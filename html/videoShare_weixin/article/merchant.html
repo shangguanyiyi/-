@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">	
+	<title>商家详情</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="stylesheet" href="../css/basearticle.css">
+    <link rel="stylesheet" href="../css/merchant.css">
+    <script src="../js/common/jquery-1.11.3.min.js"></script>
+    <script src="../js/article/merchant.js"></script>
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script src="../js/common/swiper.min.js"></script>
+</head>
+<body>
+<section>
+    <header>
+        <div class="user_img">
+            
+        </div>
+        <div class="mechant_info">
+            <p class="name"></p>
+            <p class="message"><span class="sex"></span><b class="age"></b></p><b class="constellation"></b>
+            <p class="type"></p>
+        </div>
+       
+    </header>
+       <!-- <div class="video_activity swiper-container">
+            <div class="five_activity  swiper-wrapper">
+                 <a class="swiper-slide">
+                   <img src="../videoShareContent_img/header_img.jpg" alt="">
+                </a>   
+            </div>
+           
+        </div>-->
+    <a class="activity_teacher" href="#">
+        <!-- <div class="headImg">
+            <img class="picture_user" src="../videoShareContent_img/user.png" alt="">
+        </div>
+        <p class="published">已发布的活动(1)</p>
+        <p class="right_jump"><img src="../videoShareContent_img/more.png" alt=""></p> -->
+    </a>
+    <div class="sigle">
+       <!--  <a class="left" href="">
+            <img src="../videoShareContent_img/aa.jpg" alt="">
+            <p>这是吃货大集合大龙虾大龙虾</p>
+        </a>
+         <a class="left" href="">
+            <img src="../videoShareContent_img/aa.jpg" alt="">
+            <p>这是吃货大集合大龙虾大龙虾</p>
+        </a>
+         <a class="left" href="">
+            <img src="../videoShareContent_img/aa.jpg" alt="">
+            <p>这是吃货大集合大龙虾大龙虾</p>
+        </a>
+         -->
+    </div>
+
+</section>
+<script>
+
+    var windowWidth = document.body.clientWidth;
+        window.clientWidth = windowWidth;
+        //定义body字体大小
+        document.getElementsByTagName("html")[0].style.fontSize=windowWidth/10+"px";
+        window.onresize=function(){
+        var windowWidth = document.body.clientWidth;
+        document.getElementsByTagName("html")[0].style.fontSize=windowWidth/10+"px";
+        };
+
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        slidesPerView: 4,
+        paginationClickable: true,
+        spaceBetween: 20,
+        freeMode: true
+    });
+</script>
+</body>
+</html>

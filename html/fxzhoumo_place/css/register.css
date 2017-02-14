@@ -1,0 +1,64 @@
+body{
+	background: #ededed;
+}
+.g-head{
+	background: #ededed;
+	box-shadow: 0 -1px 1px -1px rgba(0, 0, 0, 0.31) inset;
+}
+
+.g-main{
+	padding: 54px 20px;
+}
+.mt20{
+	margin-top: 20px;
+}
+.mt40{
+	margin-top: 40px;
+}
+		
+		label{
+			font-size: 16px;
+			display: inline-block;
+			width: 80px;
+			text-align: center;
+			float: left;
+			padding: 10px 0;
+		}
+		input{
+			background: #fff;
+			padding: 10px;
+			border-radius: 5px;
+			font-size: 13px;
+			outline: none;
+			border: none;
+			overflow: hidden;
+			width: 100%;
+			margin-top: 2px;
+		}
+
+	#getCode{
+		float: right;
+		background: #00c8c8;
+		color: #fff;
+		padding: 10px 0;
+		width: 110px;
+		margin-left: 10px;
+		font-size: 13px;
+		margin-top: 2px;
+		text-align: center;
+		border-radius: 5px;
+	}
+	.m-registerBtn{
+		border-radius: 5px;
+		padding: 10px 0;
+		background: #00c8c8;
+		color: #fff;
+		width: 80%;
+		margin:  40px auto;
+		font-size:18px;
+		text-align: center;
+		letter-spacing: 0.5em;
+	}
+	input[type=submit]{
+		color: #fff;
+	}

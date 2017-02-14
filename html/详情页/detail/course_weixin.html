@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+	<meta name="apple-touch-fullscreen" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<title>详情页</title>
+	<link rel="stylesheet" href="../css/particulars.css">
+	<link rel="stylesheet" href="../css/reset_s.css">
+	<link rel="stylesheet" href="../css/swiper.min.css">
+	<link href='http://api.youziku.com/webfont/CSS/56c67129f629d808fcb9964a' rel='stylesheet' type='text/css' />
+	<script src="../js/common/jquery-1.11.3.min.js"></script>
+	<script src="../js/main/particulars.js"></script>
+	<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script><!-- 分享好友和朋友圈 -->
+	<script src="../js/main/weixin.js"></script>
+	<style>
+	.nav{
+	background: #fff;
+	overflow: hidden;
+}
+.company_logo{
+	/*border:1px solid red;*/
+	width:10%;
+	margin:1% 2%;
+}
+.company_logo img{
+	border-radius: 50%;
+}
+.left_arrow{
+	width:85%;
+	/*border:1px solid red;*/
+	position:absolute;
+	top:20%;
+	left:13%;
+	font-size:1.4em;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+	</style>
+	<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?9ea4fe81ce0682c1eb0f472cbc98b9e3";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+<body>
+<div class="contain" id="contain">
+		<nav class="nav" id="nav">   	<!-- 页面最顶层 -->
+			<!-- <div class="headImg">
+				<img src="../images/head.jpg" alt="">
+			</div>
+			<div class="headText">
+				
+			</div> -->
+			<div class="nav_position">
+
+				 <div class="company_logo">
+					<!-- <a href="http://www.fxzhoumo.com/mindex.html"> -->
+						<img src="" alt="">
+					<!-- </a> -->
+				</div>	
+				<div class="left_arrow">
+					我觉得这个活动超级赞，有没有同去的！
+				</div> 
+			</div>
+		</nav>
+
+
+		<section class="particulars_notice_change particulars_notice_fixed" id="particulars_notice_change_fixed">  
+			<div class="particulars in_bl">
+				<p class="select" id="particulars_fixed">详情</p>
+			</div>
+
+			<div class="notice in_bl">
+			   <p id="notice_fixed">须知</p>
+		    </div>
+		</section>
+		<header class="scroll_img_all">   <!-- 轮播图 -->		
+				<div class="swiper-container">
+				  	<ul class="swiper-wrapper" id="swiper-wrapper">
+						<li id="loading">
+					    	<a>
+					    		<img src="../images/loading.gif" alt="" class="scroll_img">	
+					    	</a>
+					    </li>
+				  	</ul>
+				 	<div class="swiper-pagination"></div>
+				</div>      <!-- swiper框架轮播图 -->
+		</header>
+		<section class="apply_stoppage_time clear">   <!-- 报名时间截止 -->
+			<div class="apply_top clear">
+				<div class="apply_text_time in_bl">
+					<p class="apply_explain in_bl" id="course_title"></p>
+					<p class="stoppage_time" id="course_datetime"></p>
+				</div>
+			</div>			
+			<p class="price">
+				<span id="course_price_suffix" class="css19c53533a4397"></span>
+				<span id="course_price" class="css19c53533a4397"></span>
+				<span id="course_old_price"></span>
+			</p>
+		</section>
+		<section class="map clear">    <!-- 地图 -->
+		    <a href="" id="course_place">
+				<div class="map_icro fl">
+					<img src="../images/map_icro.png" alt="">
+				</div>
+				<div class="location fl" id="course_detailplace">
+					
+				</div>
+				<div class="map_right_arrow">
+					
+						<img src="../images/right_arrow.png" alt="">
+					
+				</div>
+			</a>
+		</section>
+		<section class="activity_bright_sport">  <!-- 活动亮点 -->
+			<ul class="activity_list" id="activity_list">
+				<li id="course_lightspot_type"></li>
+			</ul>
+		</section>
+		<!-- 详情须知 -->
+		<section class="particulars_notice_change" id="particulars_notice_change">  		
+				<div class="particulars in_bl">
+					<p class="select" id="particulars">详情</p>
+				</div>		
+				<div class="notice in_bl">
+					<p id="notice">须知</p>
+				</div>
+		</section>
+		<section class="organizer clear" id="organizer">  <!-- 组织者 -->
+			<div class="organizer_headimg fl" >
+				<img src="" alt="" id="course_teacher_photo">
+			</div>
+			<div class="organizer_text fl">
+				<p><span id="course_teacher_nickname"></span><span id="course_teacher_type"></span></p>
+				<p id="course_teacher_oneabstract"></p>
+			</div>
+			<div class="organizer_right_arrow fr">
+				<a href="javascript:;">
+					<img src="../images/right_arrow.png" alt="">
+				</a>
+			</div>
+		</section>
+		<section class="image_text" id="course_description">
+			<p class="des_img_text" id="des_img_text">
+			</p> 
+		</section>
+		<section class="warm_remind" id="warm_remind">
+			<ul class="activity_list" id="activity_list_remind">
+				<li class="warm_remind_first_li">温馨提示</li>
+			</ul>
+			<ul id="course_hint_photo_arr">
+				
+			</ul>
+		</section>
+		<section class="recommend_activity" >
+				<p class="title" >推荐活动</p>
+					<div class="activity_out clear">
+						<a  class="recommend_contain clear" href="javascript:;" id="local_href_0">
+							<div class="recommend_bigimg">
+								 <img src="../images/loading.gif" alt="" id="headphoto_0">
+							</div>
+							<div class="recommend_txt">
+								<p id="title_0"></p>
+								<p id="time_0"></p>
+								<p id="address_0"></p>							
+							</div>
+						</a>
+						<div class="icon_price">
+							<p id="courseprice_suffix_0" class="css19c53533a4397"></p><p id="prices_unit_0"></p>
+						</div>
+					</div>
+					<div class="line"></div>  <!-- 中间分隔线 -->
+					<div class="activity_out clear">
+						<a  class="recommend_contain clear" href="javascript:;" id="local_href_1">
+							<div class="recommend_bigimg">
+								 <img src="../images/loading.gif" alt=""  id="headphoto_1">
+							</div>
+							<div class="recommend_txt">
+								<p id="title_1"></p>
+								<p id="time_1"></p>
+								<p id="address_1"></p>
+							</div>
+						</a>
+							<div  class="icon_price">
+								<p id="courseprice_suffix_1" class="css19c53533a4397"></p><p id="prices_unit_1"></p>
+							</div>
+					</div>
+					<div class="line"></div>    <!--  中间分隔线 -->
+					<div class="activity_out dajust_bottom clear">
+						<a  class="recommend_contain clear" href="javascript:;" id="local_href_2">
+							<div class="recommend_bigimg">
+								 <img src="../images/loading.gif" alt=""  id="headphoto_2">
+							</div>
+							<div class="recommend_txt">
+								<p id="title_2"></p>
+								<p id="time_2"></p>
+								<p id="address_2"></p>
+							</div>
+						</a>
+							<div  class="icon_price">
+								<p id="courseprice_suffix_2" class="css19c53533a4397"></p><p id="prices_unit_2"></p>
+							</div>
+					</div>
+					<div class="line"></div>     <!--  中间分隔线 --> 
+		</section> 
+		<footer class="apply clear" id="apply">   <!-- 底部 -->
+				<div class="surpluses fl">
+					<span  id="course_havecount"></span>	
+				</div>
+				<div class="apply_btn fl">
+					<a href="javascript:;" id="course_isapplydes" onclick="_hmt.push(['_trackEvent', '报名', 'click', 'literature'])">立即报名</a>
+				</div>
+		</footer>
+		<!-- 遮罩层 -->
+    <div class="cd-popup" role="alert" id="cd-popup">
+      <div class="cd-popup-container">
+        <div class="mask_price">
+          <img src="../images/mask_logo.png" alt="">
+          <input type="hidden" id="course_price_id" />
+          <input type="hidden" id="courseid" />
+        </div>
+        <div class="mask_list">
+          <ul class="ul_list" id="ul_list">
+          </ul>
+        </div>
+         <ul class="cd-buttons"><!-- 立即支付按钮-->
+          <li>
+            <a href="javascript:;" class="mask_a1" id="mask_a1">
+              <img src="../images/blue_click.png" alt="" >
+            </a>
+          </li>
+        </ul>
+        <a href="#" class="cd-popup-close img-replace">关闭</a>
+      </div> <!-- cd-popup-container -->
+    </div> <!-- cd-popup -->
+</div>
+ <script src="../js/common/swiper.min.js"></script>
+</body>
+</html>
+

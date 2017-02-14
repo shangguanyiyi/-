@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html ng-app="myAppModule">
+	<head lang="en">
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<script src="js/angular.js"></script>
+	</head>
+	<body>
+	<div class="container" ng-controller="myCtrl">
+		<p ng-bind="'1+3='+(1+3)"></p>
+		<hr>
+		<p ng-init="ename='Tom';age=20;member=true;"></p>
+		<p>{{ename.toUpperCase()}}+{{age}}+{{member?'会员':'非会员'}}</p>
+		<p ng-init="namelist=['Tom','Mary','Jerry']"></p>
+		<ul>
+			<li>{{namelist[0]}}</li>
+			<li>{{namelist[1]}}</li>
+			<li>{{namelist[2]}}</li>
+		</ul>
+		<p ng-init="newList=['第一','第二','第三']"> </p>
+		<ul>
+			<li ng-repeat="(n,new) in newList">{{new+n}}</li>
+
+		</ul>
+
+		<h2>ng-if</h2>
+		<span ng-init="isMember=true"></span>
+		<fieldset ng-if="isMember">
+			<legend>会员专区</legend>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam accusamus, eos consequuntur perferendis odio eaque harum vel repellat libero id delectus nihil dolor numquam, sequi iusto, ex mollitia aliquid quis.
+		</fieldset>
+
+		<fieldset ng-if="!isMember">
+			<legend>非会员专区</legend>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat pariatur hic optio eius molestias illum fuga harum eos quisquam tempore. Deleniti labore asperiores nihil ipsam, in, accusantium! Nulla pariatur, hic?
+		</fieldset>
+
+		<span ng-init="aa=[{name:'fbb',age:1,hong:'yes',new:'y'},
+						   {name:'hx',age:28,hong:'yes',new:'y'},
+						   {name:'xjt',age:34,hong:'No',new:'y'},
+						   {name:'zk',age:32,hong:'yes',new:'y'}
+		]"></span>
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<th>序号</th>
+					<th>大名</th>
+					<th>年龄</th>
+					<th>红不红</th>
+					<th>绯闻</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="(k,value) in aa">
+					<td>{{k+1}}</td>
+					<td>{{value.name}}</td>
+					<td>{{value.age}}</td>
+					<td>{{value.hong}}</td>
+					<td>{{value.new}}</td>
+				</tr>
+				<tr ng-repeat="value in aa">
+					<td>{{$index+1}}</td>
+					<td>{{value.name}}</td>
+					<td>{{value.age}}</td>
+					<td>{{value.hong}}</td>
+					<td>{{value.new}}</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<script>           //ng-app
+		angular.module('myAppModule',['ng'])
+		.controller('myCtrl',function(){
+			console.log('111');
+			console.log('2222');
+		})
+
+		
+	</script>
+	</body>
+
+	
+</html>

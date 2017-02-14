@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>腾讯视频</title>
+	<script type="text/javascript">
+		window.onload = function(){
+			try {
+				//document.domain="qq.com";
+	        	document.getElementById('video_iframe').src="http://v.qq.com/iframe/player.html?vid=k0015trfczz&amp;width=900&amp;height=600&amp;auto=0";
+			} catch (e) {
+			 alert(e.name + ": " + e.message);
+			}
+    	}
+    	
+    /* 	window.onunload = function() {  
+		  	alert("onunload");
+		}  
+		 */
+		 window.onbeforeunload = function(){
+			 //alert("关闭浏览器");
+			document.getElementById('video_iframe').src="";
+		 }
+	</script>
+</head>
+<body>
+	<iframe id="video_iframe" class="video_iframe" style=" z-index:1; border:1px solid red;margin:0 auto;" 
+		src="#" allowfullscreen="" 
+		frameborder="0" height="600" width="100%">
+	</iframe>
+</body>
+</html>

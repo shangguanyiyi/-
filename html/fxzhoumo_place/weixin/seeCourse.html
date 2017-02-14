@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>活动查询</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" />
+	<meta name="apple-touch-fullscreen" content="yes" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="format-detection" content="telephone=no" />	
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../css/base.css">
+	<link rel="stylesheet" type="text/css" href="../css/common.css">
+				<link rel="stylesheet" href="../css/dialog.css">
+	<link rel="stylesheet" type="text/css" href="../css/seeOrder.css">
+	<script type="text/javascript" src="../js/lib/require.min.js" data-main="../js/main/seeCourse"></script>
+</head>
+<body>
+<div id="g-screen">
+	<input type="hidden" id="openid">
+	<div class="g-head bb1">
+		<div class="u-title">
+			活动查询
+		</div>
+	</div>
+	<div class="g-main">
+		<form method="post" id="loginForm">
+			<div class="u-account">
+				<label id="" for="courseName">活动名</label>
+				<div class="ovh">
+					<input type="text" placeholder='活动名'  autocomplete=off id="courseName" name="course_title">
+				</div>
+			</div>
+			<div class="u-account">
+				<label id="" for="start">开始日期</label>
+				<div class="ovh">
+					<input type="date" placeholder='预订开始日期'  autocomplete=off id="start" name="course_start_time">
+				</div>
+			</div>
+			<div class="u-passCode mt20">
+				<label for="end" id="">结束日期</label>
+				<div class="ovh">
+					<input type="date" id="end" placeholder="预订结束日期" autocomplete=off name="course_end_time">
+				</div>										
+			</div>
+
+			<input type="submit" class="m-loginBtn" value="确定">
+				
+		</form>
+		<table>
+			<thead>
+				<tr>
+					<th>活动名</th>
+					<th>活动时间</th>
+					<th>价格</th>
+					<th>已报名人数</th>
+					<th>上限人数</th>
+				</tr>
+			</thead>
+			<tbody>	
+			</tbody>
+		</table>
+		<script type="text/template" id="tpl">
+			<%var i,len;%>
+
+			<%for(i=0,len;i<course_arr.length;i++){%>
+				<%var e=course_arr[i];%>
+				<tr>
+					<td><a href="http://www.fxzhoumo.com/detail/course.html?courseid=<%=e.course_id%>"><%=e.course_title%></a></td>
+					<td><%=e.course_time%></td>
+					<td><%=e.course_price%></td>
+					<td><%=e.course_apply_count%></td>
+					<td><%=e.course_max_count%></td>
+				</tr>
+			<%}%>
+		</script>
+	</div>
+
+</div>	
+
+
+</body>

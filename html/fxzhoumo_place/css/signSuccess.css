@@ -1,0 +1,205 @@
+
+
+#g-screen{
+	 max-width: 750px;
+ 	min-width: 320px;
+  	margin: 0 auto;
+}
+		#g-payResult{
+			position: fixed;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			z-index: 2500;
+			text-align: center;
+		}
+			.m-success{
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top:0;
+				left: 0;
+				z-index: 21;
+				background: #ededed;
+				padding: 12px;
+			}
+				.m-success>h1{
+					color: #00c8c8;
+					font-size: 36px;
+					padding: 0;
+					margin-top: 150px;
+				}
+
+				.u-goOrderDetail{
+					color: #666;
+					font-size: 13px;
+					margin-top: 30px;
+					margin-bottom: 30px;
+					display: inline-block;
+				}
+
+
+
+				.u-goIndex{
+					margin-top: 30px;
+					display: inline-block;
+					background: #00c8c8;
+					border-radius: 5px;
+					color: #fff;
+					font-size: 18px;
+					padding: 10px 20px;
+					letter-spacing: 1.2;
+				}
+
+			.m-fail{
+				
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top:0;
+				left: 0;
+				z-index: 20;
+				background: #fff;
+			}
+				.m-fail>h1{
+						color: #00c8c8;
+					font-size: 3em;
+					padding: 0;
+					margin-top: 150px;
+				}	
+
+				.m-fail p{
+					font-size: 1.6em;
+					color: #666;
+					margin-top: 30px;
+				}
+
+
+			.m-setPwd{
+				position:absolute;
+				top:50%;
+				background:#fff;
+				border-radius:5px;
+				width:250px;
+				height: 290px;
+				left:50%;
+				margin-left:-125px;
+				font-size:1.6em;
+				padding-bottom: 10px;
+				margin-top: -145px;
+				z-index: 22;
+			}
+
+				.m-setPwd>h1{
+					font-size:1.2em;
+					text-align:center;
+					border-bottom:1px solid #00c8c8;
+					padding:10px 0;
+					margin-top: 0;
+				}
+
+				.m-setPwd>p{
+					padding: 0 10px;
+					line-height: 1.5;
+				}
+
+				#ff{
+					padding: 0 10px;
+					display:block;
+					margin-top:20px;
+				}
+					#ff label{
+						display:inline-block;
+						width:60px;
+						float: left;
+						padding: 10px 0;
+					}
+					#ff input{
+						border:1px solid #ccc;
+						border-radius:5px;
+						outline:none;
+						padding:10px;
+						overflow: hidden;
+						width: 150px;
+					}
+					.u-submit{
+						margin-top:20px;
+						margin-bottom: 10px;
+					}
+					#ff input[type=submit]{
+						color:#fff;
+						display:block;
+						margin:0 auto;
+						background:#ccc;
+						font-size: 1em;
+						letter-spacing: 0.5em;
+					}
+
+
+	.m-voucher{
+		width: 100%;
+		height: 100%;
+		background: #ffecc4;
+	}
+
+				.m-voucher p{
+					font-size: 13px;
+					line-height: 1.5;
+					color: #666;
+					margin:0 auto;
+					color: #fff;
+				}
+
+			.m-voucher h1{
+				font-size: 30px;
+				color: #f13c10;
+				text-align: center;
+				margin-top: 60px;
+			}
+			
+			.u-share{
+				position: relative;
+				margin: 0 24px 35px;
+				background: #f68e6b;
+				border-radius: 5px;
+				padding: 15px 15px 25px 15px;
+			}
+
+					.u-share .u-logoImg{
+						width: 56px;
+						height: 56px;
+						border-radius: 28px;
+						padding: 2px;
+						float: left;
+					}
+					.u-share .u-logoImg img{
+						width: 52px;
+						height: 52px;
+						border-radius: 50%;
+					}
+
+					.u-shareTxt{
+						width: 70%;
+						overflow: hidden;
+					}
+
+						.u-shareTxt p:nth-child(3){
+							font-size: 20px;
+						}
+					.u-shareMoney{
+						position: absolute;
+						right: 20px;
+						bottom: 10px;
+						font-size: 16px;
+						text-align: right;
+						color: #fff;
+					}
+						#vCount{
+							font-size: 30px;
+						}
+
+						#shareTxt{
+							font-size: 16px;
+							color: #f8a985;
+						}

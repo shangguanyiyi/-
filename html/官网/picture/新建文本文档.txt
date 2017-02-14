@@ -1,0 +1,131 @@
+
+/*鼠标指上去图片同比例放大   最边上的手机*/
+@-webkit-keyframes phoneScale{
+	0%{
+		-webkit-transform:scale(1);
+	}
+	
+	100%{
+		-webkit-transform: scale(1.5);
+	}
+@-o-keyframes phoneScale{
+	from{
+		-webkit-transform:scale(1);
+	}
+	to{
+		-webkit-transform: scale(1.5);
+	}
+}
+@-moz-keyframes phoneScale{
+	from{
+		-webkit-transform:scale(1);
+	}
+	to{
+		-webkit-transform: scale(1.5);
+	}
+}
+@-ms-keyframes phoneScale{
+	from{
+		-webkit-transform:scale(1);
+	}
+	to{
+		-webkit-transform: scale(1.5);
+	}
+}
+
+
+
+
+/***********************第二个*************************************/
+@-webkit-keyframes phoneTwo{
+	from{
+		-webkit-transform:scale(1);
+	}
+	to{
+		-webkit-transform:scale(1.25);
+	}
+}
+
+@-ms-keyframes phoneTwo{
+	from{
+		-webkit-transform:scale(1);
+	}
+	to{
+		-webkit-transform:scale(1.25);
+	}
+}
+@-o-keyframes phoneTwo{
+	from{
+		-webkit-transform:scale(1);
+	}
+	to{
+		-webkit-transform:scale(1.25);
+	}
+}
+@-moz-keyframes phoneTwo{
+	from{
+		-webkit-transform:scale(1);
+	}
+	to{
+		-webkit-transform:scale(1.25);
+	}
+}
+
+/**********************中间的手机 美食***************************************/
+@-webkit-keyframes phoneCenter{
+	form{
+		-webkit-transform:scale(1);
+	}
+	to{
+		-webkit-transform:scale(1.15);
+	}
+}
+
+@-ms-keyframes phoneCenter{
+	form{
+		-webkit-transform:scale(1);
+	}
+	to{
+		-webkit-transform:scale(1.15);
+	}
+}
+
+@-o-keyframes phoneCenter{
+	form{
+		-webkit-transform:scale(1);
+	}
+	to{
+		-webkit-transform:scale(1.15);
+	}
+}
+@-moz-keyframes phoneCenter{
+	form{
+		-webkit-transform:scale(1);
+	}
+	to{
+		-webkit-transform:scale(1.15);
+	}
+}
+
+/*.section_ul li:nth-child(1):hover,.section_ul li:nth-child(5):hover{
+	-webkit-animation:phoneScale .5s linear forwards;
+	-o-animation:phoneScale .3s linear forwards;
+	-moz-animation:phoneScale .3s linear forwards;
+	-ms-animation:phoneScale .3s linear forwards;
+}
+.section_ul li:nth-child(2):hover,.section_ul li:nth-child(4):hover{
+	-webkit-animation:phoneTwo .4s linear forwards;
+	-o-animation:phoneTwo .3s linear forwards;
+	-moz-animation:phoneTwo .3s linear forwards;
+	-ms-animation:phoneTwo .3s linear forwards;
+
+}
+.section_ul li:nth-child(3):hover{
+	-webkit-animation:phoneCenter .3s linear forwards;
+	-o-animation:phoneCenter .3s linear forwards;
+	-moz-animation:phoneCenter .3s linear forwards;
+	-ms-animation:phoneCenter .3s linear forwards;
+
+}
+*/
+

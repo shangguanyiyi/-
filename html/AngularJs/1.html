@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app>
+	<head lang="en">
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/angular.js"></script>
+	</head>
+	<body>
+	<h2>表达式</h2>
+		<p >{{1+2}}</p>
+		<p>{{80/100}}</p>
+		<p>这些字儿的长度为：{{"这些字儿的长度为：".length}}</p>
+		<p>'hello'转换为大写：{{'hello'.toUpperCase()}}</p>
+		<p>'hello'求字符串：{{'hello'.substring(2,5)}}</p>
+		<p>地址编码：{{encodeURI('abcs')}}</p>
+
+		<!-- <p>解析整数：{{parseInt('123')}}</p> -->
+	<h2>模型数据</h2>
+	<p ng-init="age=20;"></p>
+	<p>age={{age+3}}</p>
+	<span ng-init="baby='Tom';salary='0k'";age=1></span>
+	<p>{{baby.length}}</p>
+	<p>{{salary}}</p>
+	<p>{{age}}</p>
+
+	<p ng-init="arr=[3,90,[2,6],true,'tom']"></p>
+	<p>arr:{{arr}}</p>
+	<p>arr元素：{{arr[2]}}</p>
+
+	<p ng-init="fbb={name:'fanbb',age:35}"></p>
+	<p>{{fbb.name}}</p>
+
+		
+	</body>
+</html>

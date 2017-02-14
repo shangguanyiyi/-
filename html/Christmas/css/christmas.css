@@ -1,0 +1,154 @@
+header,section{
+	min-width: 320px;
+}
+.diwen img{
+	width:100%;
+	margin-bottom: 10px;
+}
+.wrap>img{
+	width:100%;
+	padding:0 15px;
+
+}
+.back img{
+	width:100%;
+}
+section img{
+	width:100%;
+}
+.xuyuan{
+	text-align: center;
+}
+.xuyuan p{
+	/*margin:10px 0;*/
+}
+.xuyuan img{
+	width:40%;
+	margin-top:25px;
+	/*margin-bottom: 10px;*/
+}
+.ziti img{
+	width:60%;
+	margin-top:10px;
+}
+.textarea1{
+	text-align: center;
+	margin-top: 25px;
+	position:relative;
+	/*border:1px solid red;*/
+}
+.textarea{
+	outline: none;
+	width:80%;
+	height:130px;
+	padding:10px;
+	border:1px solid #333;
+	font-size:1.1em;
+	/*border-right:1px solid #333;*/
+}
+
+.mao img{
+	/*width:150%;*/
+	max-width: 15%;
+	position:absolute;
+	top:-20px;
+	left:82%;
+}
+.inputPhone{
+	text-align:center;
+	margin-top:20px;
+}
+.inputPhone input{
+	outline: none;	
+	border-radius: 5px;
+	text-align: center;
+	padding:3%;
+	width:60%;
+}
+.phone{
+	border:1px solid #666;
+	/*border-bottom:1px solid #666;
+	border-right:1px solid #666;*/
+
+}
+/*.button{//input 里的button
+	background:#ff4a4a;
+	color:#fff;
+	border:1px solid #ff4a4a;
+	margin-top:20px;
+	border-radius: 5px;
+	padding:5px;
+
+}*/
+/*.button{//图片
+	margin-top:15px;
+	width:60%;
+}*/
+
+button{
+	border-radius: 5px;
+	text-align: center;
+	padding:3%;
+	width:60%;
+	background:#ff4a4a;
+	border:1px solid #ff4a4a;
+	margin-top:20px;
+	color:#fff;
+	font-size:1em;
+	outline: none;	
+}
+.qiang{
+	margin:5% 0 3% 0;
+	text-align: center;
+}
+.qiang img{
+	width:45%;
+}
+.luckyP{
+	color:#44c6dd;
+}
+
+.yuanwang{
+	color:#333;
+	font-size: 1em;
+	line-height:20px;
+
+}
+.ruler{
+	/*border:1px solid red;*/
+	padding:10px;
+	color:#333;
+	font-size:.8em;
+	margin-top:15px;
+	margin:15px 0 0 10px;
+	font-family:"微软雅黑";
+
+}
+.ruler li{
+	margin:10px 0;
+	list-style: url(../img/list.png) square inside;
+}
+.qiqiu img{
+	width:35%;	
+}
+.bottom{
+	margin-bottom:30px;
+	overflow: hidden;
+}
+.qiqiu,.content{
+	float:left;
+}
+.qiqiu{
+	width:15%;
+	text-align: center;
+	vertical-align: middle;
+}
+.content{
+	width:85%;
+	line-height:25px;
+}
+.luck{
+	padding: 10px 10px 0 0;
+	overflow:hidden;
+}
+

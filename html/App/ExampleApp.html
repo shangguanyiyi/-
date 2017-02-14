@@ -1,0 +1,57 @@
+<!doctype html>
+<html><head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<style type='text/css'>
+		html { font-family:Helvetica; color:#222; }
+		h1 { color:steelblue; font-size:24px; margin-top:24px; }
+		button { margin:0 3px 10px; font-size:12px; }
+		.logLine { border-bottom:1px solid #ccc; padding:4px 2px; font-family:courier; font-size:11px; }
+	</style>
+</head><body>
+	<button id="jump">安卓</button>
+	<h1>WebViewJavascriptBridge Demo</h1>
+	<script>
+	var btn=document.getElementById('jump');
+	btn.onclick=function(e){
+		e.preventDefault();
+		window.FXZMAndroidJavaScript.jumpToDetailActivity(746);  //安卓
+ 
+	}
+
+	window.onerror = function(err) {
+		log('window.onerror: ' + err)
+	}
+	
+	function connectWebViewJavascriptBridge(callback) {
+		if (window.WebViewJavascriptBridge) {
+			callback(WebViewJavascriptBridge)
+		} else {
+			document.addEventListener('WebViewJavascriptBridgeReady', function() {
+				callback(WebViewJavascriptBridge)
+			}, false)
+		}
+	}
+	
+	connectWebViewJavascriptBridge(
+		function(bridge) {
+			var uniqueId = 1
+			
+			var button = document.getElementById('buttons').appendChild(document.createElement('button'))
+			button.innerHTML = 'Send message to ObjC'
+			button.onclick = function(e) {
+				e.preventDefault()
+				var data = '{"activityID":3087,"activityTitle":"学习一下"}'
+				
+				bridge.send(data, function(responseData) {
+					
+				})
+			}
+
+		
+
+		
+	})
+	</script>
+	<div id='buttons'></div> <div id='log'></div>
+</body></html>

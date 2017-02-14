@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>收藏页面</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" />
+	<meta name="apple-touch-fullscreen" content="yes" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="format-detection" content="telephone=no" />	
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../css/base.css">
+	<link rel="stylesheet" href="../css/dialog.css">
+	<link rel="stylesheet" type="text/css" href="../css/fav.css">
+	<script type="text/javascript" src="../js/lib/require.min.js" data-main="../js/main/fav"></script>
+
+</head>
+<body>
+<div id="g-screen">
+	<div id="box"></div>
+	<div class="g-panel" id="panel">
+	<div class="g-userInfo">
+		<div class="ovh rel">
+			<a href="center.html" id="u-toCenter"></a>
+			<div class="u-imgBox">
+				<img class="u-headImg"  src="http://img.xue.sm/xue/user_large.png" alt="">
+			</div>
+			<div class="u-name">
+				昵称
+			</div>
+		</div>
+		<div class="u-des">
+			一句话个人简介在这里
+		</div>
+	</div>
+	<ul class="g-sideNav">
+		<li>
+			<a href="../index.html">精选</a>
+			<div class="i-to">
+				<div class="icon fl i-left">&#xe608;</div>
+				<div class="icon fr i-right">&#xe620;</div>
+			</div>
+		</li>
+		<li>
+			<a href="../list/list.html?go=1">发现</a>
+			<div class="i-to">
+				<div class="icon fl i-left">&#xe604;</div>
+				<div class="icon fr i-right">&#xe620;</div>
+			</div>
+		</li>
+		<div class="i-centerLine"></div>
+		<li>
+			<a href="../message/message.html?go=0">消息 <span class="msgNum dn">2</span></a>
+			<div class="i-to">
+				<div class="icon fl i-left">&#xe61a;</div>
+				<div class="icon fr i-right">&#xe620;</div>
+			</div>
+		</li>
+		<li>
+			<a href="join.html?go=0">已参加</a>
+			<div class="i-to">
+				<div class="icon fl i-left">&#xe61e;</div>
+				<div class="icon fr i-right">&#xe620;</div>
+			</div>
+		</li>
+		<li>
+			<a href="fav.html?go=0">喜欢的</a>
+			<div class="i-to">
+				<div class="icon fl i-left">&#xe617;</div>
+				<div class="icon fr i-right">&#xe620;</div>
+			</div>
+		</li>
+		<li>
+			<a href="../voucher/voucher.html?go=0">优惠券</a>
+			<div class="i-to">
+				<div class="icon fl i-left">&#xe61f;</div>
+				<div class="icon fr i-right">&#xe620;</div>
+			</div>
+		</li>
+		<li>
+			<a href="../set/set.html">设置</a>
+			<div class="i-to">
+				<div class="icon fl i-left">&#xe60f;</div>
+				<div class="icon fr i-right">&#xe620;</div>
+			</div>
+		</li>
+		<li>
+			<a href="../about/download.html">下载</a>
+			<div class="i-to">
+				<div class="i-download fl i-left"></div>
+				<div class="icon fr i-right">&#xe620;</div>
+			</div>
+		</li>
+	</ul>
+</div>
+<script type="text/template" id="tpl">
+	<div class="g-head bb1">
+		<div class="u-back dn">
+			<div class="icon">&#xe605;</div><div>返回</div>
+		</div>
+		<div class="m-panelBtn dn">
+			<div class="icon i-1"></div>
+		</div>
+		<div class="u-title">
+			<%=myTitle%>
+		</div>
+	</div>
+	<div class="g-main" id="container">
+		<%var i,len;%>
+		<%for(i=0,len=collect_arr.length;i<len;i++){%>
+			<%var elem=collect_arr[i];%>
+			<%if(elem.collect_type==1){%>
+				<div class="m-person">
+					<a href="../list/personList.html?id=<%=elem.collect_tagid%>"></a>
+					<div class="m-pImg">
+						<img src="<%=config.imgBaseURL%><%=elem.collect_teacher_photo%>" alt="">
+					</div>
+					<div class="m-uInfo">
+						<div>
+							<span class="i-tName"><%=elem.collect_teacher_nickname%></span>
+							
+								<span <%if(elem.collect_teacher_type=="组织者"){%>class="i-tCap-1"<%}else{%>class="i-tCap"<%}%> <%if(!elem.collect_teacher_type){%>style="visibility:hidden"<%}%>><%=elem.collect_teacher_type%></span>
+						</div>
+						<div class="u-uInfo">
+							<%=elem.collect_teacher_oneabstract%>
+						</div>
+					</div>
+					<div class="m-fav changeFavBtn" tagtype="1" favid="<%=elem.collect_tagid%>" >
+						<div class="changeBgElem" <%if(elem.collect_teacher_iscollect==0){%>style="background-position-y:-25px;"<%}%>></div>
+						<div class="changeTextElem dn"><%=elem.collect_teacher_collectcount%></div>
+					</div>
+				</div>
+			<%}else{%>
+				<div class="m-course">
+					<a href="../detail/course.html?courseid=<%=elem.collect_tagid%>"></a>
+					<div class="m-cImg">
+						<img src="<%=config.imgBaseURL%><%=elem.collect_course_photo%>" alt="">
+					</div>
+					<div class="m-uInfo">
+						<div class="m-cTitle"><%=elem.collect_course_title%></div>
+						<div class="u-address">
+							<div><%=elem.collect_course_startdate%></div>
+							<div><span class="i-address"><%=elem.collect_course_site%></span><span><%=elem.collect_course_distance%></span></div>
+						</div>
+					</div>
+					<div class="m-fav changeFavBtn" tagtype="2" favid="<%=elem.collect_tagid%>">
+						<div class="changeBgElem" <%if(elem.collect_course_iscollect==0){%>style="background-position-y:-25px;"<%}%> ></div>
+						<div class="changeTextElem"><%=elem.collect_course_collectcount%></div>
+					</div>
+					<div class="m-price"><span>￥</span><span><%=elem.collect_course_price%></span></div>
+				</div>
+			<%}%>
+		<%}%>
+	</div>
+
+</script>
+</div>
+</body>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>分类列表</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" />
+	<meta name="apple-touch-fullscreen" content="yes" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="format-detection" content="telephone=no" />	
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../css/base.css">
+	<link rel="stylesheet" type="text/css" href="../css/common.css">
+	<link rel="stylesheet" href="../css/dialog.css">
+	<style type="text/css">
+		body{
+			background: #ededed;
+		}
+
+		.g-head{
+			background: #ededed;
+			box-shadow: 0 -1px 1px -1px rgba(0, 0, 0, 0.3) inset;
+			top: 0;
+			left: 0;
+		}
+
+			.u-address{
+				border: none;
+				padding:0;
+			}
+					.m-fav>div:nth-child(1){
+									display: inline-block;
+									font-size: 12px;
+									width: 20px;
+									height:20px;
+									background: url(../images/fav.png) no-repeat 0 -25px;
+									background-size: 100%;
+								}
+	</style>
+	<script type="text/javascript" src="../js/lib/require.min.js" data-main="../js/main/category"></script>
+</head>
+<body>
+<div id="g-screen">
+	<div class="g-head">
+		<div class="u-back">
+			<div class="icon">&#xe605;</div><div>返回</div>
+		</div>
+		<div class="u-title">
+			
+		</div>
+	</div>
+	<div class="g-main">
+		<div class="g-page mt10" id="page">
+
+<!-- 			<div class="g-item">
+	<div class="m-item">
+		<img src="images/loading.gif" class="u-img" data-src="images/default.jpg">
+
+	</div>
+	<a class="m-content" href="http://www.baidu.com">
+		<div class="m-courseTitle">一元周末好去处,紫谷伊甸园踏青</div>
+		<div class="m-address">
+			<div class="u-date">2015.04.26</div>
+			<div class="u-address"><span>紫谷伊甸园</span><span>26公里</span></div>
+		</div>
+		<div class="m-price-1">
+			<div>100元</div>
+			<div>150元</div>
+			<div>
+				剩余<span class="red">10</span>份
+			</div>
+		</div>
+		<div class="m-fav">
+			<div class="icon"></div>
+			<div>252</div>
+		</div>
+	</a>
+	<a class="m-shadow" href="http://www.baidu.com">
+			<div class="m-over icon">
+				&#xe61d;
+			</div>
+	</a>	
+</div> -->
+
+		</div>
+	</div>
+</div>
+	<script type="text/template" id='itemTpl'>
+
+		<%var i,len;%>
+		<%for(i=0,len=course_coursetype_arr.length;i<len;i++){%>
+			<%var elem=course_coursetype_arr[i];%>
+			<div class="g-item">
+				<div class="ltr"></div>
+				<div class="rtr"></div>
+				<div class="lbr"></div>
+				<div class="rbr"></div>
+				<div class="m-item">
+					<img src="../images/loading.gif" class="u-img" data-src="<%=config.imgBaseURL%><%=elem.headphoto%>">
+				</div>
+				<a class="m-content" href="../detail/course.html?courseid=<%=elem.courseid%>">
+					<div class="m-courseTitle"><%=elem.title%></div>
+					<div class="m-address">
+						<div class="u-date"><%=elem.course_time%></div>
+						<div class="u-address"><span><%=elem.coursesite%></span><span><%=elem.coursedistance%></span></div>
+					</div>
+					<div class="m-price-1 tc">
+						
+						<div <%if(elem.old_courseprice<=elem.courseprice){%> class="dn"<%}%>><%=elem.old_courseprice%>元</div>
+						
+						<%if(elem.courseprice>0){%>
+							<div><%=elem.courseprice%>元</div>
+						<%}else if(elem.courseprice==0){%>
+							<div>免费</div>
+						<%}%>
+						<%if(elem.course_havecount>-1){%>
+							<div>
+								<%if(elem.course_havecount<=5){%>
+									仅剩
+								<%}else{%>
+									剩余
+								<%}%>
+								<span class="red"><%=elem.course_havecount%></span>份
+							</div>
+						<%}%>
+					</div>
+					<div class="m-fav changeFavBtn" tagtype="2" favid="<%=elem.courseid%>">
+						<div class="icon changeBgElem"
+						<%if(elem.iscollect!=0){%>
+							style="background-position-y:0;"
+						<%}%>
+						></div>
+						<div class="changeTextElem mt5"><%=elem.collectcount%></div>
+					</div>
+				</a>
+				<div class="m-contentShadow"></div>
+					<%if(elem.course_havecount==0){%>
+						<a class="m-shadow" href="../detail/course.html?courseid=<%=elem.courseid%>" >
+							<div class="m-over">
+								
+							</div>
+						</a>
+					<%}%>
+			</div>
+		<%}%>
+	</script>
+</body>
+</html>

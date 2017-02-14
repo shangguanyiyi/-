@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>客服消息详情</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" />
+	<meta name="apple-touch-fullscreen" content="yes" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="format-detection" content="telephone=no" />	
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../css/base.css">
+	<link rel="stylesheet" type="text/css" href="../css/common.css">
+	<link rel="stylesheet" type="text/css" href="../css/message.css">
+	<script type="text/javascript" src="../js/lib/require.min.js" data-main="../js/main/msgInfo"></script>
+</head>
+<body>
+<div id="g-screen">
+	<div class="g-head bb1">
+		<div class="u-back">
+			<div class="icon">&#xe605;</div><div>返回</div>
+		</div>
+		<div class="u-title">
+			系统消息
+		</div>
+	</div>
+	<div class="g-main" id="container">
+<!-- 		<div class="g-msgInfoItem ">
+	<div class="m-msg-r">
+	<div class="tc cc mb10 f16">2015.04.22</div>
+		<div class="u-msgImg fl mr10">
+			<img src="../images/1.jpg" alt="">
+		</div>
+		<div class="ovh rel">
+			<div class="i-ich fl"></div>
+			<div class="u-msgTxt bgf c3">
+				啊士大夫但是的房顶上发的说法是房山范德萨士大夫是阿范德萨
+			</div>
+		</div>
+	</div>
+</div>
+<div class="g-msgInfoItem">
+	<div class="m-msg-r">
+	<div class="tc cc mb10 f16">2015.04.22</div>
+		<div class="u-msgImg fl mr10">
+			<img src="../images/1.jpg" alt="">
+		</div>
+		<div class="ovh rel">
+			<div class="i-ich fl"></div>
+			<div class="u-msgTxt bgf c3">
+				啊士大夫但是的房顶上发的说法是房山范德萨士大夫是阿范德萨
+			</div>
+		</div>
+	</div>
+</div> -->
+
+	</div>
+
+	<script type="text/template" id="tpl">
+		<%for(var i=0,len=infor_arr.length;i<len;i++){%>
+			<%var e=infor_arr[i];%>
+			<div class="g-msgInfoItem">
+				<div class="m-msg-r">
+				<div class="tc cc mb10"><%=We.date(new Date(e.infor_datetime),"YYYY-MM-DD")%></div>
+					<div class="u-msgImg fl mr10">
+						<img src="<%=config.imgBaseURL%><%=e.infor_sys_photo%>" alt="">
+					</div>
+					<div class="ovh rel">
+						<div class="i-ich fl"></div>
+						<div class="u-msgTxt bgf c3">
+							<%=e.infor_sys_cotent%>
+						</div>
+					</div>
+				</div>
+			</div>
+		<%}%>
+	</script>
+</div>	
+
+
+</body>

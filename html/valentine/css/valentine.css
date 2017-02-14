@@ -1,0 +1,302 @@
+.one{
+	width:100%;
+	height:100%;
+	background-color:#86e2fd;
+	max-width:750px;
+	min-width:320px;
+	margin:0 auto;
+	position:absolute;
+	top:0;
+	left:0;
+	background:url(../valentine_img/background.png) repeat;
+	background-size: 100% 100%;
+}
+#second,#third,#forth{
+	display:none;
+}
+/*背景图框*/
+.header_maybe{
+	background:url(../valentine_img/background.png) repeat;
+	background-size: 100% 100%;
+}
+.wrap{
+	width:95%;
+	margin:0 auto;
+	text-align: center;
+}
+.header_img1{
+	width:80%;
+	vertical-align:middle;
+	padding:5% 0;
+}
+.person_img{
+	position:relative;
+	/*overflow:hidden;*/
+}
+.logo{
+	width:25%;
+	position:absolute;
+	top:3%;
+	left:3%;
+	z-index:10;
+}
+.nacklace{
+	width:7%;
+	position:absolute;
+	top:90%;
+	right:2%;
+	z-index:10;
+}
+.secretary{
+	background:#fff;
+	width:90%;
+	margin:0 auto;
+	margin-top:6%;
+	text-align: center;
+}
+.secretary_text{
+	width:90%;
+	margin:8% 0 4% 0;
+}
+.askLove,.launch{
+	width:40%;
+	margin:4% 0 1% 0;
+}
+.launch{
+	margin:9% 0 28% ;
+}
+#suowen{
+	margin-bottom:12%;
+}
+
+
+.header_img2{
+	padding:7% 0;
+	width:65%;
+	vertical-align:middle;
+}
+.select_img{
+	width:25%;
+	position:absolute;
+	top:48.5%;
+	left:37.5%;
+}
+.mask{
+	background-color: rgba(0,0,0,.3);
+	width:100%;
+	height:100%;
+	position:absolute;
+	top:0;
+	left:0;
+	z-index:11;
+	display:none;
+}
+.friend{
+	background-color: rgba(0,0,0,.3);
+	width:100%;
+	height:100%;
+	position:absolute;
+	top:0;
+	left:0;
+	z-index:11;
+	display:none;
+}
+.mask_text{
+	width:73%;
+	position:absolute;
+	top:2%;
+	right:2%;
+}
+.app_share{
+	width:75%;
+	position:absolute;
+	top:2%;
+	right:5%;
+}
+.innerSpace{
+	padding:2% 0 0;
+}
+.person_word{
+	width:70%;
+	margin:8% 0 4% 0;
+}
+.download{
+	position:fixed;
+	bottom:0;
+	left:0;
+	z-index:20;
+}
+.third_wall{
+	padding-bottom:20%;
+}
+#share{
+	margin:9% 0 28% ;
+}
+.share_word{
+	width:90%;
+	margin-top:13%;
+}
+ .fileInputContainer{
+        position:relative;
+        position:absolute;
+        top:48%;
+        left:37.5%;
+        z-index:10;
+        background:#ff7b7b;
+        color:#fff;
+        padding:2%;
+        border-radius: 3px;
+    }
+ .fileInput{
+        overflow: hidden;
+        position:absolute;
+        right:0;
+        top:0;
+        opacity: 0;
+        filter:alpha(opacity=0);
+        cursor:pointer;
+        width:90%;
+        border:1px solid transparent;
+        -webkit-tap-highlight-color:rgba(255,255,255,0);
+		-webkit-appearance:none;
+    }
+.shadow{
+    position:absolute;
+    left:0;
+    background:#99dde7;
+   /* background:#000;*/
+    /*opacity:.7;*/
+    height:10px;
+    width:100%;
+    /*z-index:1;*/
+}
+#clipArea {
+	overflow:hidden;
+	background:#fff;
+}
+/*遮罩*/
+.yanzheng{
+	background-color:rgba(0,0,0,0.68); 
+	width:100%;
+	height:100%;
+	position:fixed;
+	top:0;
+	left:0;
+	margin:0 auto;
+	display:none;
+}
+.popTan{
+	background:#fff;
+	width:80%;
+	margin:0 auto;
+	position:absolute;
+	top:30%;
+	left:10%;
+	border-radius:5px;
+}
+.input0{
+	width:100%;
+	margin:0 auto;
+	padding:0 10%;
+	margin-top:10%;
+}
+.phone{
+	width:100%;
+	border:1px solid #ddd;
+	height:30px;
+	display:inline-block;
+	font-size: 0.999em;
+	/*line-height: 30px;*/
+}
+.input1{
+	width:100%;
+	margin:0% auto;
+	padding:0 10%;
+	margin-top:5%;
+}
+.input1 img{
+	display:inline-block;
+	width:35%;
+	height:30px;
+	vertical-align: bottom;
+}
+.securityCode{
+	width:60%;
+	height:30px;
+	display:inline-block;
+	border-radius: 0px;
+	font-size: 0.999em;
+	border-bottom:#333;
+	border:1px solid #ddd;
+}
+.input2{
+	width:100%;
+	margin-top:5%;
+	padding:0 10%;
+}
+.btnYzm{
+	width:35%;
+	height:30px;
+	display:inline-block;
+	background: #86e2fd;
+	border:1px solid #86e2fd;
+	color:#fff;
+	border-radius: 5px;
+}
+.securityCode2{
+	width:60%;
+	height:30px;
+	display:inline-block;
+	border-radius: 0px;
+	font-size: 0.999em;
+	border-bottom:#333;
+	border:1px solid #ddd;
+}
+.input3{
+	width:100%;
+	margin-top:5%;
+	padding:0 10% 5% 10%;
+}
+.true{
+	width:30%;
+	height:30px;
+	background:#86e2fd;
+	border-radius: 5px;
+	color:#fff;
+	margin-left:5%;
+	border:1px solid #86e2fd;
+}
+.cancle{
+	width:30%;
+	height:30px;
+	border:1px solid #ddd;
+	border-radius: 5px;
+	color:#333;
+	background: #fff;
+	margin-left:15%;
+
+}
+.popTan input,.popTan button{
+	outline:none;
+}
+/*点击头像 生成唇印*/
+.mouth{
+	width:20%;
+	position:absolute;
+	top:0%;
+	left:0%;
+}
+#clipBtn{
+	width:40%;
+	background: #ff7b7b;
+	color:#fff;
+	padding:2%;
+	border-radius: 3px;
+	outline:none;
+	font-size:1.2em;
+	border:1px solid transparent;
+	letter-spacing:5px;
+	margin-top:10%;
+	-webkit-tap-highlight-color:rgba(255,255,255,0);
+	-webkit-appearance:none;
+}

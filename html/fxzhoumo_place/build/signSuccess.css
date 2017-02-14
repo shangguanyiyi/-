@@ -1,0 +1,205 @@
+
+
+#g-screen{
+	 max-width: 32rem;
+ 	min-width: 13.65333333rem;
+  	margin: 0 auto;
+}
+		#g-payResult{
+			position: fixed;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			z-index: 2500;
+			text-align: center;
+		}
+			.m-success{
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top:0;
+				left: 0;
+				z-index: 21;
+				background: #ededed;
+				padding: 0.512rem;
+			}
+				.m-success>h1{
+					color: #00c8c8;
+					font-size: 1.536rem;
+					padding: 0;
+					margin-top: 6.4rem;
+				}
+
+				.u-goOrderDetail{
+					color: #666;
+					font-size: 0.55466667rem;
+					margin-top: 1.28rem;
+					margin-bottom: 1.28rem;
+					display: inline-block;
+				}
+
+
+
+				.u-goIndex{
+					margin-top: 1.28rem;
+					display: inline-block;
+					background: #00c8c8;
+					border-radius: 0.21333333rem;
+					color: #fff;
+					font-size: 0.768rem;
+					padding: 0.42666667rem 0.85333333rem;
+					letter-spacing: 1.2;
+				}
+
+			.m-fail{
+				
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top:0;
+				left: 0;
+				z-index: 20;
+				background: #fff;
+			}
+				.m-fail>h1{
+						color: #00c8c8;
+					font-size: 1.28rem;
+					padding: 0;
+					margin-top: 6.4rem;
+				}	
+
+				.m-fail p{
+					font-size: 0.68266667rem;
+					color: #666;
+					margin-top: 1.28rem;
+				}
+
+
+			.m-setPwd{
+				position:absolute;
+				top:50%;
+				background:#fff;
+				border-radius:0.21333333rem;
+				width:10.66666667rem;
+				height: 12.37333333rem;
+				left:50%;
+				margin-left:-5.33333333rem;
+				font-size:0.68266667rem;
+				padding-bottom: 0.42666667rem;
+				margin-top: -6.18666667rem;
+				z-index: 22;
+			}
+
+				.m-setPwd>h1{
+					font-size:0.512rem;
+					text-align:center;
+					border-bottom:1px solid #00c8c8;
+					padding:0.42666667rem 0;
+					margin-top: 0;
+				}
+
+				.m-setPwd>p{
+					padding: 0 0.42666667rem;
+					line-height: 1.5;
+				}
+
+				#ff{
+					padding: 0 0.42666667rem;
+					display:block;
+					margin-top:0.85333333rem;
+				}
+					#ff label{
+						display:inline-block;
+						width:2.56rem;
+						float: left;
+						padding: 0.42666667rem 0;
+					}
+					#ff input{
+						border:1px solid #ccc;
+						border-radius:0.21333333rem;
+						outline:none;
+						padding:0.42666667rem;
+						overflow: hidden;
+						width: 6.4rem;
+					}
+					.u-submit{
+						margin-top:0.85333333rem;
+						margin-bottom: 0.42666667rem;
+					}
+					#ff input[type=submit]{
+						color:#fff;
+						display:block;
+						margin:0 auto;
+						background:#ccc;
+						font-size: 1px;
+						letter-spacing: 0.21333333rem;
+					}
+
+
+	.m-voucher{
+		width: 100%;
+		height: 100%;
+		background: #ffecc4;
+	}
+
+				.m-voucher p{
+					font-size: 0.55466667rem;
+					line-height: 1.5;
+					color: #666;
+					margin:0 auto;
+					color: #fff;
+				}
+
+			.m-voucher h1{
+				font-size: 1.28rem;
+				color: #f13c10;
+				text-align: center;
+				margin-top: 2.56rem;
+			}
+			
+			.u-share{
+				position: relative;
+				margin: 0 1.024rem 1.49333333rem;
+				background: #f68e6b;
+				border-radius: 0.21333333rem;
+				padding: 0.64rem 0.64rem 1.06666667rem 0.64rem;
+			}
+
+					.u-share .u-logoImg{
+						width: 2.38933333rem;
+						height: 2.38933333rem;
+						border-radius: 1.19466667rem;
+						padding: 0.08533333rem;
+						float: left;
+					}
+					.u-share .u-logoImg img{
+						width: 2.21866667rem;
+						height: 2.21866667rem;
+						border-radius: 50%;
+					}
+
+					.u-shareTxt{
+						width: 70%;
+						overflow: hidden;
+					}
+
+						.u-shareTxt p:nth-child(3){
+							font-size: 0.85333333rem;
+						}
+					.u-shareMoney{
+						position: absolute;
+						right: 0.85333333rem;
+						bottom: 0.42666667rem;
+						font-size: 0.68266667rem;
+						text-align: right;
+						color: #fff;
+					}
+						#vCount{
+							font-size: 1.28rem;
+						}
+
+						#shareTxt{
+							font-size: 0.68266667rem;
+							color: #f8a985;
+						}

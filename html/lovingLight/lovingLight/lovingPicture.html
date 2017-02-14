@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<meta charset="utf-8">
+	<title>爱的闪店~</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" />
+	<meta name="apple-touch-fullscreen" content="yes" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="format-detection" content="telephone=no" />
+	<link rel="stylesheet" href="../css/base.css">
+	<link rel="stylesheet" href="../css/lovingLight.css">
+	<script src="../js/jquery-1.11.3.js"></script>
+	<script SRC=../js/lovingLightNew.js></script>
+	<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+	<script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "//hm.baidu.com/hm.js?939d4bd0d89367d02e2a8753fb256706";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+	<body>
+		<section>
+			<div class="picture">
+				<div class="picSave"><img src="" alt=""></div>
+				<p class="close"></p>
+				<a class="pop_save"></a>
+				<p class="pop_share"></p>
+				<a href="lovingLight.html" class="weixin_save"><img src="../lovingLight_img/gaobai.png" alt=""></a>
+				<p class="pic_text">长按图片可以保存呦~</p>
+				<div class="arrow"></div>
+			</div>
+			<div class="fuchuang">
+				<a href="http://a.app.qq.com/o/simple.jsp?pkgname=sm.xue">
+					<img src="../lovingLight_img/down.png" alt="">
+				</a>
+			</div>
+		</section>
+	
+
+
+
+		<!--<div class="makeWall">
+				 <div class="picSave"><img src="" alt=""></div>
+				<p class="close"></p>
+				<a class="pop_save"></a>
+				<a class="weixin_save"><img src="../lovingLight_img/save_weixin.png" alt=""></a>
+				<p class="pop_share"></p> -->
+				<!-- <p class="pop_toSomebody"></p>
+				<p class="pop_fromMe"></p>
+				<div class="pop_textarea">	
+				</div> 
+			</div>-->
+			<!-- 分享蒙层 -->
+			<div class="mask">
+				<img src="../lovingLight_img/mask_text.png" alt="">
+			</div>
+		
+	</body>
+	<script>
+		var windowWidth = document.body.clientWidth;
+		    window.clientWidth = windowWidth;
+		    //定义body字体大小
+		    document.getElementsByTagName("html")[0].style.fontSize=windowWidth/10+"px";
+		    window.onresize=function(){
+		    var windowWidth = document.body.clientWidth;
+		    document.getElementsByTagName("html")[0].style.fontSize=windowWidth/10+"px";
+		    };
+
+		     $(function(){
+	            wx_url=escape(window.location.href);
+	            $.ajax({
+	                url:"/WeixinServlet?method=weixinPower",
+	                type:"post",
+	                data:'servicestr={"wei_url":"'+wx_url+'"}',  
+	                dataType:"html",
+	                success:function(data){
+	                    var json = eval("("+data+")");
+	                    if(json.code=="success"){
+	                        wx.config({
+	                            debug: false, 
+	                            appId: 'wx47987fa108b8329b', 
+	                           // appId:'wxd470058f4535a61d', //mammachoice
+	                            timestamp:json.timestamp,
+	                            nonceStr: json.nonceStr,
+	                            signature: json.signature,
+	                            jsApiList: ['onMenuShareTimeline','onMenuShareAppMessage','onMenuShareQQ','onMenuShareWeibo','onMenuShareQZone']
+	                        });
+
+	                        var shareObject = {
+	                            title: '喂，我有句话想告诉你！',
+	                            desc: '快点开看，趁我还没有后悔。',
+	                            link: window.location.href,
+	                            imgUrl: 'http://www.fxzhoumo.com/operation/lovingLight_img/share.jpg'
+	                        };
+	                        var shareFriend={
+	                            title:'喂，我有句话想告诉你！',
+	                            link: window.location.href,
+	                            imgUrl: 'http://www.fxzhoumo.com/operation/lovingLight_img/share.jpg'
+	                        }
+	                        wx.ready( function (){
+	                            wx.onMenuShareTimeline(shareFriend);   //朋友圈
+	                            wx.onMenuShareAppMessage(shareObject);  //朋友
+
+	                        });
+	                    }else{
+	                        alert(json.description);
+	                    }
+	                    
+	                }
+	            });
+    		});
+	</script>
+</html>

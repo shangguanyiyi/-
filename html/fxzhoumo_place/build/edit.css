@@ -1,0 +1,125 @@
+body{
+	background: #ededed;
+}
+#g-screen{
+	max-width: 32rem;
+	min-width: 13.65333333rem;
+	margin: 0 auto;
+}
+
+.g-head{
+	position: fixed;
+	width: 100%;
+	height: 1.87733333rem;
+	background: #ededed;
+	padding: 0 0.85333333rem 0 0.85333333rem;
+	overflow: hidden;
+	z-index: 2;
+	box-shadow: 0 -1px 1px -1px rgba(0, 0, 0, 0.3) inset;
+	max-width: 32rem;
+}
+		
+		.u-back{
+			position: absolute;
+			display: table;
+			left: 0.42666667rem;
+			top: 0rem;
+			height: 1.87733333rem;
+			margin-right: 0.85333333rem;
+		}
+				.u-back>div{
+					display: table-cell;
+					vertical-align: middle;
+					text-align: center;
+					font-size: 0.68266667rem;
+					color: #666;
+				}
+
+
+.g-info{
+	text-align: center;
+	padding-top: 2.73066667rem;
+	padding-bottom: 0.42666667rem;
+}
+		
+		.m-img{
+			width: 5.12rem;
+			height: 5.12rem;
+			display: inline-block;
+			border-radius: 50%;
+			border: 0.08533333rem solid #d5d5d5;
+			position: relative;
+			padding: 0.08533333rem;
+		}
+				.m-img>img{
+					width: 4.77866667rem;
+					height: 4.77866667rem;
+					border-radius: 50%;
+				}
+		
+				.i-btn{
+					position: absolute;
+					display: table;
+					font-size: 0.768rem;
+					bottom: 0;
+					right: 0;
+					background: #b3b3b3;
+					color: #fff;
+					width: 1.28rem;
+					height: 1.28rem;
+					border-radius: 50%;
+				}
+						.i-btn>div{
+							display: table-cell;
+							vertical-align: middle;
+							font-size: 0.768rem;
+							color: #fff;
+						}
+
+				.m-img>input{
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					opacity: 0;
+					top: 0;
+					left: 0;
+					z-index: 3;
+				}
+		
+		fieldset{
+			border: none;
+			margin-top: 1.70666667rem;
+			font-size: 0.768rem;
+		}
+
+				.m-nickName label,.m-sign label{
+					margin-right: 0.21333333rem;
+				}
+
+				.m-nickName input,.m-sign input{
+					border: 1px solid #999;
+					border-radius: 0.21333333rem;
+					padding:0.34133333rem;
+					outline: none;
+					background: #ededed;
+				}
+				.m-sign{
+					margin-top: 0.85333333rem;
+					margin-bottom: 0.85333333rem;
+				}
+
+				.m-btn{
+					border-radius: 0.21333333rem;
+					padding:0.42666667rem 1.06666667rem;
+					color: #fff;
+					background: #ccc;
+					display: inline-block;
+					border: none;
+					font-size: 0.768rem;
+				}
+				input[type=submit]{
+					color: #fff;
+				}
+
+				
+		

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">	
+	<title>剧情逆转</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/storyFilm.css">
+    <link rel="stylesheet" href="../css/storyFilm_comment.css">
+    <script src="../js/jquery-1.11.3.min.js"></script>
+    <script src="../js/storyFilm_comment.js"></script>
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?1863c172acf75c615be59223355d1307";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+</head>
+<body>
+    <input type="hidden" value="1" type="button" id="hidden"><!--判断验证码能否再次点击-->
+	<div class="section" onscroll="window_onscroll()">
+        <img class="img_sigleComment" src="../storyFilm_img/sigle_comment.jpg" alt="">
+        <div class="commentPanel">
+        </div>
+        <img class="moreComment" src="../storyFilm_img/moreComment.jpg" alt="">
+        <div class="commomText">
+        </div>
+         <!-- 输入验证码弹框 -->
+        <div class="yanzheng">
+            <div class="popTan">
+                <div class="input0">
+                    <input class="phone" placeholder="请输入手机号">
+                </div>
+                <div class="input1">
+                    <input class="securityCode" placeholder="图片验证码">
+                    <img src="/IUserServlet?method=getVerifyCode" class="fresh">
+                </div>
+                <div class="input2">
+                    <input class="securityCode2" placeholder="短信验证码" >
+                    <button class="btnYzm" id="btnYzm" type="button">获取短信</button>
+
+                </div>
+                <div class="input3">
+                    <button class="true">确定</button>
+                    <button class="cancle" type="button">取消</button>
+                </div>
+              
+            </div>
+               
+        </div>
+        <div class="fuchuang">
+            <a href="http://a.app.qq.com/o/simple.jsp?pkgname=sm.xue" id="downLoad">
+                <img src="../storyFilm_img/down.png" alt="">
+            </a>
+        </div>
+        <a class="back" href="http://www.fxzhoumo.com/operation/storyFilm/storyFilm.html">返 回上 页</a>
+        <div class="finish"></div>
+	</div>
+	<script>
+		 
+	     $(function(){
+            wx_url=escape(window.location.href);
+            $.ajax({
+                url:"/WeixinServlet?method=weixinPower",
+                type:"post",
+                data:'servicestr={"wei_url":"'+wx_url+'"}',  
+                dataType:"html",
+                success:function(data){
+                    var json = eval("("+data+")");
+                    if(json.code=="success"){
+                        wx.config({
+                            debug: false, 
+                            appId: 'wx47987fa108b8329b', 
+                           // appId:'wxd470058f4535a61d', //mammachoice
+                            timestamp:json.timestamp,
+                            nonceStr: json.nonceStr,
+                            signature: json.signature,
+                            jsApiList: ['onMenuShareTimeline','onMenuShareAppMessage','onMenuShareQQ','onMenuShareWeibo','onMenuShareQZone']
+                        });
+
+                        var shareObject = {
+                            title: '快来吐槽那些“剧情反转”的事儿',
+                            desc: '小伙伴集体吐槽那些“剧情反转”的事儿，快来围观助兴一下吧！',
+                            link: window.location.href,
+                            imgUrl: 'http://www.fxzhoumo.com/operation/storyFilm_img/share.jpg'
+                        };
+                        var shareFriend={
+                            title:'小伙伴集体吐槽那些“剧情反转”的事儿，快来围观助兴一下吧！',
+                            link: window.location.href,
+                            imgUrl: 'http://www.fxzhoumo.com/operation/storyFilm_img/share.jpg'
+                        }
+                        wx.ready( function (){
+                            wx.onMenuShareTimeline(shareFriend);   //朋友圈
+                            wx.onMenuShareAppMessage(shareObject);  //朋友
+
+                        });
+                    }else{
+                        alert(json.description);
+                    }
+                    
+                }
+            });
+		});
+        
+		
+	</script>
+    <script>
+        var l=0;
+    //js方法翻译版
+    $(window).bind("scroll", function(event){
+        for(var i=l;i<$("img").length;i++){
+            if($("img").eq(i).offset().top<parseInt($(window).height())+parseInt($(window).scrollTop())){
+                    if($("img").eq(i).attr("src") == ""){
+                        var lazyloadsrc=$('img').eq(i).attr("haoroomslazyload");
+                        $("img").eq(i).attr("src",lazyloadsrc);
+                    }
+                }
+            if($("img").eq(i).offset().top>parseInt($(window).height())+parseInt($(window).scrollTop())){
+                    l=i;
+                    break;
+                }
+        }
+
+    });
+    </script>
+</body>
+</html>

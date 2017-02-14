@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>订单详情</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" />
+	<meta name="apple-touch-fullscreen" content="yes" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="format-detection" content="telephone=no" />	
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../css/base.css">
+	<link rel="stylesheet" type="text/css" href="../css/common.css">
+	<link rel="stylesheet" type="text/css" href="../css/order.css">
+	<script type="text/javascript" src="../js/lib/require.min.js" data-main="../js/main/order"></script>
+</head>
+<body>
+<div id="g-screen">
+	<input type="hidden" id="openid">
+	<div class="g-head bb1">
+		<div class="u-back">
+			<div class="icon">&#xe605;</div><div>返回</div>
+		</div>
+		<div class="u-title">
+			订单详情
+		</div>
+	</div>
+	<div class="g-main">
+		<fieldset id="content">
+
+		</fieldset>
+
+		<script type="text/template" id="tpl">
+
+			<div>
+				<label for="">活动名</label>
+				<p class="ovh"><%=order_course_title%></p>
+			</div>
+			<div>
+				<label for="">活动时间</label>
+				<p class="ovh"><%=order_course_time%></p>
+			</div>
+			<div>
+				<label for="">活动地址</label>
+				<p class="ovh"><%=order_course_place%></p>
+			</div>
+			<div>
+				<label for="">预订时间</label>
+				<p class="ovh"><%=We.date(new Date(order_time),"YYYY-MM-DD")%></p>
+			</div>
+			<div>
+				<label for="">用户昵称</label>
+				<p class="ovh"><%=order_student_name%></p>
+			</div>
+			<div>
+				<label for="">手机号</label>
+				<p class="ovh"><%=order_student_mobile%></p>
+			</div>
+			<div>
+				<label for="">订单识别码</label>
+				<p class="ovh"><%=order_number%></p>
+			</div>
+			<div>
+				<label for="">预计打款时间</label>
+				<p class="ovh"><%=We.date(new Date(order_transfer_time),"YYYY-MM-DD")%></p>
+			</div>
+
+		</script>
+	</div>
+
+</div>	
+
+
+</body>

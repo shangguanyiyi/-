@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>发现周末</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="stylesheet" href="css/reset_test.css"/>
+    <link rel="stylesheet" href="css/index_test.css"/>
+    <link rel="stylesheet" type="text/css" href="css/swipers_test.css">
+    <script src="js/common/jquery-1.11.3.min.js"></script> 
+    <script src="js/main/index_test.js"></script>
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+</head>
+<body>
+<header>
+    <div class="wrap ">
+        <div class="all">           
+            <div class="two"><img src="img/logo.png" alt=""  id="logo"/></div>
+    </div>
+    </div>
+</header>
+<div class="mengceng">
+    <div class="big_mask"><!--遮罩层-->
+        <a href="https://itunes.apple.com/us/app/xue-dian-shen-me/id972982647?l=zh&ls=1&mt=8" class="iPhone"></a>
+        <a href="http://a.app.qq.com/o/simple.jsp?pkgname=sm.xue" class="android"></a>
+        <div class="jump" id="jump">跳过下载浏览网页</div>
+    </div>
+</div>
+
+<section onscroll="window_onscroll()">
+<input type="hidden" value="" id="hidden">
+    <div class="container">
+        <div class="swiper-container wrap" id="swiper-container2">
+            <div class="swiper-wrapper" id="swiper2"> 
+              
+                <div class="swiper-slide active-nav">
+                  
+                </div>
+                <div class="swiper-slide">
+                   
+                </div>
+                <div class="swiper-slide">
+                   
+                </div>
+                <div class="swiper-slide">
+                   
+                </div>
+                <!--     
+                <div class="swiper-slide">
+                    
+                </div>
+                <div class="swiper-slide">
+                   
+                </div>
+                <div class="swiper-slide ">
+                   
+                </div>-->
+            </div>
+            <div class="left"></div>
+            <div class="right"></div>
+        </div>
+
+        <div class="swiper-container wrap" id="swiper-container3">
+            <div class="swiper-wrapper" id="swiper3">
+            <!-- <div class="swiper-slide"></div> -->
+                
+                <div class="swiper-slide" id="slide1">
+                     <!--< class="info" href="#">
+                        <a href=""><div class="big">
+                            <img src="img/loading.gif" data-original="img/banner.png" alt="banner" id="banner" class="banner" width="100" height="300"/>
+                            <div class="mask"><img src="img/mask2.png"></div>
+                        </div></a>
+                        <a href=""><div class="produce">
+                            <p class="pro_theme">排队后最佳宵夜 超豪华海鲜锅&金黄特供 </p>
+                            <p class="pro_time">2015-11-12 11:30(星期五)</p>
+                            <p class="pro_address">北京朝阳区 西大望路63号</p>
+                            <p class="pro_price"><span class="finish">300</span><s class="start"> 400元</s><u class="distance">· 距离 64km</u></p>
+                        </div></a>
+                        <div class="fixed">
+                            <s><img src="img/color2.png" alt=""/></s><p><span>140</span><i>个关注</i></p><div></div>
+                        </div>
+                    </a> -->
+                </div>
+                
+
+                  
+                <div class="swiper-slide" id="slide2">
+                   
+                </div>
+                <div class="swiper-slide" id="slide3">
+                   
+                </div>
+                <div class="swiper-slide" id="slide4">
+                   
+                </div>
+                 <!--
+                <div class="swiper-slide" id="slide5">
+                  
+                </div>
+                <div class="swiper-slide" id="slide6">
+                  
+                </div>
+                <div class="swiper-slide" id="slide7">
+            
+                </div>-->
+            </div>
+        </div>
+    </div>
+	
+</section>
+
+
+<script type="text/javascript" src="js/main/swiper_test.js"></script>
+<script>
+ 
+    var mySwiper2 = new Swiper('#swiper-container2',{
+    watchSlidesProgress : true,
+    watchSlidesVisibility : true,
+    slidesPerView :5,
+    // slidesPerColumn : 2,
+    // iOSEdgeSwipeDetection : true,
+    // mode:'vertical',
+
+    onTap: function(){
+    		mySwiper3.slideTo( mySwiper2.clickedIndex)
+    	}
+    })
+    var mySwiper3 = new Swiper('#swiper-container3',{
+        spaceBetween:8,
+        slidesOffsetBefore:3,
+        // touchAngle:10,//触发拖动的角度值
+        // onlyExternal: false,
+        longSwipes : false,//长时间长距离的拖动无法触发swiper
+        iOSEdgeSwipeDetection :true,
+        iOSEdgeSwipeThreshold : 10,
+        followFinger:false,//解决苹果机上下左右同时滑动的问题
+        autoHeight: true, //高度随内容变化
+        mode:'vertical',
+
+        onSlideChangeStart: function(){
+    		updateNavPosition();
+    	},
+        onTransitionStart:function(){
+            fresh();
+        },
+
+    })
+
+    function updateNavPosition(){
+    		$('#swiper-container2 .active-nav').removeClass('active-nav')
+    		var activeNav = $('#swiper-container2 .swiper-slide').eq(mySwiper3.activeIndex).addClass('active-nav');
+
+
+    		if (!activeNav.hasClass('swiper-slide-visible')) {
+    			if (activeNav.index()>mySwiper2.activeIndex) {
+    				var thumbsPerNav = Math.floor(mySwiper2.width/activeNav.width())-2;
+    				mySwiper2.slideTo(activeNav.index()-thumbsPerNav);
+    			}
+    			else {
+    				mySwiper2.slideTo(activeNav.index());
+    			}	
+    		}
+    	}
+
+
+</script>
+<script>
+    $(function(){
+            wx_url=escape(window.location.href);
+            $.ajax({
+                url:"/WeixinServlet?method=weixinPower",
+                type:"post",
+                data:'servicestr={"wei_url":"'+wx_url+'"}',
+                success:function(data){
+                    var json = eval("("+data+")");
+                    // console.log(json);
+                    if(json.code=="success"){
+                        wx.config({
+                            debug: false, 
+                            appId: 'wx47987fa108b8329b', 
+                           // appId:'wxd470058f4535a61d', //mammachoice
+                            timestamp:json.timestamp,
+                            nonceStr: json.nonceStr,
+                            signature: json.signature,
+                            jsApiList: ['onMenuShareTimeline','onMenuShareAppMessage','onMenuShareQQ','onMenuShareWeibo','onMenuShareQZone']
+                        });
+
+                        var shareObject={
+                            title:'优质青年生活方式',
+                            desc:'专注吃喝玩乐，品味精品生活，发现周末发现最潮最热的休闲活动。',
+                            link:window.location.href,
+                            imgUrl:"http://www.fxzhoumo.com/redpacket/yuandan/img/logoHot.png"
+                        };
+                        var shareFriend={
+                            title:'发现周末，优质青年生活方式',
+                            link:window.location.href,
+                            imgUrl:"http://www.fxzhoumo.com/redpacket/yuandan/img/logoHot.png"
+
+                        };
+                        wx.ready(function(){
+                            wx.onMenuShareTimeline(shareFriend);//朋友圈
+                            wx.onMenuShareAppMessage(shareObject);
+                        });
+                    }else{
+                        alert(json.description);
+                    }
+                }
+
+            });
+        })
+</script>
+<script>
+    var l=0;
+    //js方法翻译版
+    $(window).bind("scroll", function(event){
+        for(var i=l;i<$("img").length;i++){
+            if($("img").eq(i).offset().top<parseInt($(window).height())+parseInt($(window).scrollTop())){
+                    if($("img").eq(i).attr("src") == ""){
+                        var lazyloadsrc=$('img').eq(i).attr("haoroomslazyload");
+                        $("img").eq(i).attr("src",lazyloadsrc);
+                    }
+                }
+            if($("img").eq(i).offset().top>parseInt($(window).height())+parseInt($(window).scrollTop())){
+                    l=i;
+                    break;
+                }
+        }
+
+    });
+
+
+</script>
+
+</body>
+</html>

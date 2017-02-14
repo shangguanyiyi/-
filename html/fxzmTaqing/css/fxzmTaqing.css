@@ -1,0 +1,53 @@
+section{
+	background: url(../fxzmTaqing_img/background.png) no-repeat;
+	background-size: 100% 100%;
+	width:10rem;
+	height:17.78rem;
+	position:relative;
+}
+.phone,.btn,.downLoad{
+	width:60%;
+	height:1rem;
+	margin:0 auto;
+	text-align: center;
+	border-radius: 10px;
+}
+.phone{	
+	color:#425590;
+	position:absolute;
+	top:13rem;
+	left:20%;
+	/*display:none;*/
+}
+.btn{
+	background-color:#fe7a28; 
+	color:#fff;
+	position:absolute;
+	top:14.5rem;
+	left:20%;
+	font-size:.5rem;
+	/*display:none;*/
+}
+.text p{
+	font-size:.5rem;
+	text-align: center;
+	color:#425590;
+}
+.text p span{
+	color:#fe7a28;
+}
+.text{
+	width:66%;
+	text-align: center;
+	position:absolute;
+	top:13rem;
+	left:17%;
+	display:none;
+}
+.downLoad{
+	background-color:#fe7a28; 
+	color:#fff;
+	font-size:.5rem;
+	padding:.2rem 1.5rem;
+	margin-top:.5rem;
+}

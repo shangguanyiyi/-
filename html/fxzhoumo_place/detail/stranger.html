@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>提问者详情</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" />
+	<meta name="apple-touch-fullscreen" content="yes" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="format-detection" content="telephone=no" />	
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../css/base.css">
+	<link rel="stylesheet" type="text/css" href="../css/stranger.css">
+	<script type="text/javascript" src="../js/lib/require.min.js" data-main="../js/main/stranger"></script>
+</head>
+<body>
+<div id="g-screen">
+	<div class="g-head">
+		<div class="u-back">
+			<div class="icon">&#xe605;</div><div>返回</div>
+		</div>
+	</div>
+	<div class="g-info" id="info">
+	</div>
+	<script type="text/template" id="infoTpl">
+		<div class="m-top">
+			<div class="m-img">
+				<img src="<%=config.imgBaseURL%><%=quest_user_photo%>" alt="">
+			</div>
+		</div>
+		<div class="m-userInfo">
+			<div><%=quest_user_nickname%></div>
+		</div>
+		<div class="m-desc"><%=quest_user_oneabstract%></div>
+		<div class="m-btnBox">
+			<a class="m-favBtn" href="../center/fav.html?id=<%=quest_userid%>">查看他喜欢的</a>
+		</div>
+	</script>
+</div>
+</body>
+</html>

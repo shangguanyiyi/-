@@ -1,0 +1,117 @@
+body{
+	background: #ededed;
+}
+
+.g-head{
+	box-shadow: 0 -1px 1px -1px rgba(0, 0, 0, 0.31) inset;
+	background: #ededed;
+}
+
+.g-main{
+	padding:44px 20px 5px 20px;
+	text-align: center;
+}
+		label{
+			
+			font-size: 16px;
+			display: inline-block;
+			width: 120px;
+			text-align: center;
+			float: left;
+			padding: 10px 0;
+		}
+		input{
+			background: #fff;
+			padding: 10px;
+			border-radius: 5px;
+			font-size: 13px;
+			outline: none;
+			border: none;
+			overflow: hidden;
+			width: 100%;
+			margin-top: 2px;
+		}
+		.u-account,.u-pwd{
+			
+			margin-bottom: 20px;
+			font-size:18px;
+		}
+		.u-account{
+			margin-top: 30px;
+		}
+		.u-account+.u-account{
+			margin-top: 0;
+		}
+		#forget{
+			display: block;
+			text-align: right;
+			font-size:13px;
+			margin: 10px auto;
+			color: #333;
+			float: right;
+		}
+		.m-loginBtn{
+			background: #00c8c8;
+			padding: 10px;
+			border-radius: 5px;
+			color: #fff;
+			font-size:18px;
+			width: 80%;
+			display: inline-block;
+			letter-spacing: 0.5em;
+		}
+
+	input[type=submit]{
+		color: #fff;
+	}
+
+	input[type=date]{
+		min-height: 12px;
+	}
+
+		#getCode{
+		float: right;
+		background: #00c8c8;
+		color: #fff;
+		padding: 10px 0;
+		width: 110px;
+		margin-left: 10px;
+		font-size: 13px;
+		margin-top: 2px;
+		text-align: center;
+		border-radius: 5px;
+	}
+
+	#doCode{
+		float: left;
+		color: #333;
+		font-size: 13px;
+		padding: 10px 0;
+	}
+
+	.u-passCode{
+		margin-bottom: 30px;
+	}
+
+
+	table{
+		margin-top: 30px;
+		width: 100%;
+		font-size: 13px;
+	}
+	
+	tr{
+		border: 1px solid #999;
+	}
+	th,td{
+		border: 1px solid #999;
+		padding: 5px 0;
+	}
+
+	tr>td:nth-child(1){
+		max-width: 100px;
+	}
+
+	a:visited{
+		color: #333;
+	}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+<title>html5手机微信摇一摇特效</title>
+<!-- <link rel="stylesheet" href="./css/shake.css"> -->
+<!-- <link rel="stylesheet" href="./css/myDialog.css"> -->
+<script type="text/javascript" src="./js/jquery.min.js"></script>
+<script type="text/javascript" src="./js/howler.min.js"></script> 
+<script type="text/javascript" src="./js/fastclick.js"></script> 
+<script type="text/javascript" src="./js/shake2.js"></script>
+<!-- <script type="text/javascript" src="./js/shake.js"></script> -->
+<!-- <script type="text/javascript" src="./js/myDialog.js"></script> -->
+<style>
+body{
+	width:100%;
+	background:#ddd;
+	text-align: center;
+	margin:0 auto;
+}
+.shake_up,.shake_down{
+	width:20%;
+	width:120px;
+	height:120px;
+	position:absolute;
+	left:40%;
+	top:20%;
+	border:1px solid red;
+	margin:0 auto;
+}
+.shake_up{
+	clip:rect(0,120px,60px,0);
+}
+.shake_down{
+	clip:rect(60px,120px,120px,0);
+}
+.inner{
+	position:absolute;
+	top:18%;
+	left:43%;
+	width:80px;
+	margin:0 auto;
+}
+.loading{
+	background: url(images/spinner.png) no-repeat;
+	/*background-size: 100px 100px;*/
+	background-size:100% 100%;
+	/*width:50%;*/
+	width:80px;
+	height:80px;
+	position:absolute;
+	top:50%;
+	left:41%;
+	/*border:1px solid red;*/
+	-webkit-animation: loading infinite linear .5s;
+       -moz-animation: loading infinite linear .5s;
+        -ms-animation: loading infinite linear .5s;
+         -o-animation: loading infinite linear .5s;
+            animation: loading infinite linear .5s;
+}
+@-webkit-keyframes loading {
+    0% {
+        -webkit-transform: rotate(0);
+           -moz-transform: rotate(0);
+            -ms-transform: rotate(0);
+             -o-transform: rotate(0);
+                transform: rotate(0); 
+        }
+    100% {
+        -webkit-transform: rotate(360deg);
+           -moz-transform: rotate(360deg);
+            -ms-transform: rotate(360deg);
+             -o-transform: rotate(360deg);
+                transform: rotate(360deg); 
+         }
+}
+
+</style>
+</head>
+<body>
+	<section>
+		<img src="./images/inner.png" class="inner">
+		<img src="./images/shake.png" class="shake_up" id="shakeup">
+		<img src="./images/shake.png" class="shake_down" id="shakedown">
+		<div id="loading" class="loading"></div>
+		<img src="./images/sdy.png" width="40" height="53" onclick="shake()"><br>手动摇
+		<!-- <div class="maskLayer" id="maskLayer"></div>
+            <div class="mydialog">
+                <div class="close">
+	                <a href="javascript:void(0);">
+	                	<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAA/0lEQVRYR+2V4Q3CIBCF2w0coU6gbqCT6wg6gY7gCN5LuARbyr0DTGOCCX8o3vt4x4Nx2Pg3bqw/dIDuQHfgrxw4yp3xkvEm746drJtk3HPrWQdQ6BmKXQgIiF9lAHofwJMcLAD+jJ0cCIhY/BEgVk3wAKDwzYCYi58ttzwA2EUOwi2Ogl6ANQjMa89hu7lz7UkJQAoCczhwLvFSBxQ+bgfm3OItANR2TQkT0a9E1LQg7jmKMhFdxLEEIHXaUdiK6EK8pAW5qDH3RJUDTM7dEJ4W6FVsnfY5xCnpfZhkASZZj8fIEk9FtNljtOlznHOx6hvbgiqRFmegA3QHfubAB1EWSiFDKJTHAAAAAElFTkSuQmCC"/>
+	                </a>
+                </div>
+                <div class="content"></div>
+                <div class="btn">
+                	<a href="javascript:void(0);" class="confirm">确定</a>
+                </div>
+            </div> -->
+	</section>
+	<script>
+		
+	</script>
+
+</body>
+</html>

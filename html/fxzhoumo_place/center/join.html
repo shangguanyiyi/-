@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>已参加</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" />
+	<meta name="apple-touch-fullscreen" content="yes" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="format-detection" content="telephone=no" />	
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../css/base.css">
+	<link rel="stylesheet" type="text/css" href="../css/common.css">
+	<link rel="stylesheet" href="../css/dialog.css">
+	<link rel="stylesheet" type="text/css" href="../css/join.css">
+	<script type="text/javascript" src="../js/lib/require.min.js" data-main="../js/main/join"></script>
+</head>
+<body>
+<div id="g-screen">
+	<div class="g-head bb1">
+		<div class="u-back dn">
+			<div class="icon">&#xe605;</div><div>返回</div>
+		</div>
+		<div class="m-panelBtn dn">
+			<div class="icon i-1">&#xe600;</div>
+		</div>
+		<div class="u-title">
+			已参加
+		</div>
+	</div>
+	<div class="g-main" id="container">
+<!-- 		<div class="m-course mt10">
+	<a href=""></a>
+	<div class="m-cImg">
+		<img src="../images/4.jpg" alt="">
+	</div>
+	<div class="m-uInfo">
+		<div class="m-cTitle">一元周末好去处一元周末好去处一元周末好去处一元周末好去处</div>
+		<div class="u-address">
+			<div>2015.04.26</div>
+			<div><span class="i-address">紫谷伊甸园</span><span>26公里</span></div>
+		</div>
+	</div>
+	<div class="m-fav">
+		<div></div>
+		<div>252</div>
+	</div>
+	<div class="m-price">100元</div>
+</div>
+		<div class="m-course mt10">
+	<a href=""></a>
+	<div class="m-cImg">
+		<img src="../images/4.jpg" alt="">
+	</div>
+	<div class="m-uInfo">
+		<div class="m-cTitle">一元周末好去处一元周末好去处一元周末好去处一元周末好去处</div>
+		<div class="u-address">
+			<div>2015.04.26</div>
+			<div><span class="i-address">紫谷伊甸园</span><span>26公里</span></div>
+		</div>
+	</div>
+	<div class="m-fav">
+		<div></div>
+		<div>252</div>
+	</div>
+	<div class="m-price">100元</div>
+</div> -->
+	</div>
+<div class="g-panel">
+	<div class="g-userInfo">
+		<div class="ovh rel">
+			<a href="center.html" id="u-toCenter"></a>
+			<div class="u-imgBox">
+				<img class="u-headImg"  src="http://img.xue.sm/xue/user_large.png" alt="">
+			</div>
+			<div class="u-name">
+				昵称
+			</div>
+		</div>
+		<div class="u-des">
+			一句话个人简介在这里
+		</div>
+	</div>
+	<ul class="g-sideNav">
+		<li>
+			<a href="../index.html">精选</a>
+			<div class="i-to">
+				<div class="icon fl i-left">&#xe608;</div>
+				<div class="icon fr i-right">&#xe620;</div>
+			</div>
+		</li>
+		<li>
+			<a href="../list/list.html?go=1">发现</a>
+			<div class="i-to">
+				<div class="icon fl i-left">&#xe604;</div>
+				<div class="icon fr i-right">&#xe620;</div>
+			</div>
+		</li>
+		<div class="i-centerLine"></div>
+		<li>
+			<a href="../message/message.html?go=0">消息<span class="msgNum dn">2</span></a>
+			<div class="i-to">
+				<div class="icon fl i-left">&#xe61a;</div>
+				<div class="icon fr i-right">&#xe620;</div>
+			</div>
+		</li>
+		<li>
+			<a href="join.html?go=0">已参加</a>
+			<div class="i-to">
+				<div class="icon fl i-left">&#xe61e;</div>
+				<div class="icon fr i-right">&#xe620;</div>
+			</div>
+		</li>
+		<li>
+			<a href="fav.html?go=0">喜欢的</a>
+			<div class="i-to">
+				<div class="icon fl i-left">&#xe617;</div>
+				<div class="icon fr i-right">&#xe620;</div>
+			</div>
+		</li>
+		<li>
+			<a href="../voucher/voucher.html?go=0">优惠券</a>
+			<div class="i-to">
+				<div class="icon fl i-left">&#xe61f;</div>
+				<div class="icon fr i-right">&#xe620;</div>
+			</div>
+		</li>
+		<li>
+			<a href="../set/set.html?go=0">设置</a>
+			<div class="i-to">
+				<div class="icon fl i-left">&#xe60f;</div>
+				<div class="icon fr i-right">&#xe620;</div>
+			</div>
+		</li>
+		<li>
+			<a href="../about/download.html">下载</a>
+			<div class="i-to">
+				<div class="i-download fl i-left"></div>
+				<div class="icon fr i-right">&#xe620;</div>
+			</div>
+		</li>
+	</ul>
+</div>
+
+<script type="text/template" id="tpl">
+		<%var i,len;%>
+		<%for(i=0,len=course_arr.length;i<len;i++){%>
+			<%var e=course_arr[i];%>
+			<div class="m-course mt10">
+				<a href="orderDetail.html?orderid=<%=e.orderid%>&courseid=<%=e.courseid%>&syllabusid=<%=e.course_syllabusid%>"></a>
+				<div class="m-cImg">
+					<img src="<%=config.imgBaseURL%><%=e.course_photo%>" alt="">
+				</div>
+				<div class="m-uInfo">
+					<div class="m-cTitle"><%=e.course_title%></div>
+					<div class="u-address">
+						<div><%=e.course_datetime%></div>
+						<div><span class="i-address"><%=e.course_site%></span><span><%=e.course_distance%></span></div>
+					</div>
+				</div>
+				<div class="m-fav changeFavBtn" tagtype="2" favid="<%=e.courseid%>">
+					<div class="changeBgElem" <%if(e.course_iscollect==0){%>style="background-position-y:-25px;" <%}%>></div> 
+					<div class="changeTextElem mt5"><%=e.course_collect_count%></div>
+				</div>
+				<div class="m-price"><span style="font-size:12px;">￥</span><span><%=e.course_price%></span></div>
+			</div>
+		<%}%>
+</script>
+</div>	
+
+
+</body>

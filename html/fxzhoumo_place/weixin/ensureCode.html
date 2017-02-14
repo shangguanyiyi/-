@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>订单识别码校验</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" />
+	<meta name="apple-touch-fullscreen" content="yes" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="format-detection" content="telephone=no" />	
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../css/base.css">
+	<link rel="stylesheet" type="text/css" href="../css/common.css">
+			<link rel="stylesheet" href="../css/pop.css">
+			<link rel="stylesheet" href="../css/dialog.css">
+	<link rel="stylesheet" type="text/css" href="../css/cash.css">
+
+	<script type="text/javascript" src="../js/lib/require.min.js" data-main="../js/main/orderCode"></script>
+</head>
+<body>
+<div id="g-screen">
+	<div class="g-head bb1">
+		<div class="u-title">
+			订单识别码校验
+		</div>
+	</div>
+	<div class="g-main">
+		<form method="post" id="loginForm">
+			<div class="u-account">
+				<label id="" for="start">订单识别码</label>
+				<div class="ovh">
+					<input type="tel" placeholder='订单识别码'  autocomplete=off id="start">
+				</div>
+			</div>
+			<input type="submit" class="m-loginBtn" value="确定">
+				
+		</form>
+	</div>
+	<script type="text/template" id="ensure">
+		<div class="pop-container">
+			<div class="pop-title tc">
+				 校验订单识别码
+			</div>
+			<div class="pop-content ovh">
+				<label id="" for="">活动名:</label>
+				<div class="ovh">
+					<input type="tel"  value="<%=order_course_title%>" readonly="readonly"  autocomplete=off id="order_course_title">
+				</div>
+			</div>
+			<div class="pop-content ovh">
+				<label id="" for="">活动时间:</label>
+				<div class="ovh">
+					<input type="tel"  value="<%=order_course_time%>" readonly="readonly"  autocomplete=off id="order_course_time">
+				</div>
+			</div>
+			<div class="pop-content ovh">
+				<label id="" for="">购买数量:</label>
+				<div class="ovh">
+					<input type="tel"  value="<%=order_good_count%>" readonly="readonly"  autocomplete=off id="order_good_count">
+				</div>
+			</div>
+			<div class="pop-content ovh">
+				<label id="" for="">识别码状态:</label>
+				<div class="ovh">
+					<input type="tel"  value="<%=order_number_status%>" readonly="readonly"  autocomplete=off id="order_number_status">
+				</div>
+			</div>
+			<div class="pop-btn">
+				<div class="pop-sureBtn">确定使用</div>
+			</div>
+		</div>
+	</script>
+</div>	
+
+
+</body>

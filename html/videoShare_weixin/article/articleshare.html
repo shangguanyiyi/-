@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">	
+	<title>视频内容详情页</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="stylesheet" href="../css/basearticle.css">
+    <link rel="stylesheet" href="../css/article.css">
+    <script src="../js/common/jquery-1.11.3.min.js"></script>
+    <script src="../js/article/article.js"></script>
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script src="../js/common/swiper.min.js"></script>
+</head>
+<body>
+    <section>
+        <div class="first">
+            <div class="mask">
+                <div class="fixedImg">
+                    <img class="cover" style="display:block;" src="../img/loading.png" alt="">
+                </div>
+                <div class="article_videoinfo">
+                    <div class="video_info"><!-- 这里是一句话的描述这里是一句话的描述这里是一句话的描述 --></div><div class="video_longtime"><!-- 时间 --></div>
+                </div>
+                <div class="switch">
+                    <img style="width:40%;text-align: center;" src="../img/switch.png" alt="">
+                </div>
+            </div>
+          
+        </div>
+
+        <div class="video_description">
+            <p class="video_title"><!-- 超长的标题哈他是可以换行的不能影藏掉超长的标题哈超长的标题哈 --></p>
+            <p class="time_author"><span class="video_time"><!-- 2016.3.14 --></span> &nbsp;<span class="video_author"><!-- 蛇精病 --></span></p>
+        </div>
+   
+        <div class="content">
+            <div class="content_main">
+               
+            </div>
+            <!--
+            <div class="activity_big clear">
+                <a class="content_details underline" href="">
+                    <div class="left_pic">
+                        <img class="content_leftImg" src="http://img.fxzhoumo.com/xue/58966/58966cover20160217155258mid.jpg" alt="">
+                    </div>
+                    <div class="right_info ">
+                        <p class="right_title">MESI MESI空运生鲜 创a意烹调重</p>
+                        <p class="right_time">截止日期2016.4.5前有效</p>
+                      
+                    </div> 
+                </a>
+                <div class="icon_price">
+                   <p id="content_price" class="css19c53533a4397">158</p>
+                    <p id="price_unit">元</p>
+                </div>
+            </div>
+            
+            <div class="activity_big clear">
+                <a class="content_details underline" href="">
+                    <div class="left_pic">
+                        <img class="content_leftImg" src="http://img.fxzhoumo.com/xue/42697/42697cover20160128124051mid.jpg" alt="">
+                    </div>
+                    <div class="right_info ">
+                        <p class="right_title right_name">发布人昵称</p>
+                        <p class="right_time right_type">用户类型</p>
+                        <p class="right_oneabstrace">一句话简介</p>
+                     <p class="address_price"><span class="right_address">地址：地标西大望路</span><span class="right_price">150元/份</span></p> 
+                    </div> 
+                </a>
+                <div class="icon_price">
+                    <a href="#">查看&gt;</a>
+                </div>
+            </div>-->
+        </div>
+    </section>
+    <div class="hrLine"></div>
+
+    <article class="tuijian ">
+        <div class="hot_activity swiper-container">
+            <p>相关推荐</p>
+            <div class="five_activity  swiper-wrapper">
+            
+               <!--  <a class="swiper-slide">
+                    <dt><img src="../videoShareContent_img/aa.jpg" alt=""></dt>
+                    <dd>这是龙虾的描述aa</dd>
+                </a>  -->
+            </div>
+           
+        </div>
+    </article>
+
+
+</body>
+<script type="text/javascript">
+     var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        slidesPerView: 2.02,
+        paginationClickable: true,
+        spaceBetween: 13,
+        freeMode: true
+    });
+/*
+    $(function(){
+            wx_url=escape(window.location.href);
+            $.ajax({
+                url:"/WeixinServlet?method=weixinPower",
+                type:"post",
+                data:'servicestr={"wei_url":"'+wx_url+'"}',  
+                dataType:"html",
+                success:function(data){
+                    var json = eval("("+data+")");
+                    if(json.code=="success"){
+                        wx.config({
+                            debug: false, 
+                            appId: 'wx47987fa108b8329b', 
+                           // appId:'wxd470058f4535a61d', //mammachoice
+                            timestamp:json.timestamp,
+                            nonceStr: json.nonceStr,
+                            signature: json.signature,
+                            jsApiList: ['onMenuShareTimeline','onMenuShareAppMessage','onMenuShareQQ','onMenuShareWeibo','onMenuShareQZone']
+                        });
+
+                        var shareObject = {
+                            title: '快来吐槽那些“剧情反转”的事儿',
+                            desc: '小伙伴集体吐槽那些“剧情反转”的事儿，快来围观助兴一下吧！',
+                            link: window.location.href,
+                            imgUrl: 'http://www.fxzhoumo.com/operation/storyFilm_img/share.jpg'
+                        };
+                        var shareFriend={
+                            title:'小伙伴集体吐槽那些“剧情反转”的事儿，快来围观助兴一下吧！',
+                            link: window.location.href,
+                            imgUrl: 'http://www.fxzhoumo.com/operation/storyFilm_img/share.jpg'
+                        }
+                        wx.ready( function (){
+                            wx.onMenuShareTimeline(shareFriend);   //朋友圈
+                            wx.onMenuShareAppMessage(shareObject);  //朋友
+
+                        });
+                    }else{
+                        alert(json.description);
+                    }
+                    
+                }
+            });
+    });
+*/
+</script>
+</html>

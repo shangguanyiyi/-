@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>白色情人节</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+	<meta content="telephone=no" name="format-detection">
+	<link rel="stylesheet" href="css/whiteValentine.css">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/base.css">
+	<script src="js/jquery-1.11.3.min.js"></script>
+	<script src="js/whiteValentine.js"></script>
+	<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+	<style>
+		.maskimg{max-width: 100%; height: auto;}
+		.weixin-tip{
+			display: none; 
+			position: fixed; 
+			left:0; top:0; bottom:0; 
+			background: rgba(0,0,0,0.8);
+			 filter:alpha(opacity=80); 
+			  height: 100%; 
+			  width: 100%; 
+			  z-index: 100;
+			}
+		.weixin-tip p{text-align: center; margin-top: 10%; padding:0 5%;}
+	</style>
+	
+	<script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "//hm.baidu.com/hm.js?70176ea6c27eb5e4f877a4943d721af3";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+</head>
+<body>
+	<div class="contain">
+		<!-- <input type="hidden" id="codenum" value="abcdefghabj"> -->
+		<div class="header">
+			<div class="header_bottom">
+				<img src="whiteValentine_img/banner.png" alt="" id="is_full">
+			</div>
+			<div class="header_text">
+				<img src="whiteValentine_img/info.png" alt="" >
+			</div>
+		</div>
+		<div class="description">
+			<div class="bor-txt">
+				<img src="whiteValentine_img/redPacket.png" alt="" class="redPacket_img">
+				<img src="whiteValentine_img/gift.png" class="gift_img">
+				<!-- <p class="text_li">立即领取礼券，即享全场满减</p> -->
+			</div>
+			<div class="kuang">
+				<input type="text" class="input" placeholder="请输入手机号" id="tle">
+				<button class="button" id="click_get" onclick="_hmt.push(['_trackEvent', 'button', 'click'])">立即领取</button>
+			</div>
+			<div class="kuang">
+				<img src="whiteValentine_img/good_food.png" class="good">
+			</div>
+			
+		</div>
+		<div class="particular_list clear ">
+			<div class="particular_left">
+				<a href="" class="left_activ" id="local_href_0">
+					<img src="http://img.fxzhoumo.com/xue/57432/57432multipleImages20160118202120mid.jpg" alt="" class="particular_img" id="headphoto_0">	
+					<div class="txt_price clear">
+						<p>Tomacado花厨双人美味</p>
+						<p class="price">308&nbsp;<span>元/2位</span></p>
+					</div>
+				</a>
+				
+				<a href="" class="a_top left_activ" id="local_href_1">
+					<img src="http://img.fxzhoumo.com/xue/44418/44418multipleImages20160304173112mid.jpg" alt="" class="particular_img" id="headphoto_1">	
+					<div class="txt_price clear">
+						<p>吉の彩双人品鉴套餐</p>
+						<p class="price">258&nbsp;<span>元/2位</span></p>
+					</div>
+				</a>
+				<a  class="a_top left_activ"  id="local_href_2">
+					<img src="http://img.fxzhoumo.com/xue/75797/75797multipleImages20160201141513mid.jpg" alt="" class="particular_img" id="headphoto_2">	
+					<div class="txt_price clear">
+						<p>小红袍双人火锅餐</p>
+						<p class="price">388&nbsp;<span>元/2位</span></p>
+					</div>
+				</a>
+				<a class="a_top left_activ"  id="local_href_3">
+					<img src="http://img.fxzhoumo.com/xue/66747/66747multipleImages20160122175849mid.jpg" alt="" class="particular_img" id="headphoto_3">	
+					<div class="txt_price clear">
+						<p>Corso Como时髦下午茶</p>
+						<p class="price">248&nbsp;<span>元/2位</span></p>
+					</div>
+				</a>
+
+			</div>
+
+			<div class="particular_right" >
+
+				<a href="http://www.fxzhoumo.com/detail/course.html?courseid=5656" id="local_href_4" class="right_activ">
+					<img src="http://img.fxzhoumo.com/xue/33422/33422multipleImages20160229233142mid.jpg" alt="" class="particular_img" id="headphoto_0">	
+					<div class="txt_price clear">
+						<p>天正河鲀双人餐</p>
+						<p class="price">380&nbsp;<span>元/2位</span></p>
+					</div>
+				</a>
+				<a href="http://www.fxzhoumo.com/detail/course.html?courseid=5330" class="a_top right_activ"  id="local_href_5">
+					<img src="http://img.fxzhoumo.com/xue/72073/72073multipleImages20160122171352mid.jpg" alt="" class="particular_img" id="headphoto_1">	
+					<div class="txt_price clear">
+						<p>日和美炉双人份火锅</p>
+						<p class="price">248&nbsp;<span>元/2位</span></p>
+					</div>
+				</a>
+				<a href="http://www.fxzhoumo.com/detail/course.html?courseid=5575" class="a_top right_activ" id="local_href_2">
+					<img src="http://img.fxzhoumo.com/xue/42901/42901multipleImages20160224115643mid.jpg" alt="" class="particular_img" id="headphoto_5">	
+					<div class="txt_price clear">
+						<p>九朝会双人春之盛宴</p>
+						<p class="price">298&nbsp;<span>元/2位</span></p>	
+					</div>
+				</a>
+				<a href="http://www.fxzhoumo.com/detail/course.html?courseid=5625" class="a_top right_activ" id="local_href_3">
+					<img src="http://img.fxzhoumo.com/xue/50561/50561multipleImages20160227141701mid.jpg" alt="" class="particular_img" id="headphoto_7">	
+					<div class="txt_price clear">
+						<p>时光胶囊情人节套餐</p>
+						<p class="price">398&nbsp;<span>元/2位</span></p>	
+					</div>
+				</a>
+			</div>			
+		</div>
+		<div class="find_more">
+				<a href="http://www.fxzhoumo.com/">
+					<img src="whiteValentine_img/find_more.png" alt="">
+				</a>
+		</div>
+		<div class="see_more"></div>
+		<div class="logo_cash">
+			<a href="http://a.app.qq.com/o/simple.jsp?pkgname=sm.xue">
+				<img src="whiteValentine_img/logo_cash.png" alt="" >
+			</a>
+		</div>
+		<div class="bg"></div>
+		<div class="bg2"></div>
+		<div class="mask_green">
+			<p class="p1 ">礼券已放入你的账户</p>
+			<p class="p2 "></p>
+			<p class="p3 " >登录App即可使用</p>
+			<a href="http://a.app.qq.com/o/simple.jsp?pkgname=sm.xue" class="ck_get" id="ck_get">
+				<img src="whiteValentine_img/ck_get.png" alt="" id="imgck">
+			</a>
+			<a href="javascript:;" class="lon_in" id="lon_in">
+				<img src="whiteValentine_img/lon_in.png" alt="" >
+			</a>
+		</div>
+
+	</div>
+
+	<div class="weixin-tip">  <!-- 遮罩层 -->
+		<p>
+			<img src="whiteValentine_img/live_weixin.png" alt="微信打开" class="maskimg" />
+		</p>
+	</div>
+	<script>
+		//微信分享
+		$(function(){
+			wx_url=escape(window.location.href);
+			$.ajax({
+				url:"/WeixinServlet?method=weixinPower",
+				type:"post",
+				data:'servicestr={"wei_url":"'+wx_url+'"}',  
+				dataType:"html",
+				success:function(data){
+					var json = eval("("+data+")");
+					if(json.code=="success"){
+						wx.config({
+						    debug: false, 
+						    appId: 'wx47987fa108b8329b', 
+						   // appId:'wxd470058f4535a61d', //mammachoice
+						    timestamp:json.timestamp,
+						    nonceStr: json.nonceStr,
+						    signature: json.signature,
+						    jsApiList: ['onMenuShareTimeline','onMenuShareAppMessage','onMenuShareQQ','onMenuShareWeibo','onMenuShareQZone']
+						});
+
+						var shareObject = {
+							title: '情人节浪漫美味之旅',
+							desc: '3.14白色情人节美味专场，50元礼券限量赠送',
+							link: window.location.href,
+							imgUrl: 'http://www.fxzhoumo.com/redpacket/operation/whiteValentine/whiteValentine_img/share.jpg'
+						};
+						var shareFriend={
+							title:'3.14白色情人节美味专场，50元礼券限量赠送',
+							link: window.location.href,
+							imgUrl: 'http://www.fxzhoumo.com/redpacket/operation/whiteValentine/whiteValentine_img/share.jpg'
+						}
+						wx.ready( function (){
+							wx.onMenuShareTimeline(shareFriend);   //朋友圈
+							wx.onMenuShareAppMessage(shareObject);  //朋友
+
+						});
+					}else{
+						alert(json.description);
+					}
+					
+				}
+			});
+		});    
+
+
+		$("#lon_in").bind("touchstart",function(){
+			$(".mask_green").css("display","none");
+			$(".bg2").css("display","none");
+			$('.weixin-tip').css("display","block");
+			$(".bg").css("display","none");
+		});
+
+	$(".weixin-tip").bind("touchstart",function(){
+		$('.weixin-tip').fadeOut(800);
+	});
+	</script>
+</body>
+</html>

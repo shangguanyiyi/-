@@ -1,0 +1,142 @@
+*{
+	margin:0;
+	padding:0;
+	-webkit-box-sizing:border-box;
+    box-sizing:border-box;   
+    -moz-box-sizing:border-box;  
+}
+html{
+	font-family:"Hiragino Sans GB",Helvetica,STHeiTi,Arial,sans-serif;
+    -webkit-text-size-adjust:100%;
+    font-size:100%;
+}
+a,u{
+    text-decoration: none;
+    color:#999;
+}
+li{
+    list-style: none;
+}
+
+
+.wrap{
+	width:1152px;
+	margin:0 auto;
+}
+section,footer{
+	background-color: #fff;
+	text-align: center;
+}
+header{
+	background:url(../img/background5.png) no-repeat;
+	width:100%;
+	height:664px;
+}
+
+.header{
+	clear:both;
+	overflow: hidden;
+}
+.header_nav,.header_nav_ul{
+	float:left;
+}
+.header_nav_ul{
+	padding:3% 10% 3% 40%;
+	margin-right:0;
+}
+.header_nav_ul li{
+	float:left;
+}
+/*头部竖线*/
+.header_nav_ul li span{
+	margin:0 30px;
+	color:#fff;
+	display:inline-block;
+}
+.header_nav_ul li a{
+	color:#fff;
+	font-size:14px;
+	font-weight: bold;
+	padding-bottom:5px;
+}
+.current{
+	border-bottom:2px solid #81e1fd;
+}
+/*logo图  发现周末*/
+.header_nav img{
+	padding:10% 0 10% 60%;
+}
+.banner{
+	float:left;
+}
+/*头图外框*/
+.pageOne{
+	padding-left:15%;
+	padding-top:5%;
+	padding-right:15%;
+	overflow: hidden;
+	float:left;
+}
+/*文字与下载部分*/
+.lifeStyle{
+	margin-left:330px;
+	margin-top:-320px;
+	float:left;
+}
+/*立即下载和广告投放外面的div*/
+.lifeStyle>div{
+	padding-top:5%;
+	margin-left:5%;
+}
+.guanggao{
+	padding-left:10%;
+}
+
+section img:first-child{
+	padding:5% 0 5% 0;
+}
+.select_down{
+	padding:13% 0 3% 0;
+}
+
+.footer_download{
+	overflow: hidden;
+	padding-left:20%;
+}
+.footer_download li{
+	float:left;
+	margin-right:2%;
+	margin-bottom:2%;
+	width:220px;
+	height:220px;
+	/*border:1px solid red;*/
+}
+.picture1{
+	background:url(../img/ios_unlight.png) no-repeat;
+	
+
+}
+.picture1:hover{
+	background:url(../img/ios_light2.png) no-repeat;
+	background-color:#9ae7fd;
+	box-shadow: 10px 10px 30px rgba(150,150,150,.3);
+	-webkit-transition:all 0.3s;
+}
+.picture2{
+	background:url(../img/android_unlight.png) no-repeat;
+}
+.picture2:hover{
+	background:url(../img/andriod_light2.png) no-repeat;
+	box-shadow: 10px 10px 30px rgba(150,150,150,.3);
+	-webkit-transition:all 0.3s;
+}
+.picture3{
+	background: url(../img/erweima.png) no-repeat;
+}
+footer{
+	padding:8% 0 2% 0;
+}
+footer p{
+	font-size:14px;
+	color:;
+}

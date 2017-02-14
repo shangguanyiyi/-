@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">	
+	<title>初夏の慵懒</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/summersun.css">
+    <script src="../js/jquery-1.11.3.min.js"></script>
+    <script src="../js/summersun_bj.js"></script>
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script></script>
+    <style type="text/css">
+    .fuchuang{
+        position: fixed;
+        bottom:-5px;
+        left:0;
+    }
+    </style>
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?8c365f38e1df041685661d4c2435cbd1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+    </script>
+</head>
+<body>
+    <section>
+        <img src="../summersun_img/banner.jpg" alt="">
+        <!-- <img class="banner_text" src="../summersun_img/text.jpg" alt=""> -->
+        <img class="box" src="../summersun_img/box.png" alt="">
+        <input type="text" placeholder="请输入手机号" class="phone">
+        <input type="button" value="立即领取" class="button" id="button" onclick="_hmt.push(['_trackEvent', '立即领取', 'click', 'xiazai'])">
+        <!-- <img class="activityText" src="../summersun_img/activityText.gif" alt=""> -->
+
+        <div class="all_activity">
+            <div class="sigle_activity sigle0" id="sigle0">
+                <a class="left" id="left0">
+                    <img src="http://img.fxzhoumo.com/xue/75481/75481multipleImages20160512155903mid.jpg" alt="">
+                    <div class="txt_price">
+                       <p>微粒子完美轻食单人午餐</p>
+                        <p class="price">108&nbsp;<span>元/位</span></p>
+                    </div>
+                </a>
+                <a class="right" id="right0">
+                   
+
+                    <img src="http://img.fxzhoumo.com/xue/58966/58966multipleImages20160429155637mid.jpg" alt="">
+                    <div class="txt_price">
+                        <p>真人版RPG游戏</p>
+                        <p class="price">68&nbsp;<span>元/位</span></p>
+                    </div>
+                    
+                </a>
+            </div>
+
+            <div class="sigle_activity sigle1">
+                <a class="left" id="left1">
+                     <img src="http://img.fxzhoumo.com/xue/224155/224155multipleImages20160429153259mid.jpg" alt="">
+                    <div class="txt_price">
+                        <p>北京东方美爵酒店鲜饕餮自助盛宴</p>
+                        <p class="price">168&nbsp;<span>元/位</span></p>
+                    </div>
+                    
+                    
+                </a>
+                <a class="right" id="right1">
+                    <img src="http://img.fxzhoumo.com/xue/590/590multipleImages20160304114128mid.jpg" alt="">
+                    <div class="txt_price">
+                        <p>嘻哈包袱铺搞siao表演精彩不停</p>
+                        <p class="price">77&nbsp;<span>元/位</span></p>
+                       
+                    </div>
+                </a>
+            </div>
+
+            <div class="sigle_activity sigle2">
+                <a class="left" id="left2">
+                   <img src="http://img.fxzhoumo.com/xue/198523/198523multipleImages20160311100811mid.jpg" alt="">
+                    <div class="txt_price">
+                        <p>南锣鼓巷里正宗日式双人下午茶</p>
+                        <p class="price">198&nbsp;<span>元/2位</span></p>
+                    </div>
+                </a>
+                <a class="right" id="right2">
+                    <img src="http://img.fxzhoumo.com/xue/21594/21594multipleImages20160412113059mid.jpg" alt="">
+                    <div class="txt_price">
+                        <p>一节课玩转尤克里里</p>
+                        <p class="price">88&nbsp;<span>元/位</span></p>
+                        
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <img class="end" src="../summersun_img/end.png" alt="">
+        <div class="fuchuang">
+            <a href="http://a.app.qq.com/o/simple.jsp?pkgname=sm.xue" id="downLoad" onclick="_hmt.push(['_trackEvent', '下载', 'click', 'xiazai'])">
+                <img src="../summersun_img/down.png" alt="">
+            </a>
+        </div>
+        <div class="mask">
+            <img class="close" src="../summersun_img/close.png" alt="">
+            <img class="outside" src="../summersun_img/outside.png" alt="">
+            <img class="inside" src="../summersun_img/inside.png" alt="">
+            <a class="register" id="register" href="http://a.app.qq.com/o/simple.jsp?pkgname=sm.xue" onclick="_hmt.push(['_trackEvent', '下载', 'click', 'xiazai'])">
+            </a>
+        </div>
+    </section>
+
+   
+</body>
+<script type="text/javascript">
+
+    $(function(){
+            wx_url=escape(window.location.href);
+            $.ajax({
+                url:"/WeixinServlet?method=weixinPower",
+                type:"post",
+                data:'servicestr={"wei_url":"'+wx_url+'"}',  
+                dataType:"html",
+                success:function(data){
+                    var json = eval("("+data+")");
+                    if(json.code=="success"){
+                        wx.config({
+                            debug: false, 
+                            appId: 'wx47987fa108b8329b', 
+                           // appId:'wxd470058f4535a61d', //mammachoice
+                            timestamp:json.timestamp,
+                            nonceStr: json.nonceStr,
+                            signature: json.signature,
+                            jsApiList: ['onMenuShareTimeline','onMenuShareAppMessage','onMenuShareQQ','onMenuShareWeibo','onMenuShareQZone']
+                        });
+
+                        var shareObject = {
+                            title: '初夏，享受阳光般慵懒的味道~',
+                            desc: '30元礼券每天11:00限量领取，快迎着阳光出门浪！',
+                            link: window.location.href,
+                            imgUrl: 'http://www.fxzhoumo.com/redpacket/operation/summersun_img/share.jpg'
+                        };
+                        var shareFriend={
+                            title:'初夏，享受阳光般慵懒的味道~ 30元礼券每天11:00限量领取，快迎着阳光出门浪！',
+                            link: window.location.href,
+                            imgUrl: 'http://www.fxzhoumo.com/redpacket/operation/summersun_img/share.jpg'
+                        }
+                        wx.ready( function (){
+                            wx.onMenuShareTimeline(shareFriend);   //朋友圈
+                            wx.onMenuShareAppMessage(shareObject);  //朋友
+
+                        });
+                    }else{
+                        alert(json.description);
+                    }
+                    
+                }
+            });
+    });
+
+</script>
+</html>

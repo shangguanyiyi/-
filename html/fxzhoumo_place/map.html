@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>地图</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" />
+	<meta name="apple-touch-fullscreen" content="yes" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="format-detection" content="telephone=no" />	
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/base.css">
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+	<style type="text/css">
+		.g-head{
+			position: relative;
+			 box-shadow: 0 -1px 1px -1px rgba(0, 0, 0, 0.3) inset;
+		}		
+		#map{
+			position: absolute;
+			top: 60px;
+			left: 0;
+			height: 80%;
+			width: 100%;
+			font-size: 1.6em;
+		}
+	</style>
+	<script type="text/javascript" src="http://api.map.baidu.com/api?type=quick&amp;ak=kkioZxA5fXuwI5AQ3hbc3Qul&amp;v=1.0"></script>
+	<script type="text/javascript">
+
+		window.onload=function(){
+
+					 function getUrlParam(name){
+					        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+					        var r = window.location.search.substr(1).match(reg);
+					        if (r != null)
+					            return unescape(r[2]);
+					        return null;
+					    }
+
+					var x=getUrlParam('x')||39.915;
+					var y=getUrlParam('y')||116.404;
+					var place=sessionStorage.getItem('place');
+
+					var map = new BMap.Map("map");  
+					var point = new BMap.Point(y, x);
+					var marker = new BMap.Marker(point);
+					map.centerAndZoom(point,15); 
+					map.addOverlay(marker); 
+					map.addControl(new BMap.ZoomControl());
+					var opts = {
+						width : 100,
+						height: 50, 
+						title :place
+					}
+
+					var infoWindow = new BMap.InfoWindow("点击标注将进入路线查询", opts);
+					var p=new BMap.Point(y,+x+0.002);
+					map.openInfoWindow(infoWindow,p);
+					marker.addEventListener("click", function(e){
+								var start = {
+									 lat:x,
+									 lng:y
+								}
+								var end = {
+									lat:x,
+									lng:y
+								}
+								var opts = {
+									mode:BMAP_MODE_DRIVING,
+									region:"北京"
+								}
+								var ss = new BMap.RouteSearch();
+								ss.routeCall(start,end,opts);
+					})
+					var back=document.querySelector('.u-back');
+					back.addEventListener('click',function(){
+						window.history.go(-1);
+					},false)
+
+		}
+
+	</script>
+	
+</head>
+
+<body>
+	<div id="g-screen">
+	<div class="g-head">
+		<div class="u-back">
+			<div class="icon">&#xe605;</div><div>返回</div>
+		</div>
+	</div>
+	<div id="map">
+	</div>
+</div>
+</body>

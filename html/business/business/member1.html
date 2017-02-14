@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>发现周末</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <link rel="stylesheet" type="text/css" href="../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <script type="text/javascript" src="../js/jquery-1.11.3.js"></script>   
+    <script type="text/javascript" src="../js/business1.js"></script>
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+</head>
+<body>
+    <div class="container">
+        <input type="hidden" value="1" type="button" id="hidden">
+        <div class="one page cur page0">
+            <img src="../img/logo.png" class="logo">
+            <img src="../img/header.png" class="header">
+           <div class="tel"><label><input id="phone"><img src="../img/Phone11_03.png" class="shuTel"></label></div>
+            <!-- <a class="t"><img src="img/Phone.png"></a> -->
+            <a class="redPacket"><img src="../img/redPacket.png"></a>
+            <div class="yanzheng">
+                <div class="popTan">
+                    <div class="input1">
+                        <input class="securityCode" placeholder="图片验证码">
+                        <img src="/IUserServlet?method=getVerifyCode" class="fresh">
+                    </div>
+                    <div class="input2">
+                        <input class="securityCode2" placeholder="短信验证码" >
+                        <button class="btnYzm" id="btnYzm" type="button">获取短信</button>
+                    </div>
+                    <div class="input3">
+                        <button class="true">确定</button>
+                        <button class="cancle" disabled type="button">取消</button>
+                    </div>
+                  
+                </div>
+               
+            </div>
+            <div><img src="../img/ruler.png" class="ruler"></div>
+        </div>
+
+        <div class="two page page1">
+            <img src="../img/header1.png" class="header1">
+            <a href="http://a.app.qq.com/o/simple.jsp?pkgname=sm.xue">
+                <img src="../img/button2.png" class="button2">
+            </a>
+
+            <div class="canting">
+                <div class="lilac"><!--三个活动的大框-->
+                    <img src="../img/border11_02.png" class="text">
+                    <a class="first" href="http://www.fxzhoumo.com/detail/course.html?courseid=5102"><!--一个活动的小框-->
+                        <div class="left"><!--左边的图片框-->
+                            <img src="http://img.xue.sm/xue/28244/28244cover20160112182617mid.jpg">
+                        </div>
+                        <div class="right">
+                            <p>石川日本料理</p>
+                            <p>2016.03.15前有效</p>
+                            <p>朝阳区朝阳北路核桃园30号孚兴写字楼A座101号</p>
+                            <p>88元/2位</p>
+                        </div>
+                    </a>
+
+                    <a class="first" href="http://www.fxzhoumo.com/detail/course.html?courseid=4782"><!--一个活动的小框-->
+                        <div class="left"><!--左边的图片框-->
+                            <img src="http://img.xue.sm/xue/33427/33427cover20151225231102mid.jpg">
+                        </div>
+                        <div class="right">
+                            <p>缘融海鲜</p>
+                            <p>2016.01.31前有效</p>
+                            <p>朝阳区西大望路1号温特莱特中心A座102号</p>
+                            <p>198元/2位</p>
+                        </div>
+                    </a>
+
+                    <a class="first" href="http://www.fxzhoumo.com/detail/course.html?courseid=5009"><!--一个活动的小框-->
+                        <div class="left"><!--左边的图片框-->
+                            <img src="http://img.xue.sm/xue/56219/56219cover20160114170539mid.jpg">
+                        </div>
+                        <div class="right">
+                            <p>爱de蹄花</p>
+                            <p>2016.01.31前有效</p>
+                            <p>朝阳区东大桥路8号SOHO尚都北塔四层2401</p>
+                            <p>168元/2位</p>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+       
+        </div>
+        
+    </div>
+    <script type="text/javascript">
+    $(function(){
+            wx_url=escape(window.location.href);
+            $.ajax({
+                url:"/WeixinServlet?method=weixinPower",
+                type:"post",
+                data:'servicestr={"wei_url":"'+wx_url+'"}',  
+                dataType:"html",
+                success:function(data){
+                    var json = eval("("+data+")");
+                    if(json.code=="success"){
+                        wx.config({
+                            debug: false, 
+                            appId: 'wx47987fa108b8329b', 
+                           // appId:'wxd470058f4535a61d', //mammachoice
+                            timestamp:json.timestamp,
+                            nonceStr: json.nonceStr,
+                            signature: json.signature,
+                            jsApiList: ['onMenuShareTimeline','onMenuShareAppMessage','onMenuShareQQ','onMenuShareWeibo','onMenuShareQZone']
+                        });
+
+                        var shareObject = {
+                            title: '我们请你好好吃顿饭',
+                            desc: '来「发现周末」领取60元美食基金，一起去搓一顿吧！',
+                            link: window.location.href,
+                            imgUrl: 'http://www.fxzhoumo.com/redpacket/market/img/share.png'
+                        };
+                        var shareFriend={
+                            title:'我在「发现周末」领取了60元美食基金，限量派送！手慢无。',
+                            link: window.location.href,
+                            imgUrl: 'http://www.fxzhoumo.com/redpacket/market/img/share.png'
+                        }
+                        wx.ready( function (){
+                            wx.onMenuShareTimeline(shareFriend);   //朋友圈
+                            wx.onMenuShareAppMessage(shareObject);  //朋友
+
+                        });
+                    }else{
+                        alert(json.description);
+                    }
+                    
+                }
+            });
+        });
+    </script>
+</body>
+</html>

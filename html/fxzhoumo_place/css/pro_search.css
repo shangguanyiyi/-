@@ -1,0 +1,174 @@
+@font-face {
+  font-family: "fz";
+  src: url('../font/pro.ttf') format('truetype');
+}
+body {
+  font-family: "fz", "Helvetica Neue", Helvetica, STHeiTi, Arial, sans-serif;
+}
+#g-screen {
+  max-width: 750px;
+  min-width: 320px;
+  margin: 0 auto;
+}
+.g-head {
+  padding-left: 0.6666666666666666rem;
+  padding-top: 0.5333333333333333rem;
+  font-size: 15px;
+}
+[data-dpr="2"] .g-head {
+  font-size: 30px;
+}
+[data-dpr="3"] .g-head {
+  font-size: 45px;
+}
+.g-main {
+  padding-top: 0.8rem;
+  padding-left: 0.6666666666666666rem;
+  padding-right: 0.6666666666666666rem;
+  font-size: 15px;
+}
+[data-dpr="2"] .g-main {
+  font-size: 30px;
+}
+[data-dpr="3"] .g-main {
+  font-size: 45px;
+}
+#mobile {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  display: block;
+  width: 100%;
+  font-size: 15px;
+}
+[data-dpr="2"] #mobile {
+  padding-top: 20px;
+}
+[data-dpr="3"] #mobile {
+  padding-top: 30px;
+}
+[data-dpr="2"] #mobile {
+  padding-left: 20px;
+}
+[data-dpr="3"] #mobile {
+  padding-left: 30px;
+}
+[data-dpr="2"] #mobile {
+  padding-bottom: 20px;
+}
+[data-dpr="3"] #mobile {
+  padding-bottom: 30px;
+}
+[data-dpr="2"] #mobile {
+  font-size: 30px;
+}
+[data-dpr="3"] #mobile {
+  font-size: 45px;
+}
+.codeArea {
+  margin-top: 0.5333333333333333rem;
+}
+.codeBtn {
+  width: 4.666666666666667rem;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: #FFFFFF;
+  background: #0cb9fc;
+  border: none;
+  font-size: 15px;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+[data-dpr="2"] .codeBtn {
+  padding-top: 20px;
+}
+[data-dpr="3"] .codeBtn {
+  padding-top: 30px;
+}
+[data-dpr="2"] .codeBtn {
+  padding-bottom: 20px;
+}
+[data-dpr="3"] .codeBtn {
+  padding-bottom: 30px;
+}
+[data-dpr="2"] .codeBtn {
+  font-size: 30px;
+}
+[data-dpr="3"] .codeBtn {
+  font-size: 45px;
+}
+.codeBox input {
+  display: block;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 15px;
+  padding-left: 10px;
+}
+[data-dpr="2"] .codeBox input {
+  padding-top: 20px;
+}
+[data-dpr="3"] .codeBox input {
+  padding-top: 30px;
+}
+[data-dpr="2"] .codeBox input {
+  padding-bottom: 20px;
+}
+[data-dpr="3"] .codeBox input {
+  padding-bottom: 30px;
+}
+[data-dpr="2"] .codeBox input {
+  font-size: 30px;
+}
+[data-dpr="3"] .codeBox input {
+  font-size: 45px;
+}
+[data-dpr="2"] .codeBox input {
+  padding-left: 20px;
+}
+[data-dpr="3"] .codeBox input {
+  padding-left: 30px;
+}
+#btn {
+  width: 100%;
+  background: #0CB9FC;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: #Fff;
+  text-align: center;
+  display: block;
+  font-size: 15px;
+  margin-top: 0.5333333333333333rem;
+  border: none;
+  border-radius: 5px;
+}
+[data-dpr="2"] #btn {
+  padding-top: 20px;
+}
+[data-dpr="3"] #btn {
+  padding-top: 30px;
+}
+[data-dpr="2"] #btn {
+  padding-bottom: 20px;
+}
+[data-dpr="3"] #btn {
+  padding-bottom: 30px;
+}
+[data-dpr="2"] #btn {
+  font-size: 30px;
+}
+[data-dpr="3"] #btn {
+  font-size: 45px;
+}
+.numArea {
+  margin-top: 0.5333333333333333rem;
+  display: none;
+}
+button {
+  font-family: "fz", "Helvetica Neue", Helvetica, STHeiTi, Arial, sans-serif;
+}
+/*# sourceMappingURL=pro_search.css.map */

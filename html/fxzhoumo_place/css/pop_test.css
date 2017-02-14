@@ -1,0 +1,92 @@
+
+.pop-shadow{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 0.3);
+	z-index: 2000;
+}
+
+.pop-close{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 2001;
+	display: none;
+}
+
+.pop-container{
+	position:fixed;
+	background: #fff;
+	border-radius: 10px;
+	z-index: 2002;
+	width: 250px;
+	left: 50%;
+	margin-left: -125px;
+	top: 50%;
+	box-shadow:  0 0 1px  rgba(0, 0, 0, 0.3) inset;
+}
+	
+		.pop-title{
+			box-shadow: 0 -1px 1px -1px rgba(0, 0, 0, 0.3) inset;
+			font-size:16px;
+			padding: 10px 0;
+		}
+		.pop-content{	
+			padding: 10px 5px 5px 5px;
+			font-size:16px;
+		}
+
+		.pop-content span{
+			font-weight:bold;
+		}
+
+			.pop-send{
+				width: 50%;
+				background: #00c8c8;
+				color: #fff;
+				border-radius: 5px;
+				padding: 11px 0 ;
+				text-align: center;
+				margin-left: 5px;
+			}
+
+			.pop-input{
+				border:1px solid #ccc;
+				border-radius: 5px;
+				outline: none;
+			}
+				.pop-input input{
+					border:none;
+					outline: none;
+					width: 100%;
+					padding: 10px;
+					font-size: 13px;
+				}
+
+			.pop-btn{
+				padding: 10px 20px 10px 30px;
+				text-align: center;
+				overflow: hidden;
+			}
+
+					.pop-sureBtn{
+						border-radius: 5px;
+						font-size:16px;
+						float:left;
+						text-align: center;
+						padding:0 35px 0 20px;
+						
+					}
+					.pop-cancelBtn{
+						border-radius:5px;
+						font-size:16px;
+						float:left;
+						text-align: center;
+						padding:0 20px 0 35px;
+					}
+

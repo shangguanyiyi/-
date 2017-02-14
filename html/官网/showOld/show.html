@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>发现周末</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="stylesheet" href="css/index.css"/>
+    <link rel="stylesheet" href="css/animation.css"/>
+    <script src="js/jquery-1.11.3.js"></script> 
+    <script type="text/javascript">
+    $(function(){
+       // $('.header_nav_ul li ').bind("click",function(){
+       //      $(".header_nav_ul li ").each(function(index){
+       //          $(".header_nav_ul li ").removeClass('current');
+       //          $(".header_nav_ul li ").eq(index).addClass('current')
+       //           // $(this).addClass("current");
+       //      })
+       // })
+
+
+       $('.header_nav_ul li').each(function(index){
+            $('.header_nav_ul li').bind('click',function(){
+                $(".header_nav_ul li").removeClass('current');
+                $(".header_nav_ul li").eq(index).addClass('current');
+                console.log(index);
+            })
+       })
+    })
+       
+        
+    </script>
+</head>
+<body>
+    <header class="wrap">
+        <div class="header" id="summary">
+            <div class="header_nav">
+                <img src="img/logo.png">
+            </div>
+            <ul class="header_nav_ul">
+                <li  class="current"><a href="#summary">概述</a><span>|</span></li>
+                <li><a href="#feature">特性</a><span>|</span></li>
+                <li><a href="#download">下载</a><span>|</span></li>
+                <li><a href="#">关于</a></li>
+            </ul>
+        </div>
+
+        <div class="pageOne">
+            <div class="phone">
+                <img src="img/pageOne.png" id="phone">
+            </div >
+            <div class="banner lifeStyle">
+                <img src="img/banner.png">
+                <div>
+                    <a href=""><img src="img/download.png"></a>
+                    <a href=""><img src="img/guanggao.png" class="guanggao"></a>
+                </div>
+            </div>
+        </div>
+        
+
+    </header>
+    <section class="wrap" id="summary">
+        <img src="img/section_text.png" id="feature">
+        <img src="img/phone.png">
+        <img src="img/section_download.png" class="select_down" id="download">
+        <ul class="footer_download">
+            <li class="picture1"></li>
+            <li class="picture2"></li>
+            <li class="picture3"></li>
+        </ul>
+    </section>
+    <footer class="wrap">
+        <p>违法和不良信息举报电话：028-62836666</p>
+        <p>www.fxzhoumo.com 2011-2016 © All Rights Reserved.</p>
+        <p>京公网安备：11010502015324 京ICP备11036675号-2 经营许可证编号：京ICP证120107号</p>
+    </footer>
+</body>

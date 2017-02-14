@@ -1,0 +1,160 @@
+body{
+	min-width:320px;
+	max-width:750px;
+	margin:0 auto;
+	background: #fff;
+}
+header{
+	background: url(../videoShareContent_img/header_bg.png) no-repeat;
+	background-size:100% 100%;
+	width:10rem;
+	height:4.26rem; 
+	margin:0 auto;
+	position:fixed;
+	z-index:50;
+	left:0;
+	top:0;
+	
+	/*position:relative;*/
+}
+.name{
+	font-size:.6rem;
+}
+.type{
+	font-size:.4rem;
+}
+.message{
+	width:25%;
+	background:#10b9f4;
+	font-size:.4rem;
+	text-align: center;
+	border-radius: 10px;
+}
+.age{
+	font-weight: normal;
+	padding-left:10%;
+
+}
+.constellation{
+	font-size:0.4rem;
+	color:#fff;
+	position:absolute;
+	left:1.8rem;
+	top:.9rem;
+
+}
+.user_img{
+	width:2.8rem;
+	height:2.8rem;
+	border-radius:1.4rem;
+	border:2px solid #fff;
+	position:absolute;
+	bottom:0.5rem;
+	left:.4rem;
+	z-index:10;
+	background: url(../videoShareContent_img/header_img.jpg) no-repeat;
+	background-size: 100% 100%;
+}
+.mechant_info{
+	width:6rem;
+	height:2rem;
+	position:absolute;
+	right:.3rem;
+	bottom:0.85rem;
+}
+.mechant_info p{
+	color:#fff;
+	padding:1%;
+}
+.headImg{
+	display: inline-block;
+	text-align: left;	
+
+}
+.picture_user{
+	width:60%;
+	margin-bottom:-10%;
+}
+.activity_teacher,.attention_teacher,.join_teacher{
+	border-bottom:1px solid #ddd;
+	width:92%;
+	margin:0 auto;
+	display:block;
+	background: #fff;
+	padding-bottom:1%;
+}
+.activity_teacher{
+	margin-top:4.56rem;
+}
+.published{
+	display: inline-block;
+	font-size:.5rem;
+	margin-left:-4%
+}
+.right_jump{/*右箭头*/
+	display: inline-block;
+	float:right;
+	margin-top:1%;
+}
+.right_jump img{
+	width:30%;
+	margin-left:58%;
+}
+.sigle,.sigle_attention,.sigle_join{
+	margin:3% 3% ;
+	text-align: center;
+	border-bottom:1px solid #ddd;
+	overflow: hidden;
+	width:92%;
+}
+.left{
+	display: inline-block;
+	width:48%;
+	height:80px;
+	float:left;
+	margin:2% 1%;
+	overflow: hidden;
+	position: relative;
+	border-radius: 5px;
+}
+.left img{
+	width:100%;
+	margin-top:-5%;
+}
+.left p{
+	width:90%;
+	color:#fff;
+	font-size:.4rem;
+	position: absolute;
+	left:0rem;
+	top:.8rem;
+	margin-left:5%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+/*
+.video_activity{
+	overflow: hidden;
+	height:4.26rem;
+	width:92%;
+	position:absolute;
+	top:4.26rem;
+	left:0;
+	margin:0 4%;
+	padding:0 2%;
+}
+.five_activity{
+	margin:5% 0;
+	overflow: hidden;
+}
+.five_activity a{
+	float:left;
+	overflow: hidden;
+	width:80px;
+	height:80px;
+}
+.swiper-slide img{
+	border-radius: 8px;
+}
+*/

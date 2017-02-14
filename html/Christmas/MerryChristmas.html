@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="圣诞快落" content="发现周末 陪你过圣诞" />
+    <meta name="description" content="发现周末 陪你过圣诞" />
+    <title>兔子气球</title>
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/christmas.css"/>
+    <script src="js/jquery-1.11.3.js"></script> 
+    <script type="text/javascript" src="js/christmas.js"></script>
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+
+</head>
+<body>
+    <section>
+        <div class="back"><img src="img/background.png"></div>
+        <div class="diwen"><img src="img/word.png"></div>
+        <div class="wrap">
+            <img src="img/christmasTree.png">
+            <div class="xuyuan">
+                <img src="img/xuyuan.png">
+                <p class="ziti"><img src="img/font.png"></p>
+
+            </div>
+            <div class="textarea1" contenteditable="true">
+            <textarea placeholder="写下你的疯狂圣诞愿望" class="textarea"></textarea><span class="mao"><img  src="img/mao2.png"></span>                   
+            </div>
+            <p class="inputPhone">
+                <input class="phone" type="tel" placeholder="输入幸运手机号" name="phone">
+                <!-- <img src="img/redButton.png" class="button"> -->
+                <button class="button" type="button" value="我的愿望写完啦~">我的愿望写完啦~</button>
+            </p>
+            <ul class="ruler">
+                <p>活动规则</p>
+                <li>我们将会在许下圣诞愿望的用户中抽取10名幸运用户赠送圣诞树。</li>
+                <li>梦想越疯狂，越有可能获得圣诞树哦~</li>
+                <li>获得圣诞树的幸运用户会在12月23日获得通知。</li>
+                <li>圣诞树会由发现周末亲自送到中奖用户手中。</li>
+            </ul>
+            <div class="qiang"><img src="img/qiang.png"></div>         
+            <div class="bottom">
+                <!-- <div class="luck">
+                    <div class="qiqiu"><img src="img/0.png"></div>
+                    <div class="content"><span class="luckyP">16736477989</span>:<span class="yuanwang">会由发现周末亲自送到中奖用户手中</span></div>
+                </div> -->
+            </div>          
+           
+        </div>
+    </section>
+    <script>
+        $(function(){
+            wx_url=escape(window.location.href);
+            $.ajax({
+                url:"/WeixinServlet?method=weixinPower",
+                type:"post",
+                data:'servicestr={"wei_url":"'+wx_url+'"}',
+                success:function(data){
+                    var json = eval("("+data+")");
+                    //console.log(json);
+                    if(json.code=="success"){
+                        wx.config({
+                            debug: false, 
+                            appId: 'wx47987fa108b8329b', 
+                           // appId:'wxd470058f4535a61d', //mammachoice
+                            timestamp:json.timestamp,
+                            nonceStr: json.nonceStr,
+                            signature: json.signature,
+                            jsApiList: ['onMenuShareTimeline','onMenuShareAppMessage','onMenuShareQQ','onMenuShareWeibo','onMenuShareQZone']
+                        });
+
+                        var shareObject={
+                            title:'我在【发现周末】许下了圣诞愿望快看来看看是不是关于你？',
+                            desc:'许愿就有机会获得今冬最气质圣诞树哦~',
+                            link:window.location.href,
+                            imgUrl:'http://www.fxzhoumo.com/redpacket/operation/christmaswish/img/touxiang.png'
+                        };
+                        var shareFriend={
+                            title:'快拿你的圣诞妄想，换今冬最气质圣诞树！',
+                            link:window.location.href,
+                            imgUrl:'http://www.fxzhoumo.com/redpacket/operation/christmaswish/img/touxiang.png'
+                        };
+                        wx.ready(function(){
+                            wx.onMenuShareTimeline(shareFriend);//朋友圈
+                            wx.onMenuShareAppMessage(shareObject);//好友
+                        });
+                    }else{
+                        alert(json.description);
+                    }
+                }
+
+            });
+        })
+    </script>
+    
+</body>
+</html>

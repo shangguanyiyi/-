@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">	
+	<title>端午节</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/dragon.css">
+    <script src="../js/jquery-1.11.3.min.js"></script>
+    <script src="../js/dragon_sh.js"></script>
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script></script>
+    <style type="text/css">
+    .fuchuang{
+        position: fixed;
+        bottom:-5px;
+        left:0;
+    }
+    </style>
+    <script>
+    var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?5f6d86a310bf551c1fb8c9aeae2ad646";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+    </script>
+</head>
+<body>
+    <section>
+        <img src="../dragon_img/banner.jpg" alt="">
+        <!-- <img class="banner_text" src="../dragon_img/text.jpg" alt=""> -->
+        <img class="box" src="../dragon_img/box.png" alt="">
+        <input type="text" placeholder="请输入手机号" class="phone">
+        <input type="button" value="立即领取" class="button" id="button" onclick="_hmt.push(['_trackEvent', '立即领取', 'click', 'xiazai'])">
+        <!-- <img class="activityText" src="../dragon_img/activityText.gif" alt=""> -->
+
+        <div class="all_activity">
+            <div class="sigle_activity sigle0" id="sigle0">
+                <a class="left" id="left0">
+                    <img src="http://img.fxzhoumo.com/xue/219265/219265multipleImages20160420114820mid.jpg" alt="">
+                    <div class="txt_price">
+                       <p>Kiwi Café 精致Brunch双人餐</p>
+                        <p class="price">240&nbsp;<span>元/2位</span></p>
+                    </div>
+                </a>
+                <a class="right" id="right0">
+                    <img src="http://img.fxzhoumo.com/xue/73546/73546multipleImages20160229195013mid.jpg" alt="">
+                    <div class="txt_price">
+                        <p>顺水鱼馆超值四人餐</p>
+                        <p class="price">258&nbsp;<span>元/4位</span></p>
+                    </div>
+                    
+                </a>
+            </div>
+
+            <div class="sigle_activity sigle1">
+                <a class="left" id="left1">
+                    <img src="http://img.fxzhoumo.com/xue/199242/199242multipleImages20160328150701mid.jpg" alt="">
+                    <div class="txt_price">
+                        <p>Natural by The Brewer西班牙啤酒猪肋排</p>
+                        <p class="price">288&nbsp;<span>元/2位</span></p>  
+                    </div>
+                </a>
+                <a class="right" id="right1">
+                    <img src="http://img.fxzhoumo.com/xue/220837/220837multipleImages20160423142542mid.jpg" alt="">
+                    <div class="txt_price">
+                        <p>音乐艺术殿中享用LUCE自助餐单人餐</p>
+                        <p class="price">288&nbsp;<span>元/位</span></p>
+                    </div>
+                    
+                </a>
+            </div>
+
+            <div class="sigle_activity sigle2">
+                <a class="left" id="left2">
+                    <img src="http://img.fxzhoumo.com/xue/215158/215158multipleImages20160412152415mid.jpg" alt="">
+                    <div class="txt_price">
+                        <p>唇齿回香 FENNEL双人创意晚餐</p>
+                        <p class="price">298&nbsp;<span>元/2位</span></p>
+                    </div>
+                </a>
+                <a class="right" id="right2">
+                    <img src="http://img.fxzhoumo.com/xue/209405/209405multipleImages20160329174732mid.jpg" alt="">
+                    <div class="txt_price">
+                        <p>Take it easy低温慢煮牛排双人晚餐</p>
+                        <p class="price">298&nbsp;<span>元/2位</span></p>
+                    </div>
+                    
+                </a>
+            </div>
+
+            <div class="sigle_activity sigle3">
+                <a class="left" id="left3">
+                   <img src="http://img.fxzhoumo.com/xue/198321/198321multipleImages20160310124446mid.jpg" alt="">
+                    <div class="txt_price">
+                        <p>东京超人气创意音乐酒吧式餐厅双人餐</p>
+                        <p class="price">298&nbsp;<span>元/2位</span></p>
+                        
+                    </div>
+                </a>
+                <a class="right" id="right3">
+                    <img src="http://img.fxzhoumo.com/xue/207393/207393multipleImages20160325173156mid.jpg" alt="">
+                    <div class="txt_price">
+                        <p>无敌江景 Chic N Shock单人餐</p>
+                        <p class="price">468&nbsp;<span>元/位</span></p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <img class="end" src="../dragon_img/end.png" alt="">
+        <div class="fuchuang">
+            <a href="http://a.app.qq.com/o/simple.jsp?pkgname=sm.xue" id="downLoad" onclick="_hmt.push(['_trackEvent', '下载', 'click', 'xiazai'])">
+                <img src="../dragon_img/down.png" alt="">
+            </a>
+        </div>
+        <div class="mask">
+            <img class="close" src="../dragon_img/close.png" alt="">
+            <img class="outside" src="../dragon_img/outside.png" alt="">
+            <img class="inside" src="../dragon_img/inside.png" alt="">
+            <a class="register" id="register" href="http://a.app.qq.com/o/simple.jsp?pkgname=sm.xue" onclick="_hmt.push(['_trackEvent', '下载', 'click', 'xiazai'])">
+            </a>
+        </div>
+    </section>
+
+   
+</body>
+<script type="text/javascript">
+
+    $(function(){
+            wx_url=escape(window.location.href);
+            $.ajax({
+                url:"/WeixinServlet?method=weixinPower",
+                type:"post",
+                data:'servicestr={"wei_url":"'+wx_url+'"}',  
+                dataType:"html",
+                success:function(data){
+                    var json = eval("("+data+")");
+                    if(json.code=="success"){
+                        wx.config({
+                            debug: false, 
+                            appId: 'wx47987fa108b8329b', 
+                           // appId:'wxd470058f4535a61d', //mammachoice
+                            timestamp:json.timestamp,
+                            nonceStr: json.nonceStr,
+                            signature: json.signature,
+                            jsApiList: ['onMenuShareTimeline','onMenuShareAppMessage','onMenuShareQQ','onMenuShareWeibo','onMenuShareQZone']
+                        });
+
+                        var shareObject = {
+                            title: '端午不止有粽子，还有朋友和聚会~',
+                            desc: '发现周末独家50元礼券，小长假就要放肆玩乐！',
+                            link: window.location.href,
+                            imgUrl: 'http://www.fxzhoumo.com/redpacket/operation/dragon_img/share.jpg'
+                        };
+                        var shareFriend={
+                            title:'端午不止有粽子，还有朋友和聚会~发现周末独家50元礼券，小长假就要放肆玩乐！',
+                            link: window.location.href,
+                            imgUrl: 'http://www.fxzhoumo.com/redpacket/operation/dragon_img/share.jpg'
+                        }
+                        wx.ready( function (){
+                            wx.onMenuShareTimeline(shareFriend);   //朋友圈
+                            wx.onMenuShareAppMessage(shareObject);  //朋友
+
+                        });
+                    }else{
+                        alert(json.description);
+                    }
+                    
+                }
+            });
+    });
+
+</script>
+</html>

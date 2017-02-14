@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>好酒好肉好相聚</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+	<meta content="telephone=no" name="format-detection">
+	<link rel="stylesheet" href="css/together.css">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/base.css">
+	<style>
+	.maskimg{max-width: 100%; height: auto;}
+	.weixin-tip{
+		display: none; 
+		position: fixed; 
+		left:0; top:0; bottom:0; 
+		background: rgba(0,0,0,0.8);
+		 filter:alpha(opacity=80); 
+		  height: 100%; 
+		  width: 100%; 
+		  z-index: 100;
+		}
+	.weixin-tip p{text-align: center; margin-top: 10%; padding:0 5%;}
+	</style>
+	<script src="js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+</head>
+<body>
+	<div class="contain">
+		<!-- <input type="hidden" id="codenum" value="abcdefghabj"> -->
+		<div class="header">
+			<!-- <div class="header_top">
+				
+			</div> -->
+			<div class="header_bottom">
+				<img src="images/img_bj.png" alt="" id="is_full">
+			</div>
+			<div class="header_text">
+				<img src="images/imgbj_text.png" alt="" >
+			</div>
+		</div>
+		<div class="description">
+			<div class="bor-txt">
+				<img src="images/gift_certificate.png">
+				<p class="text_li">立即领取礼券，即享全场满减</p>
+				<!-- <img src="images/img3.png" class="text">-->
+			</div>
+			<div class="kuang">
+				<input type="text" class="input" placeholder="请输入手机号" id="tle">
+				<button class="button" id="click_get" onclick="_hmt.push(['_trackEvent', 'button', 'click'])">立即领取</button>
+			</div>
+			<div class="kuang">
+				<img src="images/jingxuantaocan.png" class="good">
+			</div>
+			
+		</div>
+		<div class="particular_list clear ">
+			<div class="particular_left">
+				<a href="http://www.fxzhoumo.com/detail/course.html?courseid=5082" id="local_href_0">
+					<img src="http://img.xue.sm/xue/62884/62884cover20160119160317mid.jpg" alt="" class="particular_img" id="headphoto_0">	
+					<div class="txt_price clear">
+						<p>望京吉兆居酒屋4人餐</p>
+						<p class="price">388&nbsp;<span>元/份</span></p>
+					</div>
+				</a>
+				
+				<a href="http://www.fxzhoumo.com/detail/course.html?courseid=4778" class="a_top" id="local_href_2">
+					<img src="http://img.xue.sm/xue/33121/33121cover20151216092146mid.jpg" alt="" class="particular_img" id="headphoto_2">	
+					<div class="txt_price clear">
+						<p>和牛肉专门店 摹闺双人餐</p>
+						<p class="price">428&nbsp;<span>元/2位</span></p>
+					</div>
+				</a>
+				<a href="http://www.fxzhoumo.com/detail/course.html?courseid=5330" class="a_top"  id="local_href_4">
+					<img src="http://img.xue.sm/xue/72073/72073cover20160122171024mid.jpg" alt="" class="particular_img" id="headphoto_4">	
+					<div class="txt_price clear">
+						<p>日和美炉双人餐</p>
+						<p class="price">248&nbsp;<span>元/2位</span></p>
+					</div>
+				</a>
+				<a href="http://www.fxzhoumo.com/detail/course.html?courseid=4962" class="a_top"  id="local_href_4">
+					<img src="http://img.xue.sm/xue/44418/44418cover20160114164012mid.jpg" alt="" class="particular_img" id="headphoto_6">	
+					<div class="txt_price clear">
+						<p>吉の彩双人套餐</p>
+						<p class="price">268&nbsp;<span>元/2位</span></p>
+					</div>
+				</a>
+
+			</div>
+
+			<div class="particular_right" >
+
+				<a href="http://www.fxzhoumo.com/detail/course.html?courseid=5194" id="local_href_1">
+					<img src="http://img.xue.sm/xue/66697/66697cover20160116110241mid.jpg" alt="" class="particular_img" id="headphoto_1">	
+					<div class="txt_price clear">
+						<p>别有洞天的隐秘日式小馆 双人餐</p>
+						<p class="price">288&nbsp;<span>元/2位</span></p>
+					</div>
+				</a>
+				<a href="http://www.fxzhoumo.com/detail/course.html?courseid=5032" class="a_top"  id="local_href_3">
+					<img src="http://img.xue.sm/xue/56156/56156cover20160114170053mid.jpg" alt="" class="particular_img" id="headphoto_3">	
+					<div class="txt_price clear">
+						<p>牛魔王烧肉 2-3人餐</p>
+						<p class="price">368&nbsp;<span>元/份</span></p>
+					</div>
+				</a>
+				<a href="http://www.fxzhoumo.com/detail/course.html?courseid=4847" class="a_top" id="local_href_5">
+					<img src="http://img.xue.sm/xue/35322/35322cover20160114192329mid.jpg" alt="" class="particular_img" id="headphoto_5">	
+					<div class="txt_price clear">
+						<p>大志烧肉双人餐</p>
+						<p class="price">348&nbsp;<span>元/2位</span></p>	
+					</div>
+				</a>
+				<a href="http://www.fxzhoumo.com/detail/course.html?courseid=4542" class="a_top" id="local_href_7">
+					<img src="http://img.xue.sm/xue/28244/28244cover20151126165030mid.jpg" alt="" class="particular_img" id="headphoto_7">	
+					<div class="txt_price clear">
+						<p>石川料理亭单人餐</p>
+						<p class="price">300&nbsp;<span>元/位</span></p>	
+					</div>
+				</a>
+			</div>			
+		</div>
+		<div class="find_more">
+				<a href="http://www.fxzhoumo.com/">
+					<img src="images/find_more.png" alt="">
+				</a>
+		</div>
+		<div class="see_more"></div>
+		<div class="logo_cash">
+			<a href="http://a.app.qq.com/o/simple.jsp?pkgname=sm.xue">
+				<img src="images/logo_cash.png" alt="" >
+			</a>
+		</div>
+		<div class="bg"></div>
+		<div class="bg2"></div>
+		<div class="mask_green">
+			<p class="p1 ">礼券已放入你的账户</p>
+			<p class="p2 "></p>
+			<p class="p3 " >登录App即可使用</p>
+			<a href="http://a.app.qq.com/o/simple.jsp?pkgname=sm.xue" class="ck_get" id="ck_get">
+				<img src="images/ck_get.png" alt="" id="imgck">
+			</a>
+			<a href="javascript:;" class="lon_in" id="lon_in">
+				<img src="images/lon_in.png" alt="" >
+			</a>
+		</div>
+
+	</div>
+
+	<div class="weixin-tip">  <!-- 遮罩层 -->
+		<p>
+			<img src="images/live_weixin.png" alt="微信打开" class="maskimg" />
+		</p>
+	</div>
+	<script>
+		$(function(){
+			$.ajax({
+				url:"/IUserCenterV2Servlet?method=findVouch",
+				type:"post",
+				data:'servicestr={"voucherId":376}',  
+				dataType:"html",
+				success:function(data){
+					var json = eval("("+data+")");
+					if(json.code=="success"){
+							var count = json.c_count;	
+							if(count<=0){
+								$("#click_get").unbind().removeClass("click_get").addClass("change_click_get").text("礼券已领取完").css("color","black")
+									
+								$("#tle").attr("disabled","disabled")
+							}
+					}else{
+						alert(json.description);
+					}
+				}
+			});
+		});
+
+		//微信分享
+		$(function(){
+			wx_url=escape(window.location.href);
+			$.ajax({
+				url:"/WeixinServlet?method=weixinPower",
+				type:"post",
+				data:'servicestr={"wei_url":"'+wx_url+'"}',  
+				dataType:"html",
+				success:function(data){
+					var json = eval("("+data+")");
+					if(json.code=="success"){
+						wx.config({
+						    debug: false, 
+						    appId: 'wx47987fa108b8329b', 
+						   // appId:'wxd470058f4535a61d', //mammachoice
+						    timestamp:json.timestamp,
+						    nonceStr: json.nonceStr,
+						    signature: json.signature,
+						    jsApiList: ['onMenuShareTimeline','onMenuShareAppMessage','onMenuShareQQ','onMenuShareWeibo','onMenuShareQZone']
+						});
+
+						var shareObject = {
+							title: '羊年最后一个周末好酒好肉好聚',
+							desc: '每天10:00限量100份超级餐补大派送，快来领取吧~',
+							link: window.location.href,
+							imgUrl: 'http://www.fxzhoumo.com/redpacket/operation/together/images/share.png'
+						};
+						var shareFriend={
+							title:'我在【发现周末】领取了50元超级餐补，限量派送！手慢无，你也快来吧~',
+							link: window.location.href,
+							imgUrl: 'http://www.fxzhoumo.com/redpacket/operation/together/images/share.png'
+						}
+						wx.ready( function (){
+							wx.onMenuShareTimeline(shareFriend);   //朋友圈
+							wx.onMenuShareAppMessage(shareObject);  //朋友
+
+						});
+					}else{
+						alert(json.description);
+					}
+					
+				}
+			});
+		});
+
+
+		$(function(){
+			$(window).on("load",function(){
+				var winHeight = $(window).height();
+				function is_weixin() {
+					var ua = navigator.userAgent.toLowerCase();
+					if (ua.match(/MicroMessenger/i) == "micromessenger") {
+						return true;
+					} else {
+						return false;
+					}
+				}
+				var isWeixin = is_weixin();
+
+				$("#click_get").bind("touchstart",function(){
+					//--------------------
+					var tle = $('#tle').val();
+					// var gifts = $('#codenum').val();
+					var tel_RegExp = /^1[3|4|5|7|8]\d{9}$/;
+					if(!(tel_RegExp.test(tle))){
+						alert("手机号码有误，请重填！");
+						return;
+					}
+					$.ajax({
+						url:"/IUserCenterV2Servlet?method=addUserVoucherByMobileVoucherCardNo",
+						type:"post",
+						data:'servicestr={"user_mobile":"'+tle+'","codenumstr":"jiuroudacanbj"}',
+						dataType:"html",
+						success:function(data){
+							var json = eval("("+data+")");
+							if(json.code=="success"){
+								$('.p2').html(tle);  //点击的时候把用户电话放入到遮罩层里面
+								$('.bg').show();
+								$('.bg').bind("touchmove",function(e){  
+									e.preventDefault(); 
+								});
+								$('.mask_green').show();
+								$("body,html").css({"overflow":"hidden"});
+								//--------------------
+								
+							}else{
+								alert(json.description);
+							}					
+						}
+					});
+					
+				});
+
+				if(isWeixin){
+					$("#lon_in").css("display","none");
+					$(".logo_cash").css("display","block");
+					$(".see_more").show();
+				}else{
+					$("#lon_in").css("display","block");
+					$(".logo_cash").css("display","none");
+					$(".see_more").hide();
+				}
+
+			});
+		});
+
+
+	$("#lon_in").bind("touchstart",function(){
+		$(".mask_green").css("display","none");
+		$(".bg2").css("display","none");
+		$('.weixin-tip').css("display","block");
+		$(".bg").css("display","none");
+	});
+
+	$(".weixin-tip").bind("touchstart",function(){
+		$('.weixin-tip').fadeOut(800);
+	});
+       
+</script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">	
+	<title>会吃最光荣</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="stylesheet" href="../css/base.css">
+    <script src="../js/jquery-1.11.3.min.js"></script>
+    <script src="../js/fivework.js"></script>
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <style type="text/css">
+    .fuchuang{
+        position: fixed;
+        bottom:-0.25rem;
+        left:0;
+    }
+    .section0{
+        background: url(../fivework_img/bg2.jpg) no-repeat;
+        background-size: 100% 100%;
+        width:10rem;
+        /*height:17.78rem;*/
+        height:16.08rem;
+        position:relative;
+    }
+    .phone{
+        padding:3%;
+        width:4.56rem;
+        border-radius: 10px;
+        position:absolute;
+        /*top:12.09rem;*/
+        top:12.7rem;
+        left:2.72rem;
+        text-align: center;
+        border:2px solid #8a100e;
+    }
+    .button{
+        width:30%;
+        position:absolute;
+       /* bottom:0.9rem;*/
+        bottom:0.5rem;
+        left:3.46rem;
+    }
+    .section1>img{
+        margin-bottom:-2.5%;
+    }
+    
+    </style>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "//hm.baidu.com/hm.js?e6c943478dfb0bb267dc648e95297d6a";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+   
+</head>
+<body>
+    <section class="section0">
+        <input type="text" class="phone" placeholder="请输入手机号">
+        <img id="button" class="button" src="../fivework_img/startBefore.png" alt="">
+    </section>
+    <section class="section1">
+        <img src="../fivework_img/work01.png" alt="">
+        <img src="../fivework_img/work02.png" alt="">
+        <img src="../fivework_img/work03.png" alt="">
+        <img src="../fivework_img/work04.png" alt="">
+        <img src="../fivework_img/work05.png" alt="">
+        <img src="../fivework_img/work06.png" alt="">
+        <img src="../fivework_img/work07.png" alt="">
+        <img src="../fivework_img/work08.png" alt="">
+        <img src="../fivework_img/work09.png" alt="">
+        <img src="../fivework_img/work10.png" alt="">
+        <img src="../fivework_img/work11.png" alt="">
+        <div class="fuchuang">
+            <a href="http://a.app.qq.com/o/simple.jsp?pkgname=sm.xue" id="downLoad">
+                <img src="../fivework_img/down.png" alt="">
+            </a>
+        </div>
+    </section>
+   
+   
+</body>
+<script type="text/javascript">
+    var windowWidth = document.body.clientWidth;
+    window.clientWidth = windowWidth;
+    //定义body字体大小
+    document.getElementsByTagName("html")[0].style.fontSize=windowWidth/10+"px";
+    window.onresize=function(){
+    var windowWidth = document.body.clientWidth;
+    document.getElementsByTagName("html")[0].style.fontSize=windowWidth/10+"px";
+    };
+
+    $(function(){
+            wx_url=escape(window.location.href);
+            $.ajax({
+                url:"/WeixinServlet?method=weixinPower",
+                type:"post",
+                data:'servicestr={"wei_url":"'+wx_url+'"}',  
+                dataType:"html",
+                success:function(data){
+                    var json = eval("("+data+")");
+                    if(json.code=="success"){
+                        wx.config({
+                            debug: false, 
+                            appId: 'wx47987fa108b8329b', 
+                           // appId:'wxd470058f4535a61d', //mammachoice
+                            timestamp:json.timestamp,
+                            nonceStr: json.nonceStr,
+                            signature: json.signature,
+                            jsApiList: ['onMenuShareTimeline','onMenuShareAppMessage','onMenuShareQQ','onMenuShareWeibo','onMenuShareQZone']
+                        });
+
+                        var shareObject = {
+                            title: '会吃最光荣！',
+                            desc: '点击立即领取510元福利大礼包，发现周末带你吃遍五一小长假！',
+                            link: window.location.href,
+                            imgUrl: 'http://www.fxzhoumo.com/redpacket/operation/fivework_img/share.jpg'
+                        };
+                        var shareFriend={
+                            title:'会吃最光荣！点击立即领取510元福利大礼包，发现周末带你吃遍五一小长假！',
+                            link: window.location.href,
+                            imgUrl: 'http://www.fxzhoumo.com/redpacket/operation/fivework_img/share.jpg'
+                        }
+                        wx.ready( function (){
+                            wx.onMenuShareTimeline(shareFriend);   //朋友圈
+                            wx.onMenuShareAppMessage(shareObject);  //朋友
+
+                        });
+                    }else{
+                        alert(json.description);
+                    }
+                    
+                }
+            });
+    });
+
+</script>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+	<title>下载页</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />	
+<link rel="stylesheet" type="text/css" href="../css/reset.css">
+<link rel="stylesheet" type="text/css" href="../css/base.css">
+<link rel="stylesheet" type="text/css" href="../css/download.css">
+<script type="text/javascript">
+	
+	window.onload=function(){
+
+			var setZoom=function(){
+					var width=window.innerWidth;
+					var zoom=width/375;
+					zoom=zoom>=2?1:zoom;
+					document.body.style.zoom=zoom;
+			}
+			setZoom();
+
+			var jump=document.getElementById('jump');
+
+			jump.addEventListener('click',function(){
+				var url=window.document.referrer;
+
+				if(url&&url!=window&&url.indexOf('index')==-1){
+					window.location=url;
+				}else{
+					window.location="../index.html?go=1";	
+				}
+			},false);
+			
+		var isWeiXin=(function(){
+			return navigator.userAgent.toLowerCase().indexOf('micromessenger') !== -1
+		})();
+
+		if(isWeiXin){
+	
+			var android=document.querySelector('.android');
+			var iPhone=document.querySelector('.iPhone');
+			We.addEvent(iPhone,'click',function(e){
+				e.preventDefault();
+				window.location.href="http://a.app.qq.com/o/simple.jsp?pkgname=sm.xue";
+				return false;
+			})
+			We.addEvent(android,'click',function(e){
+				e.preventDefault();
+				window.location.href="http://a.app.qq.com/o/simple.jsp?pkgname=sm.xue";
+				return false;
+			})
+		}
+			
+
+	}
+
+</script>
+</head>
+<body>
+<div id="g-screen">
+	
+	<div class="g-bdBox">
+		<a  id="iPhone" href="https://itunes.apple.com/us/app/xue-dian-shen-me/id972982647?l=zh&ls=1&mt=8" class="iPhone"></a>
+		<a  id="andorid" href="http://www.fxzhoumo.com/fxzhoumo.apk" class="android"></a>
+		<div class="jump" id="jump">跳过下载浏览网页</div>
+	</div>
+
+</div>
+
+
+</body>
+</html>

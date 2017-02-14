@@ -1,0 +1,221 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>实例</title>
+	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+	<style type="text/css">
+	.one{
+		font-size:20px;
+	}
+	</style>
+</head>
+<body id="demo">
+	<!-- <div > -->
+		<!-- <h1 style="font-weight:bold;">标题是啥</h1>
+		<p>换一个呗 <img src="http://img.fxzhoumo.com/xue/198900/198900cover20160311111221mid.jpg"></p>
+		<img src="http://img.fxzhoumo.com/xue/193707/193707cover20160305184318mid.jpg" width="600px">
+		<p class="one">这是什么啊！！</p>
+		<button id="btn">获取元素</button> -->
+
+	<!-- </div> -->
+	<!--
+	<script type="text/javascript">
+		function getStylecss(){
+			var objList=document.all;
+			console.log("objList:"+objList)
+			var len;
+			for(var i=0;i<objList.length;i++){
+				var obj=objList[i].tagName;
+				console.log("obj:"+obj);
+				if(obj=="body"||obj=="BODY"){
+					len+=1;
+					break;
+				}
+			}
+			var b_objList=new Array();
+			for(var j=len;j<objList.length;j++){
+				b_objList.push(objList[j]);
+			}
+			console.log(b_objList);
+			return b_objList;
+		}
+
+		function getByClass1(clsName,parent){
+			var oParent=parent?document.getElementById(parent):document,
+				eles=[],
+				elements=oParent.getElementsByTagName('*');
+
+			for(var i=0,l=elements.length;i<l;i++){//同时初始化多个变量
+				if(elements[i].className==clsName){
+					eles.push(elements[i]);
+				}
+			}
+			return eles;
+
+		}
+
+
+		// function Each(obj,fun){
+		// 	if('function'!==typeof(fun) || !obj){
+		// 		return false;
+		// 	}
+		// 	if('undefined'!==typeof(obj.length)){
+		// 		for(var i=0;i<obj.length;i++){
+		// 			var o=obj[i];var r=fun(o)||true;
+		// 			if(r===true){
+		// 				r=Each(o.children,fun);
+		// 			if(!r) return false;
+		// 			}
+		// 		}
+		// 	}else{
+		// 		var r=fun(obj)||true;
+		// 		if(r===true){
+		// 			r=Each(obj.children,fun);
+		// 		if(!r) return false;
+				
+		// 		}
+		// 	}
+		// }
+
+
+		// Each(document.getElementsByTagName("body"),function(obj){
+		// 	if(obj.nodeName==="/body")//obj为当前遍历到的对象
+
+		// 		// return false;//如果返回false就会停止遍历
+		// 	console.log(obj.nodeName);
+				
+		// 	});
+
+		// function getByClass(){
+		// 	var className=elements.getElementsByTagName('*');	
+		// 	elements.
+
+		// }
+
+		// function enumChildNodes(parentNode,callback){
+		//   for (var i=0; i<parentNode.childNodes.length; i++){
+		//     callback(parentNode.childNodes[i]);
+		//     enumChildNodes(parentNode.childNodes[i]); // 递归
+		//   }
+		// }
+
+		// function enumChildNodes(parentElementNode,callback){
+		//   for (var i=0; i<parentElementNode.children.length; i++){
+		//     callback(parentElementNode.children[i]);
+		//     enumChildNodes(parentElementNode.children[i]); // 递归
+		//   }
+		// }
+
+		// enumChildNodes(document.body, function(node){
+		//   // TODO - 这里实现每一个节点的处理
+		//   // console.log(node.childNodes.length);
+
+		//   console.log(node);
+		 
+		// });
+
+
+	    var getChildNodes=function(ele){
+	    var childArr=ele.children,
+	         childArrTem=new Array();  //  临时数组，用来存储符合条件的节点
+	    for(var i=0,len=childArr.length;i<len;i++){
+	        if(childArr[i].nodeType==1){
+	            childArrTem.push(childArr[i]);  // push() 方法将节点添加到数组尾部
+	        }
+	    }
+	    console.log(childArrTem);
+	    for(var i=0;i<childArrTem.length;i++){
+	    	// console.log(childArrTem[i]);
+	    	var style=currentStyle(childArrTem[i]);
+	    	console.log(style);
+	    }
+	    return childArrTem;
+		}
+
+		document.getElementById("btn").onclick=function(){
+			var body=document.body;
+		    var childArr=getChildNodes(body);
+		    alert("元素子节点的个数为："+childArr.length);
+		}
+
+
+		function getStyle2(obj)  
+		{  
+		    if(obj.currentStyle===undefined)  
+		    {  
+		        return getComputedStyle(obj);  
+		    }else{  
+		        return obj.currentStyle;//IE  
+		    }  
+		}  
+		window.onload=function()  
+		{  
+		    var para=document.getElementsByTagName('p')[0];  
+		    var currentStyle=getStyle2(para);  
+		    alert("'"+currentStyle["color"]+"' \t\t   '"+currentStyle["margin"]+"'");  
+		} 
+					
+	</script>
+-->
+
+<script type="text/javascript">
+ var str1="yhqbj1";
+ var str2="yhqbj2";
+ var str3="yhqbj3";
+  // console.log(b+"---"+arr);
+  var curr = new Date();
+  var date=curr.getDate();
+
+  var time = curr.getHours();
+  console.log("time:"+time);
+  var minutes=curr.getMinutes();
+  console.log(date);
+
+  if(time==13){
+  	str1=str2;
+  	str2.replace(/yhqbj2/g,str2);
+  	console.log(str2+str1);
+  }
+ 	
+  // setInterval(function(){
+  // 	// if(time==24){
+  // 		str2=str3;
+  // 		str2.replace(/yhqbj2/g, str3);
+  // 		console.log(str2+":"+str3);
+
+  // 	// }
+  // },3000);//86400000   4147200000
+  // var arr=["yhq0","yhq1","yhq2"];
+  // 	 for(var i=0;i<arr.length;i++){
+  // 	 	arr[0]=arr[1];
+  // 	 	console.log(arr);
+  // 	 }
+   if ( time >= 9 && time <10 ){
+  		
+
+  		
+ }
+
+
+ String.prototype.replaceAll = function(JavaScript, qqwwe, ignoreCase) {  
+    if (!RegExp.prototype.isPrototypeOf(reallyDo)) {  
+        return this.replace(new RegExp(reallyDo, (ignoreCase ? "gi": "g")), replaceWith);  
+    } else {  
+        return this.replace(reallyDo, replaceWith);  
+    }  
+} 
+
+
+// str.replace(/JavaScript/g, "qqwwe");
+// document.write(str); 
+
+
+// var str="bjyhq";
+// str=str;
+// str=str + "one of the largest Web Developers sites in the world.";
+// document.write(str.replace(/bjyhq/g, "shyhq"));	
+</script>
+
+</body>
+</html>

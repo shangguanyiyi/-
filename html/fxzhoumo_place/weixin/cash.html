@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>提现</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" />
+	<meta name="apple-touch-fullscreen" content="yes" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="format-detection" content="telephone=no" />	
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../css/base.css">
+	<link rel="stylesheet" type="text/css" href="../css/common.css">
+			<link rel="stylesheet" href="../css/dialog.css">
+	<link rel="stylesheet" type="text/css" href="../css/cash.css">
+
+	<script type="text/javascript" src="../js/lib/require.min.js" data-main="../js/main/cash"></script>
+</head>
+<body>
+<div id="g-screen">
+	<input type="hidden" id="openid">
+	<div class="g-head bb1">
+		<div class="u-title">
+			提现
+		</div>
+	</div>
+	<div class="g-main">
+
+		<form method="post" id="loginForm">
+			<div class="u-account">
+				<label id="label_account" for="">可提现</label>
+				<div class="ovh">
+					<input type="tel" name="hasMoney" readonly="readonly"  autocomplete=off value="" id="hasMoney">
+				</div>
+			</div>
+					
+			<div class="u-account">
+				<label id="label_account" for="account">提现金额</label>
+				<div class="ovh">
+					<input type="tel" placeholder='提现金额' name="cash"  autocomplete=off id="money">
+				</div>
+			</div>
+			<div class="u-account">
+				<label id="label_account" for="account">支付宝</label>
+				<div class="ovh">
+					<input type="text" placeholder='支付宝账号' name="alipayid"  autocomplete=off id="account">
+				</div>
+			</div>
+			<div>
+				<label id="label_account" for="account">真实姓名</label>
+				<div class="ovh">
+					<input type="text" placeholder='真实姓名' name="alipayname"  autocomplete=off id="realName" >
+				</div>
+			</div>
+			<div class="mt10">
+				<label id="isNeedTxt" for="">提现方式</label>
+				<div class="ovh">
+					<div class="isNeed-1" id="hasNeedWrapper">
+						<label for="hasNeed" style="background-position-y: -65px;"></label>
+						<input type="radio" id="hasNeed" class="dn" name="isNeedCash" value="1">支付宝
+					</div>
+					<div class="isNeed-2" id="notNeedWrapper" style="visibility:hidden;">
+						<label for="notNeed" style="background-position-y: 0px;"></label>
+						<input type="radio" id="notNeed" class="dn" name="isNeedCash" value="2">微信
+					</div>
+					<input type="hidden" name="withdraw_type" value="1" id="withdraw_type">
+				</div>
+			</div>
+			<div class="u-passCode mt20">
+				<label for="passCode" id="label_passCode">验 证 码</label>
+				<div class="ovh">
+					<div id="getCode">
+							获取验证码
+						</div>
+					<div class="ovh">
+						<input type="tel" id="passCode" name="cash_password" placeholder="请输入验证码" autocomplete=off>
+					</div>										
+				</div>		
+			</div>
+			<!-- <p class="mt10">提示:如需提现到支付宝,需要填写支付宝账号,如提现到微信钱包只需填写真实姓名,无需填写支付宝账号</p> -->
+			<input type="submit" class="m-loginBtn" value="确定">
+				
+		</form>
+
+		<table>
+			<thead>
+				<tr>
+					<th>日期</th>
+					<th>收入/支出</th>
+					<th>备注</th>
+				</tr>
+			</thead>
+			<tbody>
+			
+			</tbody>
+		</table>
+		<script type="text/template" id="tpl">
+			<%var i,len;%>
+			<%for(i=0,len=bill_arr.length;i<len;i++){%>
+				<%var elem=bill_arr[i];%>
+				<tr>
+					<td><%=We.date(new Date(elem.bill_createdate),"YYYY-MM-DD")%></td>
+					<td><%=elem.bill_balance%></td>
+					<td><%=elem.bill_description%></td>
+				</tr>
+			<%}%>
+		</script>
+ 
+	</div>
+
+
+</div>	
+
+
+</body>
+

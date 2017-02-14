@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>详情</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" />
+	<meta name="apple-touch-fullscreen" content="yes" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="format-detection" content="telephone=no" />	
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../css/base.css">
+	<link rel="stylesheet" href="../css/dialog.css">
+	<link rel="stylesheet" type="text/css" href="../css/profile.css">
+	<script type="text/javascript" src="../js/lib/require.min.js" data-main="../js/main/profile"></script>
+</head>
+<body>
+<div id="g-screen">
+
+
+	<script type="text/template" id="infoTpl">
+		<div class="g-head bb1">
+			<div class="u-back">
+				<div class="icon">&#xe605;</div><div>返回</div>
+			</div>
+			<div class="u-title">
+				<%=teacher_nickname%>
+			</div>
+		</div>
+		<div class="g-userInfo" id="info">
+			<div class="m-hImgBox">
+				<div class="m-hImg">
+					<img src="<%=config.imgBaseURL%><%=teacher_photo%>" alt="">
+				</div>
+			</div>
+			<div class="m-userInfo">
+				<span class="i-tName"><%=teacher_nickname%></span>
+				<%if(teacher_type){%>
+					<span <%if(teacher_type=="组织者"){%>class="i-tCap-1"<%}else{%>class="i-tCap"<%}%>><%=teacher_type%></span>
+				<%}%>
+			</div>
+			<div class="u-desc">
+				<%=teacher_oneabstract%>
+			</div>
+			<ul class="u-list">
+				<li>
+					<a  href="../list/personList.html?id=<%=teacher_id%>">
+						<div class="u-num"><%=teacher_overcourse_count%></div>
+						<div class="u-txt">推荐</div>
+					</a>
+				</li>
+				<li>
+					<a  href="../center/fav.html?id=<%=teacher_id%>&go=1">
+						<div class="u-num"><%=teacher_mycollect_count%></div>
+						<div class="u-txt">喜欢</div>
+					</a>
+				</li>
+				<li>
+					<a  >
+						<div class="u-num"><%=teacher_collectme_count%></div>
+						<div class="u-txt">被喜欢</div>
+					</a>
+				</li>
+			</ul>
+			<%if(teacher_isown!==1){%>
+				<div class="u-btn changeFavBtn" <%if(teacher_iscollect==1){%>style="background-color:#ccc" <%}%> favid="<%=teacher_id%>" tagtype="1">
+					<div class="u-favIcon changeBgElem" <%if(teacher_iscollect==1){%> style="background-position-y:0px" <%}%>></div>
+					<div class="u-favText changeTextElem"><%=teacher_iscollect==0?"喜欢":"已喜欢"%></div>
+				</div>
+			<%}%>
+		</div>
+
+	</script>
+</div>	
+
+</body>

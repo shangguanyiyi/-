@@ -1,0 +1,351 @@
+body{background: #ededed;}
+
+h1{
+	margin-top: 0.8533333333333334rem;
+	padding-left: 0.8533333333333334rem;
+	font-size: 0.6826666666666666rem;
+	color: #999;
+	font-weight: 700;
+}
+
+.g-orderInfo{
+	background: #fff;
+	margin-top: 0.21333333333333335rem;
+	padding:0.4266666666666667rem 0.8533333333333334rem;
+}
+		
+		.i-address{
+			width: 7.68rem;
+			overflow: hidden;
+		}
+		.m-orderInfoItem{
+			position: relative;
+			font-size: 0.6826666666666666rem;
+			overflow: hidden;
+		}
+	
+		.bbc{
+			border-bottom: 1px solid #ccc;
+		}
+		.btc{
+			border-top: 1px solid #ccc;
+		}
+
+		.ptb10{
+			padding-bottom: 0.4266666666666667rem;
+			padding-top: 0.4266666666666667rem;
+		}
+				.u-rightTime{
+					color: #ccc;
+					padding: 0.4266666666666667rem 0;
+				}
+				.m-timeTitle{
+					padding:0.4266666666666667rem 0;
+				}
+		.m-centerInfo{
+			width:100%;
+			background: #ededed;
+			max-height: 8.533333333333333rem;
+			overflow: auto;
+			font-size: 0.6826666666666666rem;
+			-webkit-overflow-scrolling:touch;
+		}
+
+				.m-centerInfo li{
+					padding:0.4266666666666667rem;
+					overflow:hidden;
+					clear:both;
+				}
+				
+				.m-centerInfo li+li{
+					border-top: 1px solid #ccc;
+				}
+
+
+						.m-cLeft{
+							display: inline-block;
+							text-align: left;
+							float: left;
+							line-height: 1.5;
+							  width: 6.4rem;
+						}
+						.m-cRight{
+							text-align: right;
+							float:right;
+						}
+							.m-cRight>div{
+								display: inline-block;
+							}
+							.m-cRight input{
+								width: 2.56rem;
+								border: 1px solid #00c8c8;
+								border-radius: 0.21333333333333335rem;
+								text-align: center;
+								padding: 0.4266666666666667rem 0;
+								background: #ededed;
+								outline: none;
+								vertical-align: bottom;
+							/*	line-height: 1.5;*/
+								font-size: 0.6826666666666666rem;
+							}
+							.addBox,.subBox{
+								display: inline-block;
+								width: 1.7066666666666668rem;
+								height: 1.7066666666666668rem;
+								text-align: center;
+								/*padding: 0.4266666666666667rem;*/
+								/*line-height: 1.5;*/
+							}
+							.addBox:after,.subBox:after{
+								content: "";
+								   width: 1px;
+								  height: 100%;
+								  vertical-align: middle;
+								  display: inline-block;
+							}
+							.m-cRight .add{
+								display: inline-block;
+								background: url(../images/add_1.png) 0 -1px;
+								background-size: 100%;
+								width: 0.8533333333333334rem;
+								height:0.896rem;
+								vertical-align: middle;
+							}
+							.m-cRight .sub{
+								display: inline-block;
+								background: url(../images/sub_1.png)no-repeat 0 -1.1946666666666668rem;
+								background-size: 100%;
+								width: 0.8533333333333334rem;
+								height: 0.896rem;
+								vertical-align: middle;
+							}
+
+.g-mobile{
+	background: #fff;
+	padding:0rem 0.8533333333333334rem;
+	font-size: 0.6rem;
+	overflow: hidden;
+}
+		.m-mobTitle{
+			padding: 0.4266666666666667rem 0.8533333333333334rem 0.4266666666666667rem 0rem;
+			border-right: 1px solid #ccc;
+		}
+		.m-mobile{
+			overflow: hidden;
+		}
+			.m-mobile input{
+				width: 100%;
+				border: none;
+				text-align: center;
+				padding: 0.4266666666666667rem 0;
+				outline: none;
+				font-size:0.6826666666666666rem;
+			}
+
+.g-voucher{
+	background: #fff;
+	padding:0.4266666666666667rem 0.8533333333333334rem;
+	font-size: 0.6rem;
+}
+		.m-v1{
+			position: relative;
+			padding: 0.4266666666666667rem 1.7066666666666668rem 0.4266666666666667rem 0rem;
+			border-bottom: 1px solid #ccc;
+		}
+			.m-v1 .to{
+				position: absolute;
+				right: 0.4266666666666667rem;
+				top: 0.4266666666666667rem;
+				color: #ccc;
+			}
+		.m-v2{
+			padding:  0.4266666666666667rem 0rem 0rem 0;
+		}
+
+
+.g-pay{
+	background: #fff;
+	padding: 0.21333333333333335rem 0.8533333333333334rem;
+	font-size: 0.6826666666666666rem;
+	overflow: hidden;
+}
+		.g-pay>div{
+			padding: 0.4266666666666667rem 0;
+		}
+		.i-zLogo{
+			width: 2.56rem;
+			display: inline-block;
+		}
+			.i-zLogo>img{
+				max-width: 100%;
+			}
+			.i-isSelect{
+				  position: absolute;
+				  top: 50%;
+				  right: 0.8533333333333334rem;
+				  color: #ccc;
+				  transform: translate(-50%,-50%);
+			}
+.u-payBtn{
+	background: #00c8c8;
+	font-size: 0.6826666666666666rem;
+	color: #fff;
+	border-radius: 0.21333333333333335rem;
+	text-align: center;
+	padding: 0.4266666666666667rem 0.8533333333333334rem;
+	margin:1.7066666666666668rem auto  0.8533333333333334rem;
+	width: 4.266666666666667rem;
+}
+
+
+
+/************************************************************************/
+
+#g-screen2{
+	position: fixed;
+	right: 0rem;
+	top: 0rem;
+	min-height: 100%;
+	width: 100%;
+	z-index: 1002;
+	display: none;
+	background: #ededed;
+}
+	#back{
+		position: absolute;
+		display: table;
+		left: 0.4266666666666667rem;
+		top: 0rem;
+		height: 1.8773333333333333rem;
+		margin-right: 0.8533333333333334rem;
+	}
+
+			#back>div{
+				display: table-cell;
+				vertical-align: middle;
+				text-align: center;
+				font-size: 0.6826666666666666rem;
+				color: #666;
+			}
+			
+		.m-vNum{
+			padding: 0.4266666666666667rem;
+			display: table;
+			width: 100%;
+			height: 6.4rem;
+		}
+
+				.m-vNum>div{
+					display: table-cell;
+					text-align: center;
+					vertical-align: middle;
+				}
+						.m-vNum>div>span:nth-child(1){
+							font-size: 1.28rem;
+							color: #00c8c8;
+							margin-right: 0.128rem;
+						}
+						.m-vNum>div>span:nth-child(2){
+							font-size: 1.7066666666666668rem;
+						}
+						.m-vNum>div>div{
+							margin-top: 0.8533333333333334rem;
+							font-size: 0.6826666666666666rem;
+						}
+
+		.m-voucherContainer{
+			padding: 0.4266666666666667rem;
+		}
+
+				/*优惠券区域*/
+
+				.m-voucher{
+					position: relative;
+					background: #fff;
+					padding: 0.4266666666666667rem;
+					text-align: center;
+					overflow: hidden;
+				}
+							.i-round{
+								position: absolute;
+								width: 1.28rem;
+								height: 1.28rem;
+								border-radius: 50%;
+								background: #ededed;
+								top: 50%;
+								margin-top: -0.4266666666666667rem;
+								left: -0.8533333333333334rem;
+							}
+
+							.u-vLeft{
+									float: left;
+									font-size: 0.768rem;
+									width:2.986666666666667rem;
+									height: 2.986666666666667rem;
+									padding: 0.4266666666666667rem 0;
+								}
+
+
+								.u-vRight{
+									float: right;
+									padding: 0.4266666666666667rem 0 0 0.4266666666666667rem;
+									font-size:0.64rem;
+									width: 1.28rem;
+								}
+
+										.u-vRight>div{
+											position: relative;
+											top: 0.8533333333333334rem;
+										}
+								.u-vCenter{
+									overflow: hidden;
+									border-left: 1px dashed #ccc;
+									border-right: 1px dashed #ccc;
+									text-align: left;
+									padding-left: 0.4266666666666667rem;
+								}
+										
+									.u-vCenter>p{
+										font-size: 0.5546666666666666rem;
+										color: #8c8c8c;
+									}
+									.u-vCenter>p:nth-child(1){
+										font-size: 0.768rem;
+										color: #333;
+									}
+									
+									.i-minMoney{
+										font-size: 0.4266666666666667rem;
+									}
+
+								#toLogin{
+									color: #333;
+								}
+			
+
+			#nativePayContainer{
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				z-index: 20000;
+				background: #ededed;
+				text-align: center;
+			}
+
+				#nativePayContainer h1,#nativePayContainer p{
+					font-size: 0.6826666666666666rem;
+					margin-top: 0.8533333333333334rem;
+					margin-bottom: 0.8533333333333334rem;
+				}
+				#nativePayContainer h1{
+					margin-top: 3.4133333333333336rem;
+				}
+				
+				#nativeImg{
+					display: block;
+					width: 8.533333333333333rem;
+					height: 8.533333333333333rem;
+					margin:0 auto;
+				}

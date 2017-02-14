@@ -1,0 +1,284 @@
+body{
+	max-width:750px;
+	min-width:320px;
+	margin:0 auto;
+}
+section{
+	background: url(../storyFilm_img/background.png) no-repeat;
+	background-size: 100% 100%;
+	/*width:10rem;
+	height:60.50rem;*/
+	position:relative;
+	text-align: center;
+	padding-bottom:20%;
+}
+.header{
+	width:90%;
+	margin:5% 0;
+}
+.text{
+	width:75%;
+	margin:6% 0;
+}
+.rule{
+	width:75%;
+	margin:2% 0 6% 0;
+}
+.Isay_img{
+	width:90%;
+}
+.Isay{
+	position:relative;
+	margin:8% auto;
+}
+.textarea{
+	width:75%;
+	height:70%;
+	position:absolute;
+	top:20%;
+	left:13%;
+	background-color: transparent;
+	font-size:1.2em;
+	font-weight:bold;
+}
+.print{
+	position: relative;
+	margin:10% auto;
+	border:1px solid transparent;
+	display:none;
+}
+.phone1{
+	width:50%;
+	padding:2%;
+	/*border:2px solid #F00;*/
+	text-align: center;
+	border-radius: 5px;
+	color:#7a1f1e;
+	background-color: transparent;
+	position:absolute;
+	left:25%;
+	top:18%;
+	display:block;
+	
+}
+.img_phone{
+	width:50%;
+	margin:5% auto;
+	display:block;
+}
+.img_submit{
+	width:35%;
+}
+.submit{
+	width:35%;
+	padding:4% 0;
+	margin:0 auto;
+	position:absolute;
+	top:68%;
+	left:32%;
+	/*border:1px solid black;*/
+}
+.user{
+	position: relative;
+	margin:10% auto;
+	display:none;
+}
+.user_submit{
+	/*border:1px solid black;*/
+	width:35%;
+	padding:4% 0;
+	margin:0 auto;
+	position:absolute;
+	top:0%;
+	left:32%;
+}
+
+.commentPanel{
+	width:90%;
+	margin:0 auto;
+}
+.comment{
+	overflow: hidden;
+	margin:10% 0;
+	/*background: url(../storyFilm_img/background.png) no-repeat;
+	background-size:100%;*/
+}
+.left,.right{
+	float:left;
+}
+.left{
+	width:20%;
+	display:table-cell;
+	vertical-align: middle;
+}
+.right{
+	width:80%;
+	border:1px solid #7a1f1e;
+	border-radius: 15px;
+	position: relative;
+	padding:3% 0 3% 3%;
+	background:#fff;
+}
+.right_text{
+	width:85%;
+	text-align: left;
+	color:#7a1f1e;
+	padding:7%;
+	font-size:.8rem;
+}
+.img_exprise{
+	width:60%;
+}
+.goodHeart{
+	width:15%;
+	position:absolute;
+	right:2%;
+	bottom:1%;
+	text-align: center;
+}
+.heart{
+	width:40%;
+}
+.fuchuang{
+	position: fixed;
+	bottom:-5px;
+	left:0;
+}
+.btn,.htmlA{
+	border:1px solid #7a1f1e;
+	padding:1%;
+	border-radius: 10px;
+	box-shadow: 3px 3px 0 #7a1f1e;
+	margin-left:15%;
+	background-color: #fff;
+	color:#7a1f1e;
+}
+.zuihou{
+	overflow: hidden;
+	padding:2% 10%;
+}
+.zuihou a{
+	float:left;
+}
+.share{
+	width:100%;
+	height:100%;
+	position:fixed;
+	left:0;
+	top:0;
+	background: #000;
+	opacity: .68;
+	display:none;
+}
+
+
+/*遮罩*/
+.yanzheng{
+	background-color:rgba(0,0,0,0.68); 
+	width:100%;
+	height:100%;
+	position:fixed;
+	top:0;
+	left:0;
+	margin:0 auto;
+	display:none;
+}
+.popTan{
+	background:#fff;
+	width:80%;
+	margin:0 auto;
+	position:absolute;
+	top:30%;
+	left:10%;
+	border-radius:5px;
+}
+.input0{
+	width:100%;
+	margin:0 auto;
+	padding:0 10%;
+	margin-top:10%;
+}
+.phone{
+	width:100%;
+	border:1px solid #ddd;
+	height:30px;
+	display:inline-block;
+	font-size: 0.999em;
+	/*line-height: 30px;*/
+}
+.input1{
+	width:100%;
+	margin:0% auto;
+	padding:0 10%;
+	margin-top:5%;
+}
+.input1 img{
+	display:inline-block;
+	width:35%;
+	height:30px;
+	vertical-align: bottom;
+}
+.securityCode{
+	width:60%;
+	height:30px;
+	display:inline-block;
+	border-radius: 0px;
+	font-size: 0.999em;
+	border-bottom:#333;
+	border:1px solid #ddd;
+}
+.input2{
+	width:100%;
+	margin-top:5%;
+	padding:0 10%;
+}
+.btnYzm{
+	width:35%;
+	height:30px;
+	display:inline-block;
+	background: #86e2fd;
+	border:1px solid #86e2fd;
+	color:#fff;
+	border-radius: 5px;
+}
+.securityCode2{
+	width:60%;
+	height:30px;
+	display:inline-block;
+	border-radius: 0px;
+	font-size: 0.999em;
+	border-bottom:#333;
+	border:1px solid #ddd;
+}
+.input3{
+	width:100%;
+	margin-top:5%;
+	padding:0 10% 5% 10%;
+}
+.true{
+	width:30%;
+	height:30px;
+	background:#86e2fd;
+	border-radius: 5px;
+	color:#fff;
+	margin-left:10%;
+	border:1px solid #86e2fd;
+}
+.cancle{
+	width:30%;
+	height:30px;
+	border:1px solid #ddd;
+	border-radius: 5px;
+	color:#333;
+	background: #fff;
+	margin-left:15%;
+
+}
+.popTan input,.popTan button{
+	outline:none;
+	
+}
+.popTan input{
+	padding-left:3%;
+}
+

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>注册</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" />
+	<meta name="apple-touch-fullscreen" content="yes" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="format-detection" content="telephone=no" />	
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../css/base.css">
+	<link rel="stylesheet" type="text/css" href="../css/common.css">
+	<link rel="stylesheet" type="text/css" href="../css/register.css">
+	<script type="text/javascript" src="../js/lib/require.min.js" data-main="../js/main/login"></script>
+
+</head>
+<body>
+<div id="g-screen">
+	<div class="g-head bb1">
+		<div class="u-back">
+			<div class="icon">&#xe605;</div><div>返回</div>
+		</div>
+		<div class="u-title">
+			注册
+		</div>
+	</div>
+	<div class="g-main tc">
+		<form id="registerForm" method="post">
+			<div class="u-account" >
+				<label for="account" id="label_account">用 户 名</label>
+				<div class="ovh">
+					<input type="tel" placeholder='请输入手机号码'  id="account"  data-pattern="^1[3,4,5,7,8]\d{9}$">
+				</div>
+				
+			</div>
+			<div class="u-passCode mt20">
+				<label for="passCode" id="label_passCode">验 证 码</label>
+				<div class="ovh">
+					<div id="getCode">
+							获取验证码
+						</div>
+					<div class="ovh">
+						<input type="tel" id="passCode" placeholder='请输入验证码'>
+					</div>
+					
+					
+				</div>
+				
+			</div>
+			<div class="u-pwd mt20">
+				<label for="account" id="label_pwd" >密&nbsp;&nbsp;&nbsp;码</label>
+				<div class="ovh">
+					<input type="password" placeholder='6-15位'  id="pwd" data-pattern="^.{6,15}$">
+				</div>
+				
+			</div>
+			<div class="u-pwd mt20">
+				<label for="account" id="label_pwd2">确认密码</label>
+				<div class="ovh">
+					<input type="password" placeholder='请再次输入密码' id="pwd2" data-pattern="^.{6,15}$">
+				</div>
+			</div>
+			<div class="u-pwd mt20">
+				<label for="code" id="label_recommenCcode">推荐码</label>
+				<div class="ovh">
+					<input type="text" placeholder='请输入推荐码,可不填' id="recommendCode" >
+				</div>
+			</div>
+			<input  type="submit" class="m-registerBtn mt40" value="注册">
+			<!-- <div class="m-registerBtn mt40">
+				注册
+			</div> -->
+		</form>
+	</div>
+
+</div>	
+
+
+</body>

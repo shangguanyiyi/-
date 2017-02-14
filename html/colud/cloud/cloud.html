@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">	
+	<title>云朵餐厅</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <script src="../js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "//hm.baidu.com/hm.js?dc7872171c92fd39b3f181a0c222dbbc";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    <style type="text/css">
+    body{
+        max-width: 750px;
+        min-width: 320px;
+        margin:0 auto;
+    }
+    *{
+        margin:0;
+        padding:0;
+    }
+    section{
+        padding-bottom:5%;
+    }
+    section img{
+        width:90%;
+        margin:0 5%;
+    }
+    .fuchuang{
+        width:100%;
+        position: fixed;
+        bottom:-5px;
+        left:0;
+    }
+    .down{
+        width:100%;
+    }
+    </style>
+    <script>
+
+    $(function(){
+        function is_weixin() {
+        var ua = navigator.userAgent.toLowerCase();
+          if (ua.match(/MicroMessenger/i) == "micromessenger") {
+            return true;
+           } else {
+            return false;
+           }
+    }
+    var isWeixin=is_weixin();
+    if(isWeixin){
+        $('.fuchuang').show();
+    }else{
+        $('.fuchuang').hide();
+    }
+    })
+    </script>
+</head>
+<body>
+    <section>
+        <img src="../cloud_img/cloud_01.jpg" alt="">
+        <img src="../cloud_img/cloud_02.jpg" alt="">
+        <img src="../cloud_img/cloud_03.jpg" alt="">
+        <img src="../cloud_img/cloud_04.jpg" alt="">
+        <img src="../cloud_img/cloud_05.jpg" alt="">
+        <img src="../cloud_img/cloud_06.jpg" alt="">
+        <img src="../cloud_img/cloud_07.jpg" alt="">
+         
+    </section>
+    <div class="fuchuang">
+        <a href="http://a.app.qq.com/o/simple.jsp?pkgname=sm.xue" id="downLoad">
+            <img class="down" src="../cloud_img/down.png" alt="">
+        </a>
+    </div>
+
+    <script>
+        $(function(){
+            wx_url=escape(window.location.href);
+            $.ajax({
+                url:"/WeixinServlet?method=weixinPower",
+                type:"post",
+                data:'servicestr={"wei_url":"'+wx_url+'"}',  
+                dataType:"html",
+                success:function(data){
+                    var json = eval("("+data+")");
+                    if(json.code=="success"){
+                        wx.config({
+                            debug: false, 
+                            appId: 'wx47987fa108b8329b', 
+                           // appId:'wxd470058f4535a61d', //mammachoice
+                            timestamp:json.timestamp,
+                            nonceStr: json.nonceStr,
+                            signature: json.signature,
+                            jsApiList: ['onMenuShareTimeline','onMenuShareAppMessage','onMenuShareQQ','onMenuShareWeibo','onMenuShareQZone']
+                        });
+
+                        var shareObject = {
+                            title: '沪上6家把好天气带进室内的餐厅',
+                            desc: '快跟我一起去吧~',
+                            link: window.location.href,
+                            imgUrl: 'http://www.fxzhoumo.com/operation/cloud_img/share.jpg'
+                        };
+                        var shareFriend={
+                            title:'沪上6家把好天气带进室内的餐厅，快约上朋友一起去吧！',
+                            link: window.location.href,
+                            imgUrl: 'http://www.fxzhoumo.com/operation/cloud_img/share.jpg'
+                        }
+                        wx.ready( function (){
+                            wx.onMenuShareTimeline(shareFriend);   //朋友圈
+                            wx.onMenuShareAppMessage(shareObject);  //朋友
+
+                        });
+                    }else{
+                        alert(json.description);
+                    }
+                    
+                }
+            });
+    });
+    </script>
+</body>
+</html>

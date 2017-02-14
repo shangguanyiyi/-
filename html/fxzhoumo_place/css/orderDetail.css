@@ -1,0 +1,106 @@
+body{
+	background: #ededed;
+}
+.g-head{
+	background: #ededed;
+	box-shadow:  0 -1px 1px -1px rgba(0, 0, 0, 0.3) inset;
+}
+.u-edit{
+	color: #ff5555;
+}
+
+h1{
+	border-bottom: 1px solid #ededed;
+	margin-bottom: 10px;
+	padding: 5px 0;
+}
+
+.u-label{
+	width: 80px;
+	text-align: left;
+	display: inline-block;
+}
+	
+.g-orderInfo{
+	margin-top: 20px;
+	background: #fff;
+	padding:0 10px 10px 10px;
+}
+		.g-orderInfo>div{
+			font-size:13px;
+		}
+
+.g-orderNum{
+	margin-top: 20px;
+	background: #fff;
+	padding: 0 10px 10px 10px;
+}
+		.g-orderNum>div{
+				font-size: 13px;
+			}
+.g-tel{
+	background: #fff;
+	padding: 10px 20px;
+	font-size: 16px;
+	color: #00C8C8;
+	margin-top: 10px;
+}
+
+.g-tel div{
+	position: relative;
+	padding-left:25px;
+}
+.g-tel div:before{
+
+	position: absolute;
+	content: "";
+	top:50%;
+	left:0px;
+	margin-top: -9px;
+	width: 18px;
+	height: 18px;
+	background: url(../img/wei_tel.png)no-repeat;
+	margin-right:5px;
+	background-size: 100%;
+}
+
+
+.telBox{
+	position: fixed;
+	z-index: 2002;
+	width:320px;
+	margin-left: -160px;
+	top: 50%;
+	left: 50%;
+	background: #fff;
+	border-radius: 10px;
+	padding: 15px 15px 30px 15px;
+}
+.telBox a{
+	position: relative;
+	color: #333;
+	font-size: 16px;
+	padding-left:20px;
+}
+.telBox a:before{
+	position: absolute;
+	top:50%;
+	left:0px;
+	margin-top:-10px;
+	content: "";
+	width: 20px;
+	height: 20px;
+	background: url(../img/wei_tel.png)no-repeat;
+	background-size: 100%;
+	margin-right: 10px;
+}
+.telBox li{
+	padding: 10px 15px;
+	font-size: 18px;
+	border-bottom: 1px solid #ccc;
+}
+
+#map{
+	min-height: 300px;
+	width: 100%;
+}

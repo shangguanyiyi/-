@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>订单详细</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" />
+	<meta name="apple-touch-fullscreen" content="yes" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="format-detection" content="telephone=no" />	
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../css/base.css">
+	<link rel="stylesheet" type="text/css" href="../css/common.css">
+	<link rel="stylesheet" type="text/css" href="../css/orderDetail.css">
+	<link rel="stylesheet" href="../css/pop.css" />
+	<script type="text/javascript" src="http://api.map.baidu.com/api?type=quick&amp;ak=kkioZxA5fXuwI5AQ3hbc3Qul&amp;v=1.0"></script>
+	<script type="text/javascript" src="../js/lib/require.min.js" data-main="../js/main/orderDetail"></script>
+
+</head>
+<body>
+<div id="g-screen">
+	<div class="g-head bb1">
+		<div class="u-back">
+			<div class="icon">&#xe605;</div><div>返回</div>
+		</div>
+		<div class="m-panelBtn dn">
+			<div class="icon i-1">&#xe600;</div>
+		</div>
+		<div class="u-title">
+			订单详细
+		</div>
+		<div class="u-edit dn">提醒</div>
+	</div>
+	<div class="g-main" id="container">
+
+	</div>
+
+	<script type="text/template" id="tpl">
+		<div class="m-course mt10">
+			<a href="../detail/course.html?courseid=<%=courseid%>"></a>
+			<div class="m-cImg">
+				<img src="<%=config.imgBaseURL%><%=course_photo%>" alt="">
+			</div>
+			<div class="m-uInfo">
+				<div class="m-cTitle"><%=course_title%></div>
+				<div class="u-address">
+					<div><%=course_datetime_str%></div>
+					<div><span class="i-address" style="display:block;width:190px;"><%=course_site%></span><span><%=course_distance%></span></div>
+				</div>
+			</div>
+			<div class="m-price"><%=course_price%>元</div>
+		</div>
+		<div class="g-orderInfo">
+			<h1>订单信息</h1>
+			<div >
+				<span class="mr10 u-label">预订手机号</span>
+				<span><%=reserve_mobile%></span>
+			</div>
+			<div class="mt5">
+				<span class="mr10 u-label fl">活动日期</span>
+				<div class="ovh" style="padding-left:5px;">
+				<%for(var i=0;i<order_others_detail.length;i++){%>
+					<%var elem=order_others_detail[i];%>
+					<div>
+						<span class="mr10"><%=elem.course_all_datetime_str%></span>
+						<!--<span><%=We.date(new Date(elem.course_all_datetime),"hh:mm")%></span>-->
+					</div>
+				<%}%>
+				</div>
+			</div>
+			<div class="mt5 ovh">
+				<span class="u-label mr10">数量</span>
+				<span><%=order_goodcount%>份</span>
+			</div>
+		</div>
+		<div class="g-orderNum">
+			<h1>订单识别码</h1>
+			<%for(var i=0;i<order_others_detail.length;i++){%>
+				<%var e=order_others_detail[i];%>
+				<div class="mt5">
+					<span class="u-label mr10"><%=e.order_number%></span>
+					<span class="mr10"><span class="mr10">(<%=e.course_all_datetime_str%></span><span> 含<%=e.order_goodcount%>份)</span></span>
+					<span class="fr">未使用</span>
+				</div>
+			<%}%>
+		</div>
+		<div class="g-tel" id="toTel">
+	<div>咨询预约</div>
+</div>
+<div id="map"></div>
+
+	</script>
+<script type="text/template" id="telTpl">
+	
+	<div class="telBox">
+		<ul>
+			<li class="tc" >咨询预约</li>
+			<%for(var i=0;i<advisory_teacher_mobile_arr.length;i++){%>
+				<%var elem=advisory_teacher_mobile_arr[i];%>
+				<li><a href="tel:<%=elem.advisory_teacher_mobile%>"><%=elem.advisory_teacher_mobile_desc%><%=elem.advisory_teacher_mobile%></a></li>
+			<%}%>
+		</ul>
+	</div>
+	
+</script>
+</div>	
+
+
+</body>
+

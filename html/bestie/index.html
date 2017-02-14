@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>发现周末</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+</head>
+<body>
+	<header>
+		<img src="img/background.png">
+		<div class="wrap">
+			<img src="img/map.png" class="map">
+		</div>
+		
+	</header>
+	<section>
+		<div class="wrap">
+			<div class="tuijian">
+				<img src="img/tuijianhuodong.png">
+			</div>
+			
+				<div class="row">
+					<a href="http://www.fxzhoumo.com/detail/course.html?courseid=4993">
+						<div class="left">
+							<img src="img/54603cover20160105180833mid.jpg">
+							<p>方家胡同里的早餐披萨 RAMO双人Brunch</p>
+							<p><span>168 </span> 元/2位</p>
+						</div>
+					</a>
+					<a href="http://www.fxzhoumo.com/detail/course.html?courseid=4264">
+						<div class="right" id="nitu">
+							<img src="img/25412cover20151114111757mid.jpg">
+							<p>陶艺|泥土原味的气息</p>
+							<p><span>89 </span> 元/位</p>
+						</div>
+					</a>
+					
+				</div>
+			
+
+				<div class="row">
+					<a href="http://www.fxzhoumo.com/detail/course.html?courseid=4983">
+						<div class="left">
+							<img src="img/20381cover20160104183956mid.jpg">
+							<p>阳光玻璃房 戈多花园双人餐</p>
+							<p><span>198 </span> 元/2位</p>
+						</div>
+					</a>
+					<a href="http://www.fxzhoumo.com/detail/course.html?courseid=4251">
+						<div class="right">
+							<img src="img/6949cover20151221111818mid.jpg">
+							<p>热缩片DIY制作</p>
+							<p><span>49 </span> 元/位</p>
+						</div>
+					</a>
+					
+				</div>
+
+				<div class="row">
+					<a href="http://www.fxzhoumo.com/detail/course.html?courseid=5009">
+						<div class="left">
+							<img src="img/56219cover20160107144950mid.jpg">
+							<p>40小时熬制汤底 爱de蹄花双人餐</p>
+							<p><span>168 </span> 元/2位</p>
+						</div>
+					</a>
+					<a href="http://www.fxzhoumo.com/detail/course.html?courseid=3029">
+						<div class="right">
+							<img src="img/10490cover20160106190316mid.jpg">
+							<p>玩转缝纫机之机缝小包体验课</p>
+							<p><span>58 </span> 元/位</p>
+						</div>
+					</a>
+					
+				</div>
+
+				<div class="row">
+					<a href="http://www.fxzhoumo.com/detail/course.html?courseid=4829">
+						<div class="left">
+							<img src="img/34748cover20151219222044mid.jpg">
+							<p>鼓楼隐匿隐秘日式小馆 秋刀鱼之味双人餐</p>
+							<p><span>198 </span> 元/2位</p>
+						</div>
+					</a>
+					<a href="http://www.fxzhoumo.com/detail/course.html?courseid=4861">
+						<div class="right">
+							<img src="img/35264cover20151222154026mid.jpg">
+							<p>多肉羊毛毡制作</p>
+							<p><span>88 </span> 元/位</p>
+						</div>
+					</a>
+					
+				</div>
+
+			<div class="more">
+				<!-- <a href=""><img src="img/faxiangengduo.png"></a> -->
+			</div>
+		</div>
+	</section>
+	<script>
+	 $(function(){
+            wx_url=escape(window.location.href);
+            $.ajax({
+                url:"/WeixinServlet?method=weixinPower",
+                type:"post",
+                data:'servicestr={"wei_url":"'+wx_url+'"}',
+                success:function(data){
+                    var json = eval("("+data+")");
+                    // console.log(json);
+                    if(json.code=="success"){
+                        wx.config({
+                            debug: false, 
+                            appId: 'wx47987fa108b8329b', 
+                           // appId:'wxd470058f4535a61d', //mammachoice
+                            timestamp:json.timestamp,
+                            nonceStr: json.nonceStr,
+                            signature: json.signature,
+                            jsApiList: ['onMenuShareTimeline','onMenuShareAppMessage','onMenuShareQQ','onMenuShareWeibo','onMenuShareQZone']
+                        });
+
+                        var shareObject={
+                            title:'与闺蜜的甜蜜时光',
+                            desc:'周末邀好友一起品尝美食，制作贴心小礼物~',
+                            link:window.location.href,
+                            imgUrl:"http://www.fxzhoumo.com/market/bestie/img/share.png"
+                        };
+                        var shareFriend={
+                            title:'发现周末闺蜜约会指南',
+                            link:window.location.href,
+                            imgUrl:"http://www.fxzhoumo.com/market/bestie/img/share.png"
+
+                        };
+                        wx.ready(function(){
+                            wx.onMenuShareTimeline(shareObject);
+                            wx.onMenuShareAppMessage(shareFriend);
+                        });
+                    }else{
+                        alert(json.description);
+                    }
+                }
+
+            });
+        })
+
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,495 @@
+body{
+	background: #ededed;
+}
+#g-screen{
+	max-width: 16rem;
+	margin: 0 auto;
+}
+
+.g-head{
+	position: relative;
+	height: 8.87466667rem;
+	overflow: hidden;
+}
+		.g-head>img{
+			position: absolute;
+			max-width: 100%;
+		}
+		.m-shadow{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(35, 192, 101, 0.5);
+			z-index: 2;
+		}
+		
+		.m-head{
+			position: relative;
+			z-index: 3;
+			font-size: 0.68266667rem;
+			color: #fff;
+			height: 1.87733333rem;
+		}
+
+					
+				.u-back{
+					position: absolute;
+					display: table;
+					left: 0.42666667rem;
+					top: 0rem;
+					height: 1.87733333rem;
+					margin-right: 0.85333333rem;
+				}
+						.u-back>div{
+							display: table-cell;
+							vertical-align: middle;
+							text-align: center;
+							font-size:0.68266667rem;
+							color: #fff;
+							line-height: 1
+						}
+						.u-back>div:nth-child(1){
+							position: relative;
+							top: -1px;
+						}
+				.u-fav{
+					position: absolute;
+					display: table;
+					right: 0rem;
+					width: 1.87733333rem;
+					height: 1.87733333rem;
+				}
+
+						.u-fav>div{
+							display: table-cell;
+							text-align: center;
+							vertical-align: middle;
+						}
+								.u-fav>div>div{
+									width: 0.85333333rem;
+									height: 0.85333333rem;
+									vertical-align: middle;
+									background: url(../images/fav.png)no-repeat 0 -1.06666667rem;
+									background-size: 100%;
+									display: inline-block;
+								}
+				.m-title{
+					position: absolute;
+					bottom: 0;
+					padding:0.42666667rem 0.42666667rem 0.42666667rem 0.85333333rem;
+					color: #fff;
+					font-size:0.68266667rem;
+					z-index: 3;
+					width: 100%;
+					 background: rgba(0, 0, 0, 0.5);
+					text-overflow:ellipsis;
+					white-space: nowrap;
+					overflow: hidden;
+				}
+.g-time{
+	position: relative;
+	background: #fff;
+	padding:0.42666667rem 0.85333333rem;
+	overflow: hidden;
+	font-size: 0.55466667rem;
+}
+		.u-icon{
+			margin-right: 0.42666667rem;
+			color: #999;
+			font-size: 0.55466667rem;
+		}
+		.u-money{
+			position: absolute;
+			right: 0.85333333rem;
+			top: 0.34133333rem;
+		}
+		.u-money>span:nth-child(1){
+			text-decoration: line-through;
+			margin-right: 0.21333333rem;
+			position: relative;
+			top: -1px;
+			color: #999;
+		}
+		.u-money>span:nth-child(2){
+			color: red;
+			font-size: 0.768rem;
+		}
+
+.g-address{
+	position: relative;
+	background: #fff;
+	margin-top: 0.42666667rem;
+	padding: 0rem 0.21333333rem 0rem 0.85333333rem;
+	overflow: hidden;
+}
+		.m-address{
+			overflow: hidden;
+			color: #333;
+			display: block;
+			padding: 0.42666667rem 0;
+		}
+				.m-address>p:nth-child(1){
+					font-size:0.768rem;
+					line-height: 1.2;
+				}
+				.m-address>p:nth-child(2){
+					margin-top: 0.42666667rem;
+					font-size: 0.55466667rem;
+					color: #808080;
+					line-height: 1.2s;
+				}
+				
+
+		.m-mapBtn{
+			float: right;
+			display: table;
+			width: 3.84rem;
+			text-align: center;
+			padding: 0.42666667rem;
+			border-left: 1px solid #ededed;
+		}
+
+			.m-mapBtn{
+				display: table-cell;
+				vertical-align: middle;
+				color: #00c8c8;
+				font-size: 0.768rem;
+			}
+				.m-mapBtn>div{
+					font-size: 1.024rem;
+				}
+
+
+.g-info{
+	margin-top: 0.42666667rem;
+	padding: 0.42666667rem 0.85333333rem;
+	background: #fff;
+}
+		.m-cTitle{
+			font-size: 0.68266667rem;
+			padding-left: 0.42666667rem;
+			border-left:0.128rem solid #00c8c8;
+		}
+
+		.m-person{
+			position: relative;
+			background: #fff;
+			overflow: hidden;
+			width: 100%;
+			margin-top: 0.42666667rem;
+			padding-bottom: 0.42666667rem;
+			border-bottom: 1px solid #ededed;
+		}
+
+				.m-person>a{
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					z-index: 2;
+					top: 0;
+					left: 0;
+				}
+				.m-pImg{
+					width: 2.13333333rem;
+					height: 2.13333333rem;
+					border-radius: 1.06666667rem;
+					overflow: hidden;
+					float: left;
+					margin-right: 0.42666667rem;
+				}
+
+						.m-pImg>img{
+							width: 2.13333333rem;
+							height: 2.13333333rem;
+							border-radius: 1.06666667rem;
+						}
+
+				.m-uInfo{
+					overflow: hidden;
+					vertical-align: middle;
+					font-size: 0.68266667rem;
+				}		
+						.m-uInfo>div:nth-child(1){
+							height:1.06666667rem;
+							line-height:1.06666667rem;
+							vertical-align: text-bottom;
+						}
+
+						.m-uInfo>div:nth-child(2){
+							height:1.06666667rem;
+							line-height:1.06666667rem;
+							font-size: 0.512rem;
+							color:#8c8c8c;
+						}
+
+						.i-tName{
+							font-size: 0.68266667rem;
+							margin-right: 0.21333333rem;
+						}
+						.i-tCap{
+							font-size: 0.42666667rem;
+							background: #00c8c8;
+							color: #fff;
+							padding:1px 0.08533333rem 0;
+							overflow: hidden;
+							border-radius: 0.08533333rem;
+						}
+
+						.i-tCap-1{
+							font-size: 0.42666667rem;
+							background: #faa000;
+							color: #fff;
+							padding:1px 0.08533333rem 0;
+							overflow: hidden;
+							border-radius: 0.08533333rem;
+						}
+
+				.m-go{
+					position: absolute;
+					right:0;
+					top:50%;
+					margin-top: -0.64rem;
+					width:0.85333333rem;
+					height: 0.85333333rem;
+					color: #999;
+					text-align: right;
+				}
+
+		.m-content{
+			font-size: 0.55466667rem;
+			padding:0.85333333rem 0;
+			border-bottom: 1px solid #ededed;
+			line-height: 1.5;
+		}
+
+				.m-content p+p{
+					margin-top: 0.21333333rem;
+				}
+				.m-content img{
+					display: block;
+					max-width: 100%;
+					margin: 0.85333333rem 0;
+				}
+
+		.m-tips{
+			padding: 0rem 0.42666667rem 0 0.42666667rem;
+
+		}
+			.m-tip{
+				position: relative;
+				background: #ededed;
+				padding: 0.85333333rem 0.85333333rem 0.85333333rem 0.64rem;
+			}
+					.m-tipTitle{
+						position: absolute;
+						top: 0;
+						left: 0.42666667rem;
+						background: #00c8c8;
+						padding: 0.42666667rem;
+						color: #fff;
+						font-size: 0.55466667rem;
+					}
+
+							.i-tri-1{
+								position: absolute;
+								bottom: 0rem;
+								left: 0;
+								width: 100%;
+								border-style:solid;
+								border-width:0 1.024rem 0.34133333rem;
+								border-top: 0rem;
+								border-bottom-color:#ededed;
+								border-left-color: transparent;
+								border-right-color: transparent;
+							}
+
+					.u-tip{
+						margin-top: 1.06666667rem;
+					}
+						.u-tip li{
+							position: relative;
+							font-size: 0.55466667rem;
+							padding: 0.128rem 0;
+						}
+						.u-tip li>span{
+							position: absolute;
+							top: 50%;
+							margin-top: -0.128rem;
+							width: 0.256rem;
+							height: 0.256rem;
+							border-radius: 50%;
+							margin-right: 0.42666667rem;
+							background: #00c8c8;
+						}
+						.u-tip li>p{
+							padding-left: 0.64rem;
+						}
+
+.g-question{
+	position: relative;
+	margin-top: 0.42666667rem;
+	background: #fff;
+	padding: 0.42666667rem 0rem;
+	margin-bottom: 2.98666667rem;
+}
+		.m-h1{
+			padding: 0 0.85333333rem 0.42666667rem 0.85333333rem;
+			border-bottom: 1px solid #ededed;
+		}
+			.m-qTitle{
+				border-left: 0.128rem solid #00c8c8;
+				font-size: 0.68266667rem;
+				padding-left: 0.42666667rem;
+				line-height: 1.2;
+			}
+
+
+		.m-question{
+			padding: 0 0.85333333rem;
+			background: #fff;
+		}
+				.m-qItem{
+					position: relative;
+					padding: 0.42666667rem 0.42666667rem 0.85333333rem 0rem;
+					border-bottom: 1px solid #ededed;
+					overflow: hidden;
+					font-size:0.55466667rem;
+					display: block;
+					color: #333;
+				}
+						.i-qDate{
+							position: absolute;
+							right: 0.42666667rem;
+							top: 0.64rem;
+						}
+						.i-qImg{
+							float: left;
+							width: 1.28rem;
+							height: 1.28rem;
+							border-radius: 50%;
+							margin-right: 0.42666667rem;
+						}
+							.i-qImg>img{
+								max-width: 100%;
+								width: 1.28rem;
+								height: 1.28rem;
+								border-radius: 50%;
+							}
+						.u-qIt{
+							overflow: hidden;
+						}
+							.i-qHead{
+								margin-top: 0.21333333rem;
+							}
+									.i-qHead>span:nth-child(1){
+										color: #00c8c8;
+									}
+
+							.i-question{
+								margin-top: 0.64rem;
+
+							}
+
+							.i-answer{
+								position: relative;
+								background: #f2f2f2;
+								color: #fff;
+								margin-top: 1.06666667rem;
+								padding: 0.42666667rem;
+								border-radius: 0.21333333rem;
+							}
+									.i-ank{
+										position: absolute;
+										left: 0.68266667rem;
+										top: -0.42666667rem;
+										border-style: solid;
+										border-width: 0.46933333rem;
+										border-top: 0rem;
+										border-bottom-color: #f2f2f2;
+										border-left-color: transparent;
+										border-right-color: transparent;
+									}
+
+									.i-at{
+										overflow: hidden;
+									}
+											.i-atImg{
+												width: 1.28rem;
+												height: 1.28rem;
+												border-radius: 50%;
+												float: left;
+												margin-right: 0.42666667rem;
+											}
+												.i-atImg>img{
+													width: 1.28rem;
+													height: 1.28rem;
+													border-radius: 50%;
+												}
+											.i-atCenter{
+												overflow: hidden;
+												height: 1.28rem;
+												line-height: 1.28rem;
+												color: #999;
+											}
+
+											.i-atRight{
+												float: right;
+												height: 1.28rem;
+												line-height: 1.28rem;
+												color: #999;
+											}
+									.i-answerTxt{
+										text-indent: 0.85333333rem;
+										color: #666;
+									}
+
+		.u-moreQuestion{
+			text-align: center;
+			padding: 0.42666667rem;
+			font-size: 0.68266667rem;
+			color: #b3b3b3;
+		}
+			.u-moreQuestion>span:nth-child(2){
+				text-decoration: underline;
+			}
+
+.g-sign{
+	position: fixed;
+	bottom: 0;
+	margin-top: 0.42666667rem;
+	background: #fff;
+	width: 100%;
+	text-align: center;
+	padding: 0.42666667rem 0;
+	overflow: hidden;
+	z-index: 10;
+	box-shadow: 0 1px 1px -1px rgba(0, 0, 0, 0.3) inset;
+	max-width: 16rem;
+}
+			.g-sign>div{
+				display: inline-block;
+			}
+						.m-num{
+							padding: 0.42666667rem 0.85333333rem;
+							font-size:0.55466667rem;
+							overflow: hidden;
+							display: inline-block;
+							margin-right: 2.13333333rem;
+						}
+								
+								.m-num span{
+									font-size: 0.768rem;
+								}
+						.m-signBtn{
+							float: right;
+							background: #00c8c8;
+							padding: 0.42666667rem 0.85333333rem;
+							color: #fff;
+							border-radius: 0.21333333rem;
+							margin-right: 2.56rem;
+							font-size: 0.768rem;
+							white-space: nowrap;
+						}
+

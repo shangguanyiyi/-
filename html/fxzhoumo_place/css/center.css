@@ -1,0 +1,161 @@
+body{
+	background: #ededed;
+}
+#g-screen{
+	max-width: 750px;
+	min-width: 320px;
+	margin: 0 auto;
+}
+
+.g-head{
+	position: fixed;
+	width: 100%;
+	height: 44px;
+	background: #ededed;
+	padding: 0 20px 0 20px;
+	overflow: hidden;
+	z-index: 2;
+	box-shadow: 0 -1px 1px -1px rgba(0, 0, 0, 0.3) inset;
+	max-width: 750px;
+}
+		
+		.u-back{
+			position: absolute;
+			display: table;
+			left: 10px;
+			top: 0px;
+			height: 44px;
+			margin-right: 20px;
+		}
+				.u-back>div{
+					display: table-cell;
+					vertical-align: middle;
+					text-align: center;
+					font-size: 16px;
+					color: #666;
+				}
+		.u-title{
+			text-align: center;
+			font-size: 19px;
+			display: inline-block;
+			width: 100%;
+			line-height: 44px;
+		}
+
+		.u-edit{
+			position: absolute;
+			width:44px;
+			height: 44px;
+			right: 0;
+			top: 0;
+			color: #00c8c8;
+			text-align:center;
+			line-height: 44px;
+			font-size: 16px;
+		}
+
+.g-info{
+	background: #fff;
+	text-align: center;
+	padding-top: 64px;
+	padding-bottom: 10px;
+}
+		
+		.m-img{
+			width: 120px;
+			height: 120px;
+			display: inline-block;
+			border-radius: 50%;
+			border: 2px solid #d5d5d5;
+			padding: 2px;
+		}
+				.m-img>img{
+					width: 112px;
+					height: 112px;
+					border-radius: 50%;
+				}
+		
+		.m-userInfo{
+			margin-top: 10px;
+		}
+				.m-userInfo>div{
+					display: inline-block;
+				}
+				.m-userInfo>div:nth-child(1){
+					font-size: 20px;
+					margin-right: 5px;
+				}
+				.m-userInfo>div:nth-child(2){
+					font-size:10px;
+					border-radius: 2px;
+					padding:2px 4px;
+					background: #00c8c8;
+					color: #fff;
+					position: relative;
+					top: -2px;
+				}
+
+		.m-desc{
+			width: 70%;
+			margin: 5px auto;
+			font-size: 13px;
+			color: #8c8c8c;
+		}
+		
+		.m-btnBox{
+			font-size: 18px;
+			color: #fff;
+			margin-top: 20px;
+		}
+
+				.m-favBtn{
+					display: inline-block;
+					width: 32%;
+					padding: 10px;
+					border-radius: 5px;
+					margin-right: 30px;
+					background: #00c8c8;
+					color: #fff;
+					letter-spacing: 0.1em;
+				}
+
+				.m-actBtn{
+					display: inline-block;
+					width: 32%;
+					padding: 10px;
+					border-radius: 5px;
+					background: #00c8c8;
+					color: #fff;
+					letter-spacing: 0.1em;
+				}
+.g-list{
+	margin-top: 10px;
+	padding:0px 10px 10px 10px;
+	background: #fff;
+}	
+
+		.g-list li{
+			border-bottom: 1px solid #ededed;
+			font-size:18px;
+		}
+				.g-list a{
+					position: relative;
+					padding:20px 0px;
+					display: block;
+					color: #333;
+				}
+						.i-to-1{
+							position: absolute;
+							font-size: 16px;
+							color: #d5d5d5;
+							right: 0;
+							top: 19px;
+						}
+						.msgNum{
+							display: inline-block;
+							padding: 0px 8px;
+							background: #00c8c8;
+							color: #fff;
+							border-radius: 10px;
+							margin-left: 20px;
+						}

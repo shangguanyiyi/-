@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title></title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="stylesheet" href="css/animate.css">
+	<script src="js/zepto.min.js"></script>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		body{
+			background:#000;
+		}
+		ul{
+			list-style: none;
+		}
+		li{
+			width:100px;
+			height:100px;
+			overflow: hidden;
+			float:left;
+		}
+		.large{
+			width:100%;
+			height:100%;
+			position: absolute;
+			top:0;
+			left:0;
+			z-index:10;
+			background-color: #000;
+			display:none;
+		}
+		
+	</style>
+</head>
+<body>
+	<ul class="img-container" id="container">
+		
+	</ul>
+	<div class="large animated fadeIn" id="large">
+		<img id="largeImg" src="" alt="">
+	</div>
+	<script>
+		var total=18;
+		// var zWin=$(window);
+		var render=function render(){
+			var padding=2;
+			var winWidth=$(window).width();
+			var picWidth=Math.floor((winWidth-padding*3)/4);//单张图片的宽度
+			var tmpl='';
+			for(var i=1;i<=total;i++){
+				var p=padding;
+				var imgSrc='img/'+i+'.jpg';
+				if(i%4==1){
+					p=0;
+					// console.log(i);
+				}
+				tmpl+='<li data-id="'+i+'" class="animated bounceIn" style="width:'+picWidth+'px;height:'+picWidth+'px;padding-top:'+padding+'px;padding-left:'+p+'px"><canvas class="canvas" id="cvs'+i+'"></canvas></li>';
+				var imgObj=new Image();
+				imgObj.src=imgSrc;
+				// console.log(imgObj);
+				imgObj.index=i;
+				imgObj.onload=function(){
+					var cvs=$('#cvs'+this.index)[0].getContext('2d');
+					cvs.width=this.width;//图片的大小
+					cvs.height=this.height;
+					console.log(this);
+					cvs.drawImage(this,10,10);
+					// console.log(this);
+				}	
+			}
+			$('#container').html(tmpl);
+		}
+		render();
+		var wImage=$('#largeImg');
+		var domImage=wImage[0];
+		console.log(domImage);
+		var loadImg=function(id,callback){
+			$('#large').css({
+				width:$(window).width(),
+				height:$(window).height()
+			}).show();
+			var imgsrc='img/'+id+'.large.jpg';
+			var imageObj=new Image();
+			imageObj.src=imgsrc;
+			imageObj.onload=function(){
+				var w=this.width;
+				var h=this.height;
+				var winWidth=$(window).width();
+				var winHeight=$(window).height();
+				var realW=winHeight*w/h;//真实宽度
+				var paddingLeft=parseInt((winWidth-realW)/2);
+
+				var realH=winWidth*h/w;
+				var paddingTop=parseInt((winHeight-realH)/2);
+				wImage.css('width','auto').css('height','auto');
+				wImage.css('padding-left','0px').css('padding-top','0px');
+				if(h/w>1.2){
+					wImage.attr('src',imgsrc).css('height',winHeight).css('padding-left',paddingLeft);
+				}else{
+					wImage.attr('src',imgsrc).css('width',winWidth).css('padding-top',paddingTop);
+				}
+				callback&&callback();
+			}
+
+			
+
+
+		}
+		var cid;
+		$('#container').delegate('li','tap',function(){
+			var _id=cid=$(this).attr('data-id');
+			loadImg(_id);
+		});
+
+
+		$('#large').tap(function(){
+			$(this).hide();
+		}).swipeLeft(function(){
+			cid++;
+			if(cid>total){
+				cid=total
+			}else{
+				loadImg(cid,function(){
+					// wImage.removeClass('animated bounceInLeft');
+					//动画结束时的事件
+				domImage.addEventListener('webkitAnimationEnd',function(){
+						wImage.removeClass('animated bounceInRight');
+						domImage.removeEventListener('webkitAnimationEnd',function(){});
+					},false);
+					wImage.addClass('animated bounceInRight');
+
+				});
+			}
+		}).swipeRight(function(){
+			cid--;
+			if(cid<1){
+				cid=1;
+			}else{
+				loadImg(cid,function(){
+					// wImage.removeClass('animated bounceInRight');
+				domImage.addEventListener('webkitAnimationEnd',function(){
+						wImage.removeClass('animated bounceInLeft');
+						domImage.removeEventListener('webkitAnimationEnd',function(){});
+					},false);
+					wImage.addClass('animated bounceInLeft');
+				});
+			}
+			// 
+		})
+	</script>
+</body>
+</html>

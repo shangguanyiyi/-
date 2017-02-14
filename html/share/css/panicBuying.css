@@ -1,0 +1,83 @@
+body{
+	min-width: 320px;
+	max-width: 750px;
+	margin:0 auto;
+	background-image: url(../panicBuying_img/h5.jpg);
+	background-size: 100%;
+	position:relative;
+	height:39.226rem;
+}
+.contain{
+	position:relative;
+}
+.pic0{
+	width: 4.626rem;
+	height: 2.933rem;
+	background-image: url(http://img.fxzhoumo.com/xue/18991/18991multipleImages20160226185004mid.jpg);
+	background-repeat: no-repeat;
+	background-size: 100%;
+	position: absolute;
+	top: 8.47rem;
+	left: 0.33rem;
+}
+.pic1{
+	width: 4.626rem;
+	height: 2.933rem;
+	background-image: url(http://img.fxzhoumo.com/xue/9200/9200multipleImages20160226190027mid.jpg);
+	background-repeat: no-repeat;
+	background-size: 100%;
+	position: absolute;
+	top: 12.20rem;
+	right: 0.33rem;
+}
+.pic2{
+	width: 4.626rem;
+	height: 2.933rem;
+	background-image: url(http://img.fxzhoumo.com/xue/65228/65228multipleImages20160229112513mid.jpg);
+	background-repeat: no-repeat;
+	background-size: 100%;
+	position: absolute;
+	top: 15.95rem;
+	left: 0.33rem;
+}
+.pic3{
+	width: 4.626rem;
+	height: 2.933rem;
+	background-image: url(http://img.fxzhoumo.com/xue/23760/23760multipleImages20160229105533mid.jpg);
+	background-repeat: no-repeat;
+	background-size: 100%;
+	position: absolute;
+	top: 19.65rem;
+	right: 0.33rem;
+}
+
+.pic4{
+	width: 4.626rem;
+	height: 2.933rem;
+	background-image: url(http://img.fxzhoumo.com/xue/3573/3573multipleImages20160229113106mid.jpg);
+	background-repeat: no-repeat;
+	background-size: 100%;
+	position: absolute;
+	top: 23.42rem;
+	left: 0.33rem;
+}
+.pic5{
+	width: 4.626rem;
+	height: 2.933rem;
+	background-image: url(http://img.fxzhoumo.com/xue/17922/17922multipleImages20160120221312mid.jpg);
+	background-repeat: no-repeat;
+	background-size: 100%;
+	position: absolute;
+	top: 27.15rem;
+	right: 0.33rem;
+}
+.pic6{
+	width: 4.626rem;
+	height: 2.933rem;
+	background-image: url(http://img.fxzhoumo.com/xue/9200/9200multipleImages20160229105456mid.jpg);
+	background-repeat: no-repeat;
+	background-size: 100%;
+	position: absolute;
+	top: 30.85rem;
+	left: 0.33rem;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>推荐页</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" />
+	<meta name="apple-touch-fullscreen" content="yes" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="format-detection" content="telephone=no" />	
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../css/base.css">
+	<link rel="stylesheet" type="text/css" href="../css/recommend.css">
+	<script type="text/javascript">
+		window.onload=function(){
+			 function getUrlParam(name){
+		        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+		        var r = window.location.search.substr(1).match(reg);
+		        if (r != null)
+		            return unescape(r[2]);
+		        return null;
+   			 }
+			var codeEl=document.getElementById('code');
+			var code=getUrlParam("code");
+			codeEl.innerText=code;
+
+			var backBtn=document.querySelector('.u-back');
+
+			backBtn.addEventListener('click',function(){
+
+				window.history.go(-1);
+			})
+		}
+
+	</script>
+</head>
+<body>
+<div id="g-screen">
+	<div class="g-head bb1">
+		<div class="u-back">
+			<div class="icon">&#xe605;</div><div>返回</div>
+		</div>
+		<div class="u-title">
+			推荐好友
+		</div>
+	</div>
+	<div class="g-main">
+		<div class="m-content">
+			<h1>分享</h1>
+			<h2>与好友分享你的优惠代码</h2>
+			<div class="u-code" id="code"></div>
+			<div class="u-des">好友输入优惠代码将获得5元优惠券,使用后您也将获得5元优惠券奖励</div>
+		</div>
+	</div>
+</div>
+</body>

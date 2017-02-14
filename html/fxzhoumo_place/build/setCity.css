@@ -1,0 +1,85 @@
+body{
+	background: #ededed;
+}
+
+.mt20{
+	margin-top: 0.85333333rem;
+}
+.mt5{
+	margin-top: 0.21333333rem;
+}
+#g-screen{
+	max-width: 32rem;
+	min-width: 13.65333333rem;
+	margin: 0 auto;
+}
+
+.g-head{
+	position: fixed;
+	width: 100%;
+	height: 1.87733333rem;
+	background: #ededed;
+	padding: 0 0.85333333rem 0 0.85333333rem;
+	overflow: hidden;
+	z-index: 2;
+	box-shadow: 0 -1px 1px -1px rgba(0, 0, 0, 0.3) inset;
+	max-width: 32rem;
+}
+		
+		.u-back{
+			position: absolute;
+			display: table;
+			left: 0.42666667rem;
+			top: 0rem;
+			height: 1.87733333rem;
+			margin-right: 0.85333333rem;
+		}
+				.u-back>div{
+					display: table-cell;
+					vertical-align: middle;
+					text-align: center;
+					font-size: 0.68266667rem;
+					color: #666;
+				}
+		.u-title{
+			text-align: center;
+			font-size: 0.81066667rem;
+			display: inline-block;
+			width: 100%;
+			line-height: 1.87733333rem;
+		}
+
+.g-main{
+	padding-top: 2.73066667rem;
+
+}
+
+h1{
+	padding-left: 0.42666667rem;
+}		
+		.m-sure{
+			background: #fff;
+			padding:0.42666667rem 0;
+			position: relative;
+			font-size: 0.68266667rem;
+			padding-left: 0.42666667rem;
+		}
+				.i-flag{
+					position: absolute;
+					right: 0.42666667rem;
+					top: 0.42666667rem;
+					color: #999;
+				}
+
+		.m-select{
+			padding: 0 0.42666667rem;
+			background: #FFf;
+		}
+
+			.m-select li{
+				padding: 0.42666667rem 0;
+				font-size: 0.68266667rem;
+			}
+				.m-select li+li{
+					border-top: 1px solid #ededed;
+				}

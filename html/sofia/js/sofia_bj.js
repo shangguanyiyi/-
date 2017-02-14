@@ -1,0 +1,228 @@
+	var browser = {
+		versions: function() {
+			var u = navigator.userAgent, app = navigator.appVersion;
+			return {//移动终端浏览器版本信息 
+				trident: u.indexOf('Trident') > -1, //IE内核
+				presto: u.indexOf('Presto') > -1, //opera内核
+				webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+				gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+				mobile: !!u.match(/AppleWebKit.*Mobile.*/) || !!u.match(/AppleWebKit/), //是否为移动终端
+				ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+				android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+				iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者QQHD浏览器
+				iPad: u.indexOf('iPad') > -1, //是否iPad
+				webApp: u.indexOf('Safari') == -1 //是否web应该程序，没有头部与底部
+			};
+		}(),
+		language: (navigator.browserLanguage || navigator.language).toLowerCase()
+	}
+   
+	if (browser.versions.ios || browser.versions.iPhone || browser.versions.iPad) {
+		//document.getElementById("alink").setAttribute("href","https://itunes.apple.com/cn/app/fa-xian-zhou-mo-mei-yi-ge/id972982647?l=en&mt=8s"); 
+	}else if (browser.versions.android) {
+  		//document.getElementById("alink").setAttribute("href","http://img.fxzhoumo.com/fxzhoumo_t3.apk"); 
+	}
+
+	function connectWebViewJavascriptBridge(callback) {
+		if (window.WebViewJavascriptBridge) {
+			callback(WebViewJavascriptBridge)
+		} else {
+			document.addEventListener('WebViewJavascriptBridgeReady', function() {
+				callback(WebViewJavascriptBridge)
+			}, false)
+		}
+	}
+	
+	function is_weixin() {
+        var ua = navigator.userAgent.toLowerCase();
+          if (ua.match(/MicroMessenger/i) == "micromessenger") {
+            return true;
+           } else {
+            return false;
+           }
+    }
+
+    var isWeixin = is_weixin();
+$(function(){
+	var str1="sofitelbj1";
+	var str2="sofitelbj3";
+	
+
+	var voucher1;
+	var curr=new Date();
+	var date=curr.getDate();
+	var hours = curr.getHours();
+	var minutes=curr.getMinutes();
+	if(date==27||date==26){
+		str1="sofitelbj1";
+		voucher1=773;
+
+	}
+	if(date==28){
+		str1=str2;
+		voucher1=812;
+		str1.replace(/sofitelbj1/g,str2);
+	}
+	
+
+	
+	if(hours>=11&&hours<24){
+		$('.button').val("立即领取");
+	}else if(hours>0&&hours<11){
+		$('.button').val('即将开始');
+		$('.button').attr('disabled','disabled');
+		$('.button').css({
+			'border':'2px solid #bfbfbf',
+			'background':'#fff',
+			'color':'#666'
+		});
+	}
+
+	$.ajax({
+		url:'/IUserCenterV2Servlet?method=findVouch',
+		type:'post',
+		data:'servicestr={"voucherId":'+voucher1+'}',
+		success:function(data){
+			var json=eval("("+data+")");
+			if(json.code=="success"){
+				if(json.c_count<=0){
+					$('.button').val("已抢光");
+					$('.button').attr('disabled','disabled');
+					$('.button').css({
+						'border':'2px solid #bfbfbf',
+						'background':'#fff',
+						'color':'#666'
+					});
+				}
+			}
+		}
+	})
+	
+	if(isWeixin){
+		$('.fuchuang').show();
+		$('.phone').show();
+		$('.inside').hide();
+		$('.button').bind('click',function(){
+			var phone=$('.phone').val();
+			var tel_RegExp = /^1[3|4|5|7|8]\d{9}$/;
+			if(!(tel_RegExp.test(phone))){
+				alert("请正确填写手机号");
+				return;
+			}
+			$.ajax({
+				url:"/IUserCenterV2Servlet?method=addUserVoucherByMobileVoucherCardNo",
+				type:"post",
+				data:'servicestr={"user_mobile":"'+phone+'","codenumstr":"'+str1+'"}',
+				success:function(data){
+					var obj=eval("("+data+")");
+					if(obj.code=="success"){
+						$('.mask').show();
+						$('.outside').show();
+						$('.inside').hide();
+						$('.register').show();
+					}else{
+						alert(obj.description);
+					}
+				}
+			})
+		})
+	}else{
+		$('.fuchuang').hide();
+		//APP内登录没登录
+		$.ajax({
+			url:'/IUserCenterV2Servlet?method=toUserCenter',
+			type:'get',
+			success:function(data){
+				var json=eval("("+data+")");
+				if(json.code=="success"){
+					//已登录状态
+					$('.phone').hide();
+					$('.button').bind('click',function(){
+						$.ajax({
+							url:'/IUserCenterV2Servlet?method=voucheConvert',
+							type:'post',
+							data:'servicestr={"codenum":"'+str1+'"}',
+							success:function(data){
+								var jsonData=eval("("+data+")");
+								if(jsonData.code=="success"){
+									$('.mask').show();
+									$('.inside').show();
+									$('.outside').hide();
+									$('.register').hide();
+								}else{
+									alert(jsonData.description);
+								}
+							}
+						})
+					})
+				}else{
+					//未登录状态
+					// alert('未登录状态');
+	 				$('.inside').hide();
+	 				$('.button').bind('click',function(){
+	 					var phone=$('.phone').val();
+		 				var tel_RegExp = /^1[3|4|5|7|8]\d{9}$/;
+						if(!(tel_RegExp.test(phone))){
+							alert("请正确填写手机号");
+							return;
+						}
+	 					$.ajax({
+	 						url:"/IUserCenterV2Servlet?method=addUserVoucherByMobileVoucherCardNo",
+							type:"post",
+							data:'servicestr={"user_mobile":"'+phone+'","codenumstr":"'+str1+'"}',
+							success:function(data){
+								var obj=eval("("+data+")");
+								if(obj.code=="success"){
+									$('.mask').show();
+									$('.inside').show();
+									$('.outside').hide();
+									$('.register').hide();
+								}else{
+									alert(obj.description);
+								}
+							}
+	 					})
+	 				})
+				}
+			}
+		})
+
+	}
+	//在任何情况下都执行
+	$('.close').bind('click',function(){
+		$('.mask').hide();
+	})
+
+	$('.activity').attr('href','http://www.fxzhoumo.com/detail/course.html?courseid=6193');
+	
+	if(is_weixin()){//微信浏览器
+		
+	}else{
+		if(browser.versions.ios || browser.versions.iPhone || browser.versions.iPad){
+				connectWebViewJavascriptBridge(function(bridge) {
+				var uniqueId = 1;	
+					$('.activity').bind("click",function(e){
+						// var t_id = $(this).attr('id');
+						// var count = t_id.substr(4,1);
+						var data = '{"activityID":6193,"activityTitle":"学习一下"}'									
+						bridge.send(data, function(responseData) {										
+						})
+						e.preventDefault(); 
+					})
+			})
+		}else if(browser.versions.android){
+				
+				$('.activity').bind("click",function(e){
+					// var t_id = $(e.target).attr('id');
+					// var t_id=$(this).attr('id');
+					// var count = t_id.substr(4,1);
+					window.FXZMAndroidJavaScript.jumpToDetailActivity(6193);  //安卓
+					e.preventDefault(); 
+				})
+
+			
+
+		}
+	}				
+
+})

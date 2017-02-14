@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>爱的闪店~</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" />
+		<meta name="apple-touch-fullscreen" content="yes" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="format-detection" content="telephone=no" />
+		<link rel="stylesheet" href="../css/base.css">
+		<link rel="stylesheet" href="../css/lovingLight.css">
+		<script src="../js/jquery-1.11.3.js"></script>
+		<script src="../js/lovingLight.js"></script>
+		<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+		<script>
+			var _hmt = _hmt || [];
+			(function() {
+			  var hm = document.createElement("script");
+			  hm.src = "//hm.baidu.com/hm.js?24eb420ae8efc291544682273a70a176";
+			  var s = document.getElementsByTagName("script")[0]; 
+			  s.parentNode.insertBefore(hm, s);
+			})();
+		</script>
+	</head>
+	<body>
+			<div class="writeConfession">
+				<input type="text" class="toSomebody" maxlength="10">
+				<textarea class="textarea" name="" id="textarea" placeholder="点击留下你的告白......(最好不要超过50字)" ></textarea>
+				<input type="text" class="fromMe" maxlength="10">
+				<input type="text" class="phone" placeholder="请留下你的手机号...">
+				<a class="btn" id="btn"></a>
+				<p class="tip">在微信生成告白可以保存明信片呦~</p>
+				
+				<div class="wallText">
+					<div class="marqueeBox0 brother">
+						<!-- <div class="commomBig writeConfession0">
+							<p class="common_toSomebody">sdvz</p>
+							<div  class="commonText">sdcv</div>
+							<p class="common_fromMe">sv</p>
+						</div>
+
+						<div class="commomBig writeConfession1">
+							<p class="common_toSomebody">TO:</p>
+							<div  class="commonText">dsafs</div>
+							<p class="common_fromMe">FROM:</p>
+						</div>
+
+						<div class="commomBig writeConfession2">
+							<p class="common_toSomebody">ＴＯ：</p>
+							<div  class="commonText">ｇｄｈｓｋｊｆｌ</div>
+							<p class="common_fromMe">ＦＲＯＭ：</p>
+						</div> -->
+					</div>
+					<div class="marqueeBox1 brother"></div>
+					<div class="marqueeBox2 brother"></div>
+					<div class="marqueeBox3 brother"></div>
+					<div class="marqueeBox4 brother"></div>
+					<div class="marqueeBox5 brother"></div>
+					<div class="marqueeBox6 brother"></div>
+					<div class="marqueeBox7 brother"></div>
+					<div class="marqueeBox8 brother"></div>
+					<div class="marqueeBox9 brother"></div>
+					
+				</div>				
+			</div>
+			<!-- <div class="makeWall">
+				<div class="picSave"><img src="" alt=""></div>
+				<p class="close"></p>
+				<a class="pop_save"></a>
+				<a class="weixin_save"><img src="../lovingLight_img/save_weixin.png" alt=""></a>
+				<p class="pop_share"></p>
+			</div>
+			<div class="mask">
+				<img src="../lovingLight_img/mask_text.png" alt="">
+			</div> -->
+			<div class="mask1">
+				<img src="../lovingLight_img/mask_text1.png" alt="">
+			</div>
+			<div class="fuchuang">
+				<a href="http://a.app.qq.com/o/simple.jsp?pkgname=sm.xue" id="downLoad">
+					<img src="../lovingLight_img/down.png" alt="">
+				</a>
+			</div>
+		<script>
+			var windowWidth = document.body.clientWidth;
+		    window.clientWidth = windowWidth;
+		    //定义body字体大小
+		    document.getElementsByTagName("html")[0].style.fontSize=windowWidth/10+"px";
+		    window.onresize=function(){
+		    var windowWidth = document.body.clientWidth;
+		    document.getElementsByTagName("html")[0].style.fontSize=windowWidth/10+"px";
+		    };
+		   
+		    $(function(){
+	            wx_url=escape(window.location.href);
+	            $.ajax({
+	                url:"/WeixinServlet?method=weixinPower",
+	                type:"post",
+	                data:'servicestr={"wei_url":"'+wx_url+'"}',  
+	                dataType:"html",
+	                success:function(data){
+	                    var json = eval("("+data+")");
+	                    if(json.code=="success"){
+	                        wx.config({
+	                            debug: false, 
+	                            appId: 'wx47987fa108b8329b', 
+	                           // appId:'wxd470058f4535a61d', //mammachoice
+	                            timestamp:json.timestamp,
+	                            nonceStr: json.nonceStr,
+	                            signature: json.signature,
+	                            jsApiList: ['onMenuShareTimeline','onMenuShareAppMessage','onMenuShareQQ','onMenuShareWeibo','onMenuShareQZone']
+	                        });
+
+	                        var shareObject = {
+	                            title: '喂，我有句话想告诉你！',
+	                            desc: '快点开看，趁我还没有后悔。',
+	                            link: window.location.href,
+	                            imgUrl: 'http://www.fxzhoumo.com/operation/lovingLight_img/share.jpg'
+	                        };
+	                        var shareFriend={
+	                            title:'喂，我有句话想告诉你！',
+	                            link: window.location.href,
+	                            imgUrl: 'http://www.fxzhoumo.com/operation/lovingLight_img/share.jpg'
+	                        }
+	                        wx.ready( function (){
+	                            wx.onMenuShareTimeline(shareFriend);   //朋友圈
+	                            wx.onMenuShareAppMessage(shareObject);  //朋友
+
+	                        });
+	                    }else{
+	                        alert(json.description);
+	                    }
+	                    
+	                }
+	            });
+    		});
+    		
+		</script>
+	</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>选择城市</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" />
+	<meta name="apple-touch-fullscreen" content="yes" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="format-detection" content="telephone=no" />	
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../css/base.css">
+		<link rel="stylesheet" type="text/css" href="../css/common.css">
+	<link rel="stylesheet" type="text/css" href="../css/setCity.css">
+	<script type="text/javascript" src="http://api.map.baidu.com/api?type=quick&amp;ak=kkioZxA5fXuwI5AQ3hbc3Qul&amp;v=1.0"></script>
+	<script type="text/javascript" src="../js/lib/require.min.js" data-main="../js/main/setCity"></script>
+
+</head>
+<body>
+<div id="g-screen">
+	<div class="g-head bb1">
+		<div class="u-back">
+			<div class="icon">&#xe605;</div><div>返回</div>
+		</div>
+		<div class="u-title">
+			选择城市
+		</div>
+	</div>
+	<div class="g-main">
+		
+		<h1>当前城市</h1>
+		<div class="m-sure mt5">
+			<span class="mr5">GPS定位</span>
+			<span class="i-address" id="address">北京</span>
+			<div class="icon i-flag">&#xe613;</div>
+		</div>
+		<h1 class="mt20">其他城市</h1>
+		<ul class="m-select mt5" id="cityContainer">
+			<li cityid="0">北京</li>
+			<li cityid="1">上海</li>
+		</ul>
+	</div>
+	<div id="map"></div>
+</div>
+</body>
+</html>

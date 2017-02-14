@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+	<meta name="apple-touch-fullscreen" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<title>详情页</title>
+	<link rel="stylesheet" href="../css/particulars_test.css">
+	<link rel="stylesheet" href="../css/reset_s.css">
+	<link rel="stylesheet" href="../css/swiper.min.css">
+	<link href='http://api.youziku.com/webfont/CSS/56c67129f629d808fcb9964a' rel='stylesheet' type='text/css' />
+	<script src="../js/common/jquery-1.11.3.min.js"></script>
+	<script src="../js/main/particulars_test.js"></script>
+</head>
+<body>
+<div class="contain" id="contain">
+		<nav class="nav" id="nav">   	<!-- 页面最顶层 -->
+			<div class="nav_position">
+				<div class="company_logo">
+					<img src="../images/company_logo.png" alt="">
+				</div>	
+				<div class="left_arrow">
+					<a href="#" onclick="javascript:history.go(-1)">
+						<img src="../images/left_arrow.png" alt="">
+					</a>
+				</div>
+			</div>
+		</nav>
+		<section class="particulars_notice_change particulars_notice_fixed" id="particulars_notice_change_fixed">  
+			<div class="particulars in_bl">
+				<p class="select" id="particulars_fixed">详情</p>
+			</div>
+
+			<div class="notice in_bl">
+			   <p id="notice_fixed">须知</p>
+		    </div>
+		</section>
+		<header class="scroll_img">   <!-- 轮播图 -->		
+				<div class="swiper-container">
+				  	<ul class="swiper-wrapper" id="swiper-wrapper">
+						<li id="loading">
+					    	<a>
+					    		<img src="../images/loading.gif" alt="" class="scroll_img">	
+					    	</a>
+					    </li>
+					  <!--   <li class="swiper-slide blue-slide">
+					    	<img src="images/scroll_img.png" alt="">
+					    </li>
+					    <li class="swiper-slide red-slide">
+					    	<img src="images/scroll_img.png" alt="">
+					    </li>
+					    <li class="swiper-slide orange-slide">
+					    	<img src="images/scroll_img.png" alt="">
+					    </li> -->
+				  	</ul>
+				 	<div class="swiper-pagination"></div>
+				</div>      <!-- swiper框架轮播图 -->
+		</header>
+		<section class="apply_stoppage_time">   <!-- 报名时间截止 -->
+			<div class="apply_top">
+				<div class="apply_text_time in_bl">
+					<p class="apply_explain in_bl" id="course_title"></p>
+					<p class="stoppage_time" id="course_datetime"></p>
+				</div>
+				<!-- <div class="logo_grayicon in_bl" id="logo_grayicon">
+					<img src="images/logo_grayicon.png" alt="" id="">
+				</div> -->
+			</div>			
+			<p class="price">
+				<span id="course_price_suffix" class="css19c53533a4397"></span>
+				<span id="course_price"></span>
+				<span id="course_old_price"></span>
+			</p>
+		</section>
+		<section class="map clear">    <!-- 地图 -->
+		    <a href="" id="course_place">
+				<div class="map_icro fl">
+					<img src="../images/map_icro.png" alt="">
+				</div>
+				<div class="location fl" id="course_detailplace">
+					
+				</div>
+				<div class="map_right_arrow">
+					
+						<img src="../images/right_arrow.png" alt="">
+					
+				</div>
+			</a>
+		</section>
+		<section class="activity_bright_sport">  <!-- 活动亮点 -->
+			<ul class="activity_list" id="activity_list">
+				<li id="course_lightspot_type"></li>
+				<!-- <li>gg很多人都喜欢萌萌的小多肉非常长的一句话可能导致换行也许会出现不一样的效果</li>
+				<li>很多人都喜欢萌萌的小多肉</li>
+				<li>很多人都喜欢萌萌的小多肉</li>
+				<li>很多人都喜欢萌萌的小多肉</li>
+				<li>很多人都喜欢萌萌的小多肉</li>
+				<li>很多人都喜欢萌萌的小多肉</li>
+				<li>我是最后一句的标记很多人都喜欢萌萌的小多肉</li>
+				<li>发现好多好玩的</li> -->
+			</ul>
+		</section>
+		<!-- 详情须知 -->
+		<section class="particulars_notice_change" id="particulars_notice_change">  		
+				<div class="particulars in_bl">
+					<p class="select" id="particulars">详情</p>
+				</div>		
+				<div class="notice in_bl">
+					<p id="notice">须知</p>
+				</div>
+		</section>
+		<section class="organizer clear" id="organizer">  <!-- 组织者 -->
+			<div class="organizer_headimg fl" >
+				<img src="" alt="" id="course_teacher_photo">
+			</div>
+			<div class="organizer_text fl">
+				<p><span id="course_teacher_nickname"></span><span id="course_teacher_type"></span></p>
+				<p id="course_teacher_oneabstract"></p>
+			</div>
+			<div class="organizer_right_arrow fr">
+				<a href="javascript:;">
+					<img src="../images/right_arrow.png" alt="">
+				</a>
+			</div>
+		</section>
+		<section class="image_text" id="course_description">
+			<p class="des_img_text" id="des_img_text">
+	       <!--  <div class=" activity_particulars_line">
+				<img src="images/activity_particulars_line.jpg" alt="">
+			</div> -->
+			<!-- <p class="image_text_first_module">第一个模块</p> -->
+			<!-- <img src="images/image_text_page.png" alt=""> -->
+			<!-- <img src="images/image_text_page.png" alt="" class="image_text_img">
+			<p class="image_text_text">感恩节(Thanksgiving Day),只看名字就蕴含着深刻意义的特殊日子，每个人心中都会有自己要感恩的人，我们【发现周末】也不例外哦。【发现周末】最要感恩的人让人是我们最可爱的用户啦！</p> -->
+			<!-- <div class="environment_line">
+				<img src="images/environment_line.jpg" alt="">
+			</div>
+			<img src="images/image_text_page.png" alt="" class="image_text_img">
+			<p class="image_text_text">感恩节(Thanksgiving Day),只看名字就蕴含着深刻意义的特殊日子，每个人心中都会有自己要感恩的人，我们【发现周末】也不例外哦。【发现周末】最要感恩的人让人是我们最可爱的用户啦！</p>
+			<img src="images/image_text_page.png" alt="" class="image_text_img">
+			<p class="image_text_text">感恩节(Thanksgiving Day),只看名字就蕴含着深刻意义的特殊日子，每个人心中都会有自己要感恩的人，我们【发现周末】也不例外哦。【发现周末】最要感恩的人让人是我们最可爱的用户啦！</p>-->
+			</p> 
+		</section>
+		<section class="warm_remind" id="warm_remind">
+			<ul class="activity_list" id="activity_list_remind">
+				<li class="warm_remind_first_li">温馨提示</li>
+			<!-- <ul class="warm_remind_img">
+				<img src="images/warm_remind_img.jpg" alt="">
+				<li>测试勿用</li>
+				<img src="images/warm_remind_img.jpg" alt="">
+				<li>测试勿用</li>
+				<img src="images/warm_remind_img.jpg" alt="">
+				<li>测试勿用</li>
+
+			</ul>
+			<ul class="warm_remind_img">
+				<img src="images/warm_remind_img.jpg" alt="">
+				<li>测试勿用</li>
+				<img src="images/warm_remind_img.jpg" alt="">
+				<li>测试勿用</li>
+				<img src="images/warm_remind_img.jpg" alt="">
+				<li>测试勿用</li>	 -->	
+			</ul>
+			<ul id="course_hint_photo_arr">
+				
+			</ul>
+		</section>
+		<section class="recommend_activity" >
+				<p class="title" >推荐活动</p>
+					<div class="activity_out clear">
+						<a  class="recommend_contain clear" href="javascript:;" id="local_href_0">
+							<div class="recommend_bigimg">
+								 <img src="../images/loading.gif" alt="" id="headphoto_0">
+							</div>
+							<div class="recommend_txt">
+								<p id="title_0"></p>
+								<p id="time_0"></p>
+								<p id="address_0"></p>							
+							</div>
+						</a>
+						<div class="icon_price">
+							<p id="courseprice_suffix_0" class="css19c53533a4397"></p><p id="prices_unit_0"></p>
+						</div>
+					</div>
+					<div class="line"></div>  <!-- 中间分隔线 -->
+					<div class="activity_out clear">
+						<a  class="recommend_contain clear" href="javascript:;" id="local_href_1">
+							<div class="recommend_bigimg">
+								 <img src="../images/loading.gif" alt=""  id="headphoto_1">
+							</div>
+							<div class="recommend_txt">
+								<p id="title_1"></p>
+								<p id="time_1"></p>
+								<p id="address_1"></p>
+							</div>
+						</a>
+							<div  class="icon_price">
+								<p id="courseprice_suffix_1" class="css19c53533a4397"></p><p id="prices_unit_1"></p>
+							</div>
+					</div>
+					<div class="line"></div>    <!--  中间分隔线 -->
+					<div class="activity_out dajust_bottom clear">
+						<a  class="recommend_contain clear" href="javascript:;" id="local_href_2">
+							<div class="recommend_bigimg">
+								 <img src="../images/loading.gif" alt=""  id="headphoto_2">
+							</div>
+							<div class="recommend_txt">
+								<p id="title_2"></p>
+								<p id="time_2"></p>
+								<p id="address_2"></p>
+							</div>
+						</a>
+							<div  class="icon_price">
+								<p id="courseprice_suffix_2" class="css19c53533a4397"></p><p id="prices_unit_2"></p>
+							</div>
+					</div>
+					<div class="line"></div>     <!--  中间分隔线 --> 
+		</section> 
+		<footer class="apply clear" id="apply">   <!-- 底部 -->
+				<div class="surpluses fl">
+					<span  id="course_havecount"></span>	
+				</div>
+				<div class="apply_btn fl">
+					<a href="javascript:;" id="course_isapplydes">立即报名</a>
+				</div>
+		</footer>
+		<!-- 遮罩层 -->
+    <div class="cd-popup" role="alert" id="cd-popup">
+      <div class="cd-popup-container">
+        <div class="mask_price">
+          <img src="../images/mask_logo.png" alt="">
+          <input type="hidden" id="course_price_id" />
+          <input type="hidden" id="courseid" />
+        </div>
+        <div class="mask_list">
+          <ul class="ul_list" id="ul_list">
+	       <!-- 		<li class="radio" >
+			  
+			    	<span class="opt-text"><u class="spe_text">1元1位</u>g单人套餐 (剩余0份)</span>
+			    	<input type="radio"  name="sport" value="cba">
+		            <label name="cba" for="cba"></label>
+                </li>
+
+        		<li class="radio" >
+	    
+			    	<span class="opt-text"><u class="spe_text">1元1位</u>g单人套餐 (剩余0份)</span>
+			    	<input type="radio"  name="sport" value="cba">
+		            <label name="cba" for="cba"></label>
+                </li> -->
+          </ul>
+        </div>
+         <ul class="cd-buttons"><!-- 立即支付按钮-->
+          <li>
+            <a href="javascript:;" class="mask_a1" id="mask_a1">
+              <img src="../images/blue_click.png" alt="" >
+            </a>
+          </li>
+        </ul>
+        <a href="#" class="cd-popup-close img-replace">关闭</a>
+      </div> <!-- cd-popup-container -->
+    </div> <!-- cd-popup -->
+</div>
+	<!-- 页面分享 -->
+<!-- 	<div class="am-share">
+	  <h3 class="am-share-title">分享到</h3>
+	  <ul class="am-share-sns">
+	    <li><a href="javascript:;"> <img src="images/weixin.png" class="share-icon-weibo"> <span>微信好友</span> </a> </li>
+	    <li><a href="#"> <img src="images/share.png" class="share-icon-weibo"> <span>朋友圈</span> </a> </li>
+	    <li><a href="#"> <img src="images/sina.png" class="share-icon-weibo"> <span>新浪微博</span> </a> </li>
+	  </ul>
+	  <div class="am-share-footer"><button class="share_btn">取消</button></div>
+	</div> -->
+ <script src="../js/common/swiper.min.js"></script>
+</body>
+</html>
+

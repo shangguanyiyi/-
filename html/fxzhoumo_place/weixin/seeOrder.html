@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>订单查询</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" />
+	<meta name="apple-touch-fullscreen" content="yes" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="format-detection" content="telephone=no" />	
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../css/base.css">
+	<link rel="stylesheet" type="text/css" href="../css/common.css">
+				<link rel="stylesheet" href="../css/dialog.css">
+	<link rel="stylesheet" type="text/css" href="../css/seeOrder.css">
+	<script type="text/javascript" src="../js/lib/require.min.js" data-main="../js/main/seeOrder"></script>
+</head>
+<body>
+<div id="g-screen">
+	<input type="hidden" id="openid">
+	<div class="g-head bb1">
+		<div class="u-title">
+			订单查询
+		</div>
+	</div>
+	<div class="g-main">
+		<form method="post" id="loginForm">
+			<div class="u-account">
+				<label id="" for="courseName">活动名</label>
+				<div class="ovh">
+					<input type="text" placeholder='活动名'  autocomplete=off  name="course_title" id="courseName">
+				</div>
+			</div>
+			<div class="u-account">
+				<label id="" for="start">订单开始日期</label>
+				<div class="ovh">
+					<input type="date" placeholder='预订开始日期' name="order_start_time"  autocomplete=off id="start">
+				</div>
+			</div>
+			<div class="u-account">
+				<label for="end" id="">订单结束日期</label>
+				<div class="ovh">
+					<input type="date" id="end" placeholder="预订结束日期" name="order_end_time" autocomplete=off>
+				</div>										
+			</div>
+			<div class="u-account">
+				<label id="" for="start">活动开始日期</label>
+				<div class="ovh">
+					<input type="date" placeholder='预订开始日期'  autocomplete=off name="course_start_time" id="course_start">
+				</div>
+			</div>
+			<div class="u-account">
+				<label for="end" id="">活动结束日期</label>
+				<div class="ovh">
+					<input type="date" id="course_end" placeholder="预订结束日期" name="course_end_time" autocomplete=off>
+				</div>										
+			</div>
+			<input type="submit" class="m-loginBtn" value="确定">
+				
+		</form>
+		<table>
+			<thead>
+				<tr>
+					<th>活动名</th>
+					<th>开课日期</th>
+					<th>金额</th>
+					<th>用户昵称</th>
+					<th>用户手机号</th>
+					<th>份数</th>
+					<th>支付来源</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody>
+		
+			</tbody>
+			<script type="text/template" id="tpl">
+				<%var i,len;%>
+				<%for(i=0,len=order_arr.length;i<len;i++){%>
+						<%var elem=order_arr[i];%>
+						<tr>
+							<td><a href="http://www.fxzhoumo.com/detail/course.html?courseid=<%=elem.order_course_id%>"><%=elem.order_course_title%></a></td>
+							<td><%=elem.order_course_time%></td>
+							<td><%=elem.order_money%></td>
+							<td><%=elem.order_nickname%></td>
+							<td><%=elem.order_mobile%></td>
+							<td><%=elem.order_good_count%></td>
+							<td><%=elem.order_source&&elem.order_source%></td>
+							<td>
+								<a href="order.html?orderid=<%=elem.orderbill_id%>&courseid=<%=elem.order_course_id%>">查看</a>
+							</td>
+						</tr>
+				<%}%>
+			</script>
+
+		</table>
+	</div>
+
+</div>	
+
+
+</body>

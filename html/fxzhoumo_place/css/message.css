@@ -1,0 +1,48 @@
+body{
+	background: #ededed;
+}
+
+.i-msgNum{
+	margin-left: 50px;
+	background: #00c8c8;
+	border-radius: 10px;
+	padding: 1px 5px;
+	display: inline-block;
+	color: #fff;
+	font-size: 10px;
+	position: relative;
+	top: -2px;
+}
+
+.g-msgInfoItem{
+	padding-left: 10px;
+	padding-right: 10px;
+}
+	.g-msgInfoItem a{
+		color: #333;
+	}
+
+	.g-msgInfoItem>h1{
+		border-left: 4px solid #00c8c8;
+		padding-left: 5px;
+		line-height: 1;
+	}
+
+	.m-uInfo .u-uInfo{
+		font-size: 13px;
+		color: #8c8c8c;
+	}
+
+	.g-msgInfoItem>a{
+			padding-bottom: 10px;
+		border-bottom: 1px solid #b3b3b3;
+		margin-bottom: 10px;
+		display: block;
+	}
+
+	h1{
+		padding-left: 10px;
+		font-size: 18px;
+		border-left: 3px solid #00c8c8;
+	
+	}

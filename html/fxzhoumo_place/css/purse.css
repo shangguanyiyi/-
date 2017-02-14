@@ -1,0 +1,35 @@
+body{font-size: 62.5%;background: #ededed;}
+
+
+.g-main{position: absolute;width: 100%;height: 100%;top: 0;left: 0;}
+.u-head{height: 40px;}
+.g-chartArea{width:100%;}
+.g-chartArea img{max-width:100%;}
+.g-btnArea a{width: 40%;border:1px solid #22c064; border-radius: 5px;color: #22c064;text-align: center;padding: 8px 0;display: block;font-size:16px;margin: 0 auto;}
+.g-btnArea a+a{margin-left: 5%;}
+
+.g-water{background: #fff;overflow: hidden;font-size: 13px;margin-top: 10px;}
+.g-water ul{padding: 0 20px;}
+
+.g-water li{padding: 20px 0 5px 0;position: relative;}
+.g-water li+li{border-top: 1px solid #ccc;}
+.u-detailDes{overflow: hidden;}
+.u-moneyNum{float: right;margin-left: 10px;}
+.u-moneyNum>div{display: inline-block;}
+.u-time{font-size: 10px;color: #999;}
+#i-back{position: absolute;top:0px;left:0px;width: 40px;height: 40px;}
+#loadBtn{padding:10px;font-size:1.6em;display:none;}
+#load{display:none;}
+#ff{width:40%;margin-left:3%;}
+#ff input{width:100%;background-color: #ebebeb;border:1px solid #22c064; border-radius: 20px;color: #22c064;text-align: center;padding: 10px 0;display: block;font-size: 2em;}
+
+.imgBox{width:40%;}
+.allNum{position:absolute;width:100%;height:100%;font-size:1.6em;top:0;display:none;}
+.nav{width:60%;overflow: hidden;margin:  0 auto;text-align: center;}
+.nav li{font-size: 13px;display: inline-block;}
+.sr{width:8px;height:8px;border-radius:50%;background:#f7941d;margin-right:3px;margin-left:3px;margin-top: 2px;}
+.hb{width:8px;height:8px;border-radius:50%;background:#809fe7;margin-right:3px;margin-left:3px;margin-top: 2px;}
+.fk{width:8px;height:8px;border-radius:50%;background:#e0483e;margin-right:3px;margin-left:3px;margin-top: 2px;}
+.cz{width:8px;height:8px;border-radius:50%;background:#87d6a8;margin-right:3px;margin-left:3px;margin-top: 2px;}
+.zc{width:8px;height:8px;border-radius:50%;background:#ccc;margin-right:3px;margin-left:3px;margin-top: 2px;}
+.tx{width:8px;height:8px;border-radius:50%;background:#1352e2;margin-right:3px;margin-left:3px;margin-top: 2px;}

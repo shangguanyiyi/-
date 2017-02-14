@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<title>推荐发现周末送好礼</title>
+	<meta name="apple-touch-fullscreen" content="yes" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="format-detection" content="telephone=no" />	
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../css/base.css">
+	<link rel="stylesheet" type="text/css" href="../css/pro_search.css">
+		<script>
+			var _hmt = _hmt || [];
+			(function() {
+			  var hm = document.createElement("script");
+			  hm.src = "//hm.baidu.com/hm.js?0489886a521d4b5046689c0b7404dafe";
+			  var s = document.getElementsByTagName("script")[0]; 
+			  s.parentNode.insertBefore(hm, s);
+			})();
+		</script>
+	<script src="../js/util/flexible.js"></script>
+	<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+	<script type="text/javascript" src="../js/lib/require.min.js" data-main="../js/main/pro_search"></script>
+</head>
+<body>
+<div id="g-screen">
+	<div class="g-head">
+			<div class="u-back">返回前一页</div>
+		</div>
+	<div class="g-main">
+		
+		<input type="tel" placeholder="请输入手机号" data-pattern="^1[3,4,5,7,8]\d{9}$" name="mobile" id="mobile" />
+		<div class="codeArea">
+			<button class="fr codeBtn" id="codeBtn">获取验证码</button>
+			<div class="ovh codeBox">
+				<input type="tel" name="code" id="code" value="" placeholder="请输入验证码" />
+			</div>
+		</div>
+		<button id="btn">查询</button>
+		
+		<div class="numArea">
+			<p>当前推荐成功人数：<span id="num"></span></p>
+			<p>当前排名：<span id="seat"></span></p>
+		</div>
+		
+	</div>
+	
+	
+</div>
+
+
+
+</body>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+	<title>专题页</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />	
+<link rel="stylesheet" type="text/css" href="../css/reset.css">
+<link rel="stylesheet" type="text/css" href="../css/base.css">
+<link rel="stylesheet" type="text/css" href="../css/common.css">
+<link rel="stylesheet" type="text/css" href="../css/feature.css">
+<script type="text/javascript" src="../js/lib/require.min.js" data-main="../js/main/feature"></script>
+</head>
+<body>
+<div id="g-screen">
+	
+
+</div>
+
+
+	
+	<script type="text/template" id="tpl">
+		<div class="g-head">
+			<div class="u-back">
+				<div class="icon">&#xe605;</div><div>返回</div>
+			</div>
+			<div class="u-title">
+				<%=dissertation_title%>
+			</div>
+		</div>
+		<div class="g-main" id="container">
+			
+		 	<div class="m-enTitle">
+				<div class="m-titleImgBox">
+					<img src="../images/loading.gif" data-src="<%=config.imgBaseURL%><%=dissertation_small_photo%>" alt="">
+				</div>
+				<p>
+					<%=dissertation_contents%>
+				</p>
+			</div>
+
+			<div class="m-page">
+				<%var i,len;%>
+				<%for(i=0,len=dissertation_cell_arr.length;i<len;i++){%>
+					<%var elem=dissertation_cell_arr[i];%>
+					<div class="m-item">
+						<div class="m-itemImg">
+							<img src="../images/loading.gif" data-src="<%=config.imgBaseURL%><%=elem.dissertation_cell_small_photo%>" alt="">
+						</div>
+						<p>
+							<%=elem.dissertation_cell_contents%>
+						</p>
+						<%if(elem.dissertation_cell_type==0){%>
+							<a href="../detail/course.html?courseid=<%=elem.dissertation_cell_address%>"></a>
+						<%}else if(elem.dissertation_cell_type==1){%>
+							<a href="<%=elem.dissertation_cell_address%>"></a>
+						<%}%>
+					</div>
+				<%}%>
+			</div> 
+
+
+
+		</div>	
+	</script>
+</body>
+</html>

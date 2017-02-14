@@ -1,0 +1,103 @@
+body{
+	max-width:750px;
+	min-width:320px;
+	margin:0 auto;
+}
+.section{
+	/*background:url(../storyFilm_img/background.png) no-repeat;
+	background-size: 100% 100%;*/
+	/*padding-bottom: 20%;*/
+}
+.img_sigleComment{
+	margin-bottom:-8%;
+}
+.commentPanel{
+	width:100%;
+}
+.comment{
+	width:100%;
+	overflow: hidden;
+	margin:0 auto;
+	padding:3.8% 10%;
+	background: url(../storyFilm_img/background.png) no-repeat;
+	background-size:100%;
+}
+.sigle_comment{
+	width:100%;
+	overflow: hidden;
+	margin:0 auto;
+	/*padding:3.8% 10%;*/
+	padding:3.8% 5%;
+	color:#7a1f1e;
+	background: url(../storyFilm_img/background.png) no-repeat;
+	background-size:100%;
+	/*border:1px solid red;*/
+}
+.left,.right{
+	float:left;
+}
+.left{
+	/*width:30%;*/
+	width:20%;
+	text-align: center;
+	display:table;
+	vertical-align: middle;
+	position: relative;
+	/*border:1px solid red;	*/
+}
+.right{
+	width:80%;
+	position: relative;
+	border-radius: 15px;
+	padding:3% 0 3% 3%;
+	border:1px solid #7a1f1e;
+	vertical-align: middle;
+	background:#fff;
+}
+.amazed{
+	width:60%;
+}
+.divHeart{
+	width:15%;
+	position:absolute;
+	right:2%;
+	bottom:1%;
+	text-align: center;
+}
+.heart{
+	width:40%;
+}
+.text_comment{
+	width:85%;
+	text-align: left;
+	color:#7a1f1e;
+	padding:7%;
+	font-size:.8rem;
+}
+
+.moreComment{
+	margin:-3% 0;
+}
+.fuchuang{
+	position: fixed;
+	bottom:-5px;
+	left:0;
+}
+.back{
+	background-color: #999;
+	color:#fff;
+	opacity: .68;
+	position:fixed;
+	bottom:11%;
+	left:0;
+	text-align: center;
+	border-radius: 5px;
+	padding:1%;
+	width:50px;
+}
+.finish{
+	width:100%;
+	padding:10%;
+	background: url(../storyFilm_img/background.png) no-repeat;
+	background-size:100%;
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app="myAppModule">
+	<head lang="en">
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<script src="js/angular.js"></script>
+	</head>
+	<body>
+	<div class="container" ng-controller="myCtrl">
+	<p ng-if="isMember" class="alert alert-danger">会员专区：Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis asperiores magnam mollitia repellat alias. Est, non ullam nostrum cupiditate laborum deserunt dignissimos possimus unde explicabo error culpa consequuntur sequi adipisci!</p>
+	<table>
+		<thead>
+			<tr>
+				<th>序号</th>
+				<th>姓名</th>
+				<th>年龄</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+		</tbody>
+	</table>	
+		
+	
+	<script>
+		angular.module('myAppModule',[])
+		.controller('myCtrl',function($scope,$interval){
+			$scope.isMember=true;
+			$interval(function(){
+				$scope.isMember=!$scope.isMember;
+			},500);
+
+			$scope.list=[
+				{'name':'Mary','salary':5000},
+				{'name':'Tom','salary':4000},
+				{'name':'Meixi','salary':3000},
+
+			]
+
+			$interval(function(){
+
+			})
+		})
+	</script>
+	</body>
+</html>

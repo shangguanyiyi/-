@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>个人中心</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" />
+	<meta name="apple-touch-fullscreen" content="yes" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="format-detection" content="telephone=no" />	
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../css/base.css">
+	<link rel="stylesheet" type="text/css" href="../css/edit.css">
+	<script type="text/javascript" src="../js/lib/require.min.js" data-main="../js/main/edit"></script>
+</head>
+<body>
+<div id="g-screen">
+	<div class="g-head">
+		<div class="u-back">
+			<div class="icon">&#xe605;</div><div>返回</div>
+		</div>
+	</div>
+	<div class="g-info" id="info">
+	
+	</div>
+	<script type="text/template" id="tpl">
+			<div class="m-top">
+			<div class="m-img">
+				<img src="<%=config.imgBaseURL%><%=user_photo%>" id="headImg" alt="">
+				<div class="icon i-btn"><div>&#xe619;</div></div>
+				<input type="file" id="in">
+			</div> 
+		</div>
+
+		<fieldset>
+			<form>
+				<div class="m-nickName">
+					<label id="label_nickName">昵称</label>
+					<input type="text" id="nickName" autocomplete='off' value="<%=user_nickname%>">
+				</div>
+				<div class="m-sign">
+					<label id="label_sign">签名</label>
+					<input type="text" id="sign" autocomplete='off' value="<%=user_oneabstract%>">
+				</div>
+				<input  class="m-btn"  type="submit" value="保存"/>
+			</form>
+		</fieldset>
+
+	</script>
+	
+</div>
+</body>
+</html>

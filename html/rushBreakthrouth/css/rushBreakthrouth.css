@@ -1,0 +1,359 @@
+body{
+	min-width:320px;
+	max-width:750px;
+	margin:0 auto;
+	background: #373936;
+}
+.button0_0{
+	background-color: transparent;
+	width:5rem;
+	height:1rem;
+}
+.chooseOne .current,.chooseTwo .cur,.chooseThree .selected{
+	background:url(../rushBreakthrouth_img/current.png) no-repeat;
+	background-size:100% 100%;
+	width:.5rem;
+	height:.5rem;
+	z-index:10;
+}
+.section0{
+    background: url(../rushBreakthrouth_img/background0.jpg) no-repeat;
+    background-size: 100% 100%;
+    width:10rem;
+    height:17.786rem;
+    position: relative;
+    margin-bottom:10%;
+}
+.section0 button{
+	position:absolute;
+	left:2.5rem;
+	top:5.5rem;
+}
+.section0 .havemany{
+	width:60%;
+	position: absolute;
+	top:7.7rem;
+	left:2rem;
+}
+.number{
+	color:#ffbd44;
+	font-size:.4rem;
+	font-family: "微软雅黑";
+	position: absolute;
+	top:7.68rem;
+	left:3.3rem;
+	text-align:center;
+}
+.bigDiv{
+	width:100%;
+	height:20px;
+	background: #373936;
+}
+.section1{
+	background: url(../rushBreakthrouth_img/numberOne1.jpg) no-repeat;
+    background-size: 100% 100%;
+    width:10rem;
+    height:17.786rem;
+    position: relative;
+}
+.section2{
+	background: url(../rushBreakthrouth_img/numberTwo1.jpg) no-repeat;
+    background-size: 100% 100%;
+    width:10rem;
+    height:17.786rem;
+    position: relative;
+}
+.section3{
+	background: url(../rushBreakthrouth_img/numberThree1.jpg) no-repeat;
+    background-size: 100% 100%;
+    width:10rem;
+    height:17.786rem;
+    position: relative;
+}
+.section4{
+	background: url(../rushBreakthrouth_img/section4.png) no-repeat;
+    background-size: 100% 100%;
+    width:10rem;
+    height:17.786rem;
+    position: relative;
+    text-align:center;
+}
+.section4 input{
+	background:transparent;
+	border:2px solid transparent;
+	border-radius: 8px;
+	width:85%;
+	padding:3% 0;
+	text-align: center;
+	color:#fbbd44;
+	font-weight:bold;
+	-webkit-appearance:none;
+}
+.section4 input:nth-child(1){
+	position:absolute;
+	top:9.65rem;
+	left:.85rem;
+
+}
+.section4 input:nth-child(2){
+	position:absolute;
+	top:11.60rem;
+	left:.85rem;
+}
+.section4 input:nth-child(3){
+	position:absolute;
+	bottom:3.015rem;
+	left:2.3rem;
+	width:55%;
+}
+.A,.B{
+	width:15px;
+	height:15px;
+	position:absolute;
+	bottom:3rem;
+	left:2.75rem;
+	background: url(../rushBreakthrouth_img/nocurrent.png) no-repeat;
+	background-size: 100% 100%;
+}
+.B{
+	position:absolute;
+	bottom:3rem;
+	left:5.2rem;
+}
+.baoming{
+	background:url(../rushBreakthrouth_img/current.png) no-repeat;
+	background-size:100% 100%;
+	width:15px;
+	height:15px;
+	z-index:10;
+}
+.getVoucher{
+	position: fixed;
+	left:0;
+	top:0;
+	background-color:rgba(0,0,0,0.68);
+	width:100%;
+	height:100%;
+	text-align: center;
+	display:none;
+	z-index:100;
+}
+.getVoucher img:nth-child(1){
+	width:80%;
+	margin-top:30%;
+
+}
+.getVoucher #app{
+	width:60%;
+	position:absolute;
+	left:2rem;
+	top:5.5rem;
+}
+.toFriend{
+	width:60%;
+	position:absolute;
+	top:10rem;
+	left:2rem;
+}
+.mask{
+	width:100%;
+	height:100%;
+	position:fixed;
+	top:0;
+	left:0;
+	background: #000;
+	opacity:.68;
+	display:none;
+	z-index:200;
+}
+.mask img{
+	width:100%;
+	position:absolute;
+	right:2%;
+	top:0;
+}
+input[type="button"]{
+	width:1rem;
+	/*width:4rem;*/
+	height:1rem;
+	display:block;
+	background-color: transparent;
+	-webkit-appearance:none;
+}
+img[src*='current.png']{
+	width:.5rem;
+	display:block;
+}
+.chooseOne div,.chooseTwo div,.chooseThree div{
+	width:15px;
+	height:15px;
+	padding:3%;
+	background: url(../rushBreakthrouth_img/nocurrent.png) no-repeat;
+	background-size: 100% 100%;
+}
+.chooseOne .current,.chooseTwo .cur,.chooseThree .selected{
+	background:url(../rushBreakthrouth_img/current.png) no-repeat;
+	background-size:100% 100%;
+	width:15px;
+	height:15px;
+	padding:3%;
+	z-index:0;
+}
+.img1_0{
+	position:absolute;
+	top:9.71rem;
+	left:3.77rem;
+}
+.img1_1{
+	position:absolute;
+	top:10.925rem;
+	left:3.77rem;
+}
+.img1_2{
+	position:absolute;
+	top:12.2rem;
+	left:3.77rem;
+}
+.button1_0{
+	position:absolute;
+	top:9.5rem;
+	left:3.5rem;
+}
+.button1_1{
+	position: absolute;
+	top:10.7rem;
+	left:3.5rem;
+}
+.button1_2{
+	position: absolute;
+	top:11.9rem;
+	left:3.5rem;
+}
+.section1 .button1_3{
+	width:4rem;
+	height:1rem;
+	position: absolute;
+	top:13.9rem;
+	left:3rem;
+}
+/*****************第二题***************************/
+.img2_0{
+	position:absolute;
+	top:10.03rem;
+	left:3.9rem;
+}
+.img2_1{
+	position:absolute;
+	top:11.23rem;
+	left:3.9rem;
+}
+.img2_2{
+	position:absolute;
+	top:12.45rem;
+	left:3.9rem;
+}
+.button2_0{
+	position:absolute;
+	top:9.8rem;
+	left:3.6rem;
+}
+.button2_1{
+	position: absolute;
+	top:11rem;
+	left:3.6rem;
+}
+.button2_2{
+	position: absolute;
+	top:12.2rem;
+	left:3.6rem;
+}
+.section2 .button2_3{
+	width:4rem;
+	height:1rem;
+	position: absolute;
+	top:14rem;
+	left:3rem;
+}
+/*.section2 .button2_4{
+	width:3rem;
+	height:1.5rem;
+	position: absolute;
+	top:15.9rem;
+	left:3.5rem;
+}*/
+
+/*****************第三题***************************/
+.img3_0{
+	position:absolute;
+	top:10.25rem;
+	left:3.5rem;
+}
+.img3_1{
+	position:absolute;
+	top:11.49rem;
+	left:3.5rem;
+}
+.img3_2{
+	position:absolute;
+	top:12.72rem;
+	left:3.5rem;
+}
+.button3_0{
+	position:absolute;
+	top:10rem;
+	left:3.3rem;
+}
+.button3_1{
+	position: absolute;
+	top:11.2rem;
+	left:3.3rem;
+}
+.button3_2{
+	position: absolute;
+	top:12.5rem;
+	left:3.3rem;
+}
+.section3 .button3_3{
+	width:4rem;
+	height:1rem;
+	position: absolute;
+	top:13.9rem;
+	left:3rem;
+}
+/*.section3 .button3_4{
+	width:3rem;
+	height:1.5rem;
+	position: absolute;
+	top:15.9rem;
+	left:3.5rem;
+}*/
+.tanchuang{
+	position: fixed;
+	left:0;
+	top:0;
+	background-color:rgba(0,0,0,0.68);
+	width:100%;
+	height:100%;
+	text-align: center;
+	display:none;
+}
+.tanchuang img:nth-child(1){
+	width:80%;
+	margin-top:30%;
+
+}
+
+.tanchuang img:nth-child(2),.tanchuang img:nth-child(3){
+	width:60%;
+	position:absolute;
+	top:8.5rem;
+	left:2rem;
+}
+.tanchuang img:nth-child(3){
+	position:absolute;
+	top:10rem;
+	left:2rem;
+}
+
+
+

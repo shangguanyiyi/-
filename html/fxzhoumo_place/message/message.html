@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>消息</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" />
+	<meta name="apple-touch-fullscreen" content="yes" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="format-detection" content="telephone=no" />	
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../css/base.css">
+	<link rel="stylesheet" type="text/css" href="../css/common.css">
+	<link rel="stylesheet" type="text/css" href="../css/message.css">
+	<script type="text/javascript" src="../js/lib/require.min.js" data-main="../js/main/message"></script>
+
+</head>
+<body>
+<div id="g-screen">
+	<div class="g-head bb1">
+		<div class="u-back dn">
+			<div class="icon">&#xe605;</div><div>返回</div>
+		</div>
+		<div class="m-panelBtn dn">
+			<div class="icon i-1">&#xe600;</div>
+		</div>
+		<div class="u-title">
+			消息
+		</div>
+	</div>
+	<div class="g-main" id="container">
+<!-- 		<div class="m-person mt10">
+	<a href=""></a>
+	<div class="m-pImg">
+		<img src="../images/1.jpg" alt="">
+	</div>
+	<div class="m-uInfo">
+		<div>
+			<span class="i-tName fwb">我的提问</span>
+			<span class="i-msgNum">+2</span>
+		</div>
+		<div>
+			indie dj独立电台主持人
+		</div>
+	</div>
+</div>
+<div class="m-person mt10">
+	<a href=""></a>
+	<div class="m-pImg">
+		<img src="../images/1.jpg" alt="">
+	</div>
+	<div class="m-uInfo">
+		<div>
+			<span class="i-tName fwb">发现周末客服</span>
+			<span class="i-msgNum">+2</span>
+		</div>
+		<div>
+			indie dj独立电台主持人
+		</div>
+	</div>
+</div> -->
+	</div>
+<div class="g-panel">
+	<div class="g-userInfo">
+		<div class="ovh rel">
+			<a href="../center/center.html" id="u-toCenter"></a>
+			<div class="u-imgBox">
+				<img class="u-headImg"  src="http://img.xue.sm/xue/user_large.png" alt="">
+			</div>
+			<div class="u-name">
+				昵称
+			</div>
+		</div>
+		<div class="u-des">
+			一句话个人简介在这里
+		</div>
+	</div>
+	<ul class="g-sideNav">
+		<li>
+			<a href="../index.html">精选</a>
+			<div class="i-to">
+				<div class="icon fl i-left">&#xe608;</div>
+				<div class="icon fr i-right">&#xe620;</div>
+			</div>
+		</li>
+		<li>
+			<a href="../list/list.html?go=1">发现</a>
+			<div class="i-to">
+				<div class="icon fl i-left">&#xe604;</div>
+				<div class="icon fr i-right">&#xe620;</div>
+			</div>
+		</li>
+		<div class="i-centerLine"></div>
+		<li>
+			<a href="message.html?go=0">消息<span class="msgNum dn">2</span></a>
+			<div class="i-to">
+				<div class="icon fl i-left">&#xe61a;</div>
+				<div class="icon fr i-right">&#xe620;</div>
+			</div>
+		</li>
+		<li>
+			<a href="../center/join.html?go=0">已参加</a>
+			<div class="i-to">
+				<div class="icon fl i-left">&#xe61e;</div>
+				<div class="icon fr i-right">&#xe620;</div>
+			</div>
+		</li>
+		<li>
+			<a href="../center/fav.html?go=0">喜欢的</a>
+			<div class="i-to">
+				<div class="icon fl i-left">&#xe617;</div>
+				<div class="icon fr i-right">&#xe620;</div>
+			</div>
+		</li>
+		<li>
+			<a href="../voucher/voucher.html?go=0">优惠券</a>
+			<div class="i-to">
+				<div class="icon fl i-left">&#xe61f;</div>
+				<div class="icon fr i-right">&#xe620;</div>
+			</div>
+		</li>
+		<li>
+			<a href="../set/set.html?go=0">设置</a>
+			<div class="i-to">
+				<div class="icon fl i-left">&#xe60f;</div>
+				<div class="icon fr i-right">&#xe620;</div>
+			</div>
+		</li>
+		<li>
+			<a href="../about/download.html">下载</a>
+			<div class="i-to">
+				<div class="i-download fl i-left"></div>
+				<div class="icon fr i-right">&#xe620;</div>
+			</div>
+		</li>
+	</ul>
+</div>
+
+<script type="text/template" id="tpl">
+
+		<%
+			var flag=true;
+			for(var elem in questobj ){
+				flag=false;
+			}
+		%>
+		<%if(!flag){%>
+			<div class="m-person mt10">
+				<a href="msgInfo1.html?go=1"></a>
+				<div class="m-pImg">
+					<img src="<%=config.imgBaseURL%><%=questobj.quest_user_photo%>" alt="">
+				</div>
+				<div class="m-uInfo">
+					<div>
+						<span class="i-tName fwb">我的提问</span>
+						<span class='i-msgNum <%=questobj.quest_notlook_count>0?"":"vh"%>'>+<%=questobj.quest_notlook_count%></span>
+					</div>
+					<div class="u-uInfo">
+						<%=questobj.quest_content%>
+					</div>
+				</div>
+			</div>
+		<%}%>
+		<div class="m-person mt10">
+			<a href="msgInfo2.html?go=2"></a>
+			<div class="m-pImg">
+				<img src="<%=config.imgBaseURL%><%=inforobj.infor_sys_photo%>" alt="">
+			</div>
+			<div class="m-uInfo">
+				<div>
+					<span class="i-tName fwb"><%=inforobj.infor_sys_nickname%></span>
+					<span class='i-msgNum <%=inforobj.infor_notlook_count>0?"":"vh"%>'>+<%=inforobj.infor_notlook_count%></span>
+				</div>
+				<div class="u-uInfo">
+					<%=inforobj.infor_sys_cotent%>
+				</div>
+			</div>
+		</div>
+
+
+</script>
+</div>	
+
+
+</body>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">	
+	<title>听青春专属的音乐</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/youthMusic.css">
+    <script src="../js/jquery-1.11.3.min.js"></script>
+    <script src="../js/youthMusic_sh.js"></script>
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script></script>
+    <style type="text/css">
+    .fuchuang{
+        position: fixed;
+        bottom:-5px;
+        left:0;
+    }
+    </style>
+    <script>
+      var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?ebb251588b3f299f462de6eef1507945";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+    </script>
+</head>
+<body>
+    <section>
+        <img src="../youthMusic_img/banner.jpg" alt="">
+        <!-- <img class="banner_text" src="../youthMusic_img/text.png" alt=""> -->
+        <img class="box" src="../youthMusic_img/box.png" alt="">
+        <input type="text" placeholder="请输入手机号" class="phone">
+        <input type="button" value="立即领取" class="button" id="button">
+        <!-- <img class="activityText" src="../youthMusic_img/activityText.gif" alt=""> -->
+        <div class="all_activity">
+             <div class="sigle_activity sigle0" id="sigle0">
+                <a class="left" id="left0">
+                    <img src="http://img.fxzhoumo.com/xue/7179/7179multipleImages20160409175920mid.jpg" alt="">
+                    <div class="txt_price">
+                        <p>2016上海滴水湖春浪音乐节</p>
+                        <p class="price">213&nbsp;<span>元/位起</span></p>
+                    </div>
+                </a>
+                <a class="right" id="right0">
+                    <img src="http://img.fxzhoumo.com/xue/7179/7179multipleImages20160411133023mid.jpg" alt="">
+                    <div class="txt_price">
+                        <p>2016上海草莓音乐节</p>
+                        <p class="price">240&nbsp;<span>元/位起</span></p>
+                       
+                    </div>
+                </a>
+            </div>
+
+            <div class="sigle_activity sigle1">
+                <a class="left" id="left1">
+                    <img src="http://img.fxzhoumo.com/xue/33281/33281multipleImages20160421114125mid.jpg" alt="">
+                    <div class="txt_price">
+                        <p>2016中孝介「一念十年 亦如初见」巡回演唱会上海站</p>
+                        <p class="price">295&nbsp;<span>元/位起</span></p>
+                        
+                    </div>
+                </a>
+                <a class="right" id="right1">
+                    <img src="http://img.fxzhoumo.com/xue/7179/7179multipleImages20160406194009mid.jpg" alt="">
+                    <div class="txt_price">
+                       <p>2016李荣浩「有理想」世界巡回演唱会—上海站</p>
+                        <p class="price">495&nbsp;<span>元/位起</span></p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="sigle_activity sigle2">
+                <a class="left" id="left2">
+                    <img src="http://img.fxzhoumo.com/xue/7179/7179multipleImages20160406185317mid.jpg" alt="">
+                    <div class="txt_price">
+                        <p>2016徐佳莹上海演唱会</p>
+                        <p class="price">495&nbsp;<span>元/位起</span></p>
+                    </div>
+                </a>
+                <a class="right" id="right2">
+                    <img src="http://img.fxzhoumo.com/xue/7179/7179multipleImages20160406123014mid.jpg" alt="">
+                    <div class="txt_price">
+                        <p>一起兄弟 岁月友情演唱會</p>
+                        <p class="price">1014&nbsp;<span>元/位起</span></p>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+        <img class="end" src="../youthMusic_img/end.png" alt="">
+        <div class="fuchuang">
+            <a href="http://a.app.qq.com/o/simple.jsp?pkgname=sm.xue" id="downLoad">
+                <img src="../youthMusic_img/down.png" alt="">
+            </a>
+        </div>
+        <div class="mask">
+            <img class="close" src="../youthMusic_img/close.png" alt="">
+            <img class="outside" src="../youthMusic_img/outside.png" alt="">
+            <img class="inside" src="../youthMusic_img/inside.png" alt="">
+            <a class="register" id="register" href="http://a.app.qq.com/o/simple.jsp?pkgname=sm.xue">
+            </a>
+        </div>
+    </section>
+
+   
+</body>
+<script type="text/javascript">
+
+ $(function(){
+    wx_url=escape(window.location.href);
+    $.ajax({
+        url:"/WeixinServlet?method=weixinPower",
+        type:"post",
+        data:'servicestr={"wei_url":"'+wx_url+'"}',  
+        dataType:"html",
+        success:function(data){
+            var json = eval("("+data+")");
+            if(json.code=="success"){
+                wx.config({
+                    debug: false, 
+                    appId: 'wx47987fa108b8329b', 
+                   // appId:'wxd470058f4535a61d', //mammachoice
+                    timestamp:json.timestamp,
+                    nonceStr: json.nonceStr,
+                    signature: json.signature,
+                    jsApiList: ['onMenuShareTimeline','onMenuShareAppMessage','onMenuShareQQ','onMenuShareWeibo','onMenuShareQZone']
+                });
+
+                var shareObject = {
+                    title: '请你去听专属青春的音乐！',
+                    desc: '点击领取40元专属礼券立即抵扣！',
+                    link: window.location.href,
+                    imgUrl: 'http://www.fxzhoumo.com/redpacket/operation/youthMusic_img/share.jpg'
+                };
+                var shareFriend={
+                    title:'请你去听专属青春的音乐！点击领取40元专属礼券立即抵扣！',
+                    link: window.location.href,
+                    imgUrl: 'http://www.fxzhoumo.com/redpacket/operation/youthMusic_img/share.jpg'
+                }
+                wx.ready( function (){
+                    wx.onMenuShareTimeline(shareFriend);   //朋友圈
+                    wx.onMenuShareAppMessage(shareObject);  //朋友
+
+                });
+            }else{
+                alert(json.description);
+            }
+            
+        }
+    });
+});
+
+</script>
+</html>

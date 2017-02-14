@@ -1,0 +1,40 @@
+body{
+	background: #ededed;
+}
+.g-head{
+	background: #ededed;
+	box-shadow:  0 -1px 1px -1px rgba(0, 0, 0, 0.3) inset;
+}
+.u-edit{
+	color: #ff5555;
+}
+
+h1{
+	border-bottom: 1px solid #ededed;
+	margin-bottom: 0.42666667rem;
+	padding: 0.21333333rem 0;
+}
+
+.u-label{
+	width: 3.41333333rem;
+	text-align: left;
+	display: inline-block;
+}
+	
+.g-orderInfo{
+	margin-top: 0.85333333rem;
+	background: #fff;
+	padding:0 0.42666667rem 0.42666667rem 0.42666667rem;
+}
+		.g-orderInfo>div{
+			font-size:0.55466667rem;
+		}
+
+.g-orderNum{
+	margin-top: 0.85333333rem;
+	background: #fff;
+	padding: 0 0.42666667rem 0.42666667rem 0.42666667rem;
+}
+		.g-orderNum>div{
+				font-size: 0.55466667rem;
+			}

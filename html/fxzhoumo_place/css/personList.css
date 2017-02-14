@@ -1,0 +1,317 @@
+body{
+	background: #ededed;
+}
+#g-screen{
+	max-width: 750px;
+	min-width: 320px;
+	margin: 0 auto;
+}
+
+.g-head{
+	position: fixed;
+	width: 100%;
+	height: 44px;
+	background: #ededed;
+	padding: 0 20px 0 20px;
+	overflow: hidden;
+	z-index: 3;
+	box-shadow: 0 -1px 1px -1px rgba(0, 0, 0, 0.3) inset;
+	max-width: 750px;
+	top: 0;
+	left: 0;
+}
+@media all and (min-width: 750px) { 
+	.g-head{
+		position: relative;
+	}
+ }
+		
+		.u-back{
+			position: absolute;
+			display: table;
+			left: 10px;
+			top: 0px;
+			height: 44px;
+			margin-right: 20px;
+		}
+				.u-back>div{
+					display: table-cell;
+					vertical-align: middle;
+					text-align: center;
+					font-size: 16px;
+					color: #767676;
+				}
+		.u-title{
+			text-align: center;
+			font-size: 19px;
+			display: inline-block;
+			width: 100%;
+			line-height: 44px;
+		}
+
+.g-userInfo{
+	padding-top: 70px;
+	text-align: center;
+}
+		.m-hImg{
+			display: inline-block;
+			width: 120px;
+			height: 120px;
+			border: 1px solid #d5d5d5;
+			overflow: hidden;
+			border-radius: 50%;
+			padding: 2px;
+		}
+				.m-hImg>img{
+					max-width: 100%;
+					width: 114px;
+					height: 114px;
+					border-radius: 50%;
+				}
+
+		.m-userInfo{
+			margin-top: 10px;
+		}
+				
+				.i-tName{
+					font-size: 20px;
+					margin-right: 5px;
+					line-height: 1;
+				}
+
+				.i-tCap{
+					position: relative;
+					top: -2px;
+					font-size: 10px;
+					background: #00c8c8;
+					color: #fff;
+					padding:2px;
+					overflow: hidden;
+					border-radius: 2px;
+				}
+				.i-tCap-1{
+							font-size: 10px;
+							background: #faa000;
+							color: #fff;
+							padding:2px;
+							overflow: hidden;
+							border-radius: 2px;
+						}
+		.u-desc{
+			font-size:13px;
+			color: #999;
+			width: 80%;
+			margin:5px auto;
+		}
+
+		.u-btn{
+			margin-top: 10px;
+			padding:10px 30px;
+			background: #00c8c8;
+			color: #fff;
+			font-size:18px;
+			display: inline-block;
+			border-radius: 6px;
+			overflow: hidden;
+		}
+
+				.u-favIcon{
+					float: left;
+					background: url(../images/fav_white.png)no-repeat 0 -26px;
+					width: 20px;
+					height:18px;
+					background-size: 100%;
+					margin-right: 10px;
+				/*	margin-top: 2px;*/
+				}
+				.u-favText{
+					overflow: hidden;
+					text-align: center;
+					line-height: 18px;
+				}
+
+
+
+
+.g-page{
+	/*position: absolute;
+	width: 100%;
+	height: 100%;
+	max-width: 750px;*/
+	/*overflow: auto;*/
+	/*-webkit-overflow-scrolling:touch;*/
+	padding: 10px;
+}
+
+		/*课程列表*/
+		.g-item{
+			position:relative;
+			height: 220px;
+			overflow: hidden;
+			text-align: center;
+		}
+				.g-item a{
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					z-index:2;
+				}
+
+								.ltr{
+					position: absolute;
+					top: 0;
+					left: 0;
+					z-index: 10;
+					width: 5px;
+					height: 5px;
+					background: url(../images/zhezhao_1.png)no-repeat;
+					background-position: left top;
+				}
+				.rtr{
+					position: absolute;
+					top: 0;
+					right: 0;
+					z-index: 10;
+					width: 5px;
+					height: 5px;
+					background: url(../images/zhezhao_1.png)no-repeat;
+					background-position: right top;
+				}
+				.lbr{
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					z-index: 10;
+					width: 5px;
+					height: 5px;
+					background: url(../images/zhezhao_1.png)no-repeat;
+					background-position: left bottom;
+				}
+				.rbr{
+					position: absolute;
+					right: 0;
+					bottom: 0;
+					z-index: 10;
+					width: 5px;
+					height: 5px;
+					background: url(../images/zhezhao_1.png)no-repeat;
+					background-position: bottom right;
+				}
+
+				.m-item{
+					position: relative;
+					overflow: hidden;
+					width: 100%;
+					height: 100%;
+				}
+						.m-item img{
+							max-width: 100%;
+						}
+
+
+				.m-content{
+					padding: 10px 20px 10px 20px;
+					color: #fff;
+					text-align: left;
+				}
+						.m-courseTitle{
+							color: #fff;
+							font-size: 18px;
+							width:240px;
+							text-overflow: ellipsis;
+							white-space: nowrap;
+							overflow: hidden;
+						}
+						.m-address{
+							margin-top: 10px;
+							font-size: 12px;
+							padding-left: 5px;
+							border-left: 3px solid #00c8c8;
+							color: #fff;
+						}
+								.u-address{
+									margin-top: 1px;
+								}
+										.u-address>span:nth-child(1){
+											margin-right: 10px;
+										}
+						
+						.m-price{
+							position: absolute;
+							right: 10px;
+							bottom: 10px;
+							font-size: 16px;
+							text-align: center;
+							color: #fff;
+
+						}
+								.m-price>div:nth-child(1){
+									text-decoration: line-through;
+									padding: 2px 10px;
+								}
+							
+								.m-price>div:nth-child(2){
+									
+									background: rgba(0, 0, 0, 0.5);
+									padding: 2px 10px;
+								}
+
+						.m-fav{
+							position: absolute;
+							right: 8px;
+							top: 10px;
+							font-size:0;
+							width: 40px;
+							height: 40px;
+							text-align: center;
+							color: #fff;
+						}
+								.m-fav>div:nth-child(1){
+									display: inline-block;
+									font-size: 1.2em;
+									width: 20px;
+									height:20px;
+									background: url(../images/fav.png) no-repeat 0 -25px;
+									background-size: 100%;
+								}
+								.m-fav>div:nth-child(2){
+									font-size: 12px;
+								}
+
+						.m-contentShadow{
+							position: absolute;
+							top: 0;
+							left: 0;
+							width: 100%;
+							height: 100%;
+							background: url(../images/first_shadow.png) no-repeat;
+							background-size: cover;
+						}
+
+						.m-shadow{
+							position: relative;
+							
+							z-index: 3;
+							background: rgba(76, 74, 20, 0.5);
+							width: 100%;
+							display: table;
+							text-align: center;
+							height: 100%;
+						}
+								.m-over{
+										position: absolute;
+									  width: 200px;
+									  height: 106px;
+									  top: 50%;
+									  margin-top: -53px;
+									  left: 50%;
+									  margin-left: -100px;
+									  background: url(../images/full.png) no-repeat;
+									  background-size: 100%;
+								}
+		.g-item+.g-item{
+			margin-top: 2%;
+		}
+

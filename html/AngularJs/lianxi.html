@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="myAppModule">
+	<head lang="en">
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<script src="js/angular.js"></script>
+	</head>
+	<body>
+	<div class="container" ng-controller="myCtrl">
+		<p>{{name+age+isMember}}</p>
+		<p>{{product}}</p>
+		<p>{{new}}</p>
+		<p ng-bind="'product.name:'+product.name"></p>
+		<!-- <p ng-repeat="k in new">{{k}}</p> -->
+		<ul>
+			<li ng-repeat="k in new">{{k}}</li>
+		</ul>
+		<div ng-if="salary<=5000" class="alert alert-danger">
+			屌丝可见
+		</div>
+		<div ng-if="salary>5000" class="alert alert-success">
+			成功人士可见！
+		</div>
+		
+	</div>
+	
+	<script>
+		angular.module('myAppModule',[])
+		.controller('myCtrl',function($scope){
+			$scope.name="这是名字";
+			$scope.age="20";
+			$scope.salary=9000;
+			$scope.isMember="true";
+			$scope.product={name:'可乐',count:100};
+			// $scope.date=new Date();
+			// console.log("asdfghj");
+			$scope.new=['cdsh','43','32','43','87','09'];
+		})
+	</script>
+	</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>微信获取openId</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+	<meta content="telephone=no" name="format-detection">
+	<script type="text/javascript" src="..js/common/jquery-1.11.3.min.js"></script>
+</head>
+<body>
+	<button id="btn">点我呀~~</button>
+	<div class="text" style="width:100%;height:200px;margin:0 auto;border:1px solid #999;"></div>
+	<script type="text/javascript">
+	function GetQueryString(name) { 
+		    var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式
+		    var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+		    if (r!=null) return unescape(r[2]); return null; //返回参数值
+		} 
+
+
+	$(function(){
+		 var userCode=GetQueryString("code");
+		 // var userCode='asdfghbjwet';
+		 $('#btn').bind('click',function(){
+		 	$.ajax({
+				url:"/QingRenJieServlet?method=getChunYinCount",
+				type:"post",
+				data:'servicestr={"userid":"1","code":"'+userCode+'","type":"1"}',
+				success:function(data){
+					var jsonData=eval("("+data+")");
+					console.log(jsonData);
+					if(jsonData.code=="success"){
+						$('.text').html('我的openId是：'+jsonData.openId);
+					}
+					
+							
+				}
+			})	
+			
+		})
+	})
+	</script>
+
+</body>
+</html>

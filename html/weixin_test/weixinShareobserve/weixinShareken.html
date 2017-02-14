@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">	
+	<title>发现周末</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/weixin_test.css">
+    <link rel="stylesheet" href="../css/swiper.min.css">
+    <script src="../js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script src="../js/weixin_test.js"></script>
+    <script src="../js/swiper.min.js"></script>
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?461d5ad9ff9e8dd41f7d1b422ba1e71f";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</head>
+<body>
+    <input type="hidden" value="1314" class="hidden">
+    <section>
+        <div class="head_info">
+            <div class="imghead">
+                <img src="../weixin_test_img/Ken.JPG" alt="">
+            </div>
+            <div class="texthead">我觉得这个活动超级赞，有没有同去的！</div>
+        </div>
+        <div class="swiper-container activity" href="">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="http://img.fxzhoumo.com/xue/33005/33005multipleImages20151220220817mid.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="http://img.fxzhoumo.com/xue/33005/33005multipleImages20151220220939mid.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="http://img.fxzhoumo.com/xue/33005/33005multipleImages20151220220942mid.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="http://img.fxzhoumo.com/xue/33005/33005multipleImages20151220220955mid.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="http://img.fxzhoumo.com/xue/33005/33005multipleImages20151220220958mid.jpg" alt="">
+                </div>
+            </div>
+             <div class="swiper-pagination"></div>
+            <!-- <img class="mainimg" src="../weixin_test_img/ab.jpg" alt=""> -->
+
+             <div class="love" id="love" onclick="_hmt.push(['_trackEvent', '点赞', 'click', 'literature'])">
+                <img class="fav" src="../weixin_test_img/before1.png" alt="">
+            </div>
+            
+           <!-- <div class="details">
+                <p class="theme">喵星人陪伴的美餐时光 欢喜有鱼双人餐</p>
+                <p class="price"><span>178</span>元/2位</p>
+            </div> -->
+        </div>
+        <div class="details">
+                <p class="theme">资深媒体人为你打造双人海鲜锅套餐</p>
+                <p class="price"><span>200</span>元/2位</p>
+        </div>
+        <a class="join" href="http://www.fxzhoumo.com/detail/course_weixin.html?courseid=4767&Ken">
+            <button class="btn" id="btn" onclick="_hmt.push(['_trackEvent', '参与', 'click', 'literature'])">立即参与</button>
+        </a>
+    </section>
+
+</body>
+<script type="text/javascript">
+     var mySwiper = new Swiper('.swiper-container',{
+            pagination : '.swiper-pagination',
+            paginationType : 'fraction',
+            paginationClickable: true,
+            })
+
+    $(function(){
+            wx_url=escape(window.location.href);
+            $.ajax({
+                url:"/WeixinServlet?method=weixinPower",
+                type:"post",
+                data:'servicestr={"wei_url":"'+wx_url+'"}',  
+                dataType:"html",
+                success:function(data){
+                    var json = eval("("+data+")");
+                    if(json.code=="success"){
+                        wx.config({
+                            debug: false, 
+                            appId: 'wx47987fa108b8329b', 
+                           // appId:'wxd470058f4535a61d', //mammachoice
+                            timestamp:json.timestamp,
+                            nonceStr: json.nonceStr,
+                            signature: json.signature,
+                            jsApiList: ['onMenuShareTimeline','onMenuShareAppMessage','onMenuShareQQ','onMenuShareWeibo','onMenuShareQZone']
+                        });
+
+                        var shareObject = {
+                            title: '有没有同去的！',
+                            desc: '我觉得这个活动超级赞，有没有同去的！',
+                            link: window.location.href,
+                            imgUrl: 'http://www.fxzhoumo.com/operation/weixin_test_img/Ken.JPG'
+                        };
+                        var shareFriend={
+                            title:'我觉得这个活动超级赞，有没有同去的！',
+                            link: window.location.href,
+                            imgUrl: 'http://www.fxzhoumo.com/operation/weixin_test_img/Ken.JPG'
+                        }
+                        wx.ready( function (){
+                            wx.onMenuShareTimeline(shareFriend);   //朋友圈
+                            wx.onMenuShareAppMessage(shareObject);  //朋友
+
+                        });
+                    }else{
+                        alert(json.description);
+                    }
+                    
+                }
+            });
+    });
+
+</script>
+</html>

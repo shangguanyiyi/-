@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">	
+	<title>草莓音乐节</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="stylesheet" href="../css/base.css">
+    <script src="../js/jquery-1.11.3.min.js"></script>
+    <script src="../js/strawberrymusic_sh.js"></script>
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <style type="text/css">
+    .fuchuang{
+        position: fixed;
+        bottom:-0.25rem;
+        left:0;
+    }
+    body{
+        background: #fff;
+    }
+    section {
+        text-align: center;
+        margin-bottom:20%;
+    }
+    section input{
+        width:60%;
+        padding:2%;
+        border:2px solid #b3b3b3;
+        border-radius: 5px;
+        background: transparent;
+        text-align: center;
+        -webkit-appearance:none;
+    }
+    .box{
+        margin:3% 0;
+    }
+    .button{
+        /*background:#9e9e9e;*/
+        color:#666;
+    }
+    .activity{
+        width:90%;
+        margin:13% auto 0;
+        display:block;
+    }
+    .activity img{
+        border-radius: 5px;
+    }
+    .activity_title,.activity_price{
+        font-size:.4em;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        text-align: left;
+        padding-left:1%;
+        color:#333;
+    }
+    .activity_price span{
+        color:#333;
+        font-size:.8em;
+    }
+    .activity_price{
+        color:#f3501e;
+        padding:2% 0 2% 1%;
+    }
+    .mask{
+        background-color:rgba(0,0,0,0.68); 
+        width:100%;
+        height:100%;
+        position:fixed;
+        top:0;
+        left:0;
+        margin:0 auto;
+        display:none;
+    }
+    .close{
+        width:7%;
+        position:absolute;
+        right:17%;
+        top:13%;
+    }
+    .outside,.inside{
+        width:66%;
+        position:absolute;
+        right:17%;
+        top:20%;    
+    }
+    .register{
+        padding:8% 6%;
+        position:absolute;
+        /*right:44%;
+        top:27rem;*/
+        right:44%;
+        top:57%;
+    }
+    .end{
+        margin:10% auto 0%;
+        width:40%;
+    }
+    </style>
+    <script>
+      var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "//hm.baidu.com/hm.js?1c2e7dd3f725e1eafc8676f233043c41";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+<body>
+    <section>   
+        <img src="../strawberrymusic_img/banner.png" alt="">  
+        <img class="box" src="../strawberrymusic_img/box.png" alt="">
+        <input type="text" class="phone" placeholder="请输入手机号">
+        <input type="button" class="button" id="button" value="立即领取">
+        
+        <a class="activity">
+            <img class="" src="http://img.fxzhoumo.com/xue/7179/7179multipleImages20160411133023mid.jpg" alt="">
+            <p class="activity_title">2016上海草莓音乐节</p>
+            <p class="activity_price">240 <span>元/位起</span></p>
+        </a>
+        <img class="end" src="../strawberrymusic_img/end.png" alt="">
+    </section>
+  
+    <div class="fuchuang">
+        <a href="http://a.app.qq.com/o/simple.jsp?pkgname=sm.xue" id="downLoad">
+            <img src="../strawberrymusic_img/down.png" alt="">
+
+        </a>
+    </div>
+    <div class="mask">
+            <img class="close" src="../strawberrymusic_img/close.png" alt="">
+            <img class="outside" src="../strawberrymusic_img/outside.png" alt="">
+            <img class="inside" src="../strawberrymusic_img/inside.png" alt="">
+            <a class="register" id="register" href="http://a.app.qq.com/o/simple.jsp?pkgname=sm.xue">
+            </a>
+    </div>
+
+
+</body> 
+<script type="text/javascript">
+    var windowWidth = document.body.clientWidth;
+    window.clientWidth = windowWidth;
+    //定义body字体大小
+    document.getElementsByTagName("html")[0].style.fontSize=windowWidth/10+"px";
+    window.onresize=function(){
+    var windowWidth = document.body.clientWidth;
+    document.getElementsByTagName("html")[0].style.fontSize=windowWidth/10+"px";
+    };
+
+    $(function(){
+            wx_url=escape(window.location.href);
+            $.ajax({
+                url:"/WeixinServlet?method=weixinPower",
+                type:"post",
+                data:'servicestr={"wei_url":"'+wx_url+'"}',  
+                dataType:"html",
+                success:function(data){
+                    var json = eval("("+data+")");
+                    if(json.code=="success"){
+                        wx.config({
+                            debug: false, 
+                            appId: 'wx47987fa108b8329b', 
+                           // appId:'wxd470058f4535a61d', //mammachoice
+                            timestamp:json.timestamp,
+                            nonceStr: json.nonceStr,
+                            signature: json.signature,
+                            jsApiList: ['onMenuShareTimeline','onMenuShareAppMessage','onMenuShareQQ','onMenuShareWeibo','onMenuShareQZone']
+                        });
+
+                        var shareObject = {
+                            title: '草莓音乐节再起，high爆全场！',
+                            desc: '点击领取40元现金礼券，立即抵扣音乐节门票！',
+                            link: window.location.href,
+                            imgUrl: 'http://www.fxzhoumo.com/redpacket/operation/strawberrymusic_img/share.jpg'
+                        };
+                        var shareFriend={
+                            title:'草莓音乐节再起，high爆全场！点击领取40元现金礼券，立即抵扣音乐节门票！',
+                            link: window.location.href,
+                            imgUrl: 'http://www.fxzhoumo.com/redpacket/operation/strawberrymusic_img/share.jpg'
+                        }
+                        wx.ready( function (){
+                            wx.onMenuShareTimeline(shareFriend);   //朋友圈
+                            wx.onMenuShareAppMessage(shareObject);  //朋友
+
+                        });
+                    }else{
+                        alert(json.description);
+                    }
+                    
+                }
+            });
+    });
+
+</script>
+</html>

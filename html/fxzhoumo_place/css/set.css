@@ -1,0 +1,37 @@
+
+body{
+	background: #ededed;
+}
+.g-list{
+	margin-top: 10px;
+	background: #fff;
+}
+.g-list li{
+	border-bottom: 1px solid #ededed;
+  	font-size:16px;
+  	padding: 0 20px;
+}
+
+.g-list li>a{
+	position: relative;
+  	padding: 20px 0px;
+  	display: block;
+  	color: #333;
+}
+
+.i-to-1{
+	position: absolute;
+  font-size: 1.2em;
+  color: #ccc;
+  right: 0;
+  top: 19px;
+}
+
+.m-loginOut{
+  background: #fff;
+  padding: 20px 0;
+  text-align: center;
+  color: #ff1919;
+  margin-top: 30px;
+  font-size: 18px;
+}

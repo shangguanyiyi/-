@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">	
+	<title>十大露台餐厅</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="stylesheet" href="../css/base.css">
+    <script src="../js/jquery-1.11.3.min.js"></script>
+    <script src="../js/lutaiCanTing.js"></script>
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <style type="text/css">
+    body{
+        background:#fff;
+    }
+    .fuchuang{
+        position: fixed;
+        bottom:-5px;
+        left:0;
+        display:none;
+    }
+    section{
+        margin-bottom: 13%;
+    }
+    section a{
+        display:block;
+        margin-top:-2%;
+    }
+    </style>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "//hm.baidu.com/hm.js?3ca4ca5db9068025cc6c5dbd0797b3ab";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+<body>
+    <img src="../lutaiCanTing_img/canting_00.jpg" >
+    <img src="../lutaiCanTing_img/canting_01.jpg" alt="">
+    <section class="section">
+       
+        <a href="">
+            <img id="activity0" src="../lutaiCanTing_img/canting_02.jpg" alt="">
+        </a>
+        <a href="">
+            <img id="activity1" src="../lutaiCanTing_img/canting_03.jpg" alt="">
+        </a>
+        <a href="">
+            <img id="activity2" src="../lutaiCanTing_img/canting_04.jpg" alt="">
+        </a>
+        <a href="">
+            <img id="activity3" src="../lutaiCanTing_img/canting_05.jpg" alt="">
+        </a>
+        <a href="">
+            <img id="activity4" src="../lutaiCanTing_img/canting_06.jpg" alt="">
+        </a>
+         <a href="">
+            <img id="activity5" src="../lutaiCanTing_img/canting_07.jpg" alt="">
+        </a>
+         <a href="">
+            <img id="activity6" src="../lutaiCanTing_img/canting_08.jpg" alt="">
+        </a>
+         <a href="">
+            <img id="activity7" src="../lutaiCanTing_img/canting_09.jpg" alt="">
+        </a>
+         <a href="">
+            <img id="activity8" src="../lutaiCanTing_img/canting_10.jpg" alt="">
+        </a>
+         <a href="">
+            <img id="activity9" src="../lutaiCanTing_img/canting_11.jpg" alt="">
+        </a>
+
+    </section>
+    <div class="fuchuang">
+        <a href="http://a.app.qq.com/o/simple.jsp?pkgname=sm.xue" id="downLoad">
+            <img src="../lutaiCanTing_img/down.png" alt="">
+        </a>
+    </div>
+</body>
+<script type="text/javascript">
+
+    $(function(){
+            wx_url=escape(window.location.href);
+            $.ajax({
+                url:"/WeixinServlet?method=weixinPower",
+                type:"post",
+                data:'servicestr={"wei_url":"'+wx_url+'"}',  
+                dataType:"html",
+                success:function(data){
+                    var json = eval("("+data+")");
+                    if(json.code=="success"){
+                        wx.config({
+                            debug: false, 
+                            appId: 'wx47987fa108b8329b', 
+                           // appId:'wxd470058f4535a61d', //mammachoice
+                            timestamp:json.timestamp,
+                            nonceStr: json.nonceStr,
+                            signature: json.signature,
+                            jsApiList: ['onMenuShareTimeline','onMenuShareAppMessage','onMenuShareQQ','onMenuShareWeibo','onMenuShareQZone']
+                        });
+
+                        var shareObject = {
+                            title: '魔都露台餐厅TOP10，莫负春日好时光。',
+                            desc: '不负春光，不负卿。',
+                            link: window.location.href,
+                            imgUrl: 'http://www.fxzhoumo.com/operation/lutaiCanTing_img/share.jpg'
+                        };
+                        var shareFriend={
+                            title:'魔都露台餐厅TOP10，莫负春日好时光。',
+                            link: window.location.href,
+                            imgUrl: 'http://www.fxzhoumo.com/operation/lutaiCanTing_img/share.jpg'
+                        }
+                        wx.ready( function (){
+                            wx.onMenuShareTimeline(shareFriend);   //朋友圈
+                            wx.onMenuShareAppMessage(shareObject);  //朋友
+
+                        });
+                    }else{
+                        alert(json.description);
+                    }
+                    
+                }
+            });
+    });
+
+</script>
+</html>

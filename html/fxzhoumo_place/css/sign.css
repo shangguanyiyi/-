@@ -1,0 +1,344 @@
+body{background: #ededed;}
+
+h1{
+	margin-top: 20px;
+	padding-left: 20px;
+	font-size: 1.6em;
+	color: #999;
+	font-weight: 700;
+}
+
+.g-orderInfo{
+	background: #fff;
+	margin-top: 5px;
+	padding:10px 20px;
+}
+		
+		.i-address{
+			width: 180px;
+			overflow: hidden;
+		}
+		.m-orderInfoItem{
+			position: relative;
+			font-size: 1.6em;
+			overflow: hidden;
+		}
+	
+		.bbc{
+			border-bottom: 1px solid #ccc;
+		}
+		.btc{
+			border-top: 1px solid #ccc;
+		}
+
+		.ptb10{
+			padding-bottom: 10px;
+			padding-top: 10px;
+		}
+				.u-rightTime{
+					color: #ccc;
+					padding: 10px 0;
+				}
+				.m-timeTitle{
+					padding:10px 0;
+				}
+		.m-centerInfo{
+			width:100%;
+			background: #ededed;
+			max-height: 200px;
+			overflow: auto;
+			font-size: 1.6em;
+			-webkit-overflow-scrolling:touch;
+		}
+
+				.m-centerInfo li{
+					padding:10px;
+					overflow:hidden;
+					clear:both;
+				}
+				
+				.m-centerInfo li+li{
+					border-top: 1px solid #ccc;
+				}
+
+
+						.m-cLeft{
+							display: inline-block;
+							text-align: left;
+							float: left;
+							line-height: 1.5;
+						}
+						.m-cRight{
+							text-align: right;
+							float:right;
+						}
+							.m-cRight>div{
+								display: inline-block;
+							}
+							.m-cRight input{
+								width: 60px;
+								border: 1px solid #00c8c8;
+								border-radius: 5px;
+								text-align: center;
+								padding: 10px 0;
+								background: #ededed;
+								outline: none;
+								vertical-align: top;
+								line-height: 1.5;
+								font-size: 1em;
+							}
+							.addBox,.subBox{
+								display: inline-block;
+								width: 40px;
+								padding: 10px;
+								line-height: 1.5;
+							}
+							.m-cRight .add{
+								display: inline-block;
+								background: url(../images/add_1.png) 0 -1px;
+								background-size: 100%;
+								width: 20px;
+								height:21px;
+								vertical-align: middle;
+							}
+							.m-cRight .sub{
+								display: inline-block;
+								background: url(../images/sub_1.png)no-repeat 0 -28px;
+								background-size: 100%;
+								width: 20px;
+								height: 21px;
+								vertical-align: middle;
+							}
+
+.g-mobile{
+	background: #fff;
+	padding:0px 20px;
+	font-size: 1.6em;
+	overflow: hidden;
+}
+		.m-mobTitle{
+			padding: 10px 20px 10px 0px;
+			border-right: 1px solid #ccc;
+		}
+		.m-mobile{
+			overflow: hidden;
+		}
+			.m-mobile input{
+				width: 100%;
+				border: none;
+				text-align: center;
+				padding: 10px 0;
+				outline: none;
+				font-size:0.6em;
+				color:#ccc;
+			}
+
+.g-voucher{
+	background: #fff;
+	padding:10px 20px;
+	font-size: 0.6rem;
+}
+		.m-v1{
+			position: relative;
+			padding: 10px 40px 10px 0px;
+			border-bottom: 1px solid #ccc;
+		}
+			.m-v1 .to{
+				position: absolute;
+				right: 10px;
+				top: 10px;
+				color: #ccc;
+			}
+		.m-v2{
+			padding:  10px 0px 0px 0;
+		}
+
+
+.g-pay{
+	background: #fff;
+	padding: 5px 20px;
+	font-size: 1.6em;
+	overflow: hidden;
+}
+		.g-pay>div{
+			padding: 10px 0;
+		}
+		.i-zLogo{
+			width: 60px;
+			display: inline-block;
+		}
+			.i-zLogo>img{
+				max-width: 100%;
+			}
+			.i-isSelect{
+				position:absolute;
+				top: 18px;
+				right: 20px;
+				color: #ccc;
+			}
+.u-payBtn{
+	background: #00c8c8;
+	font-size: 1.6em;
+	color: #fff;
+	border-radius: 5px;
+	text-align: center;
+	padding: 10px 20px;
+	margin:40px auto  20px;
+	width: 100px;
+}
+
+
+
+/************************************************************************/
+
+#g-screen2{
+	position: fixed;
+	right: 0px;
+	top: 0px;
+	min-height: 100%;
+	width: 100%;
+	z-index: 1002;
+	display: none;
+	background: #ededed;
+}
+	#back{
+		position: absolute;
+		display: table;
+		left: 10px;
+		top: 0px;
+		height: 44px;
+		margin-right: 20px;
+	}
+
+			#back>div{
+				display: table-cell;
+				vertical-align: middle;
+				text-align: center;
+				font-size: 1.6em;
+				color: #666;
+			}
+			
+		.m-vNum{
+			padding: 10px;
+			display: table;
+			width: 100%;
+			height: 150px;
+		}
+
+				.m-vNum>div{
+					display: table-cell;
+					text-align: center;
+					vertical-align: middle;
+				}
+						.m-vNum>div>span:nth-child(1){
+							font-size: 3em;
+							color: #00c8c8;
+							margin-right: 3px;
+						}
+						.m-vNum>div>span:nth-child(2){
+							font-size: 4em;
+						}
+						.m-vNum>div>div{
+							margin-top: 20px;
+							font-size: 1.6em;
+						}
+
+		.m-voucherContainer{
+			padding: 10px;
+		}
+
+				/*优惠券区域*/
+
+				.m-voucher{
+					position: relative;
+					background: #fff;
+					padding: 10px;
+					text-align: center;
+					overflow: hidden;
+				}
+							.i-round{
+								position: absolute;
+								width: 30px;
+								height: 30px;
+								border-radius: 50%;
+								background: #ededed;
+								top: 50%;
+								margin-top: -10px;
+								left: -20px;
+							}
+
+							.u-vLeft{
+									float: left;
+									font-size: 18px;
+									width:70px;
+									height: 70px;
+									padding: 10px 0;
+								}
+
+
+								.u-vRight{
+									float: right;
+									padding: 10px 0 0 10px;
+									font-size:15px;
+									width: 30px;
+								}
+
+										.u-vRight>div{
+											position: relative;
+											top: 20px;
+										}
+								.u-vCenter{
+									overflow: hidden;
+									border-left: 1px dashed #ccc;
+									border-right: 1px dashed #ccc;
+									text-align: left;
+									padding-left: 10px;
+								}
+										
+									.u-vCenter>p{
+										font-size: 13px;
+										color: #8c8c8c;
+									}
+									.u-vCenter>p:nth-child(1){
+										font-size: 18px;
+										color: #333;
+									}
+									
+									.i-minMoney{
+										font-size: 10px;
+									}
+
+								#toLogin{
+									color: #ccc;
+								}
+			
+
+
+
+
+			#nativePayContainer{
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				z-index: 20000;
+				background: #ededed;
+				text-align: center;
+			}
+
+				#nativePayContainer h1,#nativePayContainer p{
+					font-size: 16px;
+					margin-top: 20px;
+					margin-bottom: 20px;
+				}
+				#nativePayContainer h1{
+					margin-top: 80px;
+				}
+				
+				#nativeImg{
+					display: block;
+					width: 200px;
+					height: 200px;
+					margin:0 auto;
+				}

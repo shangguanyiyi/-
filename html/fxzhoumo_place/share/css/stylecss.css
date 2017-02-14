@@ -1,0 +1,315 @@
+html,body{
+	width:100%;
+}
+.clear:after{
+  display:block; 
+  content:"clear"; 
+  height:0; 
+  clear:both;
+  visibility:hidden;
+}
+/*首页*/
+.header{
+	width: 82%;
+	margin:15% auto 0 auto;
+	/*background: red;*/
+}
+.header img,.footer img{
+	width: 100%;
+}
+.header p{
+	/*display: inline-block;*/
+	margin-left: 9%;
+	font-size: 0.9em;
+	margin-top: 5.3%;
+	color:#62615f;
+	/*background-size: red;*/
+}
+.main{
+	width: 82%;
+	margin:11.73% auto 0 auto;
+	/*background:yellow;*/
+}
+.main .dline{
+	width: 100%;
+	height:2px;
+	background:#cfcecc;
+	margin-top: 2%;
+}
+.main_l .inp{
+	width: 70%;
+	vertical-align: top;
+}
+.main_l .chaged{
+	vertical-align: top;
+}
+.main_l p{
+	margin-left: 6px;
+	color:#686461;
+	font-size: 0.8em;
+	/*margin-top: 8%;*/
+	display: inline-block;
+	outline: none;
+}
+.main_l{
+	padding-top:7%;
+}
+.note{
+	float: right;
+	font-size: 0.5em;
+	margin-top: 1%;
+	color: #62615f;
+}
+.note span{
+	color:#d92b4c;
+}
+.main_s{
+	width: 82%;
+	margin:20% auto 0 auto;
+}
+.main_s ul li{
+	border:1px solid #a0a0a0;
+	border-radius: 3px;
+	margin:0.7%;
+	display:inline-block;
+	font-size: 0.7em;
+	color:#feffff;
+	padding: 1px;
+	outline: none;
+	margin-top: 3%;
+	float: left;
+}
+.main_s div{
+	width: 100%;
+	margin-top:3%;
+}
+.main_s .active{
+	border:1px solid #00c8c8;
+	border-radius: 3px;
+}
+.footer{
+	width: 82%;
+	margin: 6.5% auto 5.3% auto;
+}
+/*领取红包*/
+.head .imgbg{
+	width: 100%
+}
+.head .imgper{
+	width: 25%;
+	display: block;
+	margin:-16% auto 8px auto;
+}
+
+.head_a{
+	width: 60%;
+	margin:0 auto;
+}
+.head_a p{
+	font-size: 1.2em;
+	color: #5e5d6b;
+	text-align: center;
+}
+
+.hmain{
+	width: 100%;
+	margin: 8% auto 0 auto;
+}
+.hmain img{
+	width: 100%;
+}
+.text{
+	width: 65%;
+	margin:2% auto 0 auto;
+	position: relative;
+	/*background: red;*/
+}
+.text span{
+	text-align:center;
+	font-size: 0.9em;
+	color: #5e5d6b;
+}
+#mobile{
+color: red;
+}
+/*.text_z p{
+	letter-spacing: 1.5px;
+}*/
+.text_z{
+	width: 43%;
+	/*float: left;*/
+	position: absolute;
+	right: 0;
+	top:0;
+	/*left:53%;*/
+	/*background: red;*/
+}
+/*.text_z p{
+	color: red;
+}*/
+/*.text_p{
+	width: 98%;
+	height: 1px;
+	background: #5e5d6b;
+	text-align: center;
+	margin-top: -1.5%;
+	/*float:left;
+	position: absolute;
+	/*bottom: -15px;
+}*/
+.hfoot{
+	width: 87%;
+	margin:9% auto 5% auto;
+}
+.hfoot img{
+	width: 100%;
+	display: block;
+	text-align: center;
+	margin-top: 20%;
+} 
+/*红包来了*/
+.headpg{
+	width: 82%;
+	margin: 0 auto;
+}
+.headpg img{
+	display: block;
+	width: 100%;
+}
+.mainpg{
+	width: 65.6%;
+	margin: 3% auto 0 auto;
+	position: relative;
+}
+.mainpg .img1{
+	display: block;
+	width: 100%;
+}
+.mainpg .img2{
+	width: 22.4%;
+	position:absolute;
+	top:6%;
+	left:39.5%;
+	border-radius: 50%;
+}
+.btget{
+	width:62%; 
+	margin:8% auto 10% auto;
+}
+.btget input{
+	width: 99%;
+	height: 35px;
+	outline: none;
+	border:1px solid  #da3931;
+	border-radius: 3px;
+}
+.btget img{
+	width: 100%;
+	display: block;
+	margin-top: 9%;
+}
+.btget input[type='text']{
+       text-align:center;
+  } 
+/*.text_tl,.text_w{
+	float: left;
+}
+*/
+ .text_z .text_w{
+	color: red;	
+	margin-left: 10%;
+}
+.textred{
+	width: 90%;
+	margin: 2% auto 0 17%;
+}
+.text_w{
+	text-decoration: underline;
+}
+/*.haminr{
+	margin-top: 9%
+}*/
+.hfootr{
+	margin-top: 10%;
+	margin-bottom: 30%
+}
+/*周末计划*/
+.headimg{
+	width: 17rem;
+	margin:1.5rem auto 1.5rem auto;
+
+}
+.headimg img{
+	width: 100%;
+	display: block;
+}
+.ma_im{
+	width: 15rem;
+	margin:0 auto;
+	margin-bottom: 2rem;
+	/*background: red;*/
+}
+.vertical_l{
+	width: 5.2rem;
+	float: left;
+	/*background: yellow;*/
+	margin-left: 9px;
+}
+.vertical_l img{
+	width: 100%;
+}
+.vertical_r{
+	width: 9rem;
+	float: left;
+	/*background: red;*/
+	margin-left: -9px;
+}
+.vertical_r img{
+	width: 100%;
+}
+.size{
+	width: 44%;
+	/*display: block*/
+}
+.vertical_r ul li{
+		margin-top:0.1rem;
+		text-align: center;
+		color:#166e94;
+		margin-left: -4rem;
+	}
+.vertical_r ul li a{
+	color: #166e94;
+}
+
+
+/*.redPacketPe{
+	width: 100%;
+		height: 100%;
+		background: url(../images/placebgd.jpg) 0 0 no-repeat ;
+		background-size:100% 100%;
+		overflow: hidden;
+}
+.redPacketCome{
+		width: 100%;
+		height: 100%;
+		background: url(../images/pbg.jpg) no-repeat ;
+		background-size:100% 100%;
+		overflow: hidden;
+	
+}*/
+.redPacketSu{
+	width: 100%;
+		height: 100%;
+		background: url(../images/pbg.jpg) no-repeat ;
+		background-size:100% 100%;
+		display: none;
+}
+.out_redPacketCome{
+	width: 100%;
+		height: 100%;
+		background: url(../images/pbg.jpg) no-repeat ;
+		background-size:100% 100%;
+		/*overflow: hidden;*/
+		padding-top: 15%;
+		/*display: none;*/
+}

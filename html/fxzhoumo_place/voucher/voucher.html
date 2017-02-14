@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>优惠券</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" />
+	<meta name="apple-touch-fullscreen" content="yes" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="format-detection" content="telephone=no" />	
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../css/base.css">
+	<link rel="stylesheet" type="text/css" href="../css/common.css">
+	<link rel="stylesheet" type="text/css" href="../css/voucher.css">
+	<link rel="stylesheet" type="text/css" href="../css/dialog.css">
+	<script type="text/javascript" src="../js/lib/require.min.js" data-main="../js/main/voucher"></script>
+
+</head>
+<body>
+<div id="g-screen">
+	<div class="g-head bb1">
+		<div class="u-back dn">
+			<div class="icon">&#xe605;</div><div>返回</div>
+		</div>
+		<div class="m-panelBtn dn">
+			<div class="icon i-1">&#xe600;</div>
+		</div>
+		<div class="u-title">
+			优惠券
+		</div>
+	</div>
+	<div class="g-main" id="container">
+		
+		<div id="inputVoucherBox">
+			<input type="text" id="inputVouValue" placeholder="请输入兑换码">
+			<input type="button" value="兑换" id="inputVouBtn">
+		</div>
+		<div id="vouContainer">
+			
+		</div>
+<!-- 		<div class="m-vNum">
+			<div>
+				<span class="icon">&#xe61f;</span>
+				<span>11</span>
+				<span class="f20">张</span>
+				<div>可为您节省130元</div>
+			</div>
+		</div>
+		<div class="m-voucherContainer">
+			<div class="m-voucher mt10">
+					<div class="i-round"></div>
+					<div class="u-vLeft red">
+						<div>
+							<span class="f12">10</span>
+							<span>元</span>
+						</div>
+						<div class="mt10  f12 fwb">
+							优惠券
+						</div>
+					</div>
+					<div class="u-vRight green">
+						可使用
+					</div>
+					<div class="u-vCenter">
+						<p class="f20 fwb">注册就送10元优惠券</p>
+						<p class="mt5 f16 c6">有效期至2015-06-08</p>
+						<p class="mt5 f16 c6">满30元可用</p>
+					</div>
+			</div>
+			<div class="m-voucher mt10">
+					<div class="i-round"></div>
+					<div class="u-vLeft cc">
+						<div>
+							<span class="f12">10</span>
+							<span>元</span>
+						</div>
+						<div class="mt10  f12 fwb">
+							优惠券
+						</div>
+					</div>
+					<div class="u-vRight red">
+						已过期
+					</div>
+					<div class="u-vCenter">
+						<p class="f20 fwb cc">注册就送10元优惠券</p>
+						<p class="mt5 f16 cc">有效期至2015-06-08</p>
+						<p class="mt5 f16 cc">满30元可用</p>
+					</div>
+			</div>
+		</div> -->
+		
+		
+		
+
+	</div>
+<div class="g-panel">
+	<div class="g-userInfo">
+		<div class="ovh rel">
+			<a href="../center/center.html" id="u-toCenter"></a>
+			<div class="u-imgBox">
+				<img class="u-headImg"  src="http://img.xue.sm/xue/user_large.png" alt="">
+			</div>
+			<div class="u-name">
+				昵称
+			</div>
+		</div>
+		<div class="u-des">
+			一句话个人简介在这里
+		</div>
+	</div>
+	<ul class="g-sideNav">
+		<li>
+			<a href="../index.html">精选</a>
+			<div class="i-to">
+				<div class="icon fl i-left">&#xe608;</div>
+				<div class="icon fr i-right">&#xe620;</div>
+			</div>
+		</li>
+		<li>
+			<a href="../list/list.html?go=1">发现</a>
+			<div class="i-to">
+				<div class="icon fl i-left">&#xe604;</div>
+				<div class="icon fr i-right">&#xe620;</div>
+			</div>
+		</li>
+		<div class="i-centerLine"></div>
+		<li>
+			<a href="../message/message.html?go=0">消息<span class="msgNum dn">2</span></a>
+			<div class="i-to">
+				<div class="icon fl i-left">&#xe61a;</div>
+				<div class="icon fr i-right">&#xe620;</div>
+			</div>
+		</li>
+		<li>
+			<a href="../center/join.html?go=0">已参加</a>
+			<div class="i-to">
+				<div class="icon fl i-left">&#xe61e;</div>
+				<div class="icon fr i-right">&#xe620;</div>
+			</div>
+		</li>
+		<li>
+			<a href="../center/fav.html?go=0">喜欢的</a>
+			<div class="i-to">
+				<div class="icon fl i-left">&#xe617;</div>
+				<div class="icon fr i-right">&#xe620;</div>
+			</div>
+		</li>
+		<li>
+			<a href="../voucher/voucher.html?go=0">优惠券</a>
+			<div class="i-to">
+				<div class="icon fl i-left">&#xe61f;</div>
+				<div class="icon fr i-right">&#xe620;</div>
+			</div>
+		</li>
+		<li>
+			<a href="../set/set.html?go=0">设置</a>
+			<div class="i-to">
+				<div class="icon fl i-left">&#xe60f;</div>
+				<div class="icon fr i-right">&#xe620;</div>
+			</div>
+		</li>
+				<li>
+			<a href="../about/download.html">下载</a>
+			<div class="i-to">
+				<div class="i-download fl i-left"></div>
+				<div class="icon fr i-right">&#xe620;</div>
+			</div>
+		</li>
+	</ul>
+</div>
+
+<script type="text/template" id="infoTpl">
+	
+			<div class="m-vNum">
+			<div>
+				<span class="icon">&#xe61f;</span>
+				<span><%=voucher_count%></span>
+				<span class="f20">张</span>
+				<div>可为您节省<%=voucher_all_price%>元</div>
+			</div>
+		</div>
+		<div class="m-voucherContainer">
+</script>
+
+<script type="text/template" id="tpl">
+
+		
+			<%for(var i=0;i<voucher_arr.length;i++){%>
+				<%var e=voucher_arr[i];%>
+				<div class="m-voucher mt10">
+					<div class="i-round"></div>
+					<div class='u-vLeft <%=e.voucher_isover==0?"red":"cc"%>'>
+						<div>
+							<span><%=e.voucher_price%></span>
+							<span class="i-minMoney">元</span>
+						</div>
+						<div class="mt10  fwb">
+							优惠券
+						</div>
+					</div>
+					<div class='u-vRight <%=e.voucher_isover==0?"green":"red"%>'>
+						<%=e.voucher_isover==0?"可使用":"已过期"%>
+					</div>
+					<div class="u-vCenter">
+						<p class='f20 fwb <%=e.voucher_isover==0?"":"cc"%> '><%=e.voucher_name%></p>
+						<p class='mt5 f16 <%=e.voucher_isover==0?"c6":"cc"%>'>有效期至<%=We.date(new Date(e.voucher_endtime),"YYYY-MM-DD")%></p>
+						<p class='mt5 f16 <%=e.voucher_isover==0?"c6":"cc"%>'>满<%=e.voucher_condition_price%>元可用</p>
+					</div>
+				</div>
+			<%}%>
+</script>
+</div>	
+
+
+</body>

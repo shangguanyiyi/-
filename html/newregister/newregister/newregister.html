@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">	
+	<title>新用户注册</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="stylesheet" href="../css/base.css">
+    <script src="../js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <style type="text/css">
+        body{
+            background-color: #cdf3ff;
+            min-width:320px;
+            max-width:750px;
+            margin:0 auto;
+        }
+         .fuchuang{
+            position: fixed;
+            bottom:-0.25rem;
+            left:0;
+        }
+        .section0 img{
+            display:block;
+        }
+    </style>
+    <script>
+   var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?571c462d500f3c2e6382d4497f857313";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+</head>
+<body>
+    <section class="section0">
+        <img src="../newregister_img/newregister.jpg" alt="">
+    </section>
+    <div class="fuchuang">
+        <a href="http://a.app.qq.com/o/simple.jsp?pkgname=sm.xue" id="downLoad">
+            <img src="../newregister_img/down.png" alt="">
+        </a>
+    </div>
+</body>
+<script type="text/javascript">
+    var windowWidth = document.body.clientWidth;
+    window.clientWidth = windowWidth;
+    //定义body字体大小
+    document.getElementsByTagName("html")[0].style.fontSize=windowWidth/10+"px";
+    window.onresize=function(){
+    var windowWidth = document.body.clientWidth;
+    document.getElementsByTagName("html")[0].style.fontSize=windowWidth/10+"px";
+    };
+
+    function is_weixin() {
+        var ua = navigator.userAgent.toLowerCase();
+        if (ua.match(/MicroMessenger/i) == "micromessenger") {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    var isWeixin=is_weixin();
+    if(isWeixin){
+        $('.fuchuang').show();
+        $('.section0').css('margin-bottom','1rem');
+    }else{
+        $('.fuchuang').hide();
+    }
+
+    $(function(){
+            wx_url=escape(window.location.href);
+            $.ajax({
+                url:"/WeixinServlet?method=weixinPower",
+                type:"post",
+                data:'servicestr={"wei_url":"'+wx_url+'"}',  
+                dataType:"html",
+                success:function(data){
+                    var json = eval("("+data+")");
+                    if(json.code=="success"){
+                        wx.config({
+                            debug: false, 
+                            appId: 'wx47987fa108b8329b', 
+                           // appId:'wxd470058f4535a61d', //mammachoice
+                            timestamp:json.timestamp,
+                            nonceStr: json.nonceStr,
+                            signature: json.signature,
+                            jsApiList: ['onMenuShareTimeline','onMenuShareAppMessage','onMenuShareQQ','onMenuShareWeibo','onMenuShareQZone']
+                        });
+
+                        var shareObject = {
+                            title: '叮！你的发现周末新朋友20元礼券已入荷',
+                            desc: '点击立即查看！',
+                            link: window.location.href,
+                            imgUrl: 'http://www.fxzhoumo.com/operation/newregister_img/share.jpg'
+                        };
+                        var shareFriend={
+                            title:'hi，亲爱的新朋友，有20元礼券已经放进你的钱包了哦~',
+                            link: window.location.href,
+                            imgUrl: 'http://www.fxzhoumo.com/operation/newregister_img/share.jpg'
+                        }
+                        wx.ready( function (){
+                            wx.onMenuShareTimeline(shareFriend);   //朋友圈
+                            wx.onMenuShareAppMessage(shareObject);  //朋友
+
+                        });
+                    }else{
+                        alert(json.description);
+                    }
+                    
+                }
+            });
+    });
+
+</script>
+</html>

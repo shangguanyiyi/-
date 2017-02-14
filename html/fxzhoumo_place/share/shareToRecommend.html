@@ -1,0 +1,160 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>发现周末</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/reset.css">
+	<script src="js/jquery-1.11.3.min.js"></script>
+
+</head>
+<body>
+	<div class="contain">
+		<div class="logo ">
+			<img src="images/comlogo.png" alt="">
+		</div>
+		<input type="hidden" id="userid">  <!-- 这是第一步获取传递过来的ID -->
+		<div class="get_cashout">
+			<div class="get_cash">
+				<img src="images/head_pic.png" alt="" id="head_pic">
+				<img src="" alt="" id="head">
+				<div id="perhead"></div>
+			</div>
+		</div>
+		
+		<div class="out_cash_txt">
+			<div class="cash_txt">
+			<p id="p_name"></p>    <!-- 获取name -->
+			<p id="p_text">小婊贝，我在<span>发现周末</span>给你吃喝玩乐现金券</p>
+			<img src="images/cash.png" alt="" id="cash">
+			<img src="images/casnub.png" alt="" id="casnub">
+		</div>
+
+		</div>
+
+		<div class="inputal">
+			<input type="text" class="inpo" placeholder="输入手机号领取" id="tle">
+			<input type="hidden" id="codenum"/>   <!-- 获取优惠券 -->
+			<!-- <input type="button" class="inpt" value="点击领取"  onclick="getGifts();"> -->
+			<a onclick="getGifts();">
+				<img src="images/btny.png" alt="">
+			</a>
+		</div>
+
+		<div class="dline">
+			<img src="images/dline.png" alt="">
+		</div>
+		
+		<div class="main_img">
+			<a href=""><img src="images/main_imgone.png" alt=""></a>
+			<a href=""><img src="images/main_imgtwo.png" alt=""></a>
+			<a href=""><img src="images/main_imgthr.png" alt=""></a>
+		</div>	
+		<div class="bg"></div>
+		<div class="mask">
+			<a href="http://www.fxzhoumo.com" class="close">
+				<img src="images/close.png" alt="" class="tog">
+			</a>
+			<p class="p1">现金券已放入你的账户</p>
+			<p class="p2"></p>
+			<p class="p3">快下载App使用吧~</p>
+			<!-- <p class="p4"><a href="http://a.app.qq.com/o/simple.jsp?pkgname=sm.xue">点击登录App</a></p> -->
+			<a href="http://a.app.qq.com/o/simple.jsp?pkgname=sm.xue" class="p4">
+				<img src="images/click.png" alt="">
+			</a>
+			<!-- <p class="p5">*匠心礼券只能用于对应活动哦~</p> -->
+	</div>
+		
+
+	</div>
+	<script>
+		 function GetQueryString(name) { 
+            var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式
+            var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+            if (r!=null) return unescape(r[2]); return null; //返回参数值
+        }   //通过这个函数传递url中的参数名就可以获取到参数的值
+
+        // $(function () {
+        //     var perHead = GetQueryString("perhead");
+        //     $('#p_name').html(perHead);
+        // });
+
+        $(function () {
+            var codeNum = GetQueryString("codeNum");   
+            $('#codenum').val(codeNum);
+   		});
+
+           $(function () {
+		            $('.close').click(function(){
+				      $('.bg').fadeOut(800);
+				      $('.mask').fadeOut(800);
+				    });
+		    });
+
+       			
+        // 获取头像
+    	$(function(){
+    		//首先通过url路径中的参数，获取变量值 举例子：http://www.fxzhoumo.com/sss.html?id=222&username=ssdh&password=ssss
+    		var userid = GetQueryString("userid");       //第一步
+    		//把获取到的变量，放到隐藏域里面，以便页面间调取
+        	$('#userid').val(userid);
+        	//通过ajax 获取user相关信息
+
+        	
+			$.ajax({
+			url:"/IUserCenterV2Servlet?method=getUserPhoto",
+			type:"post",
+			data:'servicestr={"userid":"'+userid+'"}',  //获取过来的ID发送给后台
+			dataType:"html",
+			success:function(data){
+				//接收到成功请求后，把服务器返回的json字符串转换成对象
+				var json = eval("("+data+")");
+				if(json.code=="success"){
+					var user_photo = "http://img.xue.sm/"+json.user_photo;
+					$("#head").attr('src',user_photo); 
+					$("#codenum").val(json.user_recommend);
+					$("#p_name").html(json.user_nickname);   //我加的
+				}else{
+					alert(json.description);
+				}
+			}
+			});
+
+		});
+
+
+
+
+        function getGifts(){
+			var tle = $('#tle').val();
+			var gifts = $('#codenum').val();
+			if(tle==""||tle.length!=11){
+				alert("请正确填写手机号");
+				return;
+			}
+			$.ajax({
+				url:"/IUserCenterV2Servlet?method=addUserVoucherByMobileVoucherCardNo",
+				type:"post",
+				data:'servicestr={"user_mobile":"'+tle+'","codenumstr":"'+gifts+'"}',
+				dataType:"html",
+				success:function(data){
+					var json = eval("("+data+")");
+					if(json.code=="success"){
+						$('.mask .p2').html(tle);  //点击的时候把用户电话放入到遮罩层里面
+							$('.bg').fadeIn(200);
+							$('.mask').fadeIn(400);
+							$("body,html").css({"overflow":"hidden"});
+						//window.location.href="redPacketSu.html?mobile="+tle;
+					}else{
+						alert(json.description);
+					}
+					
+				}
+			});
+  
+		}
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">	
+	<title>岁月友情</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="stylesheet" href="../css/base1.css">
+    <link rel="stylesheet" href="../css/timefriend.css">
+    <script src="../js/jquery-1.11.3.min.js"></script>
+    <script src="../js/timefriend.js"></script>
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <style type="text/css">
+    .fuchuang{
+        position: fixed;
+        bottom:-5px;
+        left:0;
+        display:none;
+    }
+    </style>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?f009c763d963a19104ab6dbf3eb02d65";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+<body>
+ <img src="../timefirend_img/banner.jpg" alt="">
+    <section>
+       <img class="description" src="../timefirend_img/description.png" alt="">
+       <img src="../timefirend_img/rule.png" alt="">
+       <img class="input" src="../timefirend_img/input.png" alt="">
+       <textarea class="textarea" type="text" placeholder="我想説..."></textarea>
+       <div class="kuang">
+           <div class="phone_submit">
+               <input type="text" class="phone" placeholder="請輸入手機號碼">
+               <button class="submit" onclick="_hmt.push(['_trackEvent', '提交', 'click', 'tijiao'])">提交</button>
+           </div>
+           <div class="phone_submit2">
+               <button class="submit2" onclick="_hmt.push(['_trackEvent', '提交', 'click', 'tijiao'])">提交</button>
+           </div>
+       </div>
+
+       <div class="success">
+           <img class="tanchuang" src="../timefirend_img/App.png" alt="">
+           <p class="close"></p>
+           <p class="shareBtn"></p>
+           <img class="mask" src="../timefirend_img/mask.png" alt="">
+       </div>
+       <img src="../timefirend_img/zanlist.png" alt="">
+       
+       <div class="leavewordsList" onscroll="window_onscroll()">
+          <!--  <div class="person person0">
+               <div class="headImg">
+                    <img src="../timefirend_img/head.png" alt="">
+               </div>
+               <div class="info">
+                    <div class="info_message">
+                        <div class="name">
+                           <span>郑凯</span>留言
+                        </div>
+                        <div class="fav">
+                            <img class="love" src="../timefirend_img/like.png" alt=""><b>180</b>
+                        </div>
+                    </div>
+                   <div class="text">
+                        乱起白皂的举动是否的监控覆盖和好vjdsijfidsafjfdsih花费金额和减肥的身份积分抵丧服参加了某某活动，在这里可以认识好多好多兴趣爱好相同的小伙伴。以后我们可以一起参加活动了，嗨起来吧少年！
+                    <img class="up" src="../timefirend_img/up.png" alt="">
+                   </div>
+
+                 
+               </div>
+           </div>
+
+            <div class="person person1">
+               <div class="headImg">
+                    <img src="../timefirend_img/head.png" alt="">
+               </div>
+               <div class="info">
+                    <div class="info_message">
+                        <div class="name">
+                           <span>郑凯郑凯郑凯郑凯</span>留言
+                        </div>
+                        <div class="fav">
+                            <img class="love" src="../timefirend_img/like.png" alt=""><b>180</b>
+                        </div>
+                    </div>
+                   <div class="text">
+                        乱起白皂的举动是否的监控覆盖和好vjdsijfidsafjfdsih花费金额和减肥的身份积分抵丧服参加了某某活动，在这里可以认识好多好多兴趣爱好相同的小伙伴。以后我们可以一起参加活动了，嗨起来吧少年！
+                   </div>
+                 
+               </div>
+            </div>  -->
+       </div>
+
+    </section>
+    <div class="fuchuang">
+        <a href="http://a.app.qq.com/o/simple.jsp?pkgname=sm.xue" id="downLoad">
+            <img src="../timefirend_img/down.png" alt="">
+        </a>
+    </div>
+</body>
+<script type="text/javascript">
+
+    var windowWidth = document.body.clientWidth;
+        window.clientWidth = windowWidth;
+        //定义body字体大小
+        document.getElementsByTagName("html")[0].style.fontSize=windowWidth/10+"px";
+        window.onresize=function(){
+        var windowWidth = document.body.clientWidth;
+        document.getElementsByTagName("html")[0].style.fontSize=windowWidth/10+"px";
+        };
+
+
+    $(function(){
+            wx_url=escape(window.location.href);
+            $.ajax({
+                url:"/WeixinServlet?method=weixinPower",
+                type:"post",
+                data:'servicestr={"wei_url":"'+wx_url+'"}',  
+                dataType:"html",
+                success:function(data){
+                    var json = eval("("+data+")");
+                    if(json.code=="success"){
+                        wx.config({
+                            debug: false, 
+                            appId: 'wx47987fa108b8329b', 
+                           // appId:'wxd470058f4535a61d', //mammachoice
+                            timestamp:json.timestamp,
+                            nonceStr: json.nonceStr,
+                            signature: json.signature,
+                            jsApiList: ['onMenuShareTimeline','onMenuShareAppMessage','onMenuShareQQ','onMenuShareWeibo','onMenuShareQZone']
+                        });
+
+                        var shareObject = {
+                            title: '快来赢取「岁月友情」演唱会门票！',
+                            desc: '写下《古惑仔》系列电影中最感动你的瞬间，赢取「岁月友情」演唱会门票',
+                            link: window.location.href,
+                            imgUrl: 'http://www.fxzhoumo.com/operation/timefirend_img/share.jpg'
+                        };
+                        var shareFriend={
+                            title:'写下《古惑仔》系列电影中最感动你的瞬间，赢取「岁月友情」演唱会门票！',
+                            link: window.location.href,
+                            imgUrl: 'http://www.fxzhoumo.com/operation/timefirend_img/share.jpg'
+                        }
+                        wx.ready( function (){
+                            wx.onMenuShareTimeline(shareFriend);   //朋友圈
+                            wx.onMenuShareAppMessage(shareObject);  //朋友
+
+                        });
+                    }else{
+                        alert(json.description);
+                    }
+                    
+                }
+            });
+    });
+
+</script>
+</html>

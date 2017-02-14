@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>发现</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" />
+	<meta name="apple-touch-fullscreen" content="yes" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="format-detection" content="telephone=no" />	
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../css/base.css">
+	<link rel="stylesheet" href="../css/dialog.css">
+	<link rel="stylesheet" type="text/css" href="../css/personList.css">
+	<script type="text/javascript" src="../js/lib/require.min.js" data-main="../js/main/personList"></script>
+</head>
+<body>
+<div id="g-screen">
+	<!-- <div class="g-head bb1">
+		<div class="u-back">
+			<div class="icon">&#xe605;</div><div>返回</div>
+		</div>
+		<div class="u-title">
+			王宝强
+		</div>
+	</div>
+	<div class="g-userInfo">
+		<div class="m-hImgBox">
+			<div class="m-hImg">
+				<img src="../images/1.jpg" alt="">
+			</div>
+		</div>
+		<div class="m-userInfo">
+			<span class="i-tName">王宝强</span>
+			<span class="i-tCap">发现师</span>
+		</div>
+		<div class="u-desc">
+			独立电台主持人
+		</div>
+		<div class="u-btn">
+			<div class="u-favIcon"></div>
+			<div class="u-favText">喜欢</div>
+		</div>
+	</div>
+	<div class="g-page">		
+			<div class="g-item">
+				<div class="m-item">
+					<img src="../images/loading.gif" class="u-img" data-src="../images/default.jpg">
+				</div>
+				<a class="m-content" href="http://www.baidu.com">
+					<div class="m-courseTitle">一元周末好去处,紫谷伊甸园踏青</div>
+					<div class="m-address">
+						<div class="u-date">2015.04.26</div>
+						<div class="u-address"><span>紫谷伊甸园</span><span>26公里</span></div>
+					</div>
+					<div class="m-price">
+						<div>100元</div>
+						<div>150元</div>
+					</div>
+					<div class="m-fav">
+						<div class="icon"></div>
+						<div>252</div>
+					</div>
+				</a>
+			</div>
+			<div class="g-item">
+				<div class="m-item">
+					<img src="../images/loading.gif" class="u-img" data-src="../images/default.jpg">
+
+				</div>
+				<a class="m-content" href="http://www.baidu.com">
+					<div class="m-courseTitle">一元周末好去处,紫谷伊甸园踏青</div>
+					<div class="m-address">
+						<div class="u-date">2015.04.26</div>
+						<div class="u-address"><span>紫谷伊甸园</span><span>26公里</span></div>
+					</div>
+					<div class="m-price">
+						<div>100元</div>
+						<div>150元</div>
+					</div>
+					<div class="m-fav">
+						<div class="icon"></div>
+						<div>252</div>
+					</div>
+				</a>
+				<a class="m-shadow" href="http://www.baidu.com">
+						<div class="m-over icon">
+							&#xe61d;
+						</div>
+				</a>
+				
+			</div>
+
+	</div> -->
+</div>
+<script type="text/template" id="headTpl">
+		<div class="g-head bb1">
+		<div class="u-back">
+			<div class="icon">&#xe605;</div><div>返回</div>
+		</div>
+		<div class="u-title">
+			<%=teacher_nickname%>
+		</div>
+	</div>
+	<div class="g-userInfo">
+		<div class="m-hImgBox">
+			<div class="m-hImg">
+				<img src="<%=config.imgBaseURL%><%=teacher_photo%>" alt="">
+			</div>
+		</div>
+		<div class="m-userInfo">
+			<span class="i-tName"><%=teacher_nickname%></span>
+			<%if(teacher_type){%>
+				<span <%if(teacher_type=="组织者"){%>class="i-tCap-1"<%}else{%>class="i-tCap"<%}%>><%=teacher_type%></span>
+			<%}%>
+		</div>
+		<div class="u-desc">
+			<%=teacher_oneabtract%>
+		</div>
+		<div class="u-btn changeFavBtn"  <%if(teacher_iscollect==1){%>style="background-color:#ccc" <%}%> data-id="<%=teacher_id%>" tagtype="1" favid="<%=teacher_id%>" id="teacherFavBtn">
+			<div class="u-favIcon changeBgElem" <%if(teacher_iscollect==1){%>style="background-position-y:0px;"<%}%>></div>
+			<div class="u-favText changeTextElem"><%=teacher_iscollect==0?"喜欢":"已喜欢"%></div>
+		</div>
+	</div>
+	<div class="g-page" id="page">
+</script>
+
+<script type="text/template" id="itemTpl">
+	
+		<%var i,len;%>
+		<%for(i=0,len=course_user_arr.length;i<len;i++){%>	
+			<%var e=course_user_arr[i];%>	
+			<div class="g-item">
+				<div class="ltr"></div>
+				<div class="rtr"></div>
+				<div class="lbr"></div>
+				<div class="rbr"></div>
+				<div class="m-item">
+					<img src="../images/loading.gif" class="u-img" data-src="<%=config.imgBaseURL%><%=e.headphoto%>">
+				</div>
+				<a class="m-content" href="../detail/course.html?courseid=<%=e.courseid%>">
+					<div class="m-courseTitle"><%=e.title%></div>
+					<div class="m-address">
+						<div class="u-date"><%=e.course_time%></div>
+						<div class="u-address"><span><%=e.coursesite%></span><span><%=e.coursedistance%></span></div>
+					</div>
+					<div class="m-price">
+						<%if(e.courseprice!=-1){%>
+							<%if(e.old_courseprice>0&&e.old_courseprice>e.courseprice){%>
+								<div><%=e.old_courseprice%>元</div>
+								<div><%=e.courseprice%>元</div>
+							<%}else{%>
+								<div class="dn">9999</div>
+								<div><%=e.courseprice%>元</div>
+							<%}%>
+						<%}%>
+					</div>
+					<div class="m-fav changeFavBtn" tagtype="2" favid="<%=e.courseid%>">
+						<div class="icon changeBgElem" <%if(e.iscollect==1){%> style="background-position-y:1px;"<%}%>></div>
+						<div class="changeTextElem mt5" ><%=e.collectcount%></div>
+					</div>
+				</a>
+				<div class="m-contentShadow"></div>
+					<%if(e.course_havecount==0){%>
+						<a class="m-shadow" href="../detail/course.html?courseid=<%=e.courseid%>">
+							<div class="m-over">
+								
+							</div>
+						</a>
+					<%}%>
+			</div>
+			<%}%>
+</script>
+</body>
+</html>

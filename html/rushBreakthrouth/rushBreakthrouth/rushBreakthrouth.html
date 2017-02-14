@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">	
+	<title>勇闯三关</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/rushBreakthrouth.css">
+    <script src="../js/jquery-1.11.3.min.js"></script>
+    <script src="../js/rushBreakthrouth.js"></script>
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <style type="text/css">
+    .fuchuang{
+        position: fixed;
+        bottom:-0.26rem;
+        left:0;
+    }
+   
+    </style>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "//hm.baidu.com/hm.js?e411291f40abed7605a649cec9afb049";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })(); 
+    </script>
+</head>
+<body>
+<div class="container">
+    <section class="section0 section current">
+        <button class="button0_0"></button>
+        <img class="havemany" src="../rushBreakthrouth_img/havemany.png" alt="">
+       
+       
+        <div class="number"></div>
+        <!-- <div class="bigDiv"> -->
+             <div class="fuchuang">
+                <a href="http://a.app.qq.com/o/simple.jsp?pkgname=sm.xue" id="downLoad">
+                    <img src="../rushBreakthrouth_img/down.png" alt="">
+                </a>
+            </div>
+    <!-- </div> -->
+    </section>
+    
+  
+        
+    
+    <section class="section1 section">
+        <input type="button" class="button1_3">
+        <div class="chooseOne">
+            <div class="img1_0" id="img1_0"></div>
+            <div class="img1_1" id="img1_1"></div>
+            <div class="img1_2" id="img1_2"></div>
+          
+        </div>
+    </section>
+    <section class="section2 section">
+        <input type="button" class="button2_3">
+        <div class="chooseTwo">
+            <div class="img2_0" id="img2_0"></div>
+            <div class="img2_1" id="img2_1"></div>
+            <div class="img2_2" id="img2_2"></div>
+        </div>
+    </section>
+
+    <section class="section3 section">
+        <input type="button" class="button3_3">
+        <div class="chooseThree">
+            <div class="img3_0" id="img3_0"></div>
+            <div class="img3_1" id="img3_1"></div>
+            <div class="img3_2" id="img3_2"></div>
+        </div>
+        <div class="tanchuang">
+          <img  src="../rushBreakthrouth_img/right0.png" alt="">  
+          <img id="onceagain" src="../rushBreakthrouth_img/onceagain.png" alt="">
+          <img id="nogo" src="../rushBreakthrouth_img/nogo.png" alt="">
+        </div>
+    </section>
+    <section class="section4 section">
+        <input class="phone" type="text" placeholder="请输入手机号">
+        <input class="name" type="text" placeholder="请输入昵称">
+        <input type="button" class="voucher" >
+       <!--  <div class="A" id="A"></div>
+        <div class="B" id="B"></div> -->
+        <div class="getVoucher">
+            <img class="success" src="../rushBreakthrouth_img/getVoucher.png" alt="">
+             <!-- <img class="success" src="../rushBreakthrouth_img/baoming.png" alt=""> -->
+            <a id="App">
+                <img id="app" src="../rushBreakthrouth_img/App.png" alt="">
+            </a>
+            <img id="toFriend" class="toFriend" src="../rushBreakthrouth_img/friend.png" alt="">
+        </div>
+         <div class="mask">
+            <img src="../rushBreakthrouth_img/mask_text.png" alt="">
+        </div>
+
+    </section>
+   
+</div>
+</body>
+<script type="text/javascript">
+        var windowWidth = document.body.clientWidth;
+        window.clientWidth = windowWidth;
+        //定义body字体大小
+        document.getElementsByTagName("html")[0].style.fontSize=windowWidth/10+"px";
+        window.onresize=function(){
+        var windowWidth = document.body.clientWidth;
+        document.getElementsByTagName("html")[0].style.fontSize=windowWidth/10+"px";
+        };
+               
+
+    $(function(){
+            wx_url=escape(window.location.href);
+            $.ajax({
+                url:"/WeixinServlet?method=weixinPower",
+                type:"post",
+                data:'servicestr={"wei_url":"'+wx_url+'"}',  
+                dataType:"html",
+                success:function(data){
+                    var json = eval("("+data+")");
+                    if(json.code=="success"){
+                        wx.config({
+                            debug: false, 
+                            appId: 'wx47987fa108b8329b', 
+                           // appId:'wxd470058f4535a61d', //mammachoice
+                            timestamp:json.timestamp,
+                            nonceStr: json.nonceStr,
+                            signature: json.signature,
+                            jsApiList: ['onMenuShareTimeline','onMenuShareAppMessage','onMenuShareQQ','onMenuShareWeibo','onMenuShareQZone']
+                        });
+
+                        var shareObject = {
+                            title: 'Passion Run',
+                            desc: '快来，这个周末和发现周末一起叱咤京城！',
+                            link: window.location.href,
+                            imgUrl: 'http://www.fxzhoumo.com/redpacket/market/rushBreakthrouth_img/share.jpg'
+                        };
+                        var shareFriend={
+                            title:'快来，这个周末和发现周末一起叱咤京城！',
+                            link: window.location.href,
+                            imgUrl: 'http://www.fxzhoumo.com/redpacket/market/rushBreakthrouth_img/share.jpg'
+                        }
+                        wx.ready( function (){
+                            wx.onMenuShareTimeline(shareFriend);   //朋友圈
+                            wx.onMenuShareAppMessage(shareObject);  //朋友
+
+                        });
+                    }else{
+                        alert(json.description);
+                    }
+                    
+                }
+            });
+    });
+
+</script>
+</html>

@@ -1,0 +1,158 @@
+body{
+	background: #ededed;
+}
+#g-screen{
+	max-width: 750px;
+	min-width: 320px;
+	margin: 0 auto;
+}
+
+.g-head{
+	position: fixed;
+	width: 100%;
+	height: 44px;
+	background: #ededed;
+	padding: 0 20px 0 20px;
+	overflow: hidden;
+	z-index: 2;
+	box-shadow: 0 -1px 1px -1px rgba(0, 0, 0, 0.3) inset;
+	max-width: 750px;
+}
+		.u-back{
+			position: absolute;
+			display: table;
+			left: 10px;
+			top: 0px;
+			height: 44px;
+			margin-right: 20px;
+		}
+				.u-back>div{
+					display: table-cell;
+					vertical-align: middle;
+					text-align: center;
+					font-size: 16px;
+					color: #767676;
+				}
+		.u-title{
+			text-align: center;
+			font-size: 19px;
+			display: inline-block;
+			width: 100%;
+			line-height: 44px;
+		}
+
+.g-userInfo{
+	padding-top: 70px;
+	text-align: center;
+}
+		.m-hImg{
+			display: inline-block;
+			width: 120px;
+			height: 120px;
+			border: 1px solid #d5d5d5;
+			overflow: hidden;
+			border-radius: 50%;
+			padding: 2px;
+		}
+				.m-hImg>img{
+					max-width: 100%;
+					width: 115px;
+					height: 115px;
+					border-radius: 50%;
+				}
+
+		.m-userInfo{
+			margin-top: 10px;
+		}
+				
+				.i-tName{
+					font-size: 20px;
+					margin-right: 5px;
+					line-height: 1;
+				}
+
+				.i-tCap{
+					position: relative;
+					top: -2px;
+					font-size: 10px;
+					background: #00c8c8;
+					color: #fff;
+					padding:2px;
+					overflow: hidden;
+					border-radius: 2px;
+				}
+					.i-tCap-1{
+								position: relative;
+								top: -2px;
+								font-size: 10px;
+								background: #faa000;
+								color: #fff;
+								padding:2px;
+								overflow: hidden;
+								border-radius: 2px;
+						}
+		.u-desc{
+			font-size: 13px;
+			color: #8c8c8c;
+			width: 80%;
+			margin:5px auto;
+		}
+
+		.u-list{
+			margin-top: 40px;
+			text-align: center;
+		}
+
+				.u-list li{
+					display: inline-block;
+					width: 70px;
+				}
+
+						.u-list li+li{
+							margin-left: 30px;
+						}
+						.u-list a{
+							color: #fff;
+						}
+								.u-num{
+									background: #00c8c8;
+									padding: 10px;
+									color: #fff;
+									border-radius: 5px;
+									margin-top: 5px;
+									font-size: 20px;
+								}
+
+								.u-txt{
+									margin-top: 5px;
+									color: #333;
+									font-size: 18px;
+									white-space: nowrap;
+								}
+
+			.u-btn{
+			margin-top: 40px;
+			padding:10px 30px;
+			background: #00c8c8;
+			color: #fff;
+			font-size: 18px;
+			display: inline-block;
+			border-radius: 6px;
+			overflow: hidden;
+		}
+
+				.u-favIcon{
+					float: left;
+					background: url(../images/fav_white.png)no-repeat 0 -26px;
+					width: 20px;
+					height: 18px;
+					background-size: 100%;
+					margin-right: 10px;
+				}
+				.u-favText{
+					overflow: hidden;
+					text-align: center;
+					line-height: 18px;
+				}
+
+		

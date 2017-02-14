@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">	
+	<title>发现周末</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/yinghuaLuckyBag.css">
+    <script src="../js/jquery-1.11.3.min.js"></script>
+    <script src="../js/yinghuaLuckyBag.js"></script>
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?64e774c240780cb29f1547f4406ca2ff";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+</head>
+<body>
+	<section class="sectionOne">
+		<img class="homeBag" src="../yinghuaLuckyBag_img/homeBag.png" alt="">
+        <div class="homeBegDiv"></div>
+	</section>
+    <section class="sectionTwo">
+        <div class="phoneWall">
+            <input class="phone" type="text" placeholder="输入您的手机号码将礼券放入荷包中">
+            <button class="btn">放入荷包</button>
+        </div>
+        <div class="anniu">
+            <button class="put">放入荷包</button>
+        </div>
+        <div class="voucher">
+            <img src="../yinghuaLuckyBag_img/voucher0.png" alt="">
+            <img src="../yinghuaLuckyBag_img/voucher0.png" alt="">
+            <img src="../yinghuaLuckyBag_img/vouvher1.png" alt="">
+            <img src="../yinghuaLuckyBag_img/vouvher1.png" alt="">
+            <img src="../yinghuaLuckyBag_img/voucher2.png" alt="">
+            <img src="../yinghuaLuckyBag_img/voucher2.png" alt="">
+            <img src="../yinghuaLuckyBag_img/voucher2.png" alt="">
+            <img src="../yinghuaLuckyBag_img/voucher3.png" alt="">
+            <img src="../yinghuaLuckyBag_img/voucher4.png" alt="">
+            <img src="../yinghuaLuckyBag_img/voucher4.png" alt="">
+        </div>
+        <div class="mask">
+            <!-- <img class="line" src="../yinghuaLuckyBag_img/line.png" alt=""> -->
+            <img class="app" src="../yinghuaLuckyBag_img/app.png" alt="">
+            <img class="weixin" src="../yinghuaLuckyBag_img/weixin.png" alt="">
+            <a class="register" href="http://a.app.qq.com/o/simple.jsp?pkgname=sm.xue" ></a>
+        </div>
+        
+    
+    </section>
+    <div class="fuchuang">
+        <a href="http://a.app.qq.com/o/simple.jsp?pkgname=sm.xue" id="downLoad">
+            <img src="../yinghuaLuckyBag_img/down.png" alt="">
+        </a>
+    </div>
+    
+    <script>
+        var windowWidth = document.body.clientWidth;
+        window.clientWidth = windowWidth;
+        //定义body字体大小
+        document.getElementsByTagName("html")[0].style.fontSize=windowWidth/10+"px";
+        window.onresize=function(){
+        var windowWidth = document.body.clientWidth;
+        document.getElementsByTagName("html")[0].style.fontSize=windowWidth/10+"px";
+        };
+        $(function(){
+            wx_url=escape(window.location.href);
+            $.ajax({
+                url:"/WeixinServlet?method=weixinPower",
+                type:"post",
+                data:'servicestr={"wei_url":"'+wx_url+'"}',  
+                dataType:"html",
+                success:function(data){
+                    var json = eval("("+data+")");
+                    if(json.code=="success"){
+                        wx.config({
+                            debug: false, 
+                            appId: 'wx47987fa108b8329b', 
+                           // appId:'wxd470058f4535a61d', //mammachoice
+                            timestamp:json.timestamp,
+                            nonceStr: json.nonceStr,
+                            signature: json.signature,
+                            jsApiList: ['onMenuShareTimeline','onMenuShareAppMessage','onMenuShareQQ','onMenuShareWeibo','onMenuShareQZone']
+                        });
+
+                        var shareObject = {
+                            title: 'Hey，你有一个樱花福袋还没领取～',
+                            desc: '1314份520元现金大礼包带你畅享魔都春日美食！',
+                            link: window.location.href,
+                            imgUrl: 'http://www.fxzhoumo.com/redpacket/operation/yinghuaLuckyBag_img/share.jpg'
+                        };
+                        var shareFriend={
+                            title:'Hey，我有一个樱花福袋送给你！1314份520元现金大礼包带你畅享魔都春日美食！',
+                            link: window.location.href,
+                            imgUrl: 'http://www.fxzhoumo.com/redpacket/operation/yinghuaLuckyBag_img/share.jpg'
+                        }
+                        wx.ready( function (){
+                            wx.onMenuShareTimeline(shareFriend);   //朋友圈
+                            wx.onMenuShareAppMessage(shareObject);  //朋友
+
+                        });
+                    }else{
+                        alert(json.description);
+                    }
+                    
+                }
+            });
+        });
+    </script>
+
+	
+</body>
+</html>

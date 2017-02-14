@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>测试参数</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" />
+	<script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+	<style type="text/css">
+		#textarea{
+			border:1px solid black;
+			width:100%;
+			height:100px;
+			word-wrap:break-word;
+		}
+	</style>
+	<script>
+
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?c5616c5396074e2ddeba660e674fc3aa";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+
+		$(function(){
+			var url=window.location.href;
+			$('#btn').bind('touchstart',function(){
+				$('#textarea').html(url);
+			})
+
+		})
+</script>
+	
+</head>
+<body>
+	<div id="textarea"></div>
+	<button id="btn" onclick="_hmt.push(['_trackEvent', 'style'])">获取URL</button>
+
+</body>
+</html>

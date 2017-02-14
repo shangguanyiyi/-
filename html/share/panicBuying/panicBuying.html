@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>一元专享秒杀</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" />
+	<meta name="apple-touch-fullscreen" content="yes" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="format-detection" content="telephone=no" />
+	<link rel="stylesheet" href="../css/panicBuying.css">
+	<link rel="stylesheet" href="../css/reset.css">
+	<script src="../js/jquery-1.11.3.min.js"></script>
+    <script src='../js/panicBuying.js'></script>
+	<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script><!-- 分享好友和朋友圈 -->
+   <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?31b8c7c720cb0b03cd5d3fef4466f0ee";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+</head>
+<body>
+	<div class="contain">
+	<!-- 	<a class="pic0" href="http://www.fxzhoumo.com/detail/course.html?courseid=5621"></a>	
+		<a class="pic1" href="http://www.fxzhoumo.com/detail/course.html?courseid=5620"></a>	
+		<a class="pic2" href="http://www.fxzhoumo.com/detail/course.html?courseid=5147"></a>	
+		<a class="pic3" href="http://www.fxzhoumo.com/detail/course.html?courseid=5623"></a>
+		<a class="pic4" href="http://www.fxzhoumo.com/detail/course.html?courseid=1799"></a>
+		<a class="pic5" href="http://www.fxzhoumo.com/detail/course.html?courseid=5299"></a>
+		<a class="pic6" href="http://www.fxzhoumo.com/detail/course.html?courseid=5613"></a>	 -->
+	</div>
+	 <script type="text/javascript">
+	var windowWidth = document.body.clientWidth;
+    window.clientWidth = windowWidth;
+    //定义body字体大小
+    document.getElementsByTagName("html")[0].style.fontSize=windowWidth/10+"px";
+    window.onresize=function(){
+    var windowWidth = document.body.clientWidth;
+    document.getElementsByTagName("html")[0].style.fontSize=windowWidth/10+"px";
+    };
+    $(function(){
+            wx_url=escape(window.location.href);
+            $.ajax({
+                url:"/WeixinServlet?method=weixinPower",
+                type:"post",
+                data:'servicestr={"wei_url":"'+wx_url+'"}',  
+                dataType:"html",
+                success:function(data){
+                    var json = eval("("+data+")");
+                    if(json.code=="success"){
+                        wx.config({
+                            debug: false, 
+                            appId: 'wx47987fa108b8329b', 
+                           // appId:'wxd470058f4535a61d', //mammachoice
+                            timestamp:json.timestamp,
+                            nonceStr: json.nonceStr,
+                            signature: json.signature,
+                            jsApiList: ['onMenuShareTimeline','onMenuShareAppMessage','onMenuShareQQ','onMenuShareWeibo','onMenuShareQZone']
+                        });
+
+                        var shareObject = {
+                            title: '好玩活动仅一元？专属新用户',
+                            desc: '新用户的看过来，多个一元活动选择，挑挑看，有你喜欢的吗？',
+                            link: window.location.href,
+                            imgUrl: 'http://www.fxzhoumo.com/operation/panicBuying/panicBuying_img/h5banner.png'
+                        };
+                        var shareFriend={
+                            title:'新用户一元活动专享',
+                            link: window.location.href,
+                            imgUrl: 'http://www.fxzhoumo.com/operation/panicBuying/panicBuying_img/h5banner.png'
+                        }
+                        wx.ready( function (){
+                            wx.onMenuShareTimeline(shareFriend);   //朋友圈
+                            wx.onMenuShareAppMessage(shareObject);  //朋友
+
+                        });
+                    }else{
+                        alert(json.description);
+                    }
+                    
+                }
+            });
+    });
+    </script>
+</body>
+	
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">	
+	<title>下午茶红包专场</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/afternoonTea.css">
+    <script src="../js/jquery-1.11.3.min.js"></script>
+    <script src="../js/afternoonTea_bj.js"></script>
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script></script>
+    <style type="text/css">
+    .fuchuang{
+        position: fixed;
+        bottom:-5px;
+        left:0;
+    }
+    </style>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "//hm.baidu.com/hm.js?854be5f8c32ab4d1ed86b3855aaa612e";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+<body>
+    <section>
+        <img src="../afternoonTea_img/banner_bj.jpg" alt="">
+        <img class="banner_text" src="../afternoonTea_img/text_bj.png" alt="">
+        <img class="box" src="../afternoonTea_img/box.png" alt="">
+        <input type="text" placeholder="请输入手机号" class="phone">
+        <input type="button" value="立即领取" class="button" id="button">
+        <img class="activityText" src="../afternoonTea_img/activityText.gif" alt="">
+        <div class="all_activity">
+            <div class="sigle_activity sigle0" id="sigle0">
+                <a class="left" id="left0">
+                    <img src="http://img.fxzhoumo.com/xue/203113/203113multipleImages20160317161609mid.jpg" alt="">
+                    <div class="txt_price">
+                        <p>欢喜有鱼双人泰餐</p>
+                        <p class="price">178&nbsp;<span>元/2位</span></p>
+                    </div>
+                </a>
+                <a class="right" id="right0">
+                    <img src="http://img.fxzhoumo.com/xue/199824/199824multipleImages20160316142910mid.jpg" alt="">
+                    <div class="txt_price">
+                        <p>新川香诱惑双人餐</p>
+                        <p class="price">180&nbsp;<span>元/2位</span></p>
+                       
+                    </div>
+                </a>
+            </div>
+
+            <div class="sigle_activity sigle1">
+                <a class="left" id="left1">
+                    <img src="http://img.fxzhoumo.com/xue/34748/34748multipleImages20160218101659mid.jpg" alt="">
+                    <div class="txt_price">
+                        <p>秋刀鱼之味双人餐</p>
+                        <p class="price">198&nbsp;<span>元/2位</span></p>
+                        
+                    </div>
+                </a>
+                <a class="right" id="right1">
+                    <img src="http://img.fxzhoumo.com/xue/209445/209445multipleImages20160330114653mid.jpg" alt="">
+                    <div class="txt_price">
+                       <p>MESI MESI空运生鲜豪华餐</p>
+                        <p class="price">268&nbsp;<span>元/2位</span></p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="sigle_activity sigle2">
+                <a class="left" id="left2">
+                    <img src="http://img.fxzhoumo.com/xue/198283/198283multipleImages20160311172437mid.jpg" alt="">
+                    <div class="txt_price">
+                        <p>红墙小院英式下午茶</p>
+                        <p class="price">276&nbsp;<span>元/2位</span></p>
+                    </div>
+                </a>
+                <a class="right" id="right2">
+                    <img src="http://img.fxzhoumo.com/xue/205591/205591multipleImages20160329184943mid.jpg" alt="">
+                    <div class="txt_price">
+                        <p>U-sipper精品七道式单人餐</p>
+                        <p class="price">318&nbsp;<span>元/位</span></p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <img class="end" src="../afternoonTea_img/end.png" alt="">
+        <div class="fuchuang">
+            <a href="http://a.app.qq.com/o/simple.jsp?pkgname=sm.xue" id="downLoad">
+                <img src="../afternoonTea_img/down.png" alt="">
+            </a>
+        </div>
+        <div class="mask">
+            <img class="close" src="../afternoonTea_img/close.png" alt="">
+            <img class="outside" src="../afternoonTea_img/outside.png" alt="">
+            <img class="inside" src="../afternoonTea_img/inside.png" alt="">
+            <a class="register" id="register" href="http://a.app.qq.com/o/simple.jsp?pkgname=sm.xue">
+            </a>
+        </div>
+    </section>
+
+   
+</body>
+<script type="text/javascript">
+
+    $(function(){
+            wx_url=escape(window.location.href);
+            $.ajax({
+                url:"/WeixinServlet?method=weixinPower",
+                type:"post",
+                data:'servicestr={"wei_url":"'+wx_url+'"}',  
+                dataType:"html",
+                success:function(data){
+                    var json = eval("("+data+")");
+                    if(json.code=="success"){
+                        wx.config({
+                            debug: false, 
+                            appId: 'wx47987fa108b8329b', 
+                           // appId:'wxd470058f4535a61d', //mammachoice
+                            timestamp:json.timestamp,
+                            nonceStr: json.nonceStr,
+                            signature: json.signature,
+                            jsApiList: ['onMenuShareTimeline','onMenuShareAppMessage','onMenuShareQQ','onMenuShareWeibo','onMenuShareQZone']
+                        });
+
+                        var shareObject = {
+                            title: '约上胖友去踏青',
+                            desc: '约上胖友去踏青，发现周末50元礼券供你吃好喝好！',
+                            link: window.location.href,
+                            imgUrl: 'http://www.fxzhoumo.com/redpacket/operation/afternoonTea_img/share.jpg'
+                        };
+                        var shareFriend={
+                            title:'约上胖友去踏青，发现周末50元礼券供你吃好喝好！',
+                            link: window.location.href,
+                            imgUrl: 'http://www.fxzhoumo.com/redpacket/operation/afternoonTea_img/share.jpg'
+                        }
+                        wx.ready( function (){
+                            wx.onMenuShareTimeline(shareFriend);   //朋友圈
+                            wx.onMenuShareAppMessage(shareObject);  //朋友
+
+                        });
+                    }else{
+                        alert(json.description);
+                    }
+                    
+                }
+            });
+    });
+
+</script>
+</html>

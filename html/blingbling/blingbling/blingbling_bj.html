@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">	
+	<title>一个Bling Bling的红包</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="stylesheet" href="../css/base.css">
+    <script src="../js/jquery-1.11.3.min.js"></script>
+    <script src="../js/blingbling_bj.js"></script>
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <style type="text/css">
+    .fuchuang{
+        position: fixed;
+        bottom:-0.25rem;
+        left:0;
+    }
+    section {
+        text-align: center;
+        margin-bottom:20%;
+    }
+    section input{
+        width:60%;
+        padding:2%;
+        border:2px solid #b3b3b3;
+        border-radius: 5px;
+        background: transparent;
+        text-align: center;
+        -webkit-appearance:none;
+    }
+    .box{
+        margin:3% 0;
+    }
+    .button{
+        /*background:#b4c1a8;*/
+        color:#666;
+    }
+    </style>
+    <script>
+         var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "//hm.baidu.com/hm.js?bc224ef20afc76a984fded6ffd68ef11";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+<body>
+    <section>   
+        <img src="../blingbling_img/banner.jpg" alt="">  
+        <img class="box" src="../blingbling_img/box.png" alt="">
+        <input type="text" class="phone" placeholder="请输入手机号">
+        <input type="button" class="button" id="button" value="立即领取">
+    </section>
+  
+    <div class="fuchuang">
+        <a href="http://a.app.qq.com/o/simple.jsp?pkgname=sm.xue" id="downLoad">
+            <img src="../blingbling_img/down.png" alt="">
+        </a>
+    </div>
+
+
+</body> 
+<script type="text/javascript">
+    var windowWidth = document.body.clientWidth;
+    window.clientWidth = windowWidth;
+    //定义body字体大小
+    document.getElementsByTagName("html")[0].style.fontSize=windowWidth/10+"px";
+    window.onresize=function(){
+    var windowWidth = document.body.clientWidth;
+    document.getElementsByTagName("html")[0].style.fontSize=windowWidth/10+"px";
+    };
+
+    $(function(){
+            wx_url=escape(window.location.href);
+            $.ajax({
+                url:"/WeixinServlet?method=weixinPower",
+                type:"post",
+                data:'servicestr={"wei_url":"'+wx_url+'"}',  
+                dataType:"html",
+                success:function(data){
+                    var json = eval("("+data+")");
+                    if(json.code=="success"){
+                        wx.config({
+                            debug: false, 
+                            appId: 'wx47987fa108b8329b', 
+                           // appId:'wxd470058f4535a61d', //mammachoice
+                            timestamp:json.timestamp,
+                            nonceStr: json.nonceStr,
+                            signature: json.signature,
+                            jsApiList: ['onMenuShareTimeline','onMenuShareAppMessage','onMenuShareQQ','onMenuShareWeibo','onMenuShareQZone']
+                        });
+
+                        var shareObject = {
+                            title: '去吃去喝去浪起来吧！',
+                            desc: '发现周末派发20元全场通用券，去吃去喝去浪起来吧！',
+                            link: window.location.href,
+                            imgUrl: 'http://www.fxzhoumo.com/redpacket/operation/blingbling_img/share.jpg'
+                        };
+                        var shareFriend={
+                            title:'发现周末派发20元全场通用券，去吃去喝去浪起来吧！',
+                            link: window.location.href,
+                            imgUrl: 'http://www.fxzhoumo.com/redpacket/operation/blingbling_img/share.jpg'
+                        }
+                        wx.ready( function (){
+                            wx.onMenuShareTimeline(shareFriend);   //朋友圈
+                            wx.onMenuShareAppMessage(shareObject);  //朋友
+
+                        });
+                    }else{
+                        alert(json.description);
+                    }
+                    
+                }
+            });
+    });
+
+</script>
+</html>

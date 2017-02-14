@@ -1,0 +1,261 @@
+*{
+	margin:0;
+	padding:0;
+	-webkit-box-sizing:border-box;
+    box-sizing:border-box;   
+    -moz-box-sizing:border-box;  
+}
+html{
+	font-family:"Hiragino Sans GB",Helvetica,STHeiTi,Arial,sans-serif;
+    -webkit-text-size-adjust:100%;
+    font-size:62.5%;
+}
+a,u{
+    text-decoration: none;
+    color:#999;
+}
+li{
+    list-style: none;
+}
+.wrap{
+	width:980px;
+	margin:0 auto;
+	/*border:1px solid blue;*/
+}
+header,section,footer{
+	width:100%;
+	background-color:#ddd;
+}
+section,footer{
+	background-color: #fff;
+	text-align: center;
+}
+header{
+	background:url(../show_img/background.png) no-repeat;
+	background-size: 100%;
+	/*width:100%;*/
+	height:664px;
+}
+
+.header{
+	clear:both;
+	overflow: hidden;
+}
+.header_nav,.header_nav_ul,.header_nav_ul li{
+	float:left;
+	/*border:1px solid red;*/
+}
+.header_nav_ul{
+	/*width:70%;*/
+	padding:3% 0% 3% 35%;
+	/*padding-left:40%;*/
+	margin-right:0;
+}
+.header_nav img{
+	width:95%;
+	margin-top:1%;
+}
+
+/*头部竖线*/
+.header_nav_ul li span{
+	margin:0 25px;
+	color:#eee;
+	display:inline-block;
+}
+.header_nav_ul li a{
+	color:#FFF;
+	font-size:14px;
+	padding-bottom:5px;
+}
+.current{
+	border-bottom:2px solid #81e1fd;
+}
+/*logo图  发现周末*/
+.header_nav{
+	width:30%;
+}
+.header_nav img{
+	padding:6% 0 8% 30%;
+
+}
+.banner{
+	float:left;
+}
+#phone{
+	width:26%;
+}
+/*头图外框*/
+.pageOne{
+	padding-left:15%;
+	padding-top:5%;
+	padding-right:15%;
+	overflow: hidden;
+	float:left;
+	width:100%;
+}
+/*文字与下载部分*/
+.lifeStyle{
+	margin-left:45%;
+	margin-top:-320px;
+	float:left;
+}
+.lifeStyle>img{
+	width:120%;
+}
+/*立即下载外面的div*/
+.lifeStyle>div{
+	padding-top:5%;
+	margin-left:5%;
+}
+#downLoad{
+	width:50%;
+}
+#feature{
+	width:50%;
+}
+#download{
+	width:40%;
+}
+/*ul图片*/
+.phone_kuang{
+	margin:0 auto;
+}
+.section_ul{
+	overflow: hidden;
+	padding:5% 0% 5% 8%;
+	margin:0 auto;
+	text-align:center;
+}
+.section_ul li{
+	float:left;
+	margin-right:5px;
+}
+.section_ul li:nth-child(1),.section_ul li:nth-child(5){
+	margin-top:5%;
+}
+.section_ul li:nth-child(2),.section_ul li:nth-child(4){
+	margin-top:2%;
+}
+section img:first-child{
+	padding:5% 0 0 0;
+}
+.select_down{
+	padding:7% 0 3% 0;
+}
+
+.footer_download{
+	overflow: hidden;
+	margin:0 auto;
+	padding-left:15%;
+
+}
+.footer_download li{
+	margin-right:2%;
+	margin-bottom:2%;
+	width:220px;
+	height:220px;
+	/*border:1px solid red;*/
+	float:left;
+		/*border:1px solid #ddd;*/
+}
+.footer_download li p{
+	/*font-weight:bold;*/
+	color:#999;
+	letter-spacing:.1em;
+	font-size:1.2em;
+}
+
+
+.clearfix:after{
+	visibility: hidden;
+	display:block;
+	content:"";
+	clear:both;
+	height:0;
+	font-size:0;
+}
+.clearfix{
+	*zoom:1;
+}
+.footer_download li a{
+	/*height:220px;*/
+	display:block;
+}
+.picture1,.picture2,.picture3{
+	border:2px solid #ddd;
+}
+/*.picture2{}*/
+.icon{
+	width:43px;
+	height:50px;
+	display:block;
+	/*border:1px solid red;*/
+	margin:0 auto 18px;
+}
+.ios{
+	background:url(../show_img/apple.png) no-repeat;	
+}
+.android{
+	background:url(../show_img/android.png) no-repeat;
+}
+.footer_download li a{
+	padding-top:70px;
+}
+.picture3{
+	background: url(../show_img/erweima_02.png) no-repeat;
+}
+footer{
+	padding:3% 0 2% 0;
+}
+footer p{
+	font-size:13px;
+}
+.section_ul li{
+	-webkit-transition:-webkit-transform .3s linear;
+	 -moz-transition:-moz-transform .3s ease-in;
+	 -o-transition:-o-transform .4s ease-in;
+	 -transition:-transform .4s ease-in;
+}
+
+.section_ul li:nth-child(1):hover,.section_ul li:nth-child(5):hover{
+	-webkit-transform: scale(1.5);
+    -moz-transform: scale(1.5);
+    -o-transform: scale(1.5);
+    -transform: scale(1.5);
+}
+.section_ul li:nth-child(2):hover,.section_ul li:nth-child(4):hover{
+	-webkit-transform: scale(1.25);
+    -moz-transform: scale(1.25);
+    -o-transform: scale(1.25);
+    -transform: scale(1.25);
+}
+.section_ul li:nth-child(3):hover{
+	-webkit-transform: scale(1.12);
+    -moz-transform: scale(1.12);
+    -o-transform: scale(1.12);
+    -transform: scale(1.12);
+}
+
+/***关于我们*****/
+.aboutOur{
+	width:40%;
+	margin:7% 0 5% 0;
+}
+#about{
+	/*border:1px solid red;*/
+	background-color: #333;
+	color:#fff;
+}
+.aboutOur_text{
+	padding-left:15%;
+	text-align: center;
+	/*border:1px solid red;*/
+	width:85%;
+	color:#666;
+	margin:0  0 5% 0;
+	font-family: "微软雅黑";
+	
+}
+.aboutOur_text p{
+	font-size:16px;
+}

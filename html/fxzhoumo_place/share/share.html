@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+	 <meta name="apple-mobile-web-app-capable" content="yes" />
+
+	<title>发现周末</title>
+	<link rel="stylesheet" href="css/stylecss.css">
+	<link rel="stylesheet" href="css/reset.css">
+	<script src="js/jquery-1.11.3.min.js"></script>
+</head>
+<body>
+	<div class="out_redPacketCome page" id="out_redPacketCome">
+		<div class="headpg">
+		<img src="images/pbhg.png" alt="红包来袭图">
+	</div>
+	<input type="hidden" id="orderid">  <!-- 订单id -->
+	<input type="hidden" id="userid">   <!--用户id-->
+	<div class="mainpg">
+		<img src="images/redpkg.png" alt="红包图" class="img1">
+		<img src="" alt="" class="img2" id="head">	<!-- 获取头像 -->
+		<!-- <img src="" alt="" id="head"> -->
+	</div>
+	<div class="btget">
+		<input type="text" placeholder="请输入手机号码" id="tle">
+		<input type="hidden" id="codenum"/>
+		<a onclick="getGifts();">
+			<img src="images/btget.jpg" alt="点击领取按钮">
+		</a>
+	</div>
+	</div>
+
+
+
+	<div class="redPacketSu" id="redPacketSu">
+		<div class="head">
+		<img src="images/phr.png" alt="" class="imgbg">
+		<img src="images/logo.png" alt="" class="imgper">
+	</div>
+	<div class="head_a">
+		<p>发现周末的红包</p>
+	</div>
+	<div class="hmain">
+		<img src="images/v_1.png" id="voutImg" alt="">
+	</div>
+	<div class="text clear" >
+		<span>优惠券已放入账户&nbsp;&nbsp;</span>
+		<div class="text_z">
+			<p id="mobile"></p>
+			<div class="text_p"></div>
+		</div>
+	</div>
+	<div class="hfoot hfootr">
+		<a href="http://a.app.qq.com/o/simple.jsp?pkgname=sm.xue">	<img src="images/bt1r.jpg" alt="下载发现周末">
+		</a>
+		<!-- <a href="">
+			<img src="images/bt2r.jpg" alt="分享给朋友" class="imgg">
+		</a> -->
+	</div>
+	</div>
+
+
+</body>
+<script>
+
+		function GetQueryString(name) { 
+				var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)"); 
+				var r = window.location.search.substr(1).match(reg); 
+				if (r!=null) return unescape(r[2]); return null; 
+		}
+		  
+		var sh = window.innerHeight;
+		$(".page").height(sh);   //页面高度为屏幕高度
+	
+    	$(function(){
+
+    		var userid = GetQueryString("userid");       //第一步
+    		//把获取到的变量，放到隐藏域里面，以便页面间调取
+        	$('#userid').val(userid);
+        	var orderid = GetQueryString("orderid");       
+    		//把获取到的变量，放到隐藏域里面，以便页面间调取
+        	$('#orderid').val(orderid);
+
+			$.ajax({
+			url:"/IUserCenterV2Servlet?method=getUserPhoto",
+			type:"post",
+			data:'servicestr={"userid":"'+userid+'"}',   //页面加载的时候通过用户id来获取头像
+			dataType:"html",
+			success:function(data){
+				//接收到成功请求后，把服务器返回的json字符串转换成对象
+				var json = eval("("+data+")");
+				if(json.code=="success"){
+					var user_photo = "http://img.xue.sm/"+json.user_photo;
+					$("#head").attr('src',user_photo); 
+
+
+				}else{
+					alert(json.description);
+				}
+			}
+			});
+		});
+
+
+		function getGifts(){		
+				var tle = $('#tle').val();
+				// var gifts = $('#codenum').val();
+				var ordeRid = $('#orderid').val();
+				if(tle==""||tle.length!=11){
+					alert("请正确填写手机号");
+					return;
+				}
+				$.ajax({
+					url:"/IOrderV2Servlet?method=getVoucherByShareAMob",
+					type:"post",
+					data:'servicestr={"mobile":"'+tle+'","orderid":'+ordeRid+'}',
+					dataType:"html",
+					success:function(data){
+						var json = eval("("+data+")");
+						if(json.code=="success"){
+							var tle = $('#tle').val();
+							$("#mobile").html(tle);
+							$("#redPacketSu").show();
+							$("#out_redPacketCome").hide();
+							$("#voutImg").attr("src","images/v_"+json.voucher_sort+".png");
+						}else{
+							alert(json.description);
+						}
+						
+					}
+				});
+	  			
+			}
+
+
+
+</script>
+</html>

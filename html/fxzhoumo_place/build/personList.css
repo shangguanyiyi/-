@@ -1,0 +1,317 @@
+body{
+	background: #ededed;
+}
+#g-screen{
+	max-width: 32rem;
+	min-width: 13.65333333rem;
+	margin: 0 auto;
+}
+
+.g-head{
+	position: fixed;
+	width: 100%;
+	height: 1.87733333rem;
+	background: #ededed;
+	padding: 0 0.85333333rem 0 0.85333333rem;
+	overflow: hidden;
+	z-index: 3;
+	box-shadow: 0 -1px 1px -1px rgba(0, 0, 0, 0.3) inset;
+	max-width: 32rem;
+	top: 0;
+	left: 0;
+}
+@media all and (min-width: 32rem) { 
+	.g-head{
+		position: relative;
+	}
+ }
+		
+		.u-back{
+			position: absolute;
+			display: table;
+			left: 0.42666667rem;
+			top: 0rem;
+			height: 1.87733333rem;
+			margin-right: 0.85333333rem;
+		}
+				.u-back>div{
+					display: table-cell;
+					vertical-align: middle;
+					text-align: center;
+					font-size: 0.68266667rem;
+					color: #767676;
+				}
+		.u-title{
+			text-align: center;
+			font-size: 0.81066667rem;
+			display: inline-block;
+			width: 100%;
+			line-height: 1.87733333rem;
+		}
+
+.g-userInfo{
+	padding-top: 2.98666667rem;
+	text-align: center;
+}
+		.m-hImg{
+			display: inline-block;
+			width: 5.12rem;
+			height: 5.12rem;
+			border: 1px solid #d5d5d5;
+			overflow: hidden;
+			border-radius: 50%;
+			padding: 0.08533333rem;
+		}
+				.m-hImg>img{
+					max-width: 100%;
+					width: 4.864rem;
+					height: 4.864rem;
+					border-radius: 50%;
+				}
+
+		.m-userInfo{
+			margin-top: 0.42666667rem;
+		}
+				
+				.i-tName{
+					font-size: 0.85333333rem;
+					margin-right: 0.21333333rem;
+					line-height: 1;
+				}
+
+				.i-tCap{
+					position: relative;
+					top: -0.08533333rem;
+					font-size: 0.42666667rem;
+					background: #00c8c8;
+					color: #fff;
+					padding:0.08533333rem;
+					overflow: hidden;
+					border-radius: 0.08533333rem;
+				}
+				.i-tCap-1{
+							font-size: 0.42666667rem;
+							background: #faa000;
+							color: #fff;
+							padding:0.08533333rem;
+							overflow: hidden;
+							border-radius: 0.08533333rem;
+						}
+		.u-desc{
+			font-size:0.55466667rem;
+			color: #999;
+			width: 80%;
+			margin:0.21333333rem auto;
+		}
+
+		.u-btn{
+			margin-top: 0.42666667rem;
+			padding:0.42666667rem 1.28rem;
+			background: #00c8c8;
+			color: #fff;
+			font-size:0.768rem;
+			display: inline-block;
+			border-radius: 0.256rem;
+			overflow: hidden;
+		}
+
+				.u-favIcon{
+					float: left;
+					background: url(../images/fav_white.png)no-repeat 0 -1.10933333rem;
+					width: 0.85333333rem;
+					height:0.768rem;
+					background-size: 100%;
+					margin-right: 0.42666667rem;
+				/*	margin-top: 0.08533333rem;*/
+				}
+				.u-favText{
+					overflow: hidden;
+					text-align: center;
+					line-height: 0.768rem;
+				}
+
+
+
+
+.g-page{
+	/*position: absolute;
+	width: 100%;
+	height: 100%;
+	max-width: 32rem;*/
+	/*overflow: auto;*/
+	/*-webkit-overflow-scrolling:touch;*/
+	padding: 0.42666667rem;
+}
+
+		/*课程列表*/
+		.g-item{
+			position:relative;
+			height: 9.38666667rem;
+			overflow: hidden;
+			text-align: center;
+		}
+				.g-item a{
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					z-index:2;
+				}
+
+								.ltr{
+					position: absolute;
+					top: 0;
+					left: 0;
+					z-index: 10;
+					width: 0.21333333rem;
+					height: 0.21333333rem;
+					background: url(../images/zhezhao_1.png)no-repeat;
+					background-position: left top;
+				}
+				.rtr{
+					position: absolute;
+					top: 0;
+					right: 0;
+					z-index: 10;
+					width: 0.21333333rem;
+					height: 0.21333333rem;
+					background: url(../images/zhezhao_1.png)no-repeat;
+					background-position: right top;
+				}
+				.lbr{
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					z-index: 10;
+					width: 0.21333333rem;
+					height: 0.21333333rem;
+					background: url(../images/zhezhao_1.png)no-repeat;
+					background-position: left bottom;
+				}
+				.rbr{
+					position: absolute;
+					right: 0;
+					bottom: 0;
+					z-index: 10;
+					width: 0.21333333rem;
+					height: 0.21333333rem;
+					background: url(../images/zhezhao_1.png)no-repeat;
+					background-position: bottom right;
+				}
+
+				.m-item{
+					position: relative;
+					overflow: hidden;
+					width: 100%;
+					height: 100%;
+				}
+						.m-item img{
+							max-width: 100%;
+						}
+
+
+				.m-content{
+					padding: 0.42666667rem 0.85333333rem 0.42666667rem 0.85333333rem;
+					color: #fff;
+					text-align: left;
+				}
+						.m-courseTitle{
+							color: #fff;
+							font-size: 0.768rem;
+							width:10.24rem;
+							text-overflow: ellipsis;
+							white-space: nowrap;
+							overflow: hidden;
+						}
+						.m-address{
+							margin-top: 0.42666667rem;
+							font-size: 0.512rem;
+							padding-left: 0.21333333rem;
+							border-left: 0.128rem solid #00c8c8;
+							color: #fff;
+						}
+								.u-address{
+									margin-top: 1px;
+								}
+										.u-address>span:nth-child(1){
+											margin-right: 0.42666667rem;
+										}
+						
+						.m-price{
+							position: absolute;
+							right: 0.42666667rem;
+							bottom: 0.42666667rem;
+							font-size: 0.68266667rem;
+							text-align: center;
+							color: #fff;
+
+						}
+								.m-price>div:nth-child(1){
+									text-decoration: line-through;
+									padding: 0.08533333rem 0.42666667rem;
+								}
+							
+								.m-price>div:nth-child(2){
+									
+									background: rgba(0, 0, 0, 0.5);
+									padding: 0.08533333rem 0.42666667rem;
+								}
+
+						.m-fav{
+							position: absolute;
+							right: 0.34133333rem;
+							top: 0.42666667rem;
+							font-size:0;
+							width: 1.70666667rem;
+							height: 1.70666667rem;
+							text-align: center;
+							color: #fff;
+						}
+								.m-fav>div:nth-child(1){
+									display: inline-block;
+									font-size: 0.512rem;
+									width: 0.85333333rem;
+									height:0.85333333rem;
+									background: url(../images/fav.png) no-repeat 0 -1.06666667rem;
+									background-size: 100%;
+								}
+								.m-fav>div:nth-child(2){
+									font-size: 0.512rem;
+								}
+
+						.m-contentShadow{
+							position: absolute;
+							top: 0;
+							left: 0;
+							width: 100%;
+							height: 100%;
+							background: url(../images/first_shadow.png) no-repeat;
+							background-size: cover;
+						}
+
+						.m-shadow{
+							position: relative;
+							
+							z-index: 3;
+							background: rgba(76, 74, 20, 0.5);
+							width: 100%;
+							display: table;
+							text-align: center;
+							height: 100%;
+						}
+								.m-over{
+										position: absolute;
+									  width: 8.53333333rem;
+									  height: 4.52266667rem;
+									  top: 50%;
+									  margin-top: -2.26133333rem;
+									  left: 50%;
+									  margin-left: -4.26666667rem;
+									  background: url(../images/full.png) no-repeat;
+									  background-size: 100%;
+								}
+		.g-item+.g-item{
+			margin-top: 2%;
+		}
+

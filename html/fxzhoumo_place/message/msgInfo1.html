@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>提问详情</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" />
+	<meta name="apple-touch-fullscreen" content="yes" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="format-detection" content="telephone=no" />	
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../css/base.css">
+	<link rel="stylesheet" type="text/css" href="../css/common.css">
+	<link rel="stylesheet" type="text/css" href="../css/message.css">
+	<script type="text/javascript" src="../js/lib/require.min.js" data-main="../js/main/msgInfo"></script>
+</head>
+<body>
+<div id="g-screen">
+	<div class="g-head bb1">
+		<div class="u-back">
+			<div class="icon">&#xe605;</div><div>返回</div>
+		</div>
+		<div class="u-title">
+			我的提问
+		</div>
+	</div>
+<div class="g-main" id="container">
+<!-- 		<div class="g-msgInfoItem mt10 bgf pt10 pb10">
+	<a href="../detail/course.html"><h1>周末一元课</h1></a>
+	<div class="m-msg-r">
+<div class="u-msgImg fl mr10">
+	<img src="../images/1.jpg" alt="">
+</div>
+<div class="ovh rel">
+	<div class="i-ich-l fl"></div>
+	<div class="u-msgTxt bg-ccc white">
+		啊士大夫但是的房顶上发的说法是房山范德萨士大夫是阿范德萨
+	</div>
+</div>
+<div class="tr cc">2015.04.22</div>
+	</div>
+	<div class="m-msg-l">
+<div class="u-msgImg ml10 fr">
+	<img src="../images/1.jpg" alt="">
+</div>
+<div class="ovh rel">
+	<div class="i-ich-r fr"></div>
+	<div class="u-msgTxt bg-00c8 white">
+		啊士大夫但是的房顶上发的说法是房山范德萨士大夫是阿范德萨
+	</div>
+</div>
+<div class="tl cyan">2015.04.22</div>
+	</div> -->
+</div>
+
+	</div>
+	<script type="text/template" id="tpl">
+		<%var i,len;%>
+			<%for(i=0,len=course_questreply_arr.length;i<len;i++){%>
+				<%	
+					var flag=false;
+					var e=course_questreply_arr[i];
+					var q=e.questreply_quest;
+					var r=e.questreply_reply;
+				%>
+				<div class="g-msgInfoItem mt10 bgf pt10 pb10">
+					<a href="../detail/course.html?courseid=<%=q.quest_course_id%>"><h1><%=q.quest_course_title%></h1></a>
+					<div class="m-msg-r">
+						<div class="u-msgImg fl mr10">
+							<img src="<%=config.imgBaseURL%><%=q.quest_user_photo%>" alt="">
+						</div>
+						<div class="ovh rel">
+							<div class="i-ich-l fl"></div>
+							<div class="u-msgTxt bg-ccc white">
+								<%=q.quest_content%>
+							</div>
+						</div>
+						<div class="tr cc"><%=We.date(new Date(q.quest_datetime),"YYYY-MM-DD")%></div>
+					</div>
+					<%
+						for(var elem in r){
+							flag=true;
+						}
+					%>
+					<%if(flag){%>
+						<div class="m-msg-l">
+							<div class="u-msgImg ml10 fr">
+								<img src="<%=config.imgBaseURL%><%=r.reply_user_photo%>" alt="">
+							</div>
+							<div class="ovh rel">
+								<div class="i-ich-r fr"></div>
+								<div class="u-msgTxt bg-00c8 white">
+									<%=r.reply_content%>
+								</div>
+							</div>
+							<div class="tl cyan"><%=We.date(new Date(r.reply_datetime),"YYYY-MM-DD")%></div>
+						</div>
+					<%}%>
+				</div>
+			<%}%>
+	</script>
+</div>	
+
+</body>

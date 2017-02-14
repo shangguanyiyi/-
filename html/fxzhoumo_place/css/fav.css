@@ -1,0 +1,349 @@
+body{
+	background: #ededed;
+}
+#g-screen{
+	max-width: 750px;
+	min-width: 320px;
+	margin: 0 auto;
+}
+
+.g-head{
+	position: fixed;
+	width: 100%;
+	height: 44px;
+	background: #ededed;
+	padding: 0 20px 0 20px;
+	overflow: hidden;
+	z-index: 5;
+	box-shadow: 0 -1px 1px -1px rgba(0, 0, 0, 0.3) inset;
+	max-width: 750px;
+}
+@media all and (min-width: 750px) { 
+	.g-head{
+		position: static;
+	}
+ }
+		.m-panelBtn{
+			position: absolute;
+			width: 44px;
+			height: 44px;
+			font-size: 1.6em;
+			display: table;
+			text-align: center;
+			left: 10px;
+			color: #999;
+		}
+		.i-1{
+			display: table-cell;
+			vertical-align: middle;
+			font-size: 1.4em;
+		}
+
+		.u-back{
+			position: absolute;
+			display: table;
+			left: 10px;
+			top: 0px;
+			height: 44px;
+			margin-right: 20px;
+		}
+				.u-back>div{
+					display: table-cell;
+					vertical-align: middle;
+					text-align: center;
+					font-size:16px;
+					color: #666;
+				}
+		.u-title{
+			text-align: center;
+			font-size: 19px;
+			display: inline-block;
+			width: 100%;
+			line-height: 44px;
+		}
+
+.g-main{
+	padding-top: 44px;
+}
+		.m-person,.m-course{
+			margin-top: 10px;
+		}
+
+		.m-person{
+				position: relative;
+				background: #fff;
+				padding:10px 10px 10px 20px;
+				overflow: hidden;
+				display: table;
+				width: 100%;
+			}
+
+					.m-person>a{
+						position: absolute;
+						width: 100%;
+						height: 100%;
+						z-index: 2;
+						top: 0;
+						left: 0;
+					}
+					.m-pImg{
+						width: 80px;
+						height: 80px;
+						border-radius: 40px;
+						overflow: hidden;
+						float: left;
+						margin-right: 20px;
+					}
+
+							.m-pImg>img{
+								width: 80px;
+								height: 80px;
+								border-radius: 40px;
+							}
+
+					.m-uInfo{
+						overflow: hidden;
+						width: 100%;
+						display: table-cell;
+						vertical-align: middle;
+						font-size: 1.6em;
+					}
+
+							.m-uInfo .u-uInfo{
+								font-size: 13px;
+								color: #8c8c8c;
+							}
+							.m-uInfo>div:nth-child(2){
+								margin-top:10px;
+								font-size: 12px;
+							}
+
+							.i-tName{
+								font-size: 18px;
+								margin-right: 5px;
+								float: left;
+							}
+
+							.i-tCap{
+								font-size:10px;
+								background: #00c8c8;
+								color: #fff;
+								padding:2px;
+								overflow: hidden;
+								border-radius: 2px;
+							}
+							.i-tCap-1{
+								font-size:10px;
+								background: #faa000;
+								color: #fff;
+								padding:2px;
+								overflow: hidden;
+								border-radius: 2px;
+							}
+			.m-course{
+				position: relative;
+				background: #fff;
+				padding:10px 10px 10px 20px;
+				overflow: hidden;
+				display: table;
+				width: 100%;
+			}
+					.m-course>a{
+						position: absolute;
+						width: 100%;
+						height: 100%;
+						z-index: 2;
+						top: 0;
+						left: 0;
+					}
+					.m-cTitle{
+						overflow: hidden;
+						text-overflow: ellipsis;
+						white-space: nowrap;
+						width: 200px;
+					}
+					.m-cImg{
+						width: 80px;
+						height: 80px;
+						border-radius: 5px;
+						overflow: hidden;
+						float: left;
+						margin-right: 20px;
+					}
+					.u-address{
+						border-left: 3px solid #00c8c8;
+						padding-left: 5px;
+						width: 190px;
+					}
+					.i-address{
+						margin-right: 5px;
+					}
+
+					.m-fav{
+							z-index: 3;
+						position: absolute;
+						right: 8px;
+						top: 10px;
+						font-size:0;
+						width: 55px;
+						height: 40px;
+						padding-top: 10px;
+						text-align: center;
+					}
+				
+					.m-fav>div:nth-child(1){
+						width: 20px;
+						height: 20px;
+						background: url(../images/fav_1.png) no-repeat;
+						background-size: 100%;
+						margin-bottom: 1px;
+						display: inline-block;
+					}
+					.m-fav>div:nth-child(2){
+						font-size:12px;
+						display: inline-block;
+						line-height: 20px;
+						  vertical-align: top;
+						  margin-left:5px;
+					}
+
+					.m-price{
+							
+						position: absolute;
+						right: 10px;
+						bottom: 5px;
+						padding:5px 10px;
+						font-size: 18px;
+						color: #e54923;
+					}
+
+					.m-price span:nth-child(1){
+							font-size: 12px;
+					}
+					.m-price span:nth-child(2){
+						  line-height: 20px;
+						  display: inline-block;
+						  vertical-align: bottom;
+					}
+
+
+					
+
+.g-panel{
+	position: fixed;
+	width: 260px;
+	font-size: 18px;
+	color: #333;
+	padding-left: 40px;
+	padding-top: 20px;
+	left: -260px;
+	top: 0;
+	background: #fff;
+}
+
+.g-panel .i-download{
+
+	width: 20px;
+	height: 20px;
+	background:url(../images/fx-dl.png) no-repeat;
+	background-size: 100%;
+}
+
+		.g-panel a{
+			position: relative;
+			z-index: 2;
+			width: 100%;
+			padding: 15px 0px 15px 24px;
+			color: #333;
+			display: inline-block;
+			line-height: 1;
+		}
+
+		.g-userInfo{
+			padding-bottom: 10px;
+			border-bottom: 1px solid #ebebeb;
+			overflow: hidden;
+		}
+				#u-toCenter{
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					left: 0;
+					top: 0;
+					z-index: 2;
+				}
+
+				.u-imgBox{
+					float: left;
+					width: 80px;
+					height: 80px;
+					border-radius: 50%;
+					border: 2px solid #d5d5d5;
+					margin-right: 20px;
+					padding: 2px;
+				}
+
+						.u-imgBox img{
+							border-radius: 50%;
+							max-width: 100%;
+							width: 72px;
+							height: 72px;
+						}
+
+				.u-name{
+					overflow: hidden;
+					font-size: 20px;
+					padding-top:15px;
+				}
+				.u-des{
+					margin-top: 10px;
+					padding-top: 10px;
+					border-top: 1px solid #ebebeb;
+					color: #8c8c8c;
+					font-size: 13px;
+				}
+		
+		.g-sideNav{
+			margin-top: 20px;
+		}
+				.g-sideNav li{
+					position: relative;
+				}
+				.i-centerLine{
+					height: 0px;
+					overflow: hidden;
+					border-bottom: 1px solid #ebebeb;
+					margin-top: 10px;
+					margin-bottom: 10px;
+				}
+			.msgNum{
+					display: inline-block;
+					padding: 0px 8px;
+					background: #00c8c8;
+					color: #fff;
+					border-radius: 10px;
+					margin-left: 20px;
+				}
+				.i-to{
+					position: absolute;
+					width: 100%;
+					top: 0px;
+					left: 0px;
+					height: 100%;
+					padding: 15px 0 15px 0px;
+					display: table;
+				}
+						.i-right{
+							display: table-cell;
+							vertical-align: middle;
+							color: #a3a3a3;
+							margin-right: 10px;
+							font-size: 18px;
+						}
+
+						.i-left{
+							display: table-cell;
+							vertical-align: middle;
+							color: #666;
+							font-size: 18px;
+						}

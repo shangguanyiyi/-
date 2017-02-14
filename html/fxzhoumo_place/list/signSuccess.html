@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>报名结果确认页面</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" />
+	<meta name="apple-touch-fullscreen" content="yes" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="format-detection" content="telephone=no" />	
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../css/base.css">
+	<link rel="stylesheet" href="../css/dialog.css">
+	<link rel="stylesheet" type="text/css" href="../css/common.css">
+	<link rel="stylesheet" href="../css/sign.css">
+	<link rel="stylesheet" href="../css/pop.css">
+	<link rel="stylesheet" href="../css/signSuccess.css">
+	<script type="text/javascript" src="../js/lib/require.min.js" data-main="../js/main/signSuccess"></script>
+
+</head>
+<body>
+	
+	<div id="g-screen">
+
+	
+		<div id="g-payResult">
+			
+			<div id="loader" ontouchmove="return false" class="loader">
+		        <div class="loader-graph"></div>
+		        <div id="progress" class="loader-progress">20</div>
+		        <div class="loader-text">确认支付中...</div>
+    		</div>
+
+			<div class="m-success dn" id="paySuccess">
+				
+				<h1>报名成功</h1>
+				<a href="../center/orderDetail.html" class="u-goOrderDetail" id="u-goOrderDetail">查看订单详情>></a>
+				<p>与好友分享你参与的活动 邀请对方使用发现周末同享20元礼券</p>
+				<a href="../index.html" class="u-goIndex">返回首页</a>
+			</div>
+
+			<div class="m-fail dn" id="payFail">
+
+					<h1>报名不成功</h1>
+					<p>请联系客服,客服电话xxxxxxxx</p>
+			</div>
+
+			<div class="m-setPwd dn" id="setPwdPop">
+				<h1>设置密码</h1>
+				<p class="c6 tl mt10">
+					为了保障您的账号安全
+				</p>
+				<p class="c6 tl">
+					请为您的账户<span id="i-account"></span>设置密码
+				</p>
+				<form  id="ff">
+					<div>
+						<label for="setPwd">密码</label>
+						<input type="password" id="setPwd" placeholder="请输入密码">
+					</div>
+					<div class="mt10">
+						<label for="surePwd">确认密码</label>
+						<input type="password" id="surePwd" placeholder="确认密码">
+					</div>
+					<div class="u-submit">
+						<input type="submit" value="提交" id="u-submitBtn">
+					</div>
+					
+				</form>
+				<div id="i-closePwd" class="c6">暂不设置>></div>
+			</div>
+
+
+		</div>
+	<input type="hidden" value="1311" id="nowOrderId">
+	</div>
+</body>

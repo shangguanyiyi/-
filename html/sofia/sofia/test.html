@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>情人节</title>
+	 <script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+	<style>
+		
+	</style>
+
+	
+</head>
+
+<body>
+	<button id="btn">登录</button>
+</body>
+<script type="text/javascript">
+	$('#btn').bind('click',function(){
+		$.ajax({
+			url:"/IUserServlet?method=dloginreg",
+			type:"post",
+			data:'servicestr={"mobile":"18210410403","password":"123456"}',
+			
+	        success: function (data) {  
+	            var json=eval("("+data+")");
+	            var userId=json.userid;
+	            if(json.code=="success"){
+	            	alert("登录成功")
+	            }else{
+	            	alert(json.description);
+	            }
+	        }  
+	 })	
+	})
+	 
+</script>
+
+</html>

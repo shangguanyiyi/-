@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">	
+	<title>视频内容详情页</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.9/jquery.fullPage.css">
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.9/jquery.fullPage.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-slimScroll/1.3.7/jquery.slimscroll.js"></script>
+    <style>
+        .section1{
+            background:green;
+        }
+        .section2{
+            background:blue;
+        }
+        .section3{
+            background:pink;
+        }
+        .section4{
+            background:orange;
+        }
+        #header{
+            position:fixed;
+            top:0;
+            left:0;
+            color:#fff;
+            font-size:30px;
+            z-index:10;
+        }
+        #menu{
+            /*background:pink;*/
+            position:fixed;
+            top:0;
+            z-index:999;
+            /*position:absolute;
+            top:0;
+            left:0;
+            z-index:999;*/
+
+        }
+    </style>
+</head>
+<body style="background:#444">
+    <!-- <div id="header" >
+        Header
+    </div> -->
+    <!-- <ul id="menu">
+        <li data-menuanchor="page1"><a href="#page1">section 1</a></li>
+        <li data-menuanchor="page2"><a href="#page2">section 2</a></li>
+        <li data-menuanchor="page3"><a href="#page3">section 3</a></li>
+        <li data-menuanchor="page4"><a href="#page4">section 4</a></li>
+    </ul> -->
+    <div id="fullpage">
+        <div class="section"><h1>这是第一屏</h1>
+            
+        </div>
+        <div class="section">
+            <div class="slide">slide 1</div>
+            <div class="slide">slide 2</div>
+            <div class="slide">slide 3</div>
+            <div class="slide">slide 4</div>
+        </div>
+        <div class="section"><h1>这是第三屏</h1>
+            <div style="background:#000;height:2000px;width:80%;border:1px solid red;"></div>
+        </div>
+        <div class="section"><h1>这是第四屏</h1></div>
+
+    </div>
+    <script>
+        $(function(){
+            $('#fullpage').fullpage({
+                sectionsColor:['green','pink','blue','orange'],
+                //section的颜色,
+                // controlArrows:false,//slide的控制箭头
+                // verticalCentered:false,//内容是否垂直居中 默认true
+                resize:true,//字体是否跟着缩放 默认为false
+                // scrollingSpeed:2000,//滚动速度  默认700ms
+                anchors:['page1','page2','page3','page4'],//定义锚链接 默认值空[],个数与section一致  还可以再section 后加一个class="active" 默认直接展示此屏内容
+                // animateAnchor:false,// http://192.168.0.83/fullpage/fullpage.html#page3锚链接是否可以控制滚动动画，默认true
+                // lockAnchors:true,//是否锁定锚链接
+                // easing:,//滚动的动画方式
+                css3:false,//是否使用css3transforms实现滚动效果 默认true
+                // loopTop:true,//滚动到最顶部后是否连续滚动到底部 默认false
+                // loopBottom:true,//滚动到最底部后是否连续滚动会顶部 默认false
+                // loopHorizontal:false,//横向slider幻灯片是否循环滚动 默认true
+                // autoScrolling:false,//是否使用插件的滚动方式 默认为true
+                // scrollBar:true,//是否包含滚动条，默认false
+                // paddingTop:'100px',//或者paddingBottom每一个section顶部和底部的padding，默认为0
+                // fixedElements:'#header',//固定的元素 默认null
+                // keyboardScrolling:true,//键盘方向盘导航 默认true
+                // touchSensitivity:80,//滑动页面的敏感性 默认5 按百分比衡量
+                // continuousVertical:true,//是否循环滚动
+                // recordHistory:,//是否记录滚动记录 默认true 浏览器前进后退导航 如果autoScrolling:false 这个配置将被关闭 即设置为false
+                // menu:'#menu',//绑定菜单 设定的相关属性与anchors的值对应 菜单可以控制 默认false 
+               navigation:true,//是否显示导航 默认为false true时会显示小圆点
+                navigationPosition:'right',//导航小圆点的位置，可以为left right
+                //navigationTooltips:['page1','page2','page3','page4'],//导航小圆点的tooltips设置 默认为[]
+                // showActiveTooltip:false,//是否显示当前页面的导航tooltip信息
+
+                // slidesNavigation:true,//是否显示横向幻灯片的导航 默认false
+                // slidesNavPosition:'bottom',//横向幻灯片导航的位置，默认为bottom,可以设置投票或bottom
+
+                scrollOverflow:true,//内容超过满屏后是否显示滚动条 默认false
+
+                // slideSelector:,//slide的选择器 默认为.slide.
+                // sectionSelector:,//section的选择器 默认为.section
+                
+
+                //回调函数
+                // afterLoad:function(anchorLink,index){
+                //     console.log(anchorLink+index);
+                // },
+               
+                onLeave:function(index,nextIndex,direction){
+                    console.log("index:"+index+"  nextIndex:"+nextIndex+"  direction:"+direction);
+                },
+
+                afterRender:function(){//页面结构生成后的回调函数，或者说页面初始化完成后的回调函数
+                    console.log('afterRender')
+                },
+                afterResize:function(){//页面尺寸发生改变时执行的函数
+                    console.log('afterResize');
+                },
+                afterSlideLoad:function(anchorLink,index,slideAnchor,slideIndex){//滚动到某一水平滑块后的回调函数，与 afterLoad 类似，接收 anchorLink、index、slideIndex、direction 4个参数
+
+                },
+                onSlideLeave:function(anchorLink,index,slideIndex,direction,nextSlideIndex){
+                    //某一水平滑块滚动前的回调函数，与 onLeave 类似，接收 anchorLink、index、slideIndex、direction 4个参数
+                }
+
+            })
+
+        })
+
+        //方法调用
+       
+    </script>
+</body>
+</html>

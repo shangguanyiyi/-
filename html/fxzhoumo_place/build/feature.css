@@ -1,0 +1,62 @@
+body{
+	background: #ededed;
+}
+
+.m-enTitle{
+	margin-bottom: 0.85333333rem;
+}
+		.m-titleImgBox{
+			height: 8.96rem;
+			overflow: hidden;
+		}
+				.m-titleImgBox>img{
+					max-width: 100%;
+				}
+
+		.m-enTitle>p{
+			margin-top: 0.42666667rem;
+			font-size: 0.55466667rem;
+			text-indent: 0.85333333rem;
+			line-height: 1.5;
+			padding: 0 0.85333333rem;
+		}
+
+.m-page{
+	padding: 0 0.42666667rem;
+}
+
+		.m-item{
+			background: #fff;
+			font-size: 0.55466667rem;
+			border-radius: 0.21333333rem;
+			padding: 0.42666667rem 0.42666667rem 0.64rem 0.42666667rem;
+		}
+
+				.m-item>a{
+					
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					top: 0;
+					left: 0;
+
+				}
+				.m-itemImg{
+					overflow: hidden;
+					height: 9.38666667rem;
+				}
+
+					.m-itemImg img{
+						max-width: 100%;
+						border-radius: 0.21333333rem;
+					}
+
+				.m-item>p{
+					font-size: 0.55466667rem;
+					text-indent: 0.85333333rem;
+					line-height: 1.5;
+					margin-top: 0.42666667rem;
+				}
+		.m-item+.m-item{
+			margin-top: 0.42666667rem;
+		}
